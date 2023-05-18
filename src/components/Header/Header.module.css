@@ -1,0 +1,27 @@
+.navbar{
+    font-family: var(--primary-font);
+}
+.menufirst a{
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--aloha-black);
+    margin: 0 8px;
+    position: relative;
+}
+.menufirst a::before{
+    content: '';
+    position: absolute;
+    right: -8px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    height: 24px;
+    background-color: #DFDFDF;
+    margin: auto;
+}
+.menusecond a{
+    color: var(--aloha-blue);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: underline;
+}
