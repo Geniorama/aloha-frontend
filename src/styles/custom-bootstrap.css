@@ -1,0 +1,6 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+
+/* Sobrescribir la fuente por defecto de Bootstrap */
+body {
+  font-family: var(--primary-font);
+}

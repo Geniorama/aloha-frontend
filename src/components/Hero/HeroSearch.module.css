@@ -1,0 +1,23 @@
+.HeroSearch{
+    color: white;
+}
+
+.HeroSearch__title{
+    font-size: 64px;
+    font-weight: bold;
+    line-height: 1em;
+}
+
+.HeroSearch__title__arrow{
+    display: inline-block;
+    position: relative;
+    top: -5px;
+}
+
+.HeroSearch__content{
+    position: relative;
+}
+
+.HeroSearch__desc{
+    font-weight: 600;
+}

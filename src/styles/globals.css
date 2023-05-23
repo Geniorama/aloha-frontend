@@ -10,6 +10,10 @@
   /* Principal */
   --aloha-blue: #1A01A6;
   --aloha-coral: #FF595A;
+  --aloha-coral-800: #DD4344;
+  --aloha-coral-700: #BB3132;
+  --aloha-blue-700: #150186;
+  --aloha-blue-800: #100166;
 
   /* Shadow */
   --box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.15);
