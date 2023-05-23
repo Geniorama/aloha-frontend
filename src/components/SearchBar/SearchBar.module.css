@@ -1,0 +1,43 @@
+.SearchBar{
+    background: white;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 3rem;
+    margin-bottom: -5rem;
+    box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.15);
+}
+
+.SearchBar select{
+    max-width: 250px;
+    border-right: 2px solid var(--aloha-gray);
+}
+
+.SearchBar input, .SearchBar select{
+    height: 70px;
+}
+
+.SearchBar input:focus, .SearchBar select:focus{
+    outline: 0px !important;
+    border: 0px;
+    box-shadow: none;
+    
+}
+
+.Divider{
+    width: 1px;
+    height: 50px;
+    background: #DFDFDF;
+    color: transparent;
+    display: inline-block;
+}
+
+.BtnSubmit{
+    width: 70px;
+    background: var(--aloha-black);
+    border-color: white;
+}
+
+.BtnSubmit:hover{
+    background: var(--aloha-gray);
+    border-color: white;
+}

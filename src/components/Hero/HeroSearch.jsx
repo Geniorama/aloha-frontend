@@ -3,6 +3,7 @@ import Image from 'next/image'
 import styles from './HeroSearch.module.css'
 import Link from 'next/link'
 import ButtonLink from '../ButtonLink/ButtonLink'
+import SearchBar from '../SearchBar/SearchBar'
 
 export default function HeroSearch() {
   const linkBanner = {
@@ -43,6 +44,8 @@ export default function HeroSearch() {
                 </p>
             </div>
 
+            {/* Search Bar */}
+            <SearchBar />
         </div>
     </div>
   )

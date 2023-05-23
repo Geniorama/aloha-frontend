@@ -1,5 +1,6 @@
 .HeroSearch{
     color: white;
+    margin-bottom: 7rem;
 }
 
 .HeroSearch__title{
@@ -16,6 +17,7 @@
 
 .HeroSearch__content{
     position: relative;
+    margin-top: 6rem;
 }
 
 .HeroSearch__desc{
