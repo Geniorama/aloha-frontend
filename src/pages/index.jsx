@@ -17,6 +17,7 @@ import LogoBrands2 from "../../public/img/home/brands/image 22.png";
 import LogoBrands3 from "../../public/img/home/brands/image 23.png";
 import LogoBrands4 from "../../public/img/home/brands/image 24.png";
 import LogoBrands5 from "../../public/img/home/brands/image 25.png";
+import PricingCard from "@/components/PricingCard/PricingCard";
 
 export default function Home() {
   const settings = {
@@ -318,6 +319,36 @@ export default function Home() {
           <TitleSection text="Planes." color={'white'} />
           <div style={{marginLeft: '15%'}}>
             <ButtonLink href={'/'} text={'Conoce todos los planes'} color={'coral'} size={'m'} />
+          </div>
+
+          <div className="row mt-5">
+            <div className="col-12 col-md-4">
+              <PricingCard
+                title={'Imágenes.'}
+                desc={'Más de 263 millones de fotos y vectores de stock de alta calidad para cubrir sus necesidades creativas.'}
+                price={'$0,19'}
+                label_price={'imagen'}
+                href={'/'}
+              />
+            </div>
+            <div className="col-12 col-md-4">
+              <PricingCard
+                title={'Imágenes.'}
+                desc={'Más de 263 millones de fotos y vectores de stock de alta calidad para cubrir sus necesidades creativas.'}
+                price={'$0,19'}
+                label_price={'imagen'}
+                href={'/'}
+              />
+            </div>
+            <div className="col-12 col-md-4">
+              <PricingCard
+                title={'Imágenes.'}
+                desc={'Más de 263 millones de fotos y vectores de stock de alta calidad para cubrir sus necesidades creativas.'}
+                price={'$0,19'}
+                label_price={'imagen'}
+                href={'/'}
+              />
+            </div>
           </div>
         </div>
       </section>

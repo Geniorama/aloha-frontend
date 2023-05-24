@@ -104,4 +104,24 @@
     stroke: var(--aloha-blue-700);
 }
 
+/* white */
 
+.white {
+    color: white;
+}
+
+.white:hover {
+    color: var(--aloha-coral);
+}
+
+.blue:active{
+    color: var(--aloha-blue-800);
+}
+
+.white svg path{
+    stroke: white;
+}
+
+.white:hover svg path{
+    stroke: var(--aloha-coral);
+}
