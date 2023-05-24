@@ -48,19 +48,19 @@ const Header = () => {
         <div className={styles.menufirst}>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="/">Imagenes</a>
+              <Link className="nav-link" href="/">Imagenes</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Videos</a>
+              <Link className="nav-link" href="/">Videos</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Editorial</a>
+              <Link className="nav-link" href="/">Editorial</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Música & SFX</a>
+              <Link className="nav-link" href="/">Música & SFX</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">Planes</a>
+              <Link className="nav-link" href="/">Planes</Link>
             </li>
           </ul>
         </div>
@@ -89,10 +89,10 @@ const Header = () => {
         <div className={styles.menusecond}>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link" href="/">Registrarme</a>
+              <Link className="nav-link" href="/">Registrarme</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/">
+              <Link className="nav-link" href="/">
                 Iniciar sesión
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clipPath="url(#clip0_69_1496)">
@@ -105,7 +105,7 @@ const Header = () => {
                   </clipPath>
                   </defs>
                 </svg>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
