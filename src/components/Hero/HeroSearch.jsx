@@ -45,7 +45,9 @@ export default function HeroSearch() {
             </div>
 
             {/* Search Bar */}
-            <SearchBar />
+            <div className='w-100 d-flex justify-content-center' style={{marginBottom: '-80px', marginTop: '50px'}}>
+                <SearchBar />
+            </div>
         </div>
     </div>
   )
