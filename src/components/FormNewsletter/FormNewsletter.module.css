@@ -1,0 +1,11 @@
+.FormControl{
+    border: none;
+}
+
+.FormControl:focus{
+    outline: 0px !important;
+}
+
+.InputGroup{
+    border-bottom: 2px solid #515151;
+}

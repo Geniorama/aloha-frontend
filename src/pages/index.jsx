@@ -18,6 +18,8 @@ import LogoBrands3 from "../../public/img/home/brands/image 23.png";
 import LogoBrands4 from "../../public/img/home/brands/image 24.png";
 import LogoBrands5 from "../../public/img/home/brands/image 25.png";
 import PricingCard from "@/components/PricingCard/PricingCard";
+import FormNewsletter from "@/components/FormNewsletter/FormNewsletter";
+import FormPartners from "@/components/FormPartners/FormPartners";
 
 export default function Home() {
   const settings = {
@@ -333,21 +335,48 @@ export default function Home() {
             </div>
             <div className="col-12 col-md-4">
               <PricingCard
-                title={'Imágenes.'}
+                title={'Videos.'}
                 desc={'Más de 263 millones de fotos y vectores de stock de alta calidad para cubrir sus necesidades creativas.'}
                 price={'$0,19'}
-                label_price={'imagen'}
+                label_price={'video'}
                 href={'/'}
               />
             </div>
             <div className="col-12 col-md-4">
               <PricingCard
-                title={'Imágenes.'}
+                title={'Sonido.'}
                 desc={'Más de 263 millones de fotos y vectores de stock de alta calidad para cubrir sus necesidades creativas.'}
                 price={'$0,19'}
-                label_price={'imagen'}
+                label_price={'pista'}
                 href={'/'}
               />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.Section} style={{background: '#FAFAFA'}}>
+        <div className="container">
+          <div className="text-center">
+            <TitleSection text="Regístrate en nuestro newsletter." color={'blue'} />
+          </div>
+          <div className="py-5 row justify-content-center">
+            <div className="col-12 col-md-8">
+             <FormNewsletter />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.Section}>
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-12 col-md-10">
+              <TitleSection text="¿Quieres ser parte de nuestros colaboradores?" color={'black'} />
+              <p className="mt-3" style={{fontSize: '18px', color: 'var(--aloha-black)', fontWeight: '500', maxWidth: '600px'}}>Déjanos tus datos y pronto estaremos comunicándonos contigo para ser parte de este gran mundo Aloha.</p>
+              <div className="mt-5">
+                <FormPartners />
+              </div>
             </div>
           </div>
         </div>
