@@ -1,0 +1,36 @@
+.slick-arrow::before{
+    display: none;
+}
+
+.slick-arrow{
+    width: 64px !important;
+    height: 64px !important;
+    background: white !important;
+    display: flex !important;
+    color: var(--aloha-blue) !important;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.12);
+}
+
+.slick-next{
+    right: 80px !important;
+}
+
+.slick-arrow .slick-arrow-icon{
+    transition: .3s;
+}
+
+.slick-next:hover .slick-arrow-icon{
+    transform: translateX(5px);
+}
+
+.slick-prev{
+    left: 80px !important;
+}
+
+.slick-prev:hover .slick-arrow-icon{
+    transform: translateX(-5px);
+}

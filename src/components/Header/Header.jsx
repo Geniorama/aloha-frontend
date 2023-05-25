@@ -6,6 +6,7 @@ import styles from './Header.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera , faBars} from '@fortawesome/free-solid-svg-icons';
 import { Collapse } from 'react-bootstrap';
+import Image from 'next/image';
 
 const Header = () => {
 
@@ -42,7 +43,7 @@ const Header = () => {
     <nav className={`${styles.navbar} ${headerClassName} navbar navbar-expand-lg`} ref={headerRef}>
       <div className={styles.container}>
         <Link href='#' className={styles.logo}>
-          <img src={logoImageUrl} alt="Logo Aloha" />
+          <Image src={LogoBlack} alt='Logo Aloha' />
         </Link>
         {/* Menú #1 */}
         <div className={styles.menufirst}>

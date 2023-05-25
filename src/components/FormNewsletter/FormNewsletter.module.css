@@ -1,9 +1,11 @@
 .FormControl{
     border: none;
+    background: transparent;
 }
 
 .FormControl:focus{
     outline: 0px !important;
+    background: transparent;
 }
 
 .InputGroup{

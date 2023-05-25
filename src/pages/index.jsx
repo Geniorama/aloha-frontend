@@ -20,20 +20,51 @@ import LogoBrands5 from "../../public/img/home/brands/image 25.png";
 import PricingCard from "@/components/PricingCard/PricingCard";
 import FormNewsletter from "@/components/FormNewsletter/FormNewsletter";
 import FormPartners from "@/components/FormPartners/FormPartners";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import '@fortawesome/fontawesome-svg-core/styles.css';
+import { faChevronRight, faChevronLeft  } from "@fortawesome/free-solid-svg-icons";
 
 export default function Home() {
+
+  function NextArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <button className={className} onClick={onClick}>
+        <div className="slick-arrow-icon">
+          <FontAwesomeIcon size={'lg'} icon={faChevronRight } style={{fontSize: '30px'}}/>
+        </div>
+      </button>
+    );
+  }
+  
+  function PrevArrow(props) {
+    const { className, style, onClick } = props;
+    return (
+      <button className={className} onClick={onClick}>
+        <div className="slick-arrow-icon">
+          <FontAwesomeIcon size={'lg'} icon={faChevronLeft } style={{fontSize: '30px'}}/>
+        </div>
+      </button>
+    );
+  }
+
   const settings = {
     dots: false,
     infinite: true,
+    arrows: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
     centerMode: true,
     autoplaySpeed: 3000,
-    speed: 2000
-  };
+    speed: 2000,
+    variableWidth: true,
+    adaptiveHeight: true,
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />
 
+  };
 
   return (
     <div>
@@ -113,37 +144,37 @@ export default function Home() {
             <div className={styles.SlideItem}>
               <Image
                 src={SlideExample1}
-                responsive
+                responsive="true"
               />
             </div>
             <div className={styles.SlideItem}>
               <Image
                 src={SlideExample2}
-                responsive
+                responsive="true"
               />
             </div>
             <div className={styles.SlideItem}>
               <Image
                 src={SlideExample2}
-                responsive
+                responsive="true"
               />
             </div>
             <div className={styles.SlideItem}>
               <Image
                 src={SlideExample2}
-                responsive
+                responsive="true"
               />
             </div>
             <div className={styles.SlideItem}>
               <Image
                 src={SlideExample2}
-                responsive
+                responsive="true"
               />
             </div>
             <div className={styles.SlideItem}>
               <Image
                 src={SlideExample2}
-                responsive
+                responsive="true"
               />
             </div>
           </Slider>
@@ -230,9 +261,9 @@ export default function Home() {
               <div className="d-flex align-items-start">
                 <span>
                   <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_124_3263)">
-                      <path d="M85 85L35 35" stroke="white" stroke-width="10" />
-                      <path d="M40 85H85V40" stroke="white" stroke-width="10" />
+                    <g clipPath="url(#clip0_124_3263)">
+                      <path d="M85 85L35 35" stroke="white" strokeWidth="10" />
+                      <path d="M40 85H85V40" stroke="white" strokeWidth="10" />
                     </g>
                     <defs>
                       <clipPath id="clip0_124_3263">
@@ -249,9 +280,9 @@ export default function Home() {
                 </div>
                 <span style={{alignSelf: 'flex-end'}}>
                   <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_124_3267)">
-                      <path d="M35 35L85 85" stroke="white" stroke-width="10" />
-                      <path d="M80 35H35V80" stroke="white" stroke-width="10" />
+                    <g clipPath="url(#clip0_124_3267)">
+                      <path d="M35 35L85 85" stroke="white" strokeWidth="10" />
+                      <path d="M80 35H35V80" stroke="white" strokeWidth="10" />
                     </g>
                     <defs>
                       <clipPath id="clip0_124_3267">
@@ -279,37 +310,37 @@ export default function Home() {
             <div className={styles.SlideItem}>
               <Image
                 src={SlideExample1}
-                responsive
+                responsive="true"
               />
             </div>
             <div className={styles.SlideItem}>
               <Image
                 src={SlideExample2}
-                responsive
+                responsive="true"
               />
             </div>
             <div className={styles.SlideItem}>
               <Image
                 src={SlideExample2}
-                responsive
+                responsive="true"
               />
             </div>
             <div className={styles.SlideItem}>
               <Image
                 src={SlideExample2}
-                responsive
+                responsive="true"
               />
             </div>
             <div className={styles.SlideItem}>
               <Image
                 src={SlideExample2}
-                responsive
+                responsive="true"
               />
             </div>
             <div className={styles.SlideItem}>
               <Image
                 src={SlideExample2}
-                responsive
+                responsive="true"
               />
             </div>
           </Slider>

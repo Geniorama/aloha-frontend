@@ -24,8 +24,8 @@ export default function FormPartners() {
                 <div className="row">
                     <div className="col-12 col-md-3 mb-4">
                         <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                            <label className="form-check-label" htmlFor="flexCheckChecked">
+                            <input className="form-check-input" type="checkbox" value="" id="fotos" defaultChecked />
+                            <label className="form-check-label" htmlFor="fotos">
                                 Fotos
                             </label>
                         </div>
@@ -33,8 +33,8 @@ export default function FormPartners() {
 
                     <div className="col-12 col-md-3 mb-4">
                         <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked"  />
-                            <label className="form-check-label" htmlFor="flexCheckChecked">
+                            <input className="form-check-input" type="checkbox" value="" id="editoriales"  />
+                            <label className="form-check-label" htmlFor="editoriales">
                                 Editoriales
                             </label>
                         </div>
@@ -42,8 +42,8 @@ export default function FormPartners() {
 
                     <div className="col-12 col-md-3 mb-4">
                         <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked"  />
-                            <label className="form-check-label" htmlFor="flexCheckChecked">
+                            <input className="form-check-input" type="checkbox" value="" id="musica"  />
+                            <label className="form-check-label" htmlFor="musica">
                                 Música
                             </label>
                         </div>
@@ -51,8 +51,8 @@ export default function FormPartners() {
 
                     <div className="col-12 col-md-3 mb-4">
                         <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked"  />
-                            <label className="form-check-label" htmlFor="flexCheckChecked">
+                            <input className="form-check-input" type="checkbox" value="" id="efectos-sonido"  />
+                            <label className="form-check-label" htmlFor="efectos-sonido">
                                 Efectos de sonido
                             </label>
                         </div>
@@ -60,8 +60,8 @@ export default function FormPartners() {
 
                     <div className="col-12 col-md-3 mb-4">
                         <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" />
-                            <label className="form-check-label" htmlFor="flexCheckChecked">
+                            <input className="form-check-input" type="checkbox" value="" id="video" />
+                            <label className="form-check-label" htmlFor="video">
                                 Video
                             </label>
                         </div>
@@ -69,8 +69,8 @@ export default function FormPartners() {
 
                     <div className="col-12 col-md-3 mb-4">
                         <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                            <label className="form-check-label" htmlFor="flexCheckChecked">
+                            <input className="form-check-input" type="checkbox" value="" id="ilustraciones" />
+                            <label className="form-check-label" htmlFor="ilustraciones">
                                 Illustraciones
                             </label>
                         </div>
@@ -78,8 +78,8 @@ export default function FormPartners() {
 
                     <div className="col-12 col-md-3 mb-4">
                         <div className="form-check">
-                            <input className="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
-                            <label className="form-check-label" htmlFor="flexCheckChecked">
+                            <input className="form-check-input" type="checkbox" value="" id="vectores" />
+                            <label className="form-check-label" htmlFor="vectores">
                                 Vectores
                             </label>
                         </div>
