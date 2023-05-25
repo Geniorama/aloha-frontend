@@ -66,3 +66,9 @@
 .CardCategory__link:hover svg path{
     stroke: var(--aloha-coral);
 }
+
+@media (max-width: 991.98px){
+    .CardCategory{
+        height: 380px;
+    }
+}

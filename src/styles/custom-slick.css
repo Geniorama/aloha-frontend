@@ -34,3 +34,18 @@
 .slick-prev:hover .slick-arrow-icon{
     transform: translateX(-5px);
 }
+
+@media (max-width: 991.98px){
+    .slick-arrow{
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    .slick-prev{
+        left: 50px !important;
+    }
+
+    .slick-next{
+        right: 50px !important;
+    }
+}

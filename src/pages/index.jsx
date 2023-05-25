@@ -31,7 +31,7 @@ export default function Home() {
     return (
       <button className={className} onClick={onClick}>
         <div className="slick-arrow-icon">
-          <FontAwesomeIcon size={'lg'} icon={faChevronRight } style={{fontSize: '30px'}}/>
+          <FontAwesomeIcon size={'lg'} icon={faChevronRight } style={{fontSize: '20px'}}/>
         </div>
       </button>
     );
@@ -42,7 +42,7 @@ export default function Home() {
     return (
       <button className={className} onClick={onClick}>
         <div className="slick-arrow-icon">
-          <FontAwesomeIcon size={'lg'} icon={faChevronLeft } style={{fontSize: '30px'}}/>
+          <FontAwesomeIcon size={'lg'} icon={faChevronLeft } style={{fontSize: '20px'}}/>
         </div>
       </button>
     );
@@ -62,8 +62,33 @@ export default function Home() {
     variableWidth: true,
     adaptiveHeight: true,
     nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />
-
+    prevArrow: <PrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024, // Pantallas grandes
+        settings: {
+          slidesToShow: 5,
+          slidesToScroll: 1,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 769, // Tablets
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 480, // Dispositivos móviles
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
@@ -73,10 +98,11 @@ export default function Home() {
         <HeroSearch />
       </div>
 
+      {/* Section - Fotos populares */}
       <section className={`${styles.SectionPopular} ${styles.Section}`}>
         <div className="container">
           <TitleSection text="Fotos populares." color={'black'} />
-          <div className="text-center my-3">
+          <div className="text-end text-lg-center my-3 pe-md-5">
             <ButtonLink href={'/'} text={'Ver todas las fotos'} color={'coral'} />
           </div>
 
@@ -132,7 +158,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Fotos de temporada */}
+      {/* Section - Fotos de temporada */}
       <section className={`${styles.Section}`}>
         <div className="container">
           <TitleSection text="Fotos de temporada." color={'black'} />
@@ -183,53 +209,53 @@ export default function Home() {
         {/* Promo */}
         <div className="container-fluid">
           <div className="p-3 mb-3 text-center d-flex justify-content-center align-items-center" style={{ background: "var(--aloha-blue)" }}>
-            <p className="m-0" style={{ fontWeight: '600', fontSize: '32px', color: 'white' }}>Obtén 100 imágenes por $100/mes <ButtonLink href={'/'} size={'xl'} text={'Comprar ahora'} color={'coral'} /></p>
+            <p className={`${styles.PromoText}`}>Obtén 100 imágenes por $100/mes <span className="d-none d-lg-inline-block"><ButtonLink href={'/'} size={'xl'} text={'Comprar ahora'} color={'coral'} /></span> <span className="d-lg-none"><ButtonLink href={'/'} size={'m'} text={'Comprar ahora'} color={'coral'} /></span></p>
           </div>
         </div>
       </section>
 
+      {/* Section - Categorías */}
       <section className={`${styles.Section}`}>
         <div className="container">
           <TitleSection text="Categorías." color={'black'} />
           <div className="row mt-5">
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-lg-4">
               <CardCategory text={'Fotos'} />
             </div>
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-6 col-lg-4 mt-5 mt-lg-0">
               <CardCategory link_position={'bottom-right'} text={'Vectores'} />
             </div>
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-6 col-lg-4 mt-5 mt-lg-0">
               <CardCategory text={'Ilustraciones'} />
             </div>
-          </div>
 
-          <div className="row mt-4">
-            <div className="col-12 col-md-3">
+            <div className="col-12 col-md-6 col-lg-3 mt-4">
               <CardCategory text={'Videos'} size={'large'} />
             </div>
 
-            <div className="col-12 col-md-3">
+            <div className="col-12 col-md-6 col-lg-3 mt-4">
               <CardCategory text={'Música'} size={'large'} link_position={'bottom-right'} />
             </div>
 
-            <div className="col-12 col-md-3">
+            <div className="col-12 col-md-6 col-lg-3 mt-4">
               <CardCategory text={'Gratis'} size={'large'} />
             </div>
 
-            <div className="col-12 col-md-3">
+            <div className="col-12 col-md-6 col-lg-3 mt-4">
               <CardCategory text={'Efectos de sonido'} size={'large'} link_position={'bottom-right'} />
             </div>
           </div>
         </div>
       </section>
 
+      {/* Section - Empresas */}
       <section className={styles.Section} style={{ background: 'var(--aloha-coral)' }}>
         <div className="container">
           <div style={{ maxWidth: '90%' }}>
             <TitleSection text="Empresas que trabajan con nosotros." color={'blue'} />
           </div>
 
-          <div className={`${styles.RowBrands} d-flex align-items-center flex-row`}>
+          <div className={`${styles.RowBrands} d-flex align-items-center flex-row flex-wrap`}>
             <div className={styles.RowBrands__item}>
               <Image src={LogoBrands1} />
             </div>
@@ -252,12 +278,12 @@ export default function Home() {
           </div>
 
           <div className="row align-items-center" style={{marginTop: '6rem'}}>
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-3 col-lg-4">
               <div className="d-flex justify-content-end">
-                <h3 style={{ fontSize: '107px', fontWeight: 'bold', color: 'var(--aloha-blue)', marginTop: '-5rem' }}>hola!</h3>
+                <h3 className={styles.TextHola}>hola!</h3>
               </div>
             </div>
-            <div className="col-12 col-md-8">
+            <div className="col-12 col-md-9 col-lg-8">
               <div className="d-flex align-items-start">
                 <span>
                   <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -275,7 +301,13 @@ export default function Home() {
                 <div className={styles.ctaText}>
                   <br /><br />
                   <p>¿Quieres un paquete personalizado para tu empresa?</p>
-                  <ButtonLink text={'Solicita un presupuesto'} href={'/'} color={'blue'} size={'l'} />
+                  <span className="d-none d-lg-block">
+                    <ButtonLink text={'Solicita un presupuesto'} href={'/'} color={'blue'} size={'l'} />
+                  </span>
+
+                  <span className="d-lg-none">
+                    <ButtonLink text={'Solicita un presupuesto'} href={'/'} color={'blue'} size={'m'} />
+                  </span>
                   <br /><br /><br /><br /><br /><br />
                 </div>
                 <span style={{alignSelf: 'flex-end'}}>
@@ -300,7 +332,7 @@ export default function Home() {
       <section className={styles.Section}>
         <div className="container">
           <TitleSection text="Fotos gratis." color={'black'} />
-          <div style={{marginLeft: '35%'}}>
+          <div style={{marginLeft: '35%'}} className="ps-5 ps-lg-0">
             <ButtonLink href={'/'} text={'Ver todas'} color={'coral'} size={'m'} />
           </div>
         </div>
@@ -355,7 +387,7 @@ export default function Home() {
           </div>
 
           <div className="row mt-5">
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-lg-4">
               <PricingCard
                 title={'Imágenes.'}
                 desc={'Más de 263 millones de fotos y vectores de stock de alta calidad para cubrir sus necesidades creativas.'}
@@ -364,7 +396,7 @@ export default function Home() {
                 href={'/'}
               />
             </div>
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
               <PricingCard
                 title={'Videos.'}
                 desc={'Más de 263 millones de fotos y vectores de stock de alta calidad para cubrir sus necesidades creativas.'}
@@ -373,7 +405,7 @@ export default function Home() {
                 href={'/'}
               />
             </div>
-            <div className="col-12 col-md-4">
+            <div className="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
               <PricingCard
                 title={'Sonido.'}
                 desc={'Más de 263 millones de fotos y vectores de stock de alta calidad para cubrir sus necesidades creativas.'}
@@ -392,7 +424,7 @@ export default function Home() {
             <TitleSection text="Regístrate en nuestro newsletter." color={'blue'} />
           </div>
           <div className="py-5 row justify-content-center">
-            <div className="col-12 col-md-8">
+            <div className="col-12 col-md-9 col-lg-8">
              <FormNewsletter />
             </div>
           </div>

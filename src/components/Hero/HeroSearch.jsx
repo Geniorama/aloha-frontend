@@ -13,7 +13,7 @@ export default function HeroSearch() {
   }
 
   return (
-    <div style={{position: 'relative', minHeight: '60vh'}} className={`py-5 d-flex align-items-center ${styles.HeroSearch}`}>
+    <div className={`py-5 d-flex align-items-center ${styles.HeroSearch}`}>
         <Image 
             src={BgHero}
             fill

@@ -1,6 +1,8 @@
 .HeroSearch{
     color: white;
     margin-bottom: 2rem;
+    position: relative;
+    min-height: 60vh;
 }
 
 .HeroSearch__title{
@@ -22,4 +24,14 @@
 
 .HeroSearch__desc{
     font-weight: 600;
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+    .HeroSearch{
+        min-height: unset;
+    }
+    .HeroSearch__content{
+        margin-top: 10rem;
+    }
 }
