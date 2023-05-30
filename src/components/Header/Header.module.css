@@ -12,6 +12,7 @@
     width: 100%;
     justify-content: space-between;
     padding: 10px 50px;
+    align-items: center;
 }
 .menufirst a{
     font-size: 14px;
@@ -96,23 +97,27 @@
     font-size: 14px;
     margin-right: 15px;
     position: relative;
+    height: 36px;
 }
-.search::before{
-    content: '';
-    position: absolute;
+
+.search select:focus, .search input:focus{
+    outline: 0px;
+}
+
+.Divider{
     width: 1px;
-    height: 25px;
-    background-color: #DFDFDF;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    left: 95px;
+    height: 30px;
+    background: #DFDFDF;
+    color: transparent;
+    display: inline-block;
 }
+
 .search input{
     background-color: transparent;
     border: none;
     font-size: 14px;
     margin-left: 5px;
+    height: 36px;
 }
 .search svg{
     margin-left: 7px;

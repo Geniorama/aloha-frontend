@@ -75,6 +75,7 @@ const Header = () => {
               <option value="">Item 2</option>
               <option value="">Item 3</option>
             </select>
+            <span className={`${styles.Divider}`}></span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M6.66667 11.3333C9.24399 11.3333 11.3333 9.24399 11.3333 6.66667C11.3333 4.08934 9.24399 2 6.66667 2C4.08934 2 2 4.08934 2 6.66667C2 9.24399 4.08934 11.3333 6.66667 11.3333Z" stroke="#979797" strokeWidth="1.42857"/>
               <path d="M14 14L10 10" stroke="#979797" strokeWidth="1.42857"/>
