@@ -53,6 +53,7 @@
 
 .SlideItem img{
     width: 100%;
+    object-fit: cover;
 }
 
 .RowBrands__item{
@@ -87,6 +88,14 @@
     font-weight: bold;
     color: var(--aloha-blue);
     margin-top: -5rem;
+}
+
+.BoxTitleEmpresas{
+    max-width: 90%;
+}
+
+.RowCta{
+    margin-top: 6rem;
 }
 
 /* Medium devices (tablets, less than 992px) */
@@ -141,5 +150,91 @@
 
     .TextHola{
         font-size: 64px;
+    }
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .GridPopular{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(9, 1fr);
+        height: 1000px;
+    }
+
+    .GridPopular__item:first-child{
+        grid-column: 1 / span 2;
+        grid-row: 1 / span 2;
+    }
+    
+    .GridPopular__item:nth-child(2){
+        grid-column: 1 / span 1;
+        grid-row: 3 / span 2;
+    }
+    
+    .GridPopular__item:nth-child(3){
+        grid-column: 2 / span 1;
+        grid-row: 3 / span 5;
+    }
+    
+    .GridPopular__item:nth-child(4){
+        grid-column: 1 / span 1;
+        grid-row: 5 / span 3;
+    }
+    
+    .GridPopular__item:nth-child(5){
+        grid-column: 1 / span 1;
+        grid-row: 8 / span 2;
+    }
+    
+    .GridPopular__item:nth-child(6){
+        grid-column: 2 / span 1;
+        grid-row: 8 / span 2;
+    }
+
+    .Section{
+        padding: 2rem 1rem;
+    }
+
+    .SlideItem img{
+        height: 200px;
+    }
+
+    .BoxTitleEmpresas, .BoxTitleEmpresas h2{
+        max-width: 100%;
+    }
+
+    .RowBrands__item img{
+        width: auto;
+        height: 26px;
+    }
+
+    .ctaArrow{
+        width: 15%;
+        display: inline-flex;
+    }
+
+    .ctaText{
+        width: 70%;
+    }
+
+    .ctaText p{
+        font-size: 30px;
+    }
+    
+    .ctaArrow svg{
+        width: 68px;
+        height: 68px;
+    }
+
+    .RowCta{
+        margin-top: 2rem;
+    }
+
+    .ColCta{
+        padding: 0;
+    }
+
+    .SectionNewsletter h2{
+        max-width: 100%;
     }
 }

@@ -2,6 +2,7 @@
     background: white;
     color: var(--aloha-gray);
     position: relative;
+    padding: 2rem;
 }
 
 .Title{
@@ -44,4 +45,19 @@
 .BtnBuyNow:hover{
     background-color: #111111;
     border-color: #111111;
+}
+
+@media (max-width: 575.98px){
+    .PricingCard{
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+    .PricingCard__content{
+        padding: 2rem;
+    }
+    .BtnBuyNow{
+        position: relative;
+    }
 }

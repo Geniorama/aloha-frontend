@@ -6,7 +6,7 @@ export default function FormNewsletter() {
         <div>
             <form action="">
                 <div className={`input-group ${styles.InputGroup}`}>
-                    <input type="text" className={`form-control ${styles.FormControl}`} />
+                    <input type="text" placeholder='Escribe tu correo electrónico' className={`form-control ${styles.FormControl}`} />
                     <ButtonLink type={'submit'} text={'Enviar'} size={'l'} color={'blue'} />
                 </div>
             </form>

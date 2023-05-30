@@ -3,3 +3,34 @@
     padding: 1rem 2rem;
     text-decoration: underline;
 }
+
+.LabelFormControl{
+    color: var(--aloha-gray);
+}
+
+.Caption{
+    font-size: 18px;
+    color: var(--aloha-black);
+    font-weight: 500;
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .LabelFormControl{
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .Caption{
+        font-size: 16px;
+    }
+
+    .RowChecks label{
+        font-size: 16px;
+    }
+
+    .Submit button{
+        font-size: 16px;
+        padding: 15px 20px;
+    }
+}

@@ -68,8 +68,6 @@ export default function Home() {
         breakpoint: 1024, // Pantallas grandes
         settings: {
           slidesToShow: 5,
-          slidesToScroll: 1,
-          infinite: true,
           dots: true,
         },
       },
@@ -77,15 +75,16 @@ export default function Home() {
         breakpoint: 769, // Tablets
         settings: {
           slidesToShow: 4,
-          slidesToScroll: 1,
           centerMode: false,
         },
       },
       {
         breakpoint: 480, // Dispositivos móviles
         settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
+          slidesToShow: 2,
+          centerMode: true,
+          variableWidth: true,
+          arrows: false
         },
       },
     ],
@@ -208,7 +207,7 @@ export default function Home() {
 
         {/* Promo */}
         <div className="container-fluid">
-          <div className="p-3 mb-3 text-center d-flex justify-content-center align-items-center" style={{ background: "var(--aloha-blue)" }}>
+          <div className="p-4 mt-5 mt-md-0 px-5 p-md-3 mb-3 text-center d-flex justify-content-center align-items-center" style={{ background: "var(--aloha-blue)" }}>
             <p className={`${styles.PromoText}`}>Obtén 100 imágenes por $100/mes <span className="d-none d-lg-inline-block"><ButtonLink href={'/'} size={'xl'} text={'Comprar ahora'} color={'coral'} /></span> <span className="d-lg-none"><ButtonLink href={'/'} size={'m'} text={'Comprar ahora'} color={'coral'} /></span></p>
           </div>
         </div>
@@ -251,7 +250,7 @@ export default function Home() {
       {/* Section - Empresas */}
       <section className={styles.Section} style={{ background: 'var(--aloha-coral)' }}>
         <div className="container">
-          <div style={{ maxWidth: '90%' }}>
+          <div className={styles.BoxTitleEmpresas}>
             <TitleSection text="Empresas que trabajan con nosotros." color={'blue'} />
           </div>
 
@@ -277,15 +276,15 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="row align-items-center" style={{marginTop: '6rem'}}>
-            <div className="col-12 col-md-3 col-lg-4">
+          <div className={`row align-items-center ${styles.RowCta}`}>
+            <div className="col-12 col-md-3 col-lg-4 d-none d-md-block">
               <div className="d-flex justify-content-end">
                 <h3 className={styles.TextHola}>hola!</h3>
               </div>
             </div>
-            <div className="col-12 col-md-9 col-lg-8">
-              <div className="d-flex align-items-start">
-                <span>
+            <div className={`col-12 col-md-9 col-lg-8 ${styles.ColCta}`}>
+              <div className="d-flex align-items-start position-relative">
+                <span className={styles.ctaArrow}>
                   <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0_124_3263)">
                       <path d="M85 85L35 35" stroke="white" strokeWidth="10" />
@@ -308,9 +307,9 @@ export default function Home() {
                   <span className="d-lg-none">
                     <ButtonLink text={'Solicita un presupuesto'} href={'/'} color={'blue'} size={'m'} />
                   </span>
-                  <br /><br /><br /><br /><br /><br />
+                  <br /><br /><br /><br /><br className="d-none d-md-block" /><br className="d-none d-md-block" />
                 </div>
-                <span style={{alignSelf: 'flex-end'}}>
+                <span className={styles.ctaArrow} style={{alignSelf: 'flex-end'}}>
                   <svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g clipPath="url(#clip0_124_3267)">
                       <path d="M35 35L85 85" stroke="white" strokeWidth="10" />
@@ -418,7 +417,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className={styles.Section} style={{background: '#FAFAFA'}}>
+      <section className={`${styles.Section} ${styles.SectionNewsletter}`} style={{background: '#FAFAFA'}}>
         <div className="container">
           <div className="text-center">
             <TitleSection text="Regístrate en nuestro newsletter." color={'blue'} />

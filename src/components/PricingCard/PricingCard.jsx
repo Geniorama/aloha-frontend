@@ -3,7 +3,7 @@ import ButtonLink from '../ButtonLink/ButtonLink';
 
 export default function PricingCard({title, desc, price, label_price, href}) {
     return (
-        <div className={`${styles.PricingCard} p-4`}>
+        <div className={`${styles.PricingCard}`}>
             <div className={styles.PricingCard__content}>
                 <h5 className={styles.Title}>{title}</h5>
                 <p className={styles.Desc}>{desc}</p>

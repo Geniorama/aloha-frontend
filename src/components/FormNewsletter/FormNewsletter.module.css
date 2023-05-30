@@ -11,3 +11,19 @@
 .InputGroup{
     border-bottom: 2px solid #515151;
 }
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .FormControl{
+        font-size: 14px;
+    }
+
+    .InputGroup button{
+        font-size: 14px;
+    }
+
+    .InputGroup button svg{
+        width: 16px;
+        height: 16px;
+    }
+}

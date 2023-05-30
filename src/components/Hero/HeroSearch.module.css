@@ -8,7 +8,7 @@
 .HeroSearch__title{
     font-size: 64px;
     font-weight: bold;
-    line-height: 1em;
+    line-height: 125%;
 }
 
 .HeroSearch__title__arrow{
@@ -33,5 +33,22 @@
     }
     .HeroSearch__content{
         margin-top: 10rem;
+    }
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+    .HeroSearch__content{
+        margin-top: 0;
+        padding: 0 1.5rem;
+    }
+
+    .HeroSearch__title{
+        font-size: 40px;
+    }
+
+    .ArrowMobile svg{
+        width: 56px;
+        height: 56px;
     }
 }
