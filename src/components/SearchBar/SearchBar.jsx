@@ -6,6 +6,7 @@ import {
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect, useRef } from "react";
+import MenuSelect from "../MenuSelect/MenuSelect";
 
 export default function SearchBar() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -73,17 +74,37 @@ export default function SearchBar() {
       }
     };
 
-    document.addEventListener("mousedown", handleClickOutside);
+    const handleEscapeKey = (event) => {
+      if (event.key === 'Escape') {
+        setOpenMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('keydown', handleEscapeKey);
 
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscapeKey);
     };
   }, []);
 
+  const handleClickOutside = () => {
+    setOpenMenu(false);
+  };
+
+  const handleButtonClick = () => {
+    setOpenMenu(!openMenu);
+  };
+
+  const handleCloseButtonClick = () => {
+    setOpenMenu(false);
+  };
+  
   return (
     <form className={`${styles.SearchBar} rounded`}>
       <div className="form-group d-flex align-items-center">
-        <div className={`d-md-none ${styles.SearchBar__select__mobile}`}>
+        <div className={`d-sm-none ${styles.SearchBar__select__mobile}`}>
           <span
             className={styles.IconImage}
             onClick={() => setOpenMenu(!openMenu)}
@@ -99,30 +120,20 @@ export default function SearchBar() {
           </span>
 
           {openMenu && (
-            <ul className={`${styles.MenuSelect}`} ref={ref}>
-              {categories.map((item) => (
-                <li
-                  key={item.id}
-                  className={`${styles.MenuOption} ${styles.Selected}`}
-                >
-                  <span className={`${styles.IconOption}`}>
-                    <AlohaIcon size={"20"} icon={item.icon} />
-                  </span>
-                  <span className={`${styles.TextOption}`}>{item.title}</span>
-                </li>
-              ))}
-            </ul>
+            <div className={`${styles.MenuCategories}`} ref={ref}>
+              <MenuSelect items={categories} />
+            </div>
           )}
         </div>
-        <select
-          name=""
-          id=""
-          className="form-select d-none d-md-block"
-          style={{ border: "none" }}
-        >
-          <option value="">Todas las imágenes</option>
-          <option value="">Todas las imágenes</option>
-        </select>
+        <div className={`${styles.FieldSelect} d-none d-sm-flex`} id="btn-menu-toggle" onClick={handleButtonClick}>
+          <span className={styles.FieldSelect__text}>Todas las imágenes</span>
+          <span className={styles.FieldSelect__icon}><FontAwesomeIcon icon={faChevronDown} fontSize={"12px"} /></span>
+        </div>
+        {openMenu && (
+          <div className={`${styles.MenuCategories} ${styles.MenuCategoriesDesktop}  d-none d-sm-block`} ref={ref}>
+            <MenuSelect items={categories} />
+          </div>
+        )}
         <span className={`${styles.Divider}`}></span>
         <div className="input-group">
           <input
