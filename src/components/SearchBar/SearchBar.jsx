@@ -1,70 +1,118 @@
-import Form from "react-bootstrap/Form";
+import { AlohaIcon } from "../SvgImages/SvgImages";
 import styles from "./SearchBar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMagnifyingGlass,
   faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
+import { useState, useEffect, useRef } from "react";
 
 export default function SearchBar() {
+  const [openMenu, setOpenMenu] = useState(false);
+  const ref = useRef(null);
+  const [categories] = useState([
+    {
+      id: 1,
+      title: "Todas las imágenes",
+      icon: "picture",
+    },
+
+    {
+      id: 2,
+      title: "Fotos",
+      icon: "camera",
+    },
+
+    {
+      id: 3,
+      title: "Vectores",
+      icon: "vector",
+    },
+
+    {
+      id: 4,
+      title: "Ilustraciones",
+      icon: "drawing",
+    },
+
+    {
+      id: 5,
+      title: "Videos",
+      icon: "video",
+    },
+
+    {
+      id: 6,
+      title: "Música",
+      icon: "music",
+    },
+
+    {
+      id: 7,
+      title: "Gratis",
+      icon: "star",
+    },
+
+    {
+      id: 8,
+      title: "Efectos de sonido",
+      icon: "sound",
+    },
+
+    {
+      id: 9,
+      title: "Buscar por imagen",
+      icon: "cameraFill",
+    },
+  ]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setOpenMenu(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   return (
     <form className={`${styles.SearchBar} rounded`}>
       <div className="form-group d-flex align-items-center">
         <div className={`d-md-none ${styles.SearchBar__select__mobile}`}>
-          <span className={styles.IconImage}>
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <g clipPath="url(#clip0_193_7387)">
-                <g clipPath="url(#clip1_193_7387)">
-                  <path
-                    d="M15 8H15.01"
-                    stroke="#222222"
-                    strokeWidth="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M3 6C3 5.20435 3.31607 4.44129 3.87868 3.87868C4.44129 3.31607 5.20435 3 6 3H18C18.7956 3 19.5587 3.31607 20.1213 3.87868C20.6839 4.44129 21 5.20435 21 6V18C21 18.7956 20.6839 19.5587 20.1213 20.1213C19.5587 20.6839 18.7956 21 18 21H6C5.20435 21 4.44129 20.6839 3.87868 20.1213C3.31607 19.5587 3 18.7956 3 18V6Z"
-                    stroke="#222222"
-                    strokeWidth="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M3 16.0001L8 11.0001C8.928 10.1071 10.072 10.1071 11 11.0001L16 16.0001"
-                    stroke="#222222"
-                    strokeWidth="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M14 14.0001L15 13.0001C15.928 12.1071 17.072 12.1071 18 13.0001L21 16.0001"
-                    stroke="#222222"
-                    strokeWidth="1.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-              </g>
-              <defs>
-                <clipPath id="clip0_193_7387">
-                  <rect width="24" height="24" fill="white" />
-                </clipPath>
-                <clipPath id="clip1_193_7387">
-                  <rect width="24" height="24" fill="white" />
-                </clipPath>
-              </defs>
-            </svg>
+          <span
+            className={styles.IconImage}
+            onClick={() => setOpenMenu(!openMenu)}
+          >
+            <AlohaIcon icon={"picture"} size={"25"}/>
           </span>
 
-          <span className={styles.IconSelectArrow}>
+          <span
+            className={styles.IconSelectArrow}
+            onClick={() => setOpenMenu(!openMenu)}
+          >
             <FontAwesomeIcon icon={faChevronDown} fontSize={"12px"} />
           </span>
+
+          {openMenu && (
+            <ul className={`${styles.MenuSelect}`} ref={ref}>
+              {categories.map((item) => (
+                <li
+                  key={item.id}
+                  className={`${styles.MenuOption} ${styles.Selected}`}
+                >
+                  <span className={`${styles.IconOption}`}>
+                    <AlohaIcon size={"20"} icon={item.icon} />
+                  </span>
+                  <span className={`${styles.TextOption}`}>{item.title}</span>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
         <select
           name=""

@@ -46,11 +46,57 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .IconSelectArrow {
   color: var(--aloha-black);
-  margin-left: 0.5rem;
+  margin-left: 0.2rem;
+}
+
+.MenuSelect{
+  position: absolute;
+  background: white;
+  top: -30px;
+  left: -10px;
+  padding: 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+  list-style: none;
+  margin: 0;
+  color: var(--aloha-black);
+  z-index: 3;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  max-height: 43vh;
+  overflow-y: scroll;
+}
+
+.Selected{
+  background: #FAFAFA;
+}
+
+.MenuOption{
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.MenuOption span{
+  display: inline-block;
+}
+
+.IconOption{
+  margin-right: 7px;
+}
+
+.TextOption{
+  font-size: 14px;
+}
+
+.Selected .TextOption{
+  font-weight: 600;
 }
 
 /* X-Small devices (portrait phones, less than 576px) */
@@ -65,5 +111,11 @@
   .SearchBar input,
   .SearchBar select {
     height: 56px;
+  }
+
+  .FormControl{
+    font-size: 16px;
+    padding: .7rem;
+    font-weight: 400;
   }
 }
