@@ -1,66 +1,66 @@
-.alfooter{
-    background-color: #1A01A6;
-    padding: 80px 0;
-    font-family: var(--primary-font);
+.alfooter {
+  background-color: #1a01a6;
+  padding: 80px 0;
+  font-family: var(--primary-font);
 }
-.alfooterHeader a{
-    color: var(--aloha-coral);
-    font-size: 24px;
-    font-weight: 500;
-    text-decoration: underline;
+.alfooterHeader a {
+  color: var(--aloha-coral);
+  font-size: 24px;
+  font-weight: 500;
+  text-decoration: underline;
 }
-.alfooterBottom{
-    padding-top: 80px;
+.alfooterBottom {
+  padding-top: 80px;
 }
-.alfooterBottom h5{
-    color: white;
-    font-size: 35px;
-    font-weight: 700;
+.alfooterBottom h5 {
+  color: white;
+  font-size: 35px;
+  font-weight: 700;
 }
-.alfooterBottom ul{
-    list-style: none;
-    padding: 0;
-    margin-top: 25px;
+.alfooterBottom ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 25px;
 }
-.alfooterBottom ul a{
-    color: white;
-    font-size: 16px;
-    display: inline-flex;
-    margin-bottom: 12px;
+.alfooterBottom ul a {
+  color: white;
+  font-size: 16px;
+  display: inline-flex;
+  margin-bottom: 12px;
 }
-.alapps{
-    margin-top: 25px;
+.alapps {
+  margin-top: 25px;
 }
-.alapps a{
-    display: inline-flex;
-    margin-bottom: 15px;
+.alapps a {
+  display: inline-flex;
+  margin-bottom: 15px;
 }
-.alsocial{
-    margin-top: 25px;
+.alsocial {
+  margin-top: 25px;
 }
-.alsocial a{
-    margin-right: 20px;
+.alsocial a {
+  margin-right: 20px;
 }
-.alsocial svg{
-    color: white;
-    font-size: 35px;
+.alsocial svg {
+  color: white;
+  font-size: 35px;
 }
 
 /*Responsive*/
 @media (max-width: 991.98px) {
-    .logo{
-        margin-bottom: 50px;
-    }
-    .alfooterHeader a{
-        margin-bottom: 10px;
-        display: inline-flex;
-        font-size: 18px;
-    }
-    .alfooterBottom{
-        padding-top: 10px;
-    }
-    .alfooterBottom h5{
-        font-size: 32px;
-        margin-top: 30px;
-    }
+  .logo {
+    margin-bottom: 50px;
+  }
+  .alfooterHeader a {
+    margin-bottom: 10px;
+    display: inline-flex;
+    font-size: 18px;
+  }
+  .alfooterBottom {
+    padding-top: 10px;
+  }
+  .alfooterBottom h5 {
+    font-size: 32px;
+    margin-top: 30px;
+  }
 }

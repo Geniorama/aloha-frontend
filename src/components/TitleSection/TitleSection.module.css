@@ -1,31 +1,31 @@
-.TitleSection{
-    font-weight: bold;
-    font-size: 72px;
-    line-height: 125%;
+.TitleSection {
+  font-weight: bold;
+  font-size: 72px;
+  line-height: 125%;
 }
 
-.black{
-    color: var(--aloha-black);
+.black {
+  color: var(--aloha-black);
 }
 
-.blue{
-    color: var(--aloha-blue);
+.blue {
+  color: var(--aloha-blue);
 }
 
-.white{
-    color: white;
+.white {
+  color: white;
 }
 
-@media (max-width: 991.98px){
-    .TitleSection{
-        font-size: 56px;
-    }
+@media (max-width: 991.98px) {
+  .TitleSection {
+    font-size: 56px;
+  }
 }
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .TitleSection{
-        font-size: 40px;
-        max-width: 80%;
-    }
+  .TitleSection {
+    font-size: 40px;
+    max-width: 80%;
+  }
 }

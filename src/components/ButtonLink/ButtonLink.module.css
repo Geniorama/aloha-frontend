@@ -1,6 +1,6 @@
 .ButtonLink {
-    font-weight: 600;
-    display: inline-block;
+  font-weight: 600;
+  display: inline-block;
 }
 
 /***********************************
@@ -9,54 +9,53 @@
 
 /* xs */
 .xs {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .xs .arrow svg {
-    width: 16px;
-    height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 /* s */
 .s {
-    font-size: 16px;
+  font-size: 16px;
 }
 
 .s .arrow svg {
-    width: 20px;
-    height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 /* m */
 .m {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .m .arrow svg {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 /* l */
 .l {
-    font-size: 24px;
+  font-size: 24px;
 }
 
 .l .arrow svg {
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
 }
 
 /* xl */
 .xl {
-    font-size: 32px;
+  font-size: 32px;
 }
 
 .xl .arrow svg {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
 }
-
 
 /***********************************
 ========= Color variables ==========
@@ -64,64 +63,64 @@
 
 /* coral */
 .coral {
-    color: var(--aloha-coral);
+  color: var(--aloha-coral);
 }
 
-.coral:hover{
-    color: var(--aloha-coral-800);
+.coral:hover {
+  color: var(--aloha-coral-800);
 }
 
-.coral:active{
-    color: var(--aloha-coral-700);
+.coral:active {
+  color: var(--aloha-coral-700);
 }
 
-.coral svg path{
-    stroke: var(--aloha-coral);
+.coral svg path {
+  stroke: var(--aloha-coral);
 }
 
-.coral:hover svg path{
-    stroke: var(--aloha-coral-800);
+.coral:hover svg path {
+  stroke: var(--aloha-coral-800);
 }
 
 /* blue */
 .blue {
-    color: var(--aloha-blue);
+  color: var(--aloha-blue);
 }
 
 .blue:hover {
-    color: var(--aloha-blue-700);
+  color: var(--aloha-blue-700);
 }
 
-.blue:active{
-    color: var(--aloha-blue-800);
+.blue:active {
+  color: var(--aloha-blue-800);
 }
 
-.blue svg path{
-    stroke: var(--aloha-blue);
+.blue svg path {
+  stroke: var(--aloha-blue);
 }
 
-.blue:hover svg path{
-    stroke: var(--aloha-blue-700);
+.blue:hover svg path {
+  stroke: var(--aloha-blue-700);
 }
 
 /* white */
 
 .white {
-    color: white;
+  color: white;
 }
 
 .white:hover {
-    color: var(--aloha-coral);
+  color: var(--aloha-coral);
 }
 
-.blue:active{
-    color: var(--aloha-blue-800);
+.blue:active {
+  color: var(--aloha-blue-800);
 }
 
-.white svg path{
-    stroke: white;
+.white svg path {
+  stroke: white;
 }
 
-.white:hover svg path{
-    stroke: var(--aloha-coral);
+.white:hover svg path {
+  stroke: var(--aloha-coral);
 }

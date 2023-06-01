@@ -5,7 +5,8 @@ body {
   font-family: var(--primary-font);
 }
 
-.form-control, .form-select{
+.form-control,
+.form-select {
   height: 62px;
   padding: 16px 24px;
   font-weight: 500;
@@ -14,18 +15,17 @@ body {
   border-radius: 4px !important;
 }
 
-.form-control:focus{
+.form-control:focus {
   box-shadow: none;
   outline: 2px solid var(--aloha-blue) !important;
 }
 
-.form-check .form-check-input[type="checkbox"]{
+.form-check .form-check-input[type="checkbox"] {
   border-radius: 0px;
-  border-color: #CECECE;
+  border-color: #cecece;
 }
 
-.form-check .form-check-input[type="checkbox"]:checked{
+.form-check .form-check-input[type="checkbox"]:checked {
   background-color: var(--aloha-blue);
   border-color: var(--aloha-blue);
-  
 }

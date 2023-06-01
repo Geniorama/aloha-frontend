@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
-:root{
-  --primary-font: 'Poppins', sans-serif;
+:root {
+  --primary-font: "Poppins", sans-serif;
   /* Grayscale */
   --aloha-black: #222222;
   --aloha-gray: #515151;
   --aloha-gray-400: #979797;
 
   /* Principal */
-  --aloha-blue: #1A01A6;
-  --aloha-coral: #FF595A;
-  --aloha-coral-800: #DD4344;
-  --aloha-coral-700: #BB3132;
+  --aloha-blue: #1a01a6;
+  --aloha-coral: #ff595a;
+  --aloha-coral-800: #dd4344;
+  --aloha-coral-700: #bb3132;
   --aloha-blue-700: #150186;
   --aloha-blue-800: #100166;
 
@@ -26,11 +26,11 @@
   box-sizing: border-box;
 }
 
-
-body{
+body {
   font-family: var(--primary-font);
 }
 
-body, html{
+body,
+html {
   overflow-x: hidden;
 }

@@ -1,67 +1,69 @@
-.SearchBar{
-    background: white;
-    width: 100%;
-    max-width: 900px;
-    box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.15);
+.SearchBar {
+  background: white;
+  width: 100%;
+  max-width: 900px;
+  box-shadow: 0px 4px 36px rgba(0, 0, 0, 0.15);
 }
 
-.SearchBar select{
-    max-width: 250px;
-    border-right: 2px solid var(--aloha-gray);
+.SearchBar select {
+  max-width: 250px;
+  border-right: 2px solid var(--aloha-gray);
 }
 
-.SearchBar input, .SearchBar select{
-    height: 70px;
+.SearchBar input,
+.SearchBar select {
+  height: 70px;
 }
 
-.SearchBar input:focus, .SearchBar select:focus{
-    outline: 0px !important;
-    border: 0px;
-    box-shadow: none;
-    
+.SearchBar input:focus,
+.SearchBar select:focus {
+  outline: 0px !important;
+  border: 0px;
+  box-shadow: none;
 }
 
-.Divider{
-    width: 1px;
-    height: 50px;
-    background: #DFDFDF;
-    color: transparent;
-    display: inline-block;
+.Divider {
+  width: 1px;
+  height: 50px;
+  background: #dfdfdf;
+  color: transparent;
+  display: inline-block;
 }
 
-.BtnSubmit{
-    width: 70px;
-    background: var(--aloha-black);
-    border-color: white;
+.BtnSubmit {
+  width: 70px;
+  background: var(--aloha-black);
+  border-color: white;
 }
 
-.BtnSubmit:hover{
-    background: var(--aloha-gray);
-    border-color: white;
+.BtnSubmit:hover {
+  background: var(--aloha-gray);
+  border-color: white;
 }
 
-.SearchBar__select__mobile{
-    padding: .7rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.SearchBar__select__mobile {
+  padding: 0.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.IconSelectArrow{
-    color: var(--aloha-black);
-    margin-left: .5rem;
+.IconSelectArrow {
+  color: var(--aloha-black);
+  margin-left: 0.5rem;
 }
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .BtnSubmit{
-        font-size: 24px;
-    }
-    .BtnSubmit svg{
-        width: 24px;
-        height: 24px;
-    }
-    .SearchBar input, .SearchBar select{
-        height: 56px;
-    }
+  .BtnSubmit {
+    font-size: 24px;
+  }
+  .BtnSubmit svg {
+    width: 24px;
+    height: 24px;
+  }
+  .SearchBar input,
+  .SearchBar select {
+    height: 56px;
+  }
 }

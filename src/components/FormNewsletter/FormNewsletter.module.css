@@ -1,29 +1,29 @@
-.FormControl{
-    border: none;
-    background: transparent;
+.FormControl {
+  border: none;
+  background: transparent;
 }
 
-.FormControl:focus{
-    outline: 0px !important;
-    background: transparent;
+.FormControl:focus {
+  outline: 0px !important;
+  background: transparent;
 }
 
-.InputGroup{
-    border-bottom: 2px solid #515151;
+.InputGroup {
+  border-bottom: 2px solid #515151;
 }
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
-    .FormControl{
-        font-size: 14px;
-    }
+  .FormControl {
+    font-size: 14px;
+  }
 
-    .InputGroup button{
-        font-size: 14px;
-    }
+  .InputGroup button {
+    font-size: 14px;
+  }
 
-    .InputGroup button svg{
-        width: 16px;
-        height: 16px;
-    }
+  .InputGroup button svg {
+    width: 16px;
+    height: 16px;
+  }
 }

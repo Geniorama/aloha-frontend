@@ -1,7 +1,3 @@
-
-
 export default function PageComponents() {
-  return (
-    <div>Page components</div>
-  )
+  return <div>Page components</div>;
 }

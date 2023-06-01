@@ -1,7 +1,10 @@
 import Form from "react-bootstrap/Form";
 import styles from "./SearchBar.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMagnifyingGlass,
+  faChevronDown,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function SearchBar() {
   return (
@@ -60,7 +63,7 @@ export default function SearchBar() {
           </span>
 
           <span className={styles.IconSelectArrow}>
-            <FontAwesomeIcon icon={faChevronDown} fontSize={"12px"}/>
+            <FontAwesomeIcon icon={faChevronDown} fontSize={"12px"} />
           </span>
         </div>
         <select
