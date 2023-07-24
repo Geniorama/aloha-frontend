@@ -83,19 +83,61 @@
   color: white;
 }
 
-.TextHola {
-  font-size: 107px;
-  font-weight: bold;
-  color: var(--aloha-blue);
-  margin-top: -5rem;
-}
-
-.BoxTitleEmpresas {
-  max-width: 90%;
-}
-
 .RowCta {
   margin-top: 6rem;
+}
+
+.SectionSignup{
+  background-color: var(--aloha-blue);
+  color: white;
+}
+
+.SectionSignup__title{
+  font-size: 72px;
+  line-height: 115%;
+  font-weight: bold;
+}
+
+.ButtonSignUp{
+  background: white;
+  border: none;
+  padding: 1em 1.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--aloha-black);
+  font-weight: 600;
+  text-decoration: underline;
+  min-width: 300px;
+  font-size: 16px;
+}
+
+.ButtonSignUp.disabled{
+  opacity: .6;
+  pointer-events: none;
+}
+
+.SectionColab{
+  color: white;
+}
+
+.SectionColab__title{
+  font-size: 64px;
+  font-weight: bold;
+}
+
+.LayerOpacity{
+  background-color: rgba(0, 0, 0, .8);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.SectionColab__desc{
+  max-width: 800px;
+  margin: 1em auto;
 }
 
 /* Medium devices (tablets, less than 992px) */
@@ -197,16 +239,6 @@
 
   .SlideItem img {
     height: 200px;
-  }
-
-  .BoxTitleEmpresas,
-  .BoxTitleEmpresas h2 {
-    max-width: 100%;
-  }
-
-  .RowBrands__item img {
-    width: auto;
-    height: 26px;
   }
 
   .ctaArrow {

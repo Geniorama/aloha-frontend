@@ -3,7 +3,7 @@ import Image from "next/image";
 import ExampleImage from "../../../public/img/home/image 113.jpg";
 import Link from "next/link";
 
-export default function CardCategory({ link_position, size, text }) {
+export default function CardCategory({ link_position, size, text, image }) {
   return (
     <div className={`${styles.CardCategory} ${styles[size]}`}>
       <Link
@@ -39,7 +39,7 @@ export default function CardCategory({ link_position, size, text }) {
           </svg>
         </span>
       </Link>
-      <Image src={ExampleImage} fill style={{ objectFit: "cover" }} alt={text}/>
+      <Image src={image ? image : ExampleImage} fill style={{ objectFit: "cover" }} alt={text}/>
     </div>
   );
 }

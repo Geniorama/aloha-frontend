@@ -12,22 +12,30 @@ import Slider from "react-slick";
 import SlideExample1 from "../../public/img/home/image 113.jpg";
 import SlideExample2 from "../../public/img/home/image 114.jpg";
 import CardCategory from "@/components/CardCategory/CardCategory";
-import LogoBrands1 from "../../public/img/home/brands/image 21.png";
-import LogoBrands2 from "../../public/img/home/brands/image 22.png";
-import LogoBrands3 from "../../public/img/home/brands/image 23.png";
-import LogoBrands4 from "../../public/img/home/brands/image 24.png";
-import LogoBrands5 from "../../public/img/home/brands/image 25.png";
-import PricingCard from "@/components/PricingCard/PricingCard";
 import FormNewsletter from "@/components/FormNewsletter/FormNewsletter";
 import FormPartners from "@/components/FormPartners/FormPartners";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
+import CoverFotos from "../../public/img/home/categories/imagenes.jpg";
+import CoverVectores from "../../public/img/home/categories/vectores.jpg";
+import CoverIlustraciones from "../../public/img/home/categories/ilustraciones.jpg";
+import CoverVideos from "../../public/img/home/categories/videos.jpg";
+import CoverMusica from "../../public/img/home/categories/musica.jpg";
+import CoverGratis from "../../public/img/home/categories/gratis.jpg";
+import CoverEfectos from "../../public/img/home/categories/efectos-de-sonido.jpg";
+import LogoGoogle from "../../public/img/signup/logo-google.png";
+import LogoFB from "../../public/img/signup/logo-fb.png";
+import IconEnvelope from "../../public/img/signup/email.svg";
+import BgColaboradores from "../../public/img/home/bg-colaboradores.png";
 import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
+import dotenv from 'dotenv';
+import Link from "next/link";
+dotenv.config();
 
-export default function Home() {
+export default function Home({ data }) {
   function NextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -106,6 +114,50 @@ export default function Home() {
       <div className="container-fluid">
         <HeroSearch />
       </div>
+
+      {/* Section - Categorías */}
+      <section className={`${styles.Section}`}>
+        <div className="container">
+          <TitleSection text="Categorías." color={"black"} />
+          <div className="row mt-5">
+            <div className="col-12 col-lg-4">
+              <CardCategory text={"Fotos"} image={CoverFotos} />
+            </div>
+            <div className="col-12 col-md-6 col-lg-4 mt-5 mt-lg-0">
+              <CardCategory link_position={"bottom-right"} text={"Vectores"} image={CoverVectores} />
+            </div>
+            <div className="col-12 col-md-6 col-lg-4 mt-5 mt-lg-0">
+              <CardCategory text={"Ilustraciones"} image={CoverIlustraciones} />
+            </div>
+
+            <div className="col-12 col-md-6 col-lg-3 mt-4">
+              <CardCategory text={"Videos"} size={"large"} image={CoverVideos} />
+            </div>
+
+            <div className="col-12 col-md-6 col-lg-3 mt-4">
+              <CardCategory
+                text={"Música"}
+                size={"large"}
+                link_position={"bottom-right"}
+                image={CoverMusica}
+              />
+            </div>
+
+            <div className="col-12 col-md-6 col-lg-3 mt-4">
+              <CardCategory text={"Gratis"} size={"large"} image={CoverGratis} />
+            </div>
+
+            <div className="col-12 col-md-6 col-lg-3 mt-4">
+              <CardCategory
+                text={"Efectos de sonido"}
+                size={"large"}
+                link_position={"bottom-right"}
+                image={CoverEfectos}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Section - Fotos populares */}
       <section className={`${styles.SectionPopular} ${styles.Section}`}>
@@ -206,178 +258,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section - Categorías */}
-      <section className={`${styles.Section}`}>
-        <div className="container">
-          <TitleSection text="Categorías." color={"black"} />
-          <div className="row mt-5">
-            <div className="col-12 col-lg-4">
-              <CardCategory text={"Fotos"} />
-            </div>
-            <div className="col-12 col-md-6 col-lg-4 mt-5 mt-lg-0">
-              <CardCategory link_position={"bottom-right"} text={"Vectores"} />
-            </div>
-            <div className="col-12 col-md-6 col-lg-4 mt-5 mt-lg-0">
-              <CardCategory text={"Ilustraciones"} />
-            </div>
-
-            <div className="col-12 col-md-6 col-lg-3 mt-4">
-              <CardCategory text={"Videos"} size={"large"} />
-            </div>
-
-            <div className="col-12 col-md-6 col-lg-3 mt-4">
-              <CardCategory
-                text={"Música"}
-                size={"large"}
-                link_position={"bottom-right"}
-              />
-            </div>
-
-            <div className="col-12 col-md-6 col-lg-3 mt-4">
-              <CardCategory text={"Gratis"} size={"large"} />
-            </div>
-
-            <div className="col-12 col-md-6 col-lg-3 mt-4">
-              <CardCategory
-                text={"Efectos de sonido"}
-                size={"large"}
-                link_position={"bottom-right"}
-              />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Section - Empresas */}
-      <section
-        className={styles.Section}
-        style={{ background: "var(--aloha-coral)" }}
-      >
-        <div className="container">
-          <div className={styles.BoxTitleEmpresas}>
-            <TitleSection
-              text="Empresas que trabajan con nosotros."
-              color={"blue"}
-            />
-          </div>
-
-          <div
-            className={`${styles.RowBrands} d-flex align-items-center flex-row flex-wrap`}
-          >
-            <div className={styles.RowBrands__item}>
-              <Image src={LogoBrands1} />
-            </div>
-
-            <div className={styles.RowBrands__item}>
-              <Image src={LogoBrands2} />
-            </div>
-
-            <div className={styles.RowBrands__item}>
-              <Image src={LogoBrands3} />
-            </div>
-
-            <div className={styles.RowBrands__item}>
-              <Image src={LogoBrands4} />
-            </div>
-
-            <div className={styles.RowBrands__item}>
-              <Image src={LogoBrands5} />
-            </div>
-          </div>
-
-          <div className={`row align-items-center ${styles.RowCta}`}>
-            <div className="col-12 col-md-3 col-lg-4 d-none d-md-block">
-              <div className="d-flex justify-content-end">
-                <h3 className={styles.TextHola}>hola!</h3>
-              </div>
-            </div>
-            <div className={`col-12 col-md-9 col-lg-8 ${styles.ColCta}`}>
-              <div className="d-flex align-items-start position-relative">
-                <span className={styles.ctaArrow}>
-                  <svg
-                    width="120"
-                    height="120"
-                    viewBox="0 0 120 120"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clipPath="url(#clip0_124_3263)">
-                      <path d="M85 85L35 35" stroke="white" strokeWidth="10" />
-                      <path d="M40 85H85V40" stroke="white" strokeWidth="10" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_124_3263">
-                        <rect
-                          width="120"
-                          height="120"
-                          fill="white"
-                          transform="matrix(1 0 0 -1 0 120)"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
-                <div className={styles.ctaText}>
-                  <br />
-                  <br />
-                  <p>¿Quieres un paquete personalizado para tu empresa?</p>
-                  <span className="d-none d-lg-block">
-                    <ButtonLink
-                      text={"Solicita un presupuesto"}
-                      href={"/"}
-                      color={"blue"}
-                      size={"l"}
-                    />
-                  </span>
-
-                  <span className="d-lg-none">
-                    <ButtonLink
-                      text={"Solicita un presupuesto"}
-                      href={"/"}
-                      color={"blue"}
-                      size={"m"}
-                    />
-                  </span>
-                  <br />
-                  <br />
-                  <br />
-                  <br />
-                  <br className="d-none d-md-block" />
-                  <br className="d-none d-md-block" />
-                </div>
-                <span
-                  className={styles.ctaArrow}
-                  style={{ alignSelf: "flex-end" }}
-                >
-                  <svg
-                    width="120"
-                    height="120"
-                    viewBox="0 0 120 120"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clipPath="url(#clip0_124_3267)">
-                      <path d="M35 35L85 85" stroke="white" strokeWidth="10" />
-                      <path d="M80 35H35V80" stroke="white" strokeWidth="10" />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_124_3267">
-                        <rect
-                          width="120"
-                          height="120"
-                          fill="white"
-                          transform="matrix(-1 0 0 1 120 0)"
-                        />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      {/* Section - Fotos gratis */}
       <section className={styles.Section}>
         <div className="container">
           <TitleSection text="Fotos gratis." color={"black"} />
@@ -415,84 +296,163 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        className={styles.Section}
-        style={{ background: "var(--aloha-blue)" }}
-      >
+      {/* Section - Regístrate */}
+      <section className={`${styles.SectionSignup} ${styles.Section}`}>
         <div className="container">
-          <TitleSection text="Planes." color={"white"} />
-          <div style={{ marginLeft: "15%" }}>
-            <ButtonLink
-              href={"/"}
-              text={"Conoce todos los planes"}
-              color={"coral"}
-              size={"m"}
-            />
-          </div>
+          <div className="row">
+            <div className="col-12 col-lg-7">
+              <h3 className={`${styles.SectionSignup__title}`}>Regístrate y descarga semanalmente imágenes gratis.</h3>
+            </div>
+            <div className="col-12 col-lg-5 px-4">
+              <button className={`${styles.ButtonSignUp} ${styles.disabled} mb-4`}>
+                <span>
+                  <Image src={LogoGoogle} className={`${styles.ButtonSignUp__logo}`} alt="Sign up with Google" />
+                </span>
+                <span className={`${styles.ButtonSignUp__name} mx-2`}>Sign up with Google</span>
+                <span className={`${styles.ButtonSignUp__arrow}`}>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clipPath="url(#clip0_48_55)">
+                      <path
+                        d="M22.6668 9.33301L9.3335 22.6663"
+                        stroke="#222222"
+                        strokeWidth="2.66667"
+                      />
+                      <path
+                        d="M10.6665 9.33301H22.6665V21.333"
+                        stroke="#222222"
+                        strokeWidth="2.66667"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_48_55">
+                        <rect width="20" height="20" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+              </button>
 
-          <div className="row mt-5">
-            <div className="col-12 col-lg-4">
-              <PricingCard
-                title={"Imágenes."}
-                desc={
-                  "Más de 263 millones de fotos y vectores de stock de alta calidad para cubrir sus necesidades creativas."
-                }
-                price={"$0,19"}
-                label_price={"imagen"}
-                href={"/"}
-              />
-            </div>
-            <div className="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-              <PricingCard
-                title={"Videos."}
-                desc={
-                  "Más de 263 millones de fotos y vectores de stock de alta calidad para cubrir sus necesidades creativas."
-                }
-                price={"$0,19"}
-                label_price={"video"}
-                href={"/"}
-              />
-            </div>
-            <div className="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
-              <PricingCard
-                title={"Sonido."}
-                desc={
-                  "Más de 263 millones de fotos y vectores de stock de alta calidad para cubrir sus necesidades creativas."
-                }
-                price={"$0,19"}
-                label_price={"pista"}
-                href={"/"}
-              />
+              <button className={`${styles.ButtonSignUp} mb-4`}>
+                <span>
+                  <Image src={LogoFB} className={`${styles.ButtonSignUp__logo}`} alt="Sign up with Google" />
+                </span>
+                <span className={`${styles.ButtonSignUp__name} mx-2`}>Sign up with Facebook</span>
+                <span className={`${styles.ButtonSignUp__arrow}`}>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clipPath="url(#clip0_48_55)">
+                      <path
+                        d="M22.6668 9.33301L9.3335 22.6663"
+                        stroke="#222222"
+                        strokeWidth="2.66667"
+                      />
+                      <path
+                        d="M10.6665 9.33301H22.6665V21.333"
+                        stroke="#222222"
+                        strokeWidth="2.66667"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_48_55">
+                        <rect width="20" height="20" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+              </button>
+
+              <button className={`${styles.ButtonSignUp} mb-4`}>
+                <span>
+                  <Image src={IconEnvelope} className={`${styles.ButtonSignUp__logo}`} alt="Sign up with Google" />
+                </span>
+                <span className={`${styles.ButtonSignUp__name} mx-2`}>Sign up with Email</span>
+                <span className={`${styles.ButtonSignUp__arrow}`}>
+                  <svg
+                    width="20"
+                    height="20"
+                    viewBox="0 0 32 32"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clipPath="url(#clip0_48_55)">
+                      <path
+                        d="M22.6668 9.33301L9.3335 22.6663"
+                        stroke="#222222"
+                        strokeWidth="2.66667"
+                      />
+                      <path
+                        d="M10.6665 9.33301H22.6665V21.333"
+                        stroke="#222222"
+                        strokeWidth="2.66667"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_48_55">
+                        <rect width="20" height="20" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </span>
+              </button>
+
+              <div className="form-check">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="condiciones"
+                  defaultChecked
+                />
+                <label className="form-check-label" htmlFor="condiciones">
+                  Acepto las <a href="#" style={{ color: 'white' }}>condiciones de la membresía</a>
+                </label>
+              </div>
+
+              <div className="form-check mt-3">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="newsletter"
+                />
+                <label className="form-check-label" htmlFor="newsletter">
+                  Me gustaría recibir el newsletter y ofertas especiales
+                </label>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section
-        className={`${styles.Section} ${styles.SectionNewsletter}`}
-        style={{ background: "#FAFAFA" }}
-      >
-        <div className="container">
-          <div className="text-center">
-            <TitleSection
-              text="Regístrate en nuestro newsletter."
-              color={"blue"}
-            />
-          </div>
-          <div className="py-5 row justify-content-center">
-            <div className="col-12 col-md-9 col-lg-8">
-              <FormNewsletter />
-            </div>
-          </div>
+      {/* Section - colaboradores */}
+      <section className={`${styles.Section} ${styles.SectionColab}`} style={{position: 'relative'}}>
+        <Image fill src={BgColaboradores} alt="" style={{objectFit: 'cover'}}/>
+        <div className={styles.LayerOpacity}></div>
+        <div className="container position-relative text-center">
+          <h5 className={`${styles.SectionColab__title}`}>Únete a nuestra comunidad de colaboradores.</h5>
+          <p className={`${styles.SectionColab__desc}`}>Sabemos que detrás de cada pieza de imagen, video o sonido hay una mente creativa.
+            Puedes crear contenido y venderlo con Aloha.</p>
+
+          <ButtonLink text={"Quiero vender contenido"} color={"coral"} size={'m'}/>
         </div>
       </section>
 
+      {/* Section - Planes */}
       <section className={styles.Section}>
         <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-12 col-md-10">
+          <div className="row">
+            <div className="col-12 col-lg-8">
               <TitleSection
-                text="¿Quieres ser parte de nuestros colaboradores?"
+                text="Tenemos planes especiales para ti."
                 color={"black"}
               />
               <p
@@ -504,11 +464,10 @@ export default function Home() {
                   maxWidth: "600px",
                 }}
               >
-                Déjanos tus datos y pronto estaremos comunicándonos contigo para
-                ser parte de este gran mundo Aloha.
+                Explora los diferentes planes, o si necesitas algo más personalizado <Link style={{color: 'var(--aloha-blue)'}} href={'#'}>Escríbenos</Link>.
               </p>
               <div className="mt-5">
-                <FormPartners />
+                
               </div>
             </div>
           </div>
@@ -517,4 +476,24 @@ export default function Home() {
       <Footer />
     </div>
   );
+}
+
+export async function getServerSideProps() {
+  const apiKey = process.env.API_KEY;
+  const apiUrl = process.env.API_URL;
+
+  try {
+    const res = await fetch(apiUrl + '?dp_command=getInfo&dp_apikey=' + apiKey);
+    const data = await res.json()
+
+    return {
+      props: {
+        data
+      }
+    }
+
+  } catch (error) {
+    console.log('Hubo un error', error)
+  }
+
 }
