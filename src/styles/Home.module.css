@@ -140,6 +140,24 @@
   margin: 1em auto;
 }
 
+.CardFeatures__title{
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 125%;
+  color: var(--aloha-black);
+}
+
+.CardFeatures__list{
+  padding-left: 1.5em;
+  margin: 2em 0;
+  color: var(--aloha-gray);
+}
+
+.CardFeatures__list li{
+  margin-bottom: 1em;
+  font-size: 16px;
+}
+
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
   .Section {

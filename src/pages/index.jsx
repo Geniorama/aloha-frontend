@@ -33,6 +33,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import dotenv from 'dotenv';
 import Link from "next/link";
+import Tabs from "@/components/Tabs/Tabs";
 dotenv.config();
 
 export default function Home({ data }) {
@@ -107,6 +108,26 @@ export default function Home({ data }) {
       },
     ],
   };
+
+  const tabsMenu = [
+    {
+      id: 1,
+      title: 'Item 1',
+      content: 'Content 1'
+    },
+
+    {
+      id: 2,
+      title: 'Item 2',
+      content: 'Content 2'
+    },
+
+    {
+      id: 3,
+      title: 'Item 3',
+      content: 'Content 3'
+    }
+  ]
 
   return (
     <div>
@@ -259,7 +280,7 @@ export default function Home({ data }) {
       </section>
 
       {/* Section - Fotos gratis */}
-      <section className={styles.Section}>
+      <section className={`${styles.Section} pt-0`}>
         <div className="container">
           <TitleSection text="Fotos gratis." color={"black"} />
           <div style={{ marginLeft: "35%" }} className="ps-5 ps-lg-0">
@@ -450,7 +471,7 @@ export default function Home({ data }) {
       <section className={styles.Section}>
         <div className="container">
           <div className="row">
-            <div className="col-12 col-lg-8">
+            <div className="col-12 col-lg-7">
               <TitleSection
                 text="Tenemos planes especiales para ti."
                 color={"black"}
@@ -469,6 +490,30 @@ export default function Home({ data }) {
               <div className="mt-5">
                 
               </div>
+            </div>
+            <div className="col-12 col-lg-5">
+              {/* Empty space */}
+            </div>
+          </div>
+
+          <div className="row">
+            <div className="col-12 col-lg-4">
+              <div className={`${styles.CardFeatures}`}>
+                <h6 className={`${styles.CardFeatures__title}`}>Tu plan de suscripción o prepago incluye:</h6>
+                <ul className={`${styles.CardFeatures__list}`}>
+                  <li>Las imágenes no usadas serán añadidas al mes siguiente.</li>
+                  <li>Imágenes adicionales a $1 cada una.</li>
+                  <li>Uso impreso o digital (se excluyen artículos para reventa).</li>
+                  <li>Derechos de impresión: hasta 500.000 copias.</li>
+                  <li>Derecho a usar las imágenes de por vida.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="col-12 col-lg-8">
+               <Tabs 
+                  items={tabsMenu}
+               />
             </div>
           </div>
         </div>
