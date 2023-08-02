@@ -38,7 +38,7 @@ import CardPlan from "@/components/CardPlan/CardPlan";
 import ItemsPlan from "@/components/CardPlan/ItemsPlan/ItemsPlan";
 dotenv.config();
 
-export default function Home({ data }) {
+export default function Home() {
   function NextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -857,22 +857,22 @@ export default function Home({ data }) {
   );
 }
 
-export async function getServerSideProps() {
-  const apiKey = process.env.API_KEY;
-  const apiUrl = process.env.API_URL;
+// export async function getServerSideProps() {
+//   const apiKey = process.env.API_KEY;
+//   const apiUrl = process.env.API_URL;
 
-  try {
-    const res = await fetch(apiUrl + '?dp_command=getInfo&dp_apikey=' + apiKey);
-    const data = await res.json()
+//   try {
+//     const res = await fetch(apiUrl + '?dp_command=getInfo&dp_apikey=' + apiKey);
+//     const data = await res.json()
 
-    return {
-      props: {
-        data
-      }
-    }
+//     return {
+//       props: {
+//         data
+//       }
+//     }
 
-  } catch (error) {
-    console.log('Hubo un error', error)
-  }
+//   } catch (error) {
+//     console.log('Hubo un error', error)
+//   }
 
-}
+// }
