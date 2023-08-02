@@ -1,0 +1,30 @@
+.ListItems{
+    list-style: none;
+    padding: 0;
+}
+
+.ListItems__item{
+    padding: 1em;  
+}
+
+.ListItems__item label{
+    cursor: pointer;
+}
+
+.ListItems__item:hover{
+    background: #EFEFEF;
+}
+
+.InputCheck:checked[type=radio]{
+    background: var(--aloha-blue);
+    border: 2px solid white;
+    outline: 2px solid var(--aloha-blue);
+    box-sizing: border-box;
+    transform: scale(.9);
+}
+
+@media screen and (max-width: 600px) {
+    .ListItems__item{
+        padding: 1em;  
+    }
+}

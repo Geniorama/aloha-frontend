@@ -34,6 +34,8 @@ import {
 import dotenv from 'dotenv';
 import Link from "next/link";
 import Tabs from "@/components/Tabs/Tabs";
+import CardPlan from "@/components/CardPlan/CardPlan";
+import ItemsPlan from "@/components/CardPlan/ItemsPlan/ItemsPlan";
 dotenv.config();
 
 export default function Home({ data }) {
@@ -109,26 +111,358 @@ export default function Home({ data }) {
     ],
   };
 
-  const tabsMenu = [
+  
+  const planes = [
     {
-      id: 1,
-      title: 'Item 1',
-      content: 'Content 1'
+      id: 'fotos-vectores-suscripcion',
+      name: 'Suscripción',
+      category: [
+        {
+          name: 'Fotos y vectores',
+          slug: 'fotos-y-vectores'
+        }
+      ],
+      type: [
+        {
+          id: 'pago-anual',
+          name: 'Pago anual',
+          subitems: [
+            {
+              name: '10 imágenes',
+              small: 'mes',
+              price: 8.99,
+              price_per_item: 0.90,
+              small_per_item: 'por imagen',
+            },
+    
+            {
+              name: '75 imágenes',
+              small: 'mes',
+              price: 59,
+              price_per_item: 0.79,
+              small_per_item: 'por imagen',
+            },
+
+            {
+              name: '150 imágenes',
+              small: 'mes',
+              price: 89,
+              price_per_item: 0.59,
+              small_per_item: 'por imagen',
+            },
+
+            {
+              name: '750 imágenes',
+              small: 'mes',
+              price: 169,
+              price_per_item: 0.23,
+              small_per_item: 'por imagen',
+            },
+          ]
+        },
+
+        {
+          id: 2,
+          name: 'Pago mensual',
+          subitems: [
+            {
+              name: '10 imágenes',
+              small: 'mes',
+              price: 8.99,
+              price_per_item: 0.90,
+              small_per_item: 'por imagen',
+            },
+    
+            {
+              name: '75 imágenes',
+              small: 'mes',
+              price: 59,
+              price_per_item: 0.79,
+              small_per_item: 'por imagen',
+            },
+
+            {
+              name: '150 imágenes',
+              small: 'mes',
+              price: 89,
+              price_per_item: 0.59,
+              small_per_item: 'por imagen',
+            },
+
+            {
+              name: '750 imágenes',
+              small: 'mes',
+              price: 169,
+              price_per_item: 0.23,
+              small_per_item: 'por imagen',
+            },
+          ]
+        }
+      ]
     },
 
     {
-      id: 2,
-      title: 'Item 2',
-      content: 'Content 2'
+      id: 'fotos-vectores-prepago',
+      name: 'Prepago',
+      category: [
+        {
+          name: 'Fotos y vectores',
+          slug: 'fotos-y-vectores'
+        }
+      ],
+      type: [
+        {
+          id: 1,
+          name: 'Pago anual',
+          subitems: [
+            {
+              name: '3 imágenes',
+              small: 'mes',
+              price: 42,
+              price_per_item: 14,
+              small_per_item: 'por imagen',
+            },
+    
+            {
+              name: '10 imágenes',
+              small: 'mes',
+              price: 49,
+              price_per_item: 4.90,
+              small_per_item: 'por imagen',
+            },
+
+            {
+              name: '25 imágenes',
+              small: 'mes',
+              price: 99,
+              price_per_item: 3.96,
+              small_per_item: 'por imagen',
+            },
+
+            {
+              name: '25 imágenes',
+              small: 'mes',
+              price: 299,
+              price_per_item: 2.99,
+              small_per_item: 'por imagen',
+            }
+          ]
+        },
+
+        {
+          id: 2,
+          name: 'Pago mensual',
+          subitems: [
+            {
+              name: '10 imágenes',
+              small: 'mes',
+              price: 8.99,
+              price_per_item: 0.90,
+              small_per_item: 'por imagen',
+            },
+    
+            {
+              name: '75 imágenes',
+              small: 'mes',
+              price: 59,
+              price_per_item: 0.79,
+              small_per_item: 'por imagen',
+            }
+          ]
+        }
+      ]
     },
 
     {
       id: 3,
-      title: 'Item 3',
+      name: 'Suscripción',
+      category: [
+        {
+          name: 'Videos',
+          slug: 'videos'
+        }
+      ],
+      type: [
+        {
+          id: 1,
+          name: 'Pago anual',
+          subitems: [
+            {
+              name: '10 videos',
+              small: 'mes',
+              price: 8.99,
+              price_per_item: 0.90,
+              small_per_item: 'por video',
+            },
+    
+            {
+              name: '75 videos',
+              small: 'mes',
+              price: 59,
+              price_per_item: 0.79,
+              small_per_item: 'por video',
+            },
+
+            {
+              name: '150 videos',
+              small: 'mes',
+              price: 89,
+              price_per_item: 0.59,
+              small_per_item: 'por video',
+            },
+
+            {
+              name: '750 videos',
+              small: 'mes',
+              price: 169,
+              price_per_item: 0.23,
+              small_per_item: 'por video',
+            },
+          ]
+        },
+
+        {
+          id: 2,
+          name: 'Pago mensual',
+          subitems: [
+            {
+              name: '10 videos',
+              small: 'mes',
+              price: 8.99,
+              price_per_item: 0.90,
+              small_per_item: 'por video',
+            },
+    
+            {
+              name: '75 videos',
+              small: 'mes',
+              price: 59,
+              price_per_item: 0.79,
+              small_per_item: 'por video',
+            },
+
+            {
+              name: '150 videos',
+              small: 'mes',
+              price: 89,
+              price_per_item: 0.59,
+              small_per_item: 'por video',
+            },
+
+            {
+              name: '750 videos',
+              small: 'mes',
+              price: 169,
+              price_per_item: 0.23,
+              small_per_item: 'por video',
+            },
+          ]
+        }
+      ]
+    },
+
+    {
+      id: 2,
+      name: 'Prepago',
+      category: [
+        {
+          name: 'Videos',
+          slug: 'videos'
+        }
+      ],
+      type: [
+        {
+          id: 1,
+          name: 'Pago anual',
+          subitems: [
+            {
+              name: '3 imágenes',
+              small: 'mes',
+              price: 42,
+              price_per_item: 14,
+              small_per_item: 'por video',
+            },
+    
+            {
+              name: '10 imágenes',
+              small: 'mes',
+              price: 49,
+              price_per_item: 4.90,
+              small_per_item: 'por video',
+            },
+
+            {
+              name: '25 imágenes',
+              small: 'mes',
+              price: 99,
+              price_per_item: 3.96,
+              small_per_item: 'por video',
+            },
+
+            {
+              name: '25 imágenes',
+              small: 'mes',
+              price: 299,
+              price_per_item: 2.99,
+              small_per_item: 'por video',
+            }
+          ]
+        },
+
+        {
+          id: 2,
+          name: 'Pago mensual',
+          subitems: [
+            {
+              name: '10 imágenes',
+              small: 'mes',
+              price: 8.99,
+              price_per_item: 0.90,
+              small_per_item: 'por video',
+            },
+    
+            {
+              name: '75 imágenes',
+              small: 'mes',
+              price: 59,
+              price_per_item: 0.79,
+              small_per_item: 'por video',
+            }
+          ]
+        }
+      ]
+    },
+
+
+  ]
+
+  const planesFotosVectores = planes.filter((plan) => {
+    return plan.category.some((categoria) => categoria.name === 'Fotos y vectores');
+  });
+
+  const planesVideos = planes.filter((plan) => {
+    return plan.category.some((categoria) => categoria.name === 'Videos');
+  });
+
+  const tabsMenu = [
+    {
+      id: 1,
+      title: 'Fotos y vectores',
+      content: <CardPlan planes={planesFotosVectores} />
+    },
+
+    {
+      id: 2,
+      title: 'Videos',
+      content: <CardPlan planes={planesVideos} />
+    },
+
+    {
+      id: 3,
+      title: 'Música & SFX',
       content: 'Content 3'
     }
   ]
-
   return (
     <div>
       <Header />
@@ -194,23 +528,23 @@ export default function Home({ data }) {
 
           <div className={styles.GridPopular}>
             <div className={styles.GridPopular__item}>
-              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} />
+              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} alt="" />
             </div>
 
             <div className={styles.GridPopular__item}>
-              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} />
+              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} alt="" />
             </div>
 
             <div className={styles.GridPopular__item}>
-              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} />
+              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} alt="" />
             </div>
 
             <div className={styles.GridPopular__item}>
-              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} />
+              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} alt="" />
             </div>
 
             <div className={styles.GridPopular__item}>
-              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} />
+              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} alt="" />
             </div>
 
             <div className={styles.GridPopular__item}>
@@ -455,15 +789,15 @@ export default function Home({ data }) {
       </section>
 
       {/* Section - colaboradores */}
-      <section className={`${styles.Section} ${styles.SectionColab}`} style={{position: 'relative'}}>
-        <Image fill src={BgColaboradores} alt="" style={{objectFit: 'cover'}}/>
+      <section className={`${styles.Section} ${styles.SectionColab}`} style={{ position: 'relative' }}>
+        <Image fill src={BgColaboradores} alt="" style={{ objectFit: 'cover' }} />
         <div className={styles.LayerOpacity}></div>
         <div className="container position-relative text-center">
           <h5 className={`${styles.SectionColab__title}`}>Únete a nuestra comunidad de colaboradores.</h5>
           <p className={`${styles.SectionColab__desc}`}>Sabemos que detrás de cada pieza de imagen, video o sonido hay una mente creativa.
             Puedes crear contenido y venderlo con Aloha.</p>
 
-          <ButtonLink text={"Quiero vender contenido"} color={"coral"} size={'m'}/>
+          <ButtonLink text={"Quiero vender contenido"} color={"coral"} size={'m'} />
         </div>
       </section>
 
@@ -485,10 +819,10 @@ export default function Home({ data }) {
                   maxWidth: "600px",
                 }}
               >
-                Explora los diferentes planes, o si necesitas algo más personalizado <Link style={{color: 'var(--aloha-blue)'}} href={'#'}>Escríbenos</Link>.
+                Explora los diferentes planes, o si necesitas algo más personalizado <Link style={{ color: 'var(--aloha-blue)' }} href={'#'}>Escríbenos</Link>.
               </p>
               <div className="mt-5">
-                
+
               </div>
             </div>
             <div className="col-12 col-lg-5">
@@ -511,9 +845,9 @@ export default function Home({ data }) {
             </div>
 
             <div className="col-12 col-lg-8">
-               <Tabs 
-                  items={tabsMenu}
-               />
+              <Tabs
+                items={tabsMenu}
+              />
             </div>
           </div>
         </div>
