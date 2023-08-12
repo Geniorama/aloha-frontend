@@ -6,17 +6,25 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera, faBars } from "@fortawesome/free-solid-svg-icons";
 import { Collapse } from "react-bootstrap";
 import Image from "next/image";
+import SearchBar from "../SearchBar/SearchBar";
+import LogoLetter from '../../../public/img/components/header/logo-aloha-letter.svg';
+import menuData from './menuData.json';
+import ButtonLink from "../ButtonLink/ButtonLink";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   const headerRef = useRef(null);
   const [isHeaderFixed, setIsHeaderFixed] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [indiceSubMenuAbierto, setIndiceSubMenuAbierto] = useState(null);
+
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+
   }, []);
 
   const handleScroll = () => {
@@ -32,14 +40,12 @@ const Header = () => {
 
   const handleMenuToggle = () => {
     setIsMenuOpen(!isMenuOpen);
+    setIndiceSubMenuAbierto(!indiceSubMenuAbierto);
   };
 
   const headerClassName = isHeaderFixed
     ? `${styles.header} ${styles.fixed}`
     : styles.header;
-  const logoImageUrl = isHeaderFixed
-    ? "/img/components/header/logo-aloha-letter.svg"
-    : "/img/components/header/logo-black-aloha.svg";
 
   return (
     <nav
@@ -48,70 +54,30 @@ const Header = () => {
     >
       <div className={styles.container}>
         <Link href="#" className={styles.logo}>
-          <Image src={LogoBlack} alt="Logo Aloha" />
+          <Image src={isHeaderFixed ? LogoLetter : LogoBlack} alt="Logo Aloha" />
         </Link>
         {/* Menú #1 */}
         <div className={styles.menufirst}>
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <Link className="nav-link" href="/">
-                Imagenes
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/">
-                Videos
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/">
-                Editorial
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/">
-                Música & SFX
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/">
-                Planes
-              </Link>
-            </li>
+            {menuData.map((item, i) => (
+              <li key={i} className="nav-item">
+                <Link className="nav-link" href={item.path}>
+                  {item.text}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/*Search*/}
-        <div className={styles.search}>
-          <form>
-            <select name="" id="">
-              <option value="">Todas</option>
-              <option value="">Item 1</option>
-              <option value="">Item 2</option>
-              <option value="">Item 3</option>
-            </select>
-            <span className={`${styles.Divider}`}></span>
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.66667 11.3333C9.24399 11.3333 11.3333 9.24399 11.3333 6.66667C11.3333 4.08934 9.24399 2 6.66667 2C4.08934 2 2 4.08934 2 6.66667C2 9.24399 4.08934 11.3333 6.66667 11.3333Z"
-                stroke="#979797"
-                strokeWidth="1.42857"
-              />
-              <path d="M14 14L10 10" stroke="#979797" strokeWidth="1.42857" />
-            </svg>
 
-            <input type="text" placeholder="Buscar imagenes" />
-            <button>
-              <FontAwesomeIcon icon={faCamera} />
-            </button>
-          </form>
-        </div>
+        {isHeaderFixed && (
+          <div className="d-none d-sm-block">
+            <SearchBar size="small" />
+          </div>
+        )
+        }
+
         {/* Menú #2 */}
         <div className={styles.menusecond}>
           <ul className="navbar-nav">
@@ -153,36 +119,72 @@ const Header = () => {
           </ul>
         </div>
         <div className={styles.menuThree}>
-          <div className={`${styles.searchIcon} d-lg-none d-md-none`}>
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 16 16"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M6.66667 11.3333C9.24399 11.3333 11.3333 9.24399 11.3333 6.66667C11.3333 4.08934 9.24399 2 6.66667 2C4.08934 2 2 4.08934 2 6.66667C2 9.24399 4.08934 11.3333 6.66667 11.3333Z"
-                stroke="#979797"
-                strokeWidth="1.42857"
-              />
-              <path d="M14 14L10 10" stroke="#979797" strokeWidth="1.42857" />
-            </svg>
-          </div>
           <button
             className={`${styles.menuButton} d-lg-none`}
             onClick={handleMenuToggle}
           >
-            Menú
-            <FontAwesomeIcon icon={faBars} />
+            {!isMenuOpen
+              ? "Menú"
+              : "Salir"
+            }
+            <div className={`${styles.menuButton__toggle} ${isMenuOpen && styles.close}`}>
+              <span></span>
+              <span></span>
+            </div>
           </button>
           <Collapse in={isMenuOpen}>
             <div className={`${styles.menu} d-lg-none`}>
-              <ul>
-                <li>Menu Item 1</li>
-                <li>Menu Item 2</li>
-                <li>Menu Item 3</li>
+              <ul className="navbar-nav flex-column">
+                {menuData.map((item, i) => (
+                  <li className={`${item.subMenu && styles.Dropdown} ${styles.menuItem} nav-item py-3 px-4`} key={i}>
+                    {item.subMenu ? (
+                      <div
+                        className={`nav-link ${styles.subMenuToggle}`}
+                        onClick={() => setIndiceSubMenuAbierto(indiceSubMenuAbierto === i ? null : i)}
+                      >
+                        <span style={{color: 'var(--aloha-black)'}}>
+                          {item.text}
+                        </span>
+                        <span className={`${styles.subMenuArrow} ${indiceSubMenuAbierto === i && styles.abierto}`}>
+                          <FontAwesomeIcon icon={faChevronDown} />
+                        </span>
+                      </div>
+                    )
+                      :
+                      (
+                        <Link className={`nav-link`} style={{fontWeight: '600', color: 'var(--aloha-black)'}} href={item.path}>
+                          {item.text}
+                        </Link>
+                      )}
+
+                    {item.subMenu && indiceSubMenuAbierto === i && (
+                      <ul className={`${styles.DropdownMenu} navbar-nav mt-4`}>
+                        {item.subMenu.map((item, i) => (
+                          <li key={i} className="nav-item py-2">
+                            <ButtonLink href={item.path} text={item.text} size={'s'} color={'blue'} />
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
               </ul>
+
+              <div className="d-none d-sm-block px-4 my-4">
+                <ButtonLink text={'Registrarme'} color={'blue'} size={'l'}/>
+                <span className="px-2" style={{color: '#AEAEAE', fontSize: '20px'}}>
+                  |
+                </span>
+                <ButtonLink text={'Iniciar sesión'} color={'blue'} size={'l'}/>
+              </div>
+
+              <div className="d-sm-none px-4 my-4">
+                <ButtonLink text={'Registrarme'} color={'blue'} size={'m'}/>
+                <span className="px-2" style={{color: '#AEAEAE', fontSize: '20px'}}>
+                  |
+                </span>
+                <ButtonLink text={'Iniciar sesión'} color={'blue'} size={'m'}/>
+              </div>
             </div>
           </Collapse>
         </div>

@@ -68,6 +68,11 @@
   left: 0;
 }
 
+.Small .MenuCategoriesDesktop {
+  top: 50px;
+}
+
+
 .FieldSelect {
   color: var(--aloha-gray);
   padding: 0 1rem;
@@ -81,6 +86,23 @@
 .FieldSelect__text {
   white-space: nowrap;
   margin-right: 10px;
+  min-width: 150px;
+}
+
+.SearchBar.Small input,
+.SearchBar.Small select {
+  height: 30px;
+}
+
+.Small .FieldSelect__text{
+  width: 100px;
+  font-size: 14px;
+  min-width: auto;
+  overflow: hidden;
+}
+
+.Small .FormControl{
+  font-size: 14px;
 }
 
 /* X-Small devices (portrait phones, less than 576px) */

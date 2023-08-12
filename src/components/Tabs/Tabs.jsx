@@ -12,7 +12,6 @@ export default function Tabs({items, style, products, idPlan, namePlan}) {
   const changeTab = (tabId) => {
     setActiveTab(tabId);
   }; 
-  console.log(items)
 
   return (
     <>

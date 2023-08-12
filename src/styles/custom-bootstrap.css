@@ -27,5 +27,5 @@ body {
 
 .form-check .form-check-input[type="checkbox"]:checked {
   background-color: var(--aloha-blue);
-  border-color: var(--aloha-blue);
+  border-color: white;
 }

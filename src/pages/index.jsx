@@ -12,8 +12,6 @@ import Slider from "react-slick";
 import SlideExample1 from "../../public/img/home/image 113.jpg";
 import SlideExample2 from "../../public/img/home/image 114.jpg";
 import CardCategory from "@/components/CardCategory/CardCategory";
-import FormNewsletter from "@/components/FormNewsletter/FormNewsletter";
-import FormPartners from "@/components/FormPartners/FormPartners";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import CoverFotos from "../../public/img/home/categories/imagenes.jpg";
@@ -35,10 +33,16 @@ import dotenv from 'dotenv';
 import Link from "next/link";
 import Tabs from "@/components/Tabs/Tabs";
 import CardPlan from "@/components/CardPlan/CardPlan";
-import ItemsPlan from "@/components/CardPlan/ItemsPlan/ItemsPlan";
+import { useState } from "react";
 dotenv.config();
 
 export default function Home() {
+  const [regTerms, setRegTerms] = useState(false);
+
+  const handleCheckboxChange = () => {
+    setRegTerms(!regTerms);
+  };
+
   function NextArrow(props) {
     const { className, style, onClick } = props;
     return (
@@ -69,6 +73,7 @@ export default function Home() {
     );
   }
 
+  // Slider settings
   const settings = {
     dots: false,
     infinite: true,
@@ -110,7 +115,6 @@ export default function Home() {
       },
     ],
   };
-
   
   const planes = [
     {
@@ -659,7 +663,7 @@ export default function Home() {
               <h3 className={`${styles.SectionSignup__title}`}>Regístrate y descarga semanalmente imágenes gratis.</h3>
             </div>
             <div className="col-12 col-lg-5 px-4">
-              <button className={`${styles.ButtonSignUp} ${styles.disabled} mb-4`}>
+              <button className={`${styles.ButtonSignUp} ${!regTerms && styles.disabled} mb-4`}>
                 <span>
                   <Image src={LogoGoogle} className={`${styles.ButtonSignUp__logo}`} alt="Sign up with Google" />
                 </span>
@@ -693,7 +697,7 @@ export default function Home() {
                 </span>
               </button>
 
-              <button className={`${styles.ButtonSignUp} mb-4`}>
+              <button className={`${styles.ButtonSignUp} ${!regTerms && styles.disabled} mb-4`}>
                 <span>
                   <Image src={LogoFB} className={`${styles.ButtonSignUp__logo}`} alt="Sign up with Google" />
                 </span>
@@ -727,7 +731,7 @@ export default function Home() {
                 </span>
               </button>
 
-              <button className={`${styles.ButtonSignUp} mb-4`}>
+              <button className={`${styles.ButtonSignUp} ${!regTerms && styles.disabled} mb-4`}>
                 <span>
                   <Image src={IconEnvelope} className={`${styles.ButtonSignUp__logo}`} alt="Sign up with Google" />
                 </span>
@@ -766,7 +770,8 @@ export default function Home() {
                   className="form-check-input"
                   type="checkbox"
                   id="condiciones"
-                  defaultChecked
+                  onChange={handleCheckboxChange}
+                  defaultChecked = {regTerms ? true : false}
                 />
                 <label className="form-check-label" htmlFor="condiciones">
                   Acepto las <a href="#" style={{ color: 'white' }}>condiciones de la membresía</a>

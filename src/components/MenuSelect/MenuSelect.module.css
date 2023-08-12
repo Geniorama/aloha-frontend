@@ -24,7 +24,7 @@
 }
 
 .MenuOption:hover{
-    background: #FAFAFA;
+    background: rgba(0, 0, 0, 0.05);
 }
 
 .MenuOption span {

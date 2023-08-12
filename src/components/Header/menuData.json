@@ -1,0 +1,52 @@
+[
+    {
+        "text": "Imágenes",
+        "path": "/",
+        "subMenu":[
+            {
+                "text": "Fotos",
+                "path": "/"
+            },
+
+            {
+                "text": "Vectores",
+                "path": "/"
+            },
+
+            {
+                "text": "Ilustraciones",
+                "path": "/"
+            },
+
+            {
+                "text": "Colecciones",
+                "path": "/"
+            },
+
+            {
+                "text": "Gratis",
+                "path": "/"
+            }
+        ]
+    },
+
+    {
+        "text": "Videos",
+        "path": "/"
+    },
+
+    {
+        "text": "Editorial",
+        "path": "/"
+    },
+
+    {
+        "text": "Música & SFX",
+        "path": "/"
+    },
+
+    {
+        "text": "Planes",
+        "path": "/"
+    }
+]
