@@ -120,7 +120,7 @@ const Header = () => {
         </div>
         <div className={styles.menuThree}>
           <button
-            className={`${styles.menuButton} d-lg-none`}
+            className={`${styles.menuButton}`}
             onClick={handleMenuToggle}
           >
             {!isMenuOpen
@@ -133,7 +133,7 @@ const Header = () => {
             </div>
           </button>
           <Collapse in={isMenuOpen}>
-            <div className={`${styles.menu} d-lg-none`}>
+            <div className={`${styles.menu} ${styles.menuResponsive}`}>
               <ul className="navbar-nav flex-column">
                 {menuData.map((item, i) => (
                   <li className={`${item.subMenu && styles.Dropdown} ${styles.menuItem} nav-item py-3 px-4`} key={i}>
@@ -158,7 +158,7 @@ const Header = () => {
                       )}
 
                     {item.subMenu && indiceSubMenuAbierto === i && (
-                      <ul className={`${styles.DropdownMenu} navbar-nav mt-4`}>
+                      <ul className={`${styles.DropdownMenu} navbar-nav mt-4 flex-column`}>
                         {item.subMenu.map((item, i) => (
                           <li key={i} className="nav-item py-2">
                             <ButtonLink href={item.path} text={item.text} size={'s'} color={'blue'} />
@@ -171,7 +171,9 @@ const Header = () => {
               </ul>
 
               <div className="d-none d-sm-block px-4 my-4">
-                <ButtonLink text={'Registrarme'} color={'blue'} size={'l'}/>
+                <Link href={'/'} style={{fontSize: '24px', color: 'var(--aloha-blue)', fontWeight: '600'}}>
+                    Registrarme
+                </Link>
                 <span className="px-2" style={{color: '#AEAEAE', fontSize: '20px'}}>
                   |
                 </span>
@@ -179,7 +181,9 @@ const Header = () => {
               </div>
 
               <div className="d-sm-none px-4 my-4">
-                <ButtonLink text={'Registrarme'} color={'blue'} size={'m'}/>
+                <Link href={'/'} style={{fontSize: '18px', color: 'var(--aloha-blue)', fontWeight: '600'}}>
+                    Registrarme
+                </Link>
                 <span className="px-2" style={{color: '#AEAEAE', fontSize: '20px'}}>
                   |
                 </span>

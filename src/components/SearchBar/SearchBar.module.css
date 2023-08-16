@@ -33,6 +33,7 @@
 
 .BtnSubmit {
   width: 70px;
+  height: 70px;
   background: var(--aloha-black);
   border-color: white;
 }
@@ -95,7 +96,7 @@
 }
 
 .Small .FieldSelect__text{
-  width: 100px;
+  width: 70px;
   font-size: 14px;
   min-width: auto;
   overflow: hidden;

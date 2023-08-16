@@ -152,10 +152,16 @@ export default function SearchBar({size}) {
           </div>
         )}
         <span className={`${styles.Divider}`}></span>
-        <div className="input-group">
+        <div className="input-group align-items-center">
+          {size == 'small' && (
+            <span style={{fontSize: '18px', color: '#979797'}} className="ms-3 d-inline-block">
+              <FontAwesomeIcon icon={faMagnifyingGlass} />
+            </span>
+          )
+          }
           <input
             type="search"
-            className={`form-control ${styles.FormControl}`}
+            className={`form-control ${styles.FormControl} ${size == 'small' && 'px-2'}`}
             placeholder="Buscar imágenes"
             aria-label="Buscar imágenes"
             style={{ border: "none" }}

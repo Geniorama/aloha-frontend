@@ -42,6 +42,12 @@
     display: block;
 }
 
+.TabButton{
+    line-break: none;
+    white-space: nowrap;
+    outline: none;
+}
+
 .Style2 .TabsMenu button::before{
     display: none;
 }
@@ -71,4 +77,10 @@
 
 .Style2 .TabsMenu button:hover::before, .Style2 .TabsMenu button.active::before{
     width: 0;
+}
+
+@media screen and (max-width: 600px){
+    .TabsMenu{
+        overflow-x: scroll;
+    }
 }
