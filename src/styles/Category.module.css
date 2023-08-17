@@ -1,0 +1,20 @@
+.Grid{
+    display: grid;
+    gap: 1em;
+}
+
+.Grid__style1{
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.Grid__style1 .Item:first-child{
+    grid-column: span 4;
+}
+
+.Grid__style1 .Item:nth-child(2){
+    grid-column: span 3;
+}
+
+.Grid__style1 .Item:nth-child(3){
+    grid-column: span 5;
+}

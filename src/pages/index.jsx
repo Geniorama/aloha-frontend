@@ -1,5 +1,6 @@
 import Header from "@/components/Header/Header";
 import Footer from "@/components/Footer/Footer";
+import Layout from "@/components/Layout/Layout";
 import HeroSearch from "@/components/Hero/HeroSearch";
 import TitleSection from "@/components/TitleSection/TitleSection";
 import ButtonLink from "@/components/ButtonLink/ButtonLink";
@@ -115,7 +116,7 @@ export default function Home() {
       },
     ],
   };
-  
+
   const planes = [
     {
       id: 'fotos-vectores-suscripcion',
@@ -138,7 +139,7 @@ export default function Home() {
               price_per_item: 0.90,
               small_per_item: 'por imagen',
             },
-    
+
             {
               name: '75 imágenes',
               small: 'mes',
@@ -176,7 +177,7 @@ export default function Home() {
               price_per_item: 0.90,
               small_per_item: 'por imagen',
             },
-    
+
             {
               name: '75 imágenes',
               small: 'mes',
@@ -226,7 +227,7 @@ export default function Home() {
               price_per_item: 14,
               small_per_item: 'por imagen',
             },
-    
+
             {
               name: '10 imágenes',
               small: 'mes',
@@ -264,7 +265,7 @@ export default function Home() {
               price_per_item: 0.90,
               small_per_item: 'por imagen',
             },
-    
+
             {
               name: '75 imágenes',
               small: 'mes',
@@ -298,7 +299,7 @@ export default function Home() {
               price_per_item: 0.90,
               small_per_item: 'por video',
             },
-    
+
             {
               name: '75 videos',
               small: 'mes',
@@ -336,7 +337,7 @@ export default function Home() {
               price_per_item: 0.90,
               small_per_item: 'por video',
             },
-    
+
             {
               name: '75 videos',
               small: 'mes',
@@ -386,7 +387,7 @@ export default function Home() {
               price_per_item: 14,
               small_per_item: 'por video',
             },
-    
+
             {
               name: '10 imágenes',
               small: 'mes',
@@ -424,7 +425,7 @@ export default function Home() {
               price_per_item: 0.90,
               small_per_item: 'por video',
             },
-    
+
             {
               name: '75 imágenes',
               small: 'mes',
@@ -467,9 +468,18 @@ export default function Home() {
       content: 'Content 3'
     }
   ]
+
+  const metaData = {
+    title: 'Inicio',
+    description: 'Mi metadescripción',
+    keywords: 'Banco imágenes, aloha',
+    author: 'Geniorama Agencia',
+  }
+
   return (
-    <div>
-      <Header />
+    <Layout
+      metaData={metaData}
+    >
       <div className="container-fluid">
         <HeroSearch />
       </div>
@@ -771,7 +781,7 @@ export default function Home() {
                   type="checkbox"
                   id="condiciones"
                   onChange={handleCheckboxChange}
-                  defaultChecked = {regTerms ? true : false}
+                  defaultChecked={regTerms ? true : false}
                 />
                 <label className="form-check-label" htmlFor="condiciones">
                   Acepto las <a href="#" style={{ color: 'white' }}>condiciones de la membresía</a>
@@ -857,8 +867,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <Footer />
-    </div>
+    </Layout>
   );
 }
 
