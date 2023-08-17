@@ -1,4 +1,4 @@
-import Layout from "@/components/Layout/Layout";
+import Layout from '@/components/Layout/Layout';
 import HeroCategory from "@/components/Hero/HeroCategory/HeroCategory";
 import bgFotos from "../../../public/img/category/bg_fotos.jpg";
 import TitleSection from "@/components/TitleSection/TitleSection";
