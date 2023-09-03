@@ -1,0 +1,25 @@
+.Grid{
+    display: grid;
+    height: 30vh;
+    gap: 1rem;
+    width: 400px;
+}
+
+.Grid_3{
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.Item{
+    position: relative;
+}
+
+.Grid_3 .Item{
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.Grid_3 .Item:first-child{
+    grid-column: span 3;
+    grid-row: span 2;
+}

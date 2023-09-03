@@ -3,9 +3,9 @@ import Image from "next/image";
 import ExampleImage from "../../../public/img/home/image 113.jpg";
 import Link from "next/link";
 
-export default function CardCategory({ link_position, size, text, image }) {
+export default function CardCategory({ link_position, size, text, image, height }) {
   return (
-    <div className={`${styles.CardCategory} ${styles[size]}`}>
+    <div className={`${styles.CardCategory} ${styles[size]}`} style={{height: height && height}}>
       <Link
         href={"/"}
         className={`${styles.CardCategory__link} ${styles[link_position]}`}

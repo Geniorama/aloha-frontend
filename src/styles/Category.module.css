@@ -1,20 +1,14 @@
 .Grid{
-    display: grid;
-    gap: 1em;
+    height: 100vh;
 }
 
-.Grid__style1{
-    grid-template-columns: repeat(12, 1fr);
+.Grid .Column{
+    height: 100%;
 }
 
-.Grid__style1 .Item:first-child{
-    grid-column: span 4;
+.Item{
+    height: calc(100% / 3);
+    margin-bottom: 1em;
 }
 
-.Grid__style1 .Item:nth-child(2){
-    grid-column: span 3;
-}
 
-.Grid__style1 .Item:nth-child(3){
-    grid-column: span 5;
-}
