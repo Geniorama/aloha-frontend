@@ -27,3 +27,17 @@
   margin-top: 10px;
   
 }
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  .cover {
+    width: 100px;
+  }
+}
+
+/* X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+  .cover {
+    width: 250px;
+  }
+}
