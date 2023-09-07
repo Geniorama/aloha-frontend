@@ -1,6 +1,6 @@
 .Grid{
     display: grid;
-    height: 30vh;
+    height: 50vh;
     gap: 1rem;
     width: 400px;
 }
