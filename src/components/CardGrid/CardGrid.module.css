@@ -1,8 +1,9 @@
 .Grid{
     display: grid;
-    height: 50vh;
+    height: 450px;
     gap: 1rem;
-    width: 400px;
+    width: 550px;
+    padding: 0 20px;
 }
 
 .Grid_3{
@@ -10,8 +11,21 @@
     grid-template-rows: repeat(2, 1fr);
 }
 
+.Grid_4{
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
 .Item{
     position: relative;
+}
+
+.Grid_3, .caption {
+    grid-column: span 5;
+}
+
+.Grid_3, .caption {
+    grid-column: span 6;
 }
 
 .Grid_3 .Item{
@@ -22,4 +36,22 @@
 .Grid_3 .Item:first-child{
     grid-column: span 3;
     grid-row: span 2;
+}
+
+.Grid_4 .Item{
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.Grid_4 .Item:first-child{
+    grid-column: span 6;
+    grid-row: span 2;
+}
+
+.caption h3 {
+    font-weight: bold;
+}
+
+.caption span {
+    color: #515151;
 }
