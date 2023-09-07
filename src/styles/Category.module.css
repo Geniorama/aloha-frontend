@@ -17,6 +17,9 @@
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
+  .Grid{
+    height: auto;
+  }
 	.Section {
     padding: 3rem 0;
   }
@@ -24,6 +27,9 @@
 
 /* X-Small devices (portrait phones, less than 576px) */
 @media (max-width: 575.98px) {
+  .Grid{
+    height: auto;
+  }
 	.Section {
     padding: 2rem 1rem;
   }
