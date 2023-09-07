@@ -1,4 +1,4 @@
-import Layout from '@/components/Layout/Layout';
+import Layout from "@/components/Layout/Layout";
 import HeroCategory from "@/components/Hero/HeroCategory/HeroCategory";
 import bgFotos from "../../../public/img/category/bg_fotos.jpg";
 import TitleSection from "@/components/TitleSection/TitleSection";
@@ -14,15 +14,18 @@ import img_arquitectura from "../../../public/img/category/cat-arquitectura.png"
 import img_relajado from "../../../public/img/category/cat-relajado.png";
 import img_amigos from "../../../public/img/category/cat-amigos.png";
 import img_backgrounds from "../../../public/img/category/cat-background.png";
-import ButtonLink from '@/components/ButtonLink/ButtonLink';
-import CardGrid from '@/components/CardGrid/CardGrid';
+import ButtonLink from "@/components/ButtonLink/ButtonLink";
+import CardGrid from "@/components/CardGrid/CardGrid";
+
+import Image from "next/image";
+import PlanSection from "@/components/PlanSection/PlanSection";
+import PopularAuthors from "@/components/PopularAuthors/PopularAuthors";
+import Slider from "@/components/Slider/Slider";
 
 export default function Fotos() {
   const metaData = {
-    title: 'Categoría | Fotos',
-  }
-
-  console.log(bgFotos.src)
+    title: "Categoría | Fotos",
+  };
 
   return (
     <Layout metaData={metaData}>
@@ -30,44 +33,43 @@ export default function Fotos() {
         <HeroCategory
           background={bgFotos.src}
           search={true}
-          title={'Fotos'}
-          desc={'La magia en cada imagen'}
+          title={"Fotos"}
+          desc={"La magia en cada imagen"}
           layer={{
-            background: 'linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0.3) 49%, rgba(0,0,0,0) 100%)',
-            backgroundBlendMode: 'multiply',
+            background:
+              "linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0.3) 49%, rgba(0,0,0,0) 100%)",
+            backgroundBlendMode: "multiply",
           }}
         />
       </div>
 
       <section className={HomeStyles.Section}>
         <div className="container">
-          <TitleSection
-            text={"Categorías de fotos."}
-          />
+          <TitleSection text={"Categorías de fotos."} />
 
           <div className={`mt-4 row ${styles.Grid} ${styles.Grid__style1}`}>
             {/* Column */}
             <div className={`col-12 col-md-4 ${styles.Column}`}>
-              <div className={styles.Item} style={{height: '40%'}}>
+              <div className={styles.Item} style={{ height: "40%" }}>
                 <CardCategory
-                  text={'Trabajo'}
-                  height={'100%'}
+                  text={"Trabajo"}
+                  height={"100%"}
                   image={img_trabajo}
                 />
               </div>
 
-              <div className={`${styles.Item}`} style={{height: '30%'}}>
+              <div className={`${styles.Item}`} style={{ height: "30%" }}>
                 <CardCategory
-                  text={'Relajado'}
-                  height={'100%'}
+                  text={"Relajado"}
+                  height={"100%"}
                   image={img_relajado}
                 />
               </div>
 
-              <div className={styles.Item} style={{height: '30%'}}>
+              <div className={styles.Item} style={{ height: "30%" }}>
                 <CardCategory
-                  text={'Paisaje'}
-                  height={'100%'}
+                  text={"Paisaje"}
+                  height={"100%"}
                   image={img_paisaje}
                 />
               </div>
@@ -75,26 +77,26 @@ export default function Fotos() {
 
             {/* Column */}
             <div className={`col-12 col-md-4 ${styles.Column}`}>
-              <div className={styles.Item} style={{height: '20%'}}>
+              <div className={styles.Item} style={{ height: "20%" }}>
                 <CardCategory
-                  text={'Flores'}
-                  height={'100%'}
+                  text={"Flores"}
+                  height={"100%"}
                   image={img_flores}
                 />
               </div>
 
-              <div className={styles.Item} style={{height: '55%'}}>
+              <div className={styles.Item} style={{ height: "55%" }}>
                 <CardCategory
-                  text={'Amigos'}
-                  height={'100%'}
+                  text={"Amigos"}
+                  height={"100%"}
                   image={img_amigos}
                 />
               </div>
 
-              <div className={styles.Item} style={{height: '25%'}}>
+              <div className={styles.Item} style={{ height: "25%" }}>
                 <CardCategory
-                  text={'Abstracto'}
-                  height={'100%'}
+                  text={"Abstracto"}
+                  height={"100%"}
                   image={img_abstracto}
                 />
               </div>
@@ -102,26 +104,26 @@ export default function Fotos() {
 
             {/* Column */}
             <div className={`col-12 col-md-4 ${styles.Column}`}>
-              <div className={styles.Item} style={{height: '35%'}}>
+              <div className={styles.Item} style={{ height: "35%" }}>
                 <CardCategory
-                  text={'Arquitectura'}
-                  height={'100%'}
+                  text={"Arquitectura"}
+                  height={"100%"}
                   image={img_arquitectura}
                 />
               </div>
 
-              <div className={styles.Item} style={{height: '35%'}}>
+              <div className={styles.Item} style={{ height: "35%" }}>
                 <CardCategory
-                  text={'Backgrounds'}
-                  height={'100%'}
+                  text={"Backgrounds"}
+                  height={"100%"}
                   image={img_backgrounds}
                 />
               </div>
 
-              <div className={styles.Item} style={{height: '30%'}}>
+              <div className={styles.Item} style={{ height: "30%" }}>
                 <CardCategory
-                  text={'Comida'}
-                  height={'100%'}
+                  text={"Comida"}
+                  height={"100%"}
                   image={img_comida}
                 />
               </div>
@@ -130,22 +132,28 @@ export default function Fotos() {
         </div>
       </section>
 
-      <section className={`${HomeStyles.Section}`}>
+      <section className={`${styles.Section}`}>
         <div className="container">
-          <TitleSection text={'Colección de fotos.'} />
-          <div className='text-center'>
-            <ButtonLink 
-              text={'Ver todos'}
-              color={'coral'}
-              size={'m'}
-            />
+          <TitleSection text={"Colección de fotos."} />
+          <div className="text-center">
+            <ButtonLink text={"Ver todos"} color={"coral"} size={"m"} />
           </div>
-
           <div>
-            <CardGrid />
+            <Slider>
+              <CardGrid />
+              <CardGrid />
+              <CardGrid />
+              <CardGrid />
+              <CardGrid />
+              <CardGrid />
+              <CardGrid />
+              <CardGrid />
+            </Slider>
           </div>
         </div>
       </section>
+      <PopularAuthors />
+      <PlanSection />
     </Layout>
-  )
+  );
 }
