@@ -9,7 +9,7 @@ export const defaultSettingSlider = {
   infinite: true,
   arrows: true,
   speed: 500,
-  slidesToShow: 4,
+  // slidesToShow: 4,
   slidesToScroll: 1,
   autoplay: true,
   centerMode: true,
@@ -21,7 +21,6 @@ export const defaultSettingSlider = {
     {
       breakpoint: 1024, // Pantallas grandes
       settings: {
-        slidesToShow: 5,
         dots: true,
       },
     },
@@ -35,7 +34,6 @@ export const defaultSettingSlider = {
     {
       breakpoint: 480, // Dispositivos móviles
       settings: {
-        slidesToShow: 2,
         centerMode: true,
         variableWidth: true,
         arrows: false,
