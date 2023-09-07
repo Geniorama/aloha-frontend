@@ -1,0 +1,11 @@
+.section {
+  background-color: #1a01a6;
+  padding: 80px 0;
+  font-family: var(--primary-font);
+}
+
+.title {
+  color: #FF595A;
+  font-weight: bold;
+  font-size: 4rem;
+}

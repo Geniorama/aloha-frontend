@@ -1,0 +1,29 @@
+.authorCard {
+  padding: 0 16px;
+  position: relative;
+  margin-top: 20px;
+}
+.cover {
+  object-fit: 'cover';
+}
+.main {
+  position: relative;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+}
+.photo {
+  display: block;
+  margin: auto;
+  border-radius: 100%;
+  border: 2px solid white;
+}
+.author {
+  position: absolute;
+  top: -50px;
+}
+.author h4 {
+  color: white;
+  margin-top: 10px;
+  
+}
