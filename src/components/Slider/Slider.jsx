@@ -12,6 +12,7 @@ const settings = {
   prevArrow: <PrevArrowButton />,
 };
 
-export default function Slider({ children }) {
-  return <ReactSlick {...settings}>{children}</ReactSlick>;
+export default function Slider({ children, ...props }) {
+  const options = { ...props, ...settings };
+  return <ReactSlick {...options}>{children}</ReactSlick>;
 }
