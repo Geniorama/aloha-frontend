@@ -1,26 +1,22 @@
-import styles from "./CardCategory.module.css";
 import Image from "next/image";
-import ExampleImage from "../../../public/img/home/image 113.jpg";
 import Link from "next/link";
+import styles from "./Category.module.css";
 
-export default function CardCategory({
-  link_position,
-  size,
+export default function Category({
   text,
+  link_position,
   image,
   height,
+  width,
 }) {
   return (
-    <div
-      className={`${styles.CardCategory} ${styles[size]}`}
-      style={{ height: height && height }}
-    >
+    <div className={styles.category} style={{ height }}>
       <Link
+        className={`${styles.category__link} ${styles[link_position]}`}
         href={"/"}
-        className={`${styles.CardCategory__link} ${styles[link_position]}`}
       >
-        <span className={styles.CardCategory__link__text}>{text}</span>
-        <span className={styles.CardCategory__link__arrow}>
+        <span className={styles.category__link__text}>{text}</span>
+        <span className={styles.category__link__arrow}>
           <svg
             width="40"
             height="40"
@@ -49,10 +45,10 @@ export default function CardCategory({
         </span>
       </Link>
       <Image
-        src={image ? image : ExampleImage}
-        fill
-        style={{ objectFit: "cover" }}
-        alt={text}
+        src={image}
+        className={styles.category__image}
+        width={width}
+        height={height}
       />
     </div>
   );
