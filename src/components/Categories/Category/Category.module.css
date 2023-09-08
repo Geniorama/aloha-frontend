@@ -89,25 +89,32 @@
     height: 100%;
   }
   .category:nth-child(1)  {
-    height: 250px !important;
-    order: 2;
+    height: 200px !important;
   }
-  .category:nth-child(2), 
-  .category:nth-child(3)  {
-    height: 125px !important;
+  .category:nth-child(2) {
+    height: 120px !important;
+  }
+  .category:nth-child(3) {
+    height: 200px !important;
+  }
+  .category:nth-child(3) {
+    height: 250px !important;
+  }
+  .category:nth-child(4)  {
+    height: 200px !important;
   }
   .category:nth-child(5)  {
-    height: 300px !important;
-    order: 1;
+    height: 160px !important;
   }
-  .category:nth-child(4), 
   .category:nth-child(6)  {
-    height: 190px !important;
+    height: 100px !important;
   }
-  .category:nth-child(7), 
+  .category:nth-child(7)  {
+    height: 150px !important;
+  }
   .category:nth-child(8)  {
-    height: 190px !important;
-  } 
+    height: 120px !important;
+  }
   .category:nth-child(9)  {
     height: 220px !important;
   }
