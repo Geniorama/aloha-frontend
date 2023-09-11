@@ -13,22 +13,20 @@ const metaData = {
 export default function Vectores() {
   return (
     <Layout metaData={metaData}>
-      <div className="container-fluid">
-        <HeroCategory
-          background="/img/category/bg_fotos.jpg"
-          search={true}
-          title="Vectores"
-          desc="Crea formas precisas y líneas perfectas"
-          layer={{
-            background:
-              "linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0.3) 49%, rgba(0,0,0,0) 100%)",
-            backgroundBlendMode: "multiply",
-          }}
-        />
-      </div>
+      <HeroCategory
+        background="/img/category/bg_fotos.jpg"
+        search={true}
+        title="Vectores"
+        desc="Crea formas precisas y líneas perfectas"
+        layer={{
+          background:
+            "linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0.3) 49%, rgba(0,0,0,0) 100%)",
+          backgroundBlendMode: "multiply",
+        }}
+      />
       <section className={styles.Section}>
         <div className="container">
-          <TitleSection text="Categorías de fotos." />
+          <TitleSection text="Categorías de vectores." />
 
           <div className={`mt-4 row ${styles.Grid} ${styles.Grid__style1}`}>
             {/* Column */}
