@@ -1,4 +1,3 @@
-import Image from "next/image";
 import TitleSection from "../TitleSection/TitleSection";
 import styles from "./Categories.module.css";
 import Category from "./Category/Category";
