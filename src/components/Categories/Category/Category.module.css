@@ -26,6 +26,13 @@
   left: 0;
 }
 
+.category__link.top-right {
+  top: 0;
+  right: 0;
+  left: unset;
+  flex-direction: row-reverse;
+}
+
 .category__link.bottom-right {
   top: unset;
   left: unset;
@@ -34,8 +41,23 @@
   flex-direction: row-reverse;
 }
 
+.category__link.bottom-left {
+  top: unset;
+  left: unset;
+  bottom: 0;
+  left: 0;
+}
+
 .category__link.bottom-right .category__link__arrow {
   transform: rotate(-180deg);
+}
+
+.category__link.bottom-left .category__link__arrow {
+  transform: rotate(-90deg);
+}
+
+.category__link.top-right .category__link__arrow {
+  transform: rotate(90deg);
 }
 
 .category__link:hover {
