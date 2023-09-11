@@ -1,4 +1,4 @@
-import { planes } from "@/data";
+import planes from "@/data/planes.json";
 import CardPlan from "../CardPlan/CardPlan";
 import TitleSection from "../TitleSection/TitleSection";
 import styles from "@/components/PlanSection/PlanSection.module.css";
