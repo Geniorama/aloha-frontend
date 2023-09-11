@@ -22,23 +22,15 @@ import PlanSection from "@/components/PlanSection/PlanSection";
 import PopularAuthors from "@/components/PopularAuthors/PopularAuthors";
 import Slider from "@/components/Slider/Slider";
 import Categories from "@/components/Categories/Categories";
+import {
+  photo_categories,
+  photo_exampleImages,
+  photo_exampleWith4Images,
+} from "@/data";
 
 const metaData = {
   title: "Categoría | Fotos",
 };
-
-const exampleImages = [
-  "https://images.unsplash.com/photo-1693443760721-93025350bf03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-  "https://images.unsplash.com/photo-1693443760721-93025350bf03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-  "https://images.unsplash.com/photo-1693443760721-93025350bf03?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-];
-
-const exampleWith4Images = [
-  "https://images.unsplash.com/photo-1693661925821-bc241be1cf69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-  "https://images.unsplash.com/photo-1693661925821-bc241be1cf69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-  "https://images.unsplash.com/photo-1693661925821-bc241be1cf69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-  "https://images.unsplash.com/photo-1693661925821-bc241be1cf69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1964&q=80",
-];
 
 export default function Fotos() {
   return (
@@ -56,7 +48,7 @@ export default function Fotos() {
           }}
         />
       </div>
-      <Categories />
+      <Categories categories={photo_categories} />
       <section className={`${styles.Section}`}>
         <div className="container">
           <TitleSection text={"Colección de fotos."} />
@@ -65,11 +57,11 @@ export default function Fotos() {
           </div>
           <div>
             <Slider>
-              <CardGrid items={exampleImages} />
-              <CardGrid items={exampleWith4Images} />
-              <CardGrid items={exampleImages} />
-              <CardGrid items={exampleImages} />
-              <CardGrid items={exampleWith4Images} />
+              <CardGrid items={photo_exampleImages} />
+              <CardGrid items={photo_exampleWith4Images} />
+              <CardGrid items={photo_exampleImages} />
+              <CardGrid items={photo_exampleImages} />
+              <CardGrid items={photo_exampleWith4Images} />
             </Slider>
           </div>
         </div>
