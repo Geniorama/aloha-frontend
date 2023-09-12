@@ -35,7 +35,7 @@ export default function Fotos() {
       <section className={`${styles.Section}`}>
         <div className="container">
           <TitleSection text={"Colección de fotos."} />
-          <div className="text-center">
+          <div className="text-center mb-4">
             <ButtonLink text={"Ver todos"} color={"coral"} size={"m"} />
           </div>
           <div>
