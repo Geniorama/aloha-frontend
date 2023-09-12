@@ -1,6 +1,11 @@
 import ButtonLink from "../ButtonLink/ButtonLink";
 import Image from "next/image";
 import styles from "./CardGrid.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faArrowRight,
+  faChevronRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 export default function CardGrid({ items = [], name }) {
   return (
@@ -16,6 +21,7 @@ export default function CardGrid({ items = [], name }) {
           </div>
         ))}
       <div className={styles.caption}>
+        <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
         <h3>
           Japandi Aesthetic
           <span> &middot; 300</span>
