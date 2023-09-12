@@ -6,7 +6,7 @@ export default function Categories({ categories, title }) {
   return (
     <section className={styles.section}>
       <div className="container">
-        <TitleSection text={`Categorías de ${title}`} />
+        <TitleSection text={`Categorías de ${title}.`} />
         <div className={styles.content}>
           {categories.map((category, index) => (
             <Category key={index} {...category} />
