@@ -1,51 +1,19 @@
 import Layout from "@/components/Layout/Layout";
+import ProductChooseItem from "@/components/Product/ProductChooseItem/ProductChooseItem";
+import ProductChooseSize from "@/components/Product/ProductChooseSize/ProductChooseSize";
 import styles from "@/styles/Product.module.css";
 import {
   faArrowRight,
-  faChevronDown,
   faClone,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import { Fragment } from "react";
 
 const metaData = {
   title: "Producto",
 };
-
-function ChooseItem({ label, tag, size, dpi, active }) {
-  return (
-    <Fragment>
-      <div
-        className={`${styles.chooseSize__content} ${
-          active ? styles.chooseSize__active : ""
-        }`}
-      >
-        <div className={styles.chooseSize__input}>
-          <div className={styles.chooseSize__radio} />
-          <div className={styles.chooseSize__tag}>
-            <span>{tag}</span>
-          </div>
-        </div>
-        <div className={styles.chooseSize__item}>
-          <h4>{label}</h4>
-          <span>
-            {size} cm,
-            <br /> {dpi} dpi
-          </span>
-        </div>
-      </div>
-      {active ? (
-        <FontAwesomeIcon
-          className={`${styles.chooseSize__icon}`}
-          icon={faChevronDown}
-        />
-      ) : null}
-    </Fragment>
-  );
-}
 
 function ProductPage() {
   return (
@@ -64,48 +32,16 @@ function ProductPage() {
             height={100}
           />
         </div>
-        <div className={styles.info__content}>
-          <div className={styles.chooseSize__container}>
-            <ChooseItem
-              tag="S"
-              label="1000 x 668"
-              size="89.26x42.71"
-              dpi="300"
-            />
-            <ChooseItem
-              tag="L"
-              label="2000 x 1335"
-              size="89.26x42.71"
-              dpi="300"
-            />
-            <ChooseItem
-              tag="XL"
-              label="6016x4016"
-              size="89.26x42.71"
-              dpi="300"
-              active
-            />
-            <ChooseItem
-              tag="S"
-              label="1000 x 668"
-              size="89.26x42.71"
-              dpi="300"
-            />
-            <ChooseItem
-              tag="S"
-              label="1000 x 668"
-              size="89.26x42.71"
-              dpi="300"
-            />
-            <div className={`mt-2 w-100 d-none d-lg-block ${styles.info__nav}`}>
-              <button className={styles.button}>
-                <span>Descargar imagen</span>
-                <FontAwesomeIcon icon={faArrowRight} />
-              </button>
-              <Link href="#" className={`${styles.searchLink} mt-4 p-4 p-lg-0`}>
-                <span>Empezar prueba gratis</span>
-              </Link>
-            </div>
+        <div className={styles.options}>
+          <ProductChooseSize />
+          <div className={`mt-2 w-100 d-none d-lg-block ${styles.info__nav}`}>
+            <button className={styles.button}>
+              <span>Descargar imagen</span>
+              {/* <FontAwesomeIcon icon={faArrowRight} /> */}
+            </button>
+            <Link href="#" className={`${styles.searchLink} mt-4 p-4 p-lg-0`}>
+              <span>Empezar prueba gratis</span>
+            </Link>
           </div>
         </div>
         <div className={styles.info__items}>
@@ -117,7 +53,7 @@ function ProductPage() {
             <h6>Colaborador</h6>
             <Link href="#">
               <span>Paul Steven</span>
-              <FontAwesomeIcon icon={faArrowRight} />
+              {/* <FontAwesomeIcon icon={faArrowRight} /> */}
             </Link>
           </div>
           <div>
@@ -131,7 +67,7 @@ function ProductPage() {
         <div className={`mt-5 ${styles.info__nav}`}>
           <button className={styles.button}>
             <span>Descargar imagen</span>
-            <FontAwesomeIcon icon={faArrowRight} />
+            {/* <FontAwesomeIcon icon={faArrowRight} /> */}
           </button>
           <Link href="#" className={`${styles.searchLink} p-4`}>
             <span>Empezar prueba gratis</span>
