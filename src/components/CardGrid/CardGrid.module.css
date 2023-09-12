@@ -48,10 +48,28 @@
     grid-row: span 2;
 }
 
+.caption {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 10px
+}
+
 .caption h3 {
     font-weight: bold;
+    margin-bottom: 0;
 }
 
 .caption span {
     color: #515151;
 }
+
+.icon {
+    transform: rotate(-45deg);
+    font-size: 24px;
+}
+
+.caption:hover .icon,
+.caption:hover span {
+    color: #FF595A;
+} 
