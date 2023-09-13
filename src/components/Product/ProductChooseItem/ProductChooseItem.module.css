@@ -8,6 +8,7 @@
   display: none;
   align-items: center;
   gap: 14px;
+  cursor: pointer;
 }
 .input {
   display: flex;
@@ -27,11 +28,11 @@
   border: 2px solid #CECECE;
   background-color: white;
 }
-.active .radio {
+.active .radio, .content:hover .radio {
   background-color: #150186;
   border: none;
 }
-.active .radio:after{
+.active .radio:after, .content:hover .radio::after{
   content: "";
   border: 2px solid white;
   border-radius: 100%;
@@ -46,7 +47,7 @@
   justify-content: center;
   border-radius: 4px;
 }
-.active .tag {
+.active .tag, .content:hover .tag {
   background-color: #150186;
   border: none;
   display: flex;
@@ -107,20 +108,24 @@
 
 @media (min-width: 900px) {
   .content {
-    gap: 20px;
+    gap: 10px;
   }
   .input {
-    gap: 20px;
+    gap: 14px;
   }
   .item {
-    gap: 30px
+    gap: 20px
   }
   .item h4 {
     font-size: 18px;
     border-right: 1px solid #DFDFDF;
   }
   .tag {
-    width: 100px;
+    width: 70px;
+  }
+  .tag span {
+    font-size: 16px;
+    font-weight: 600;
   }
   .radio {
     width: 22px;
