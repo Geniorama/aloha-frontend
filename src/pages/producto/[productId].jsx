@@ -1,3 +1,4 @@
+import ButtonLink from "@/components/ButtonLink/ButtonLink";
 import Layout from "@/components/Layout/Layout";
 import ProductChooseItem from "@/components/Product/ProductChooseItem/ProductChooseItem";
 import ProductChooseSize from "@/components/Product/ProductChooseSize/ProductChooseSize";
@@ -18,7 +19,7 @@ const metaData = {
 function ProductPage() {
   return (
     <Layout metaData={metaData}>
-      <section className="container">
+      <section className="container px-4">
         <h2 className={styles.title}>
           Pescador solitario en la playa con fondo rocoso de montaña.
         </h2>
@@ -36,8 +37,7 @@ function ProductPage() {
           <ProductChooseSize />
           <div className={`mt-2 w-100 d-none d-lg-block ${styles.info__nav}`}>
             <button className={styles.button}>
-              <span>Descargar imagen</span>
-              {/* <FontAwesomeIcon icon={faArrowRight} /> */}
+              <ButtonLink text="Descargar imagen" color="white" />
             </button>
             <Link href="#" className={`${styles.searchLink} mt-4 p-4 p-lg-0`}>
               <span>Empezar prueba gratis</span>
@@ -47,20 +47,26 @@ function ProductPage() {
         <div className={styles.info__items}>
           <Link href="#" className={styles.searchLink}>
             <span>Buscar imágenes similares</span>
-            <FontAwesomeIcon icon={faMagnifyingGlass} />
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              className={styles.searchLink__icon}
+            />
           </Link>
           <div>
             <h6>Colaborador</h6>
             <Link href="#">
               <span>Paul Steven</span>
-              {/* <FontAwesomeIcon icon={faArrowRight} /> */}
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className={styles.info__arrowIcon}
+              />
             </Link>
           </div>
           <div>
             <h6>ID de la imagen</h6>
             <Link href="#">
               <span>138519659</span>
-              <FontAwesomeIcon icon={faClone} />
+              <Image src="/Copy-blue.svg" width={18} height={18} />
             </Link>
           </div>
         </div>
@@ -74,7 +80,7 @@ function ProductPage() {
           </Link>
         </div>
       </section>
-      <section className={`container px-4 ${styles.description}`}>
+      <section className={`container my-4 px-4 ${styles.description}`}>
         <div>
           <h5 className="mb-4">Información de uso</h5>
           <p>
@@ -92,7 +98,7 @@ function ProductPage() {
             hasta 4704x3184. Fecha de carga: 7 feb 2022
           </p>
         </div>
-        <div>
+        <div className="mt-5 mt-lg-0">
           <h5 className="mb-4">Palabras clave</h5>
           <div className={styles.tags}>
             <span className={styles.tag}>Paisajes</span>
@@ -112,7 +118,7 @@ function ProductPage() {
         </div>
       </section>
       <section className="container p-4">
-        <h5 className="mb-4">Misma serie:</h5>
+        <h5 className={styles.gallery__title}>Misma serie:</h5>
         <div className={styles.gallery}>
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
@@ -155,7 +161,7 @@ function ProductPage() {
         </button>
       </section>
       <section className="container p-4">
-        <h5 className="mb-4">Imágenes similares:</h5>
+        <h5 className={styles.gallery__title}>Imágenes similares:</h5>
         <div className={styles.gallery}>
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
