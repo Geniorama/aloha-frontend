@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 export default function ProductChooseItem({
-  label,
-  tag,
   size,
-  dpi,
+  width,
+  height,
+  mp,
   active,
   onSetActiveRadio,
 }) {
@@ -16,14 +16,14 @@ export default function ProductChooseItem({
         <div className={styles.input}>
           <div className={styles.radio} />
           <div className={styles.tag}>
-            <span>{tag}</span>
+            <span style={{ textTransform: "uppercase" }}>{size}</span>
           </div>
         </div>
         <div className={styles.item}>
-          <h4>{label}</h4>
+          <h4>{`${width}x${height}`}</h4>
           <span>
-            {size} cm,
-            <br /> {dpi} dpi
+            {`${width}x${height}`} cm,
+            <br /> {mp} dpi
           </span>
         </div>
       </div>

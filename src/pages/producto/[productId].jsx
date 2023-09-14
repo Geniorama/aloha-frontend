@@ -2,6 +2,7 @@ import ButtonLink from "@/components/ButtonLink/ButtonLink";
 import Layout from "@/components/Layout/Layout";
 import ProductChooseItem from "@/components/Product/ProductChooseItem/ProductChooseItem";
 import ProductChooseSize from "@/components/Product/ProductChooseSize/ProductChooseSize";
+import { api } from "@/helpers/helpers";
 import styles from "@/styles/Product.module.css";
 import {
   faArrowRight,
@@ -9,32 +10,62 @@ import {
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const metaData = {
   title: "Producto",
 };
 
-function ProductPage() {
+const getImage = async (media) => {
+  try {
+    const response = await axios.post(`${api}`, null, {
+      params: {
+        dp_command: "getMediaData",
+        dp_media_id: media ?? "222637964",
+        dp_apikey: "79a81d2c27320915317994339a8b0589fe45c6ad",
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+function ProductPage({ data: product }) {
+  const [items, setItems] = useState({ series: [], similar: [] });
+  useEffect(() => {
+    const data = { ...items };
+
+    getImage(product.series).then((series) => {
+      data.series = series;
+    });
+    getImage(product.similar).then((similar) => {
+      data.similar = similar;
+    });
+    setItems(data);
+  }, [product]);
+  console.log(items);
+  if (!product) return <div>Cargando...</div>;
   return (
     <Layout metaData={metaData}>
       <section className="container px-4">
-        <h2 className={styles.title}>
-          Pescador solitario en la playa con fondo rocoso de montaña.
-        </h2>
+        <h2 className={styles.title}>{product.title} </h2>
       </section>
       <section className={`container px-4 ${styles.info__container}`}>
         <div className={styles.hero}>
           <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
+            src={product.large_thumb}
             className={styles.cover}
             width={100}
             height={100}
+            alt=""
           />
         </div>
         <div className={styles.options}>
-          <ProductChooseSize />
+          <ProductChooseSize sizes={product.sizes} />
           <div className={`mt-2 w-100 d-none d-lg-block ${styles.info__nav}`}>
             <button className={styles.button}>
               <ButtonLink text="Descargar imagen" color="white" />
@@ -65,8 +96,8 @@ function ProductPage() {
           <div>
             <h6>ID de la imagen</h6>
             <Link href="#">
-              <span>138519659</span>
-              <Image src="/Copy-blue.svg" width={18} height={18} />
+              <span>{product.id}</span>
+              <Image src="/Copy-blue.svg" width={18} height={18} alt="" />
             </Link>
           </div>
         </div>
@@ -83,37 +114,16 @@ function ProductPage() {
       <section className={`container my-4 px-4 ${styles.description}`}>
         <div>
           <h5 className="mb-4">Información de uso</h5>
-          <p>
-            Puede usar esta foto sin royalties "Pescador solitario en la playa
-            con fondo rocoso de montaña" para fines personales y comerciales de
-            acuerdo con las licencias Estándar o Ampliada. La licencia Estándar
-            cubre la mayoría de los casos de uso, incluida la publicidad, los
-            diseños de interfaz de usuario y el embalaje de productos, y permite
-            hasta 500.000 copias impresas. La licencia Ampliada permite todos
-            los casos de uso bajo la licencia Estándar con derechos de impresión
-            ilimitados, y le permite utilizar las imágenes descargadas para
-            merchandising, reventa de productos o distribución gratuita. <br />
-            <br />
-            Puede comprar esta foto de stock y descargarla en alta resolución
-            hasta 4704x3184. Fecha de carga: 7 feb 2022
-          </p>
+          <p>{product.description}</p>
         </div>
         <div className="mt-5 mt-lg-0">
           <h5 className="mb-4">Palabras clave</h5>
           <div className={styles.tags}>
-            <span className={styles.tag}>Paisajes</span>
-            <span className={styles.tag}>Primavera</span>
-            <span className={styles.tag}>Naturaleza</span>
-            <span className={styles.tag}>Viajes</span>
-            <span className={styles.tag}>Estaciones</span>
-            <span className={styles.tag}>Árbol</span>
-            <span className={styles.tag}>Verde</span>
-            <span className={styles.tag}>Bosque</span>
-            <span className={styles.tag}>Luz solar</span>
-            <span className={styles.tag}>Silencio</span>
-            <span className={styles.tag}>Sol</span>
-            <span className={styles.tag}>Panorama</span>
-            <span className={styles.tag}>Escénica</span>
+            {product.tags.map((tag) => (
+              <span key={tag} className={styles.tag}>
+                {tag}
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -124,36 +134,43 @@ function ProductPage() {
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
         </div>
         <button className={styles.button_small}>
@@ -167,36 +184,43 @@ function ProductPage() {
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
           <Image
             src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
             width={100}
             height={100}
+            alt=""
           />
         </div>
         <button className={styles.button_small}>
@@ -205,6 +229,24 @@ function ProductPage() {
       </section>
     </Layout>
   );
+}
+
+export async function getStaticPaths() {
+  return {
+    paths: [
+      {
+        params: {
+          productId: "222637964",
+        },
+      }, // See the "paths" section below
+    ],
+    fallback: true, // false or "blocking"
+  };
+}
+
+export async function getStaticProps() {
+  const data = (await getImage()) || {};
+  return { props: { data }, revalidate: 1 };
 }
 
 export default ProductPage;
