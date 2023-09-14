@@ -35,19 +35,30 @@ const getImage = async (media) => {
 };
 
 function ProductPage({ data: product }) {
-  const [items, setItems] = useState({ series: [], similar: [] });
-  useEffect(() => {
-    const data = { ...items };
+  const [items, setItems] = useState({
+    series: [],
+    similar: [],
+  });
 
-    getImage(product.series).then((series) => {
-      data.series = series;
-    });
-    getImage(product.similar).then((similar) => {
-      data.similar = similar;
-    });
-    setItems(data);
-  }, [product]);
-  console.log(items);
+  useEffect(() => {
+    if (product) {
+      if (!items.series.length)
+        getImage(product.series).then((data) => {
+          const series = Object.entries(data)
+            .filter((item) => item[0].includes("item"))
+            .map((item) => item[1]);
+          setItems({ ...items, series });
+        });
+      if (!items.similar.length)
+        getImage(product.similar).then((data) => {
+          const similar = Object.entries(data)
+            .filter((item) => item[0].includes("item"))
+            .map((item) => item[1]);
+          setItems({ ...items, similar });
+        });
+    }
+  }, [items, product]);
+
   if (!product) return <div>Cargando...</div>;
   return (
     <Layout metaData={metaData}>
@@ -130,48 +141,15 @@ function ProductPage({ data: product }) {
       <section className="container p-4">
         <h5 className={styles.gallery__title}>Misma serie:</h5>
         <div className={styles.gallery}>
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
+          {items.series.map((serie) => (
+            <Image
+              key={serie.id}
+              src={serie.large_thumb}
+              width={100}
+              height={100}
+              alt=""
+            />
+          ))}
         </div>
         <button className={styles.button_small}>
           <span>Ver más</span>
@@ -180,48 +158,15 @@ function ProductPage({ data: product }) {
       <section className="container p-4">
         <h5 className={styles.gallery__title}>Imágenes similares:</h5>
         <div className={styles.gallery}>
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
-          <Image
-            src="https://images.unsplash.com/photo-1682687220067-dced9a881b56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1975&q=80"
-            width={100}
-            height={100}
-            alt=""
-          />
+          {items.similar.map((similar) => (
+            <Image
+              key={similar.id}
+              src={similar.large_thumb}
+              width={100}
+              height={100}
+              alt=""
+            />
+          ))}
         </div>
         <button className={styles.button_small}>
           <span>Ver más</span>
@@ -246,6 +191,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps() {
   const data = (await getImage()) || {};
+
   return { props: { data }, revalidate: 1 };
 }
 
