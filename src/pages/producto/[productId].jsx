@@ -25,7 +25,10 @@ const getImage = async (media) => {
       params: {
         dp_command: "getMediaData",
         dp_media_id: media ?? "222637964",
+        dp_translate_items: true,
+        dp_lang: "sp",
         dp_apikey: "79a81d2c27320915317994339a8b0589fe45c6ad",
+        // dp_full_similar: true,
       },
     });
     return response.data;
@@ -58,7 +61,7 @@ function ProductPage({ data: product }) {
         });
     }
   }, [items, product]);
-
+  console.log(product);
   if (!product) return <div>Cargando...</div>;
   return (
     <Layout metaData={metaData}>
@@ -68,10 +71,10 @@ function ProductPage({ data: product }) {
       <section className={`container px-4 ${styles.info__container}`}>
         <div className={styles.hero}>
           <Image
-            src={product.large_thumb}
+            src={product.url_big}
             className={styles.cover}
-            width={100}
-            height={100}
+            width={2000}
+            height={2000}
             alt=""
           />
         </div>
@@ -145,8 +148,8 @@ function ProductPage({ data: product }) {
             <Image
               key={serie.id}
               src={serie.large_thumb}
-              width={100}
-              height={100}
+              width={2000}
+              height={2000}
               alt=""
             />
           ))}
@@ -162,8 +165,8 @@ function ProductPage({ data: product }) {
             <Image
               key={similar.id}
               src={similar.large_thumb}
-              width={100}
-              height={100}
+              width={2000}
+              height={2000}
               alt=""
             />
           ))}
