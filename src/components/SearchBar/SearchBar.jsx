@@ -7,81 +7,20 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect, useRef } from "react";
 import MenuSelect from "../MenuSelect/MenuSelect";
+import default_categories from "@/data/categories/default_categories.json";
+import search from "@/services/search.service";
 
-export default function SearchBar({size}) {
-  const [categories] = useState([
-    {
-      id: 1,
-      title: "Todas las imágenes",
-      icon: "picture",
-      value: 'todas',
-    },
-
-    {
-      id: 2,
-      title: "Fotos",
-      icon: "camera",
-      value: "fotos",
-    },
-
-    {
-      id: 3,
-      title: "Vectores",
-      icon: "vector",
-      value: "vectores",
-    },
-
-    {
-      id: 4,
-      title: "Ilustraciones",
-      icon: "drawing",
-      value: "ilustraciones",
-    },
-
-    {
-      id: 5,
-      title: "Videos",
-      icon: "video",
-      value: "videos",
-    },
-
-    {
-      id: 6,
-      title: "Música",
-      icon: "music",
-      value: "musica",
-    },
-
-    {
-      id: 7,
-      title: "Gratis",
-      icon: "star",
-      value: "gratis",
-    },
-
-    {
-      id: 8,
-      title: "Efectos de sonido",
-      icon: "sound",
-      value: "efectos-sonido",
-    },
-
-    {
-      id: 9,
-      title: "Buscar por imagen",
-      icon: "cameraFill",
-      value: "buscar-imagen",
-    },
-  ]);
+export default function SearchBar({ size }) {
+  const [categories] = useState(default_categories);
 
   const [openMenu, setOpenMenu] = useState(false);
   const [searchCat, setSearchCat] = useState(categories[0]);
   const ref = useRef(null);
-  
+  const inputRef = useRef();
 
   const handleItemSelect = (selectedItem) => {
-    setSearchCat(selectedItem)
-    handleCloseButtonClick()
+    setSearchCat(selectedItem);
+    handleCloseButtonClick();
   };
 
   useEffect(() => {
@@ -92,17 +31,17 @@ export default function SearchBar({size}) {
     };
 
     const handleEscapeKey = (event) => {
-      if (event.key === 'Escape') {
+      if (event.key === "Escape") {
         setOpenMenu(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('keydown', handleEscapeKey);
+    document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscapeKey);
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleEscapeKey);
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscapeKey);
     };
   }, []);
 
@@ -117,16 +56,22 @@ export default function SearchBar({size}) {
   const handleCloseButtonClick = () => {
     setOpenMenu(false);
   };
-  
+
+  const onSubmit = async () => search(inputRef.current.value);
+
   return (
-    <form className={`${styles.SearchBar} ${size == 'small' && styles.Small} rounded`}>
+    <form
+      className={`${styles.SearchBar} ${
+        size == "small" && styles.Small
+      } rounded`}
+    >
       <div className="form-group d-flex align-items-center">
         <div className={`d-sm-none ${styles.SearchBar__select__mobile}`}>
           <span
             className={styles.IconImage}
             onClick={() => setOpenMenu(!openMenu)}
           >
-            <AlohaIcon icon={"picture"} size={"25"}/>
+            <AlohaIcon icon={"picture"} size={"25"} />
           </span>
 
           <span
@@ -142,26 +87,40 @@ export default function SearchBar({size}) {
             </div>
           )}
         </div>
-        <div className={`${styles.FieldSelect} d-none d-sm-flex`} id="btn-menu-toggle" onClick={handleButtonClick}>
+        <div
+          className={`${styles.FieldSelect} d-none d-sm-flex`}
+          id="btn-menu-toggle"
+          onClick={handleButtonClick}
+        >
           <span className={styles.FieldSelect__text}>{searchCat.title}</span>
-          <span className={styles.FieldSelect__icon}><FontAwesomeIcon icon={faChevronDown} fontSize={"12px"} /></span>
+          <span className={styles.FieldSelect__icon}>
+            <FontAwesomeIcon icon={faChevronDown} fontSize={"12px"} />
+          </span>
         </div>
         {openMenu && (
-          <div className={`${styles.MenuCategories} ${styles.MenuCategoriesDesktop}  d-none d-sm-block`} ref={ref}>
+          <div
+            className={`${styles.MenuCategories} ${styles.MenuCategoriesDesktop}  d-none d-sm-block`}
+            ref={ref}
+          >
             <MenuSelect items={categories} onSelect={handleItemSelect} />
           </div>
         )}
         <span className={`${styles.Divider}`}></span>
         <div className="input-group align-items-center">
-          {size == 'small' && (
-            <span style={{fontSize: '18px', color: '#979797'}} className="ms-3 d-inline-block">
+          {size == "small" && (
+            <span
+              style={{ fontSize: "18px", color: "#979797" }}
+              className="ms-3 d-inline-block"
+            >
               <FontAwesomeIcon icon={faMagnifyingGlass} />
             </span>
-          )
-          }
+          )}
           <input
             type="search"
-            className={`form-control ${styles.FormControl} ${size == 'small' && 'px-2'}`}
+            ref={inputRef}
+            className={`form-control ${styles.FormControl} ${
+              size == "small" && "px-2"
+            }`}
             placeholder="Buscar imágenes"
             aria-label="Buscar imágenes"
             style={{ border: "none" }}
@@ -172,18 +131,18 @@ export default function SearchBar({size}) {
             id="basic-addon1"
             style={{ background: "none", border: "none" }}
           >
-            <AlohaIcon icon={'camera-solid'} size={size == 'small' ? 24 : 30} />
+            <AlohaIcon icon={"camera-solid"} size={size == "small" ? 24 : 30} />
           </span>
-          {size != 'small' && (
+          {size != "small" && (
             <button
               className={`btn btn-primary ${styles.BtnSubmit}`}
               type="button"
               id="button-addon2"
+              onClick={onSubmit}
             >
               <FontAwesomeIcon fontSize={"28px"} icon={faMagnifyingGlass} />
             </button>
-            )
-          }
+          )}
         </div>
       </div>
     </form>
