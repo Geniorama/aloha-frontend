@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
@@ -40,4 +42,30 @@ export const defaultSettingSlider = {
       },
     },
   ],
+};
+
+export const api = process.env.NEXT_PUBLIC_API_URL;
+
+export const request = async (command, options = {}) => {
+  try {
+    const params = {};
+    for (const key in options) {
+      if (options.hasOwnProperty(key)) {
+        const param = `dp_${key}`;
+        params[param] = options[key];
+      }
+    }
+    const response = await axios.post(`${api}`, null, {
+      params: {
+        dp_apikey: process.env.NEXT_PUBLIC_API_KEY,
+        dp_command: command,
+        dp_translate_items: true,
+        dp_lang: "sp",
+        ...params,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.log(error);
+  }
 };
