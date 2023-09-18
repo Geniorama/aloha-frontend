@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "title": "Todas las imágenes",
+    "icon": "picture",
+    "value": "todas"
+  },
+  {
+    "id": 2,
+    "title": "Fotos",
+    "icon": "camera",
+    "value": "fotos"
+  },
+  {
+    "id": 3,
+    "title": "Vectores",
+    "icon": "vector",
+    "value": "vectores"
+  },
+  {
+    "id": 4,
+    "title": "Ilustraciones",
+    "icon": "drawing",
+    "value": "ilustraciones"
+  },
+  {
+    "id": 5,
+    "title": "Videos",
+    "icon": "video",
+    "value": "videos"
+  },
+  {
+    "id": 6,
+    "title": "Música",
+    "icon": "music",
+    "value": "musica"
+  },
+  {
+    "id": 7,
+    "title": "Gratis",
+    "icon": "star",
+    "value": "gratis"
+  },
+  {
+    "id": 8,
+    "title": "Efectos de sonido",
+    "icon": "sound",
+    "value": "efectos-sonido"
+  },
+  {
+    "id": 9,
+    "title": "Buscar por imagen",
+    "icon": "cameraFill",
+    "value": "buscar-imagen"
+  }
+]
