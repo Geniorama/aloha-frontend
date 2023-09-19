@@ -3,8 +3,6 @@ import styles from "./PopularSearches.module.css";
 import { useState } from "react";
 import getKeywoards from "@/services/keywoards.service";
 
-const keywoards = ["navidad", "feliz año nuevo"];
-
 export default function PopularSearches() {
   const [keywoards, setKeywoards] = useState([]);
   useEffect(() => {
