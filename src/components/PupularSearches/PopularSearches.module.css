@@ -1,0 +1,38 @@
+.container {
+  background-color: #222222;
+  padding: 50px 25px;
+}
+.title {
+  font-size: 45px;
+  margin-bottom: 0;
+  color: #FF595A;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+.keywoards {
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px
+}
+.keywoards span {
+  text-decoration: underline;
+}
+@media (min-width: 500px) {
+  .container {
+    padding: 30px;
+  }
+  .title {
+    font-size: 50px;
+  }
+  .keywoards span {
+    font-size: 25px;
+    font-weight: 600;
+  }
+}
+
+@media (min-width: 900px) {
+  .container {
+    padding: 80px;
+  }
+}
