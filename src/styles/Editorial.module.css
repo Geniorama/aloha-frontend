@@ -31,15 +31,16 @@
 
 @media (min-width: 900px) {
   .info {
-    padding: 5em 10em;
-    max-width: 1000px;
+    padding: 5em 7.5em;
+    max-width: 980px;
     margin: auto;
   }
   .info h2 {
-    font-size: 50px;
+    font-size: 60px;
   }
   .categories {
-    max-width: 1200px;
+    max-width: 1500px;
+    padding: 0 40px ;
     margin: auto;
     grid-template-columns: repeat(3, 1fr);
   }

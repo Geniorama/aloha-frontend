@@ -38,4 +38,7 @@
   .card:last-child {
     grid-column: span 1;
   }
+  .card, .card img {
+    height: 500px;
+  }
 }
