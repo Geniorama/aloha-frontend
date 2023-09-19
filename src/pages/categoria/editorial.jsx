@@ -7,7 +7,7 @@ import EditorialItemCard from "@/components/Categories/Editorial/EditorialItemCa
 import PopularSearches from "@/components/PupularSearches/PopularSearches";
 
 const metaData = {
-  title: "Categoría | Fotos",
+  title: "Categoría | Editorial",
 };
 
 export default function EditorialPage() {

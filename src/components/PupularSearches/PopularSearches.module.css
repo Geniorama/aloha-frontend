@@ -35,4 +35,7 @@
   .container {
     padding: 80px;
   }
+  .keywoards {
+    gap: 20px;
+  }
 }
