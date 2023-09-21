@@ -1,0 +1,55 @@
+.content {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-color: white;
+  font-size: 32px;
+  font-weight: bold;
+  text-decoration: none;
+  color: var(--aloha-black);
+  padding: 8px;
+  line-height: 1em;
+  display: flex;
+  align-items: flex-start;
+  transition: 0.3s;
+  max-width: 90%;
+}
+
+.link .top-left {
+  top: 0;
+  left: 0;
+}
+
+.link:hover {
+  background: #efefef;
+  color: var(--aloha-black);
+}
+
+.link svg {
+  transition: 0.3s;
+}
+
+.link:hover svg {
+  background: #efefef;
+  color: var(--aloha-black);
+  transform: translateX(3px) translateY(3px);
+}
+
+.link svg path {
+  transform: 0.3s;
+}
+
+.link:hover svg path {
+  stroke: var(--aloha-coral);
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+}
