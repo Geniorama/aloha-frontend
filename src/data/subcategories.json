@@ -1,0 +1,52 @@
+{
+  "paisaje": [
+    {
+      "image": "/img/category/cat-trabajo.png",
+      "text": "Verano",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-relajado.png",
+      "text": "Invierno",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-paisaje.png",
+      "text": "Otoño",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-flores.png",
+      "text": "Primavera",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-amigos.png",
+      "text": "Flores",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-abstracto.png",
+      "text": "Playa y mar",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-arquitectura.png",
+      "text": "Cielo y espacio",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-background.png",
+      "text": "Bosque",
+      "width": 450,
+      "height": 450
+    }
+  ]
+}
