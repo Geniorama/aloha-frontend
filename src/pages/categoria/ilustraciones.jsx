@@ -7,7 +7,7 @@ import PlanSection from "@/components/PlanSection/PlanSection";
 import PopularAuthors from "@/components/PopularAuthors/PopularAuthors";
 import Slider from "@/components/Slider/Slider";
 import TitleSection from "@/components/TitleSection/TitleSection";
-import categories from "@/data/categories/illustration.json";
+import categories from "@/data/categories";
 import images from "@/data/images.json";
 import styles from "@/styles/Category.module.css";
 
@@ -29,7 +29,7 @@ function Ilustrations() {
           backgroundBlendMode: "multiply",
         }}
       />
-      <Categories title="ilustraciones" categories={categories} />
+      <Categories title="ilustraciones" categories={categories.illustrations} />
       <section className={`${styles.Section}`}>
         <div className="container">
           <TitleSection text={"Colección de ilustraciones."} />

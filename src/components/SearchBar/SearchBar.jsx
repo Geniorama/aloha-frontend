@@ -7,7 +7,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { useState, useEffect, useRef } from "react";
 import MenuSelect from "../MenuSelect/MenuSelect";
-import default_categories from "@/data/categories/default_categories.json";
+import default_categories from "@/data/default_categories";
 import search from "@/services/search.service";
 
 export default function SearchBar({ size }) {
