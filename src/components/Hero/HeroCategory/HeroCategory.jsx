@@ -20,7 +20,9 @@ export default function HeroCategory({
       >
         <div className={styles.Layer} style={layer}></div>
         <div className="container">
-          {title && <h1 className={styles.Title}>{title}</h1>}
+          {title && (
+            <h1 className={`${styles.Title} text-capitalize`}>{title}</h1>
+          )}
 
           {desc && <p className={styles.Desc}>{desc}</p>}
 
