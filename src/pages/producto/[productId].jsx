@@ -24,7 +24,7 @@ const getImage = async (media) => {
     const response = await axios.post(`${api}`, null, {
       params: {
         dp_command: "getMediaData",
-        dp_media_id: media ?? "222637964",
+        dp_media_id: media ?? "7587996",
         dp_translate_items: true,
         dp_lang: "sp",
         dp_apikey: "79a81d2c27320915317994339a8b0589fe45c6ad",
@@ -44,6 +44,7 @@ function ProductPage({ data: product }) {
   });
 
   useEffect(() => {
+    console.log(product);
     if (product) {
       if (!items.series.length)
         getImage(product.series).then((data) => {
@@ -61,7 +62,7 @@ function ProductPage({ data: product }) {
         });
     }
   }, [items, product]);
-  console.log(product);
+
   if (!product) return <div>Cargando...</div>;
   return (
     <Layout metaData={metaData}>
@@ -73,8 +74,8 @@ function ProductPage({ data: product }) {
           <Image
             src={product.url_big}
             className={styles.cover}
-            width={2000}
-            height={2000}
+            width={product.width}
+            height={product.height}
             alt=""
           />
         </div>
@@ -179,23 +180,10 @@ function ProductPage({ data: product }) {
   );
 }
 
-export async function getStaticPaths() {
-  return {
-    paths: [
-      {
-        params: {
-          productId: "222637964",
-        },
-      }, // See the "paths" section below
-    ],
-    fallback: true, // false or "blocking"
-  };
-}
-
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const data = (await getImage()) || {};
 
-  return { props: { data }, revalidate: 1 };
+  return { props: { data } };
 }
 
 export default ProductPage;
