@@ -1,0 +1,21 @@
+.content {
+  padding: 20px 30px;
+}
+.image {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  margin-bottom: 30px;
+}
+
+@media (min-width: 500px) {
+  .content {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 900px) {
+  .content {
+    column-count: 3;
+  }
+}
