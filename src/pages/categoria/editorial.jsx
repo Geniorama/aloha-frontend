@@ -2,7 +2,7 @@ import HeroCategory from "@/components/Hero/HeroCategory/HeroCategory";
 import Layout from "@/components/Layout/Layout";
 import PlanSection from "@/components/PlanSection/PlanSection";
 import styles from "@/styles/Editorial.module.css";
-import categories from "@/data/categories/editorial.json";
+import categories from "@/data/categories";
 import EditorialItemCard from "@/components/Categories/Editorial/EditorialItemCard/EditorialItemCard";
 import PopularSearches from "@/components/PupularSearches/PopularSearches";
 
@@ -38,7 +38,7 @@ export default function EditorialPage() {
         </p>
       </section>
       <section className={styles.categories}>
-        {categories.map((item, index) => (
+        {categories.editorial.map((item, index) => (
           <EditorialItemCard key={index} {...item} />
         ))}
       </section>

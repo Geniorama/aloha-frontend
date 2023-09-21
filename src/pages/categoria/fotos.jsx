@@ -9,15 +9,20 @@ import PlanSection from "@/components/PlanSection/PlanSection";
 import PopularAuthors from "@/components/PopularAuthors/PopularAuthors";
 import Slider from "@/components/Slider/Slider";
 import Categories from "@/components/Categories/Categories";
-import images from "@/data/images.json";
+import images from "@/data/images";
 
-import categories from "@/data/categories/photos";
+import categories from "@/data/categories";
+import { useEffect } from "react";
+import search from "@/services/search.service";
 
 const metaData = {
   title: "Categoría | Fotos",
 };
 
 export default function Fotos() {
+  useEffect(() => {
+    search("", { search_gender: "both" });
+  }, []);
   return (
     <Layout metaData={metaData}>
       <HeroCategory
@@ -31,7 +36,7 @@ export default function Fotos() {
           backgroundBlendMode: "multiply",
         }}
       />
-      <Categories title="fotos" categories={categories} />
+      <Categories title="fotos" categories={categories.photos} />
       <section className={`${styles.Section}`}>
         <div className="container">
           <TitleSection text={"Colección de fotos."} />
