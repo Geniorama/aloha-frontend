@@ -8,12 +8,13 @@ export default function Category({
   image,
   height,
   width,
+  url,
 }) {
   return (
     <div className={styles.category} style={{ height }}>
       <Link
+        href={url}
         className={`${styles.category__link} ${styles[link_position]}`}
-        href={"/"}
       >
         <span className={styles.category__link__text}>{text}</span>
         <span className={styles.category__link__arrow}>
@@ -49,6 +50,7 @@ export default function Category({
         className={styles.category__image}
         width={width}
         height={height}
+        alt=""
       />
     </div>
   );

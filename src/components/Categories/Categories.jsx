@@ -2,14 +2,18 @@ import TitleSection from "../TitleSection/TitleSection";
 import styles from "./Categories.module.css";
 import Category from "./Category/Category";
 
-export default function Categories({ categories, title }) {
+export default function Categories({ categories, title, path }) {
   return (
     <section className={styles.section}>
       <div className="container">
         {title && <TitleSection text={`Categorías de ${title}.`} />}
         <div className={styles.content}>
           {categories.map((category, index) => (
-            <Category key={index} {...category} />
+            <Category
+              key={index}
+              url={`/categoria/${path}/${category.slug}`}
+              {...category}
+            />
           ))}
         </div>
       </div>

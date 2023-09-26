@@ -2,10 +2,10 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "./SubcategoryCard.module.css";
 
-export default function SubcategoryCard({ text, image }) {
+export default function SubcategoryCard({ text, image, url }) {
   return (
     <div className={styles.content}>
-      <Link className={`${styles.link} ${styles["top-left"]}`} href={"/"}>
+      <Link className={`${styles.link} ${styles["top-left"]}`} href={url}>
         <span className={styles.link__text}>{text}</span>
         <span className={styles.link__arrow}>
           <svg
