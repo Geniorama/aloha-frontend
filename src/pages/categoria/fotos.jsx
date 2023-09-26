@@ -36,7 +36,7 @@ export default function Fotos() {
           backgroundBlendMode: "multiply",
         }}
       />
-      <Categories title="fotos" categories={categories.photos} />
+      <Categories title="fotos" path="fotos" categories={categories.photos} />
       <section className={`${styles.Section}`}>
         <div className="container">
           <TitleSection text={"Colección de fotos."} />
