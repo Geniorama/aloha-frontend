@@ -3,12 +3,14 @@
     {
       "image": "/img/category/cat-trabajo.png",
       "text": "Trabajo",
+      "slug": "trabajo",
       "width": 400,
       "height": 458
     },
     {
       "image": "/img/category/cat-relajado.png",
       "text": "Relajado",
+      "slug": "relajado",
       "width": 400,
       "height": 265
     },
@@ -16,6 +18,7 @@
       "image": "/img/category/cat-paisaje.png",
       "link_position": "bottom-right",
       "text": "Paisaje",
+      "slug": "paisaje",
       "width": 400,
       "height": 267
     },
@@ -23,6 +26,7 @@
       "image": "/img/category/cat-flores.png",
       "link_position": "bottom-right",
       "text": "Flores",
+      "slug": "flores",
       "width": 280,
       "height": 249
     },
@@ -30,12 +34,14 @@
       "image": "/img/category/cat-amigos.png",
       "link_position": "bottom-right",
       "text": "Amigos",
+      "slug": "amigos",
       "width": 280,
       "height": 418
     },
     {
       "image": "/img/category/cat-abstracto.png",
       "text": "Abstracto",
+      "slug": "abstracto",
       "width": 280,
       "height": 323
     },
@@ -43,12 +49,14 @@
       "image": "/img/category/cat-arquitectura.png",
       "link_position": "bottom-right",
       "text": "Arquitectura",
+      "slug": "arquitectura",
       "width": 376,
       "height": 355
     },
     {
       "image": "/img/category/cat-background.png",
       "text": "Backgrounds",
+      "slug": "backgrounds",
       "width": 376,
       "height": 368
     },
@@ -56,6 +64,7 @@
       "image": "/img/category/cat-comida.png",
       "link_position": "bottom-right",
       "text": "Comida",
+      "slug": "comida",
       "width": 376,
       "height": 267
     }
@@ -64,12 +73,14 @@
     {
       "image": "https://images.unsplash.com/photo-1584446922448-efd3351dad71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1914&q=80",
       "text": "Cartoons",
+      "slug": "cartoons",
       "width": 400,
       "height": 458
     },
     {
       "image": "https://images.unsplash.com/photo-1584446922448-efd3351dad71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1914&q=80",
       "text": "Arte clasico",
+      "slug": "arte clasico",
       "width": 400,
       "height": 265
     },

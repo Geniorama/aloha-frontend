@@ -3,6 +3,7 @@
     {
       "image": "/img/category/cat-trabajo.png",
       "text": "Verano",
+      "slug": "verano",
       "width": 450,
       "height": 450
     },
