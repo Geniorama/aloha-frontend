@@ -3,6 +3,7 @@ import Layout from "@/components/Layout/Layout";
 import ProductChooseItem from "@/components/Product/ProductChooseItem/ProductChooseItem";
 import ProductChooseSize from "@/components/Product/ProductChooseSize/ProductChooseSize";
 import { api } from "@/helpers/helpers";
+import getMediaData from "@/services/product.service";
 import styles from "@/styles/Product.module.css";
 import {
   faArrowRight,
@@ -44,7 +45,6 @@ function ProductPage({ data: product }) {
   });
 
   useEffect(() => {
-    console.log(product);
     if (product) {
       if (!items.series.length)
         getImage(product.series).then((data) => {
@@ -134,11 +134,12 @@ function ProductPage({ data: product }) {
         <div className="mt-5 mt-lg-0">
           <h5 className="mb-4">Palabras clave</h5>
           <div className={styles.tags}>
-            {product.tags.map((tag) => (
-              <span key={tag} className={styles.tag}>
-                {tag}
-              </span>
-            ))}
+            {product.tags &&
+              product.tags.map((tag) => (
+                <span key={tag} className={styles.tag}>
+                  {tag}
+                </span>
+              ))}
           </div>
         </div>
       </section>
@@ -180,10 +181,14 @@ function ProductPage({ data: product }) {
   );
 }
 
-export async function getServerSideProps() {
-  const data = (await getImage()) || {};
-
-  return { props: { data } };
+export async function getServerSideProps({ params }) {
+  try {
+    const query = params.productId || "";
+    const data = (await getMediaData(query)) || {};
+    return { props: { data } };
+  } catch (error) {
+    return { props: {} };
+  }
 }
 
 export default ProductPage;
