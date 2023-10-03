@@ -19,10 +19,10 @@ function Subcatgory({ items = [], subcategory }) {
   return (
     <Layout metaData={{ title: `Subcategoría | ${subcategory}` }}>
       <HeroCategory
-        background="/img/category/bg_fotos.jpg"
+        background="/img/category/bg_subcat_naturaleza.png"
         search={true}
         title={subcategory}
-        desc="La magia en cada imagen"
+        desc=" "
         layer={{
           background:
             "linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0.3) 49%, rgba(0,0,0,0) 100%)",
