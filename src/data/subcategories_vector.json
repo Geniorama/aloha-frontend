@@ -1,0 +1,60 @@
+{
+  "stock-vector": [
+    {
+      "image": "/img/category/cat-trabajo.png",
+      "text": "Fondos",
+      "slug": "fondos",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-flores.png",
+      "text": "Patrones",
+      "slug": "patrones",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-abstracto.png",
+      "text": "Texturas",
+      "slug": "texturas",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-relajado.png",
+      "text": "Abstracto",
+      "slug": "abstracto",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-amigos.png",
+      "text": "Líneas",
+      "slug": "lineas",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-abstracto.png",
+      "text": "Fluido",
+      "slug": "fluido",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-abstracto.png",
+      "text": "Curvas",
+      "slug": "curvas",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-paisaje.png",
+      "text": "Dinámico",
+      "slug": "dinamico",
+      "width": 450,
+      "height": 450
+    }
+  ]
+}
