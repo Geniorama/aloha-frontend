@@ -7,16 +7,16 @@ export default function FilterOptions() {
     <section className={styles.FilterOptions}>
       <div className="container py-5 border-top">
         <div className="row">
-          <div className="col-lg-6">
+          <div className="col-12 col-lg-6">
             <SearchFilter />
           </div>
-          <div className="col-lg-6 d-flex gap-2 align-items-center justify-content-end">
+          <div className="col-6 col-lg-6 d-flex gap-2 align-items-center justify-content-end">
             <span>Ordenar por</span>
             <select name="" id="">
               <option value="">Más relevante</option>
             </select>
           </div>
-          <div className="col-lg-12">
+          <div className="col-6 col-lg-12">
             <FilterOptionsTags />
           </div>
         </div>
