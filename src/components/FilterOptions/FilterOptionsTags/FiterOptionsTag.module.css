@@ -1,0 +1,33 @@
+.FilterOptionsTag {
+  position: relative;
+}
+.FilterOptionsTag span{
+  font-weight: 600;
+  font-size: 14px;
+}
+.Header {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 10px;
+  border: 2px solid #EFEFEF;
+  background-color: #FAFAFA;
+  cursor: pointer;
+  width: 100%;
+}
+@media (min-width: 900px) {
+  .Items {
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.29);
+  }
+  .ItemsContentSizeBig {
+    width: 800px;
+  }
+  .ItemsContentSizeNormal {
+    width: 440px;
+  }
+}
