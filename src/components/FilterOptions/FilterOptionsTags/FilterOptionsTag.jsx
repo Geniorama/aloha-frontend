@@ -4,12 +4,6 @@ import styles from "./FiterOptionsTag.module.css";
 import Chevrondown from "../../../../public/icons/Chevron-down.svg";
 import FilterOptionsTagItems from "./FilterOptionsTag/FilterOptionsTagItems";
 
-const alignStyles = {
-  left: { left: "0" },
-  center: { left: "50%", transform: "translate(-50%,0)" },
-  right: { right: "0" },
-};
-
 export default function FilterOptionsTag({
   icon,
   label,
@@ -34,12 +28,7 @@ export default function FilterOptionsTag({
                 ? "ItemsContentSizeBig"
                 : "ItemsContentSizeNormal"
             ]
-          } p-4 mt-2`}
-          style={{
-            "@maida (minWidth: 900px)": {
-              ...alignStyles[align],
-            },
-          }}
+          } ${styles[`ItemPosition-${align}`]} p-4 mt-2`}
         >
           {items.length ? (
             <FilterOptionsTagItems items={items} />

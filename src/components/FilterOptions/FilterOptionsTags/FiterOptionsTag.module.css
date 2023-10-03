@@ -30,4 +30,14 @@
   .ItemsContentSizeNormal {
     width: 440px;
   }
+  .ItemPosition-left {
+    left: 0
+  }
+  .ItemPosition-center {
+    left: 50%;
+    transform: translate(-50%,0) 
+  }
+  .ItemPosition-right {
+    right: 0
+  }
 }
