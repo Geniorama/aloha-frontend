@@ -1,0 +1,60 @@
+{
+  "moderno": [
+    {
+      "image": "/img/category/cat-trabajo.png",
+      "text": "Ciberpunk",
+      "slug": "ciberpunk",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-flores.png",
+      "text": "Urbano",
+      "slug": "urbano",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-abstracto.png",
+      "text": "Personajes",
+      "slug": "personajes",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-relajado.png",
+      "text": "Gente",
+      "slug": "gente",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-amigos.png",
+      "text": "Fantasía",
+      "slug": "fantasia",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-abstracto.png",
+      "text": "Naturaleza",
+      "slug": "naturaleza",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-paisaje.png",
+      "text": "Animales",
+      "slug": "animales",
+      "width": 450,
+      "height": 450
+    },
+    {
+      "image": "/img/category/cat-abstracto.png",
+      "text": "Industrial",
+      "slug": "industrial",
+      "width": 450,
+      "height": 450
+    }
+  ]
+}
