@@ -1,0 +1,15 @@
+.SearchFilter {
+  background-color: #F6F6F6;
+  border: 1px solid #EFEFEF;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.SearchFilter input {
+  background: none;
+  border: none;
+  outline: none;
+  width: calc(100% - 35px);
+}
