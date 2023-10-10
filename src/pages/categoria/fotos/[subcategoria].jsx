@@ -31,11 +31,14 @@ function Subcatgory({ items = [], subcategory }) {
       />
       <section className="container p-5">
         <div className="row">
-          {items.map((item, index) => (
-            <div key={index} className="col-4">
-              <SubcategoryCard url={`/search/fotos/${item.slug}`} {...item} />
-            </div>
-          ))}
+          {items.map((item, index) => {
+            const query = item.text ? item.text.toLowerCase() : "";
+            return (
+              <div key={index} className="col-4">
+                <SubcategoryCard url={`/search/fotos/${query}`} {...item} />
+              </div>
+            );
+          })}
         </div>
       </section>
     </Layout>
