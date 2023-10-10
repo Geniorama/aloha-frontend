@@ -1,45 +1,22 @@
 import Image from "next/image";
 import styles from "./GirdGallery.module.css";
+import Link from "next/link";
 
-const images = [
-  {
-    source: "/img/category/bg_fotos.jpg",
-    height: 400,
-  },
-  {
-    source: "/img/category/bg_fotos.jpg",
-    height: 200,
-  },
-  {
-    source: "/img/category/bg_fotos.jpg",
-    height: 400,
-  },
-  {
-    source: "/img/category/bg_fotos.jpg",
-    height: 200,
-  },
-  {
-    source: "/img/category/bg_fotos.jpg",
-    height: 400,
-  },
-  {
-    source: "/img/category/bg_fotos.jpg",
-    height: 200,
-  },
-];
-
-export default function GridGallery() {
+export default function GridGallery({ images = [] }) {
   return (
     <div className={`container ${styles.GridGallery}`}>
       {images.map((image, index) => (
-        <Image
-          key={index}
-          src={image.source}
-          className={styles.Image}
-          width={200}
-          height={image.height}
-          alt=""
-        />
+        <Link key={image.id} href={`/producto/${image.id}`}>
+          <Image
+            key={index}
+            src={image.url_big}
+            className={styles.Image}
+            width={1000}
+            quality={100}
+            height={image.height * 0.1 < 600 ? image.height * 0.1 : 500}
+            alt=""
+          />
+        </Link>
       ))}
     </div>
   );
