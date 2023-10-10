@@ -1,0 +1,129 @@
+.section {
+  min-height: 100vh;
+  background-image: url("../../public/img/signin/bg-signin.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.logo {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  max-width: 675px;
+  margin: auto;
+  min-height: 100vh;
+  padding: 4rem 8rem;
+  background-color: white;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.description {
+  font-size: 0.9rem;
+}
+
+.loginButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.buttonGoogle {
+  padding: 18px 45px;
+  background-color: black;
+  color: white;
+  font-size: 1rem;
+  line-height: 0;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.buttonFacebook {
+  background-color: #1977f3;
+  border: 0;
+  padding: 12px;
+}
+
+.buttonFacebook img {
+  height: 32px;
+  width: 32px;
+}
+
+.separador {
+  margin: 40px 0;
+  width: 100%;
+  text-align: center;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.separador::before,
+.separador::after {
+  content: "";
+  width: 100%;
+  max-width: 112px;
+  height: 1px;
+  background-color: #dfdfdf;
+}
+
+.formLogin {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.formLabel {
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.formInput {
+  padding: 18px 24px;
+  font-size: 18px;
+  font-weight: 500;
+  border: solid 2px #cecece;
+  border-radius: 4px;
+}
+
+.formInput::placeholder {
+  color: #cecece;
+}
+
+.formContentLabels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+}
+
+.formRememberPass {
+  color: #ff595a;
+  text-decoration: underline;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.registrate {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.registrate span {
+  color: #1a01a6;
+  font-weight: 600;
+}
