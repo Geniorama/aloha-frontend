@@ -100,8 +100,8 @@ function ProductPage({ data: product }) {
           </Link>
           <div>
             <h6>Colaborador</h6>
-            <Link href="#">
-              <span>Paul Steven</span>
+            <Link href={`/autor/${product.username}`}>
+              <span>{product.username}</span>
               <FontAwesomeIcon
                 icon={faArrowRight}
                 className={styles.info__arrowIcon}
@@ -135,10 +135,16 @@ function ProductPage({ data: product }) {
           <h5 className="mb-4">Palabras clave</h5>
           <div className={styles.tags}>
             {product.tags &&
-              product.tags.map((tag) => (
-                <span key={tag} className={styles.tag}>
-                  {tag}
-                </span>
+              product.tags.slice(0, 15).map((tag) => (
+                <Link
+                  key={tag}
+                  href={`/search/${tag}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <span key={tag} className={styles.tag}>
+                    {tag}
+                  </span>
+                </Link>
               ))}
           </div>
         </div>
@@ -147,13 +153,15 @@ function ProductPage({ data: product }) {
         <h5 className={styles.gallery__title}>Misma serie:</h5>
         <div className={styles.gallery}>
           {items.series.map((serie) => (
-            <Image
-              key={serie.id}
-              src={serie.large_thumb}
-              width={2000}
-              height={2000}
-              alt=""
-            />
+            <Link key={serie.id} href={`/producto/${serie.id}`}>
+              <Image
+                key={serie.id}
+                src={serie.large_thumb}
+                width={2000}
+                height={2000}
+                alt=""
+              />
+            </Link>
           ))}
         </div>
         <button className={styles.button_small}>
@@ -164,13 +172,15 @@ function ProductPage({ data: product }) {
         <h5 className={styles.gallery__title}>Imágenes similares:</h5>
         <div className={styles.gallery}>
           {items.similar.map((similar) => (
-            <Image
-              key={similar.id}
-              src={similar.large_thumb}
-              width={2000}
-              height={2000}
-              alt=""
-            />
+            <Link key={similar.id} href={`/producto/${similar.id}`}>
+              <Image
+                key={similar.id}
+                src={similar.large_thumb}
+                width={2000}
+                height={2000}
+                alt=""
+              />
+            </Link>
           ))}
         </div>
         <button className={styles.button_small}>
