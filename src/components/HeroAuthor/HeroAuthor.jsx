@@ -2,14 +2,14 @@ import Image from "next/image";
 import styles from "./HeroAuthor.module.css";
 import ButtonLink from "../ButtonLink/ButtonLink";
 
-export default function HeroAuthor() {
+export default function HeroAuthor({ author }) {
   return (
     <section className={styles.hero}>
       <div className="container">
         <div className="row">
           <div className="col-12 col-md-3 col-lg-2 d-flex justify-content-center align-items-center mb-4 mb-md-0">
             <Image
-              src="/img/author/author.png"
+              src={author.avatar}
               alt="author-avatar"
               className={styles.image}
               quality={100}
@@ -18,7 +18,7 @@ export default function HeroAuthor() {
             />
           </div>
           <div className="col-12 col-md-9 col-lg-7 d-flex flex-column justify-content-center align-items-md-start text-center text-md-start">
-            <h1 className="fw-bold">Wavebreak Premium.</h1>
+            <h1 className="fw-bold">{author.username}</h1>
             <p>
               Our teams are constantly creating, coding and collaborating so we
               can bring you the very best in premium photography, authentic
