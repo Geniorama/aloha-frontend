@@ -1,0 +1,13 @@
+.GridGallery {
+  column-count: 2;
+}
+.Image {
+  width: 100%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+@media (min-width: 900px) {
+  .GridGallery {
+    column-count: 3;
+  }
+}

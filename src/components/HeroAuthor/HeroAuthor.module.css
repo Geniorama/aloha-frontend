@@ -8,7 +8,9 @@
   color: #FF595A;
   font-weight: 800;
 }
-
+.image {
+  border-radius: 50%;
+}
 @media (min-width: 900px) {
   
 }

@@ -93,13 +93,24 @@ export default function FilterOptionsTags() {
         <FilterOptionsTag
           icon={Location}
           label="Ubicación"
-          align="right"
+          align="center"
           items={[{ items: ["Interior", "Exterior"] }]}
         />
         <FilterOptionsTag
           icon={Season}
           label="Estación y hora del día"
-        ></FilterOptionsTag>
+          align="right"
+          items={[
+            {
+              label: "Estación",
+              items: ["Primavera", "Verano", "Otoño", "Invierno"],
+            },
+            {
+              label: "Hora del día",
+              items: ["Mañana", "Amanecer", "Tarde", "Atardecer", "Noche"],
+            },
+          ]}
+        />
       </div>
     </div>
   );
