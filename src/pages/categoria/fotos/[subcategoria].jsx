@@ -35,7 +35,7 @@ function Subcatgory({ items = [], subcategory }) {
             const query = item.text ? item.text.toLowerCase() : "";
             return (
               <div key={index} className="col-4">
-                <SubcategoryCard url={`/search/fotos/${query}`} {...item} />
+                <SubcategoryCard url={`/search/${query}`} {...item} />
               </div>
             );
           })}
