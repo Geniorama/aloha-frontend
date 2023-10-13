@@ -6,14 +6,14 @@ export default function GridGallery({ images = [] }) {
   const getOrientation = (image) => {
     const sizes = {
       horizontal: {
-        width: 400,
+        width: 1000,
         height: 250,
       },
       vertical: {
-        width: 250,
-        height: 500,
+        width: 1000,
+        height: 450,
       },
-      square: { width: 400, height: 400 },
+      square: { width: 1000, height: 400 },
     };
     if (parseInt(image.width) > parseInt(image.height)) return sizes.horizontal;
     if (parseInt(image.width) === parseInt(image.height)) return sizes.square;
