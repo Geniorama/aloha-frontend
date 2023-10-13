@@ -32,12 +32,12 @@
 
     {
         "text": "Videos",
-        "path": "/"
+        "path": "/categoria/videos"
     },
 
     {
         "text": "Editorial",
-        "path": "/"
+        "path": "/categoria/editorial"
     },
 
     {
