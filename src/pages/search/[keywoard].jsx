@@ -1,9 +1,6 @@
 import GridGallery from "@/components/GridGallery/GridGallery";
 import Layout from "@/components/Layout/Layout";
 import search from "@/services/search.service";
-import styles from "@/styles/Search.module.css";
-import Image from "next/image";
-import Link from "next/link";
 
 const metaData = {
   title: "Resultado",
