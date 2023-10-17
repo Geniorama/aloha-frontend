@@ -481,7 +481,6 @@ export default function Home() {
       <div className="container-fluid">
         <HeroSearch />
       </div>
-
       {/* Section - Categorías */}
       <section className={`${styles.Section}`}>
         <div className="container">
