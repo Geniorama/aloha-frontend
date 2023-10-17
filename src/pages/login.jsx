@@ -2,6 +2,7 @@ import { loginAsUser } from "@/services/user.service";
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { deleteCookie } from "cookies-next";
+import styles from "@/styles/Login.module.css";
 
 function Login() {
   const { register, handleSubmit } = useForm();
@@ -11,41 +12,30 @@ function Login() {
   }, []);
   const onSubmit = (data) => loginAsUser(data.email, data.password);
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <h2>Iniciar secion</h2>
-        <div>
-          <input placeholder="Correo electronico" {...register("email")} />
+    <div className={styles.Container}>
+      <div className={styles.Content}>
+        <h2>Iniciar sesión en Aloha</h2>
+        <span>Ingresa a tu sesión con alguna de estas opciones</span>
+        <div className={styles.SocialButton}>
+          <button className={styles.GoogleButton}>Continuar con Google</button>
+          <button className={styles.FacebookButton}>F</button>
         </div>
-        <div>
-          <input
-            placeholder="Contraseña"
-            type="password"
-            {...register("password")}
-          />
+        <div className={styles.Form}>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div>
+              <input placeholder="Correo electronico" {...register("email")} />
+            </div>
+            <div>
+              <input
+                placeholder="Contraseña"
+                type="password"
+                {...register("password")}
+              />
+            </div>
+            <button type="submit">Ingresar</button>
+          </form>
         </div>
-        <button type="submit">Entrar</button>
-      </form>
-      <style jsx>{`
-        .container {
-          max-width: 400px;
-          height: 100vh;
-          margin: auto;
-          display: flex;
-          align-items: center;
-        }
-        form,
-        input,
-        button {
-          width: 100%;
-        }
-        input,
-        button {
-          padding: 10px;
-          border-radius: 5px;
-          margin-bottom: 4px;
-        }
-      `}</style>
+      </div>
     </div>
   );
 }
