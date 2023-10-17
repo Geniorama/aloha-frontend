@@ -673,7 +673,7 @@ export default function Home() {
       </section>
 
       {/* Section - Fotos gratis */}
-      <section className={`${styles.Section} pt-0`}>
+      {/* <section className={`${styles.Section} pt-0`}>
         <div className="container">
           <TitleSection text="Fotos gratis." color={"black"} />
           <div style={{ marginLeft: "35%" }} className="ps-5 ps-lg-0">
@@ -685,7 +685,6 @@ export default function Home() {
             />
           </div>
         </div>
-        {/* Slider */}
         <div>
           <Slider {...settings}>
             <div className={styles.SlideItem}>
@@ -708,7 +707,7 @@ export default function Home() {
             </div>
           </Slider>
         </div>
-      </section>
+      </section> */}
 
       {/* Section - Regístrate */}
       <section className={`${styles.SectionSignup} ${styles.Section}`}>
