@@ -84,12 +84,12 @@ const Header = () => {
         <div className={styles.menusecond}>
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link" href="/">
+              <Link className="nav-link" href="/signup">
                 Registrarme
               </Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" href="/">
+              <Link className="nav-link" href="/signin">
                 Iniciar sesión
                 <svg
                   width="16"
@@ -197,7 +197,7 @@ const Header = () => {
 
               <div className="d-none d-sm-block px-4 my-4">
                 <Link
-                  href={"/"}
+                  href={"/signup"}
                   style={{
                     fontSize: "24px",
                     color: "var(--aloha-blue)",
@@ -212,12 +212,17 @@ const Header = () => {
                 >
                   |
                 </span>
-                <ButtonLink text={"Iniciar sesión"} color={"blue"} size={"l"} />
+                <ButtonLink
+                  href="/signin"
+                  text={"Iniciar sesión"}
+                  color={"blue"}
+                  size={"l"}
+                />
               </div>
 
               <div className="d-sm-none px-4 my-4">
                 <Link
-                  href={"/"}
+                  href={"/signup"}
                   style={{
                     fontSize: "18px",
                     color: "var(--aloha-blue)",
@@ -232,7 +237,12 @@ const Header = () => {
                 >
                   |
                 </span>
-                <ButtonLink text={"Iniciar sesión"} color={"blue"} size={"m"} />
+                <ButtonLink
+                  href="/signin"
+                  text={"Iniciar sesión"}
+                  color={"blue"}
+                  size={"m"}
+                />
               </div>
             </div>
           </Collapse>
