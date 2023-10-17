@@ -7,6 +7,11 @@ import ButtonLink from "@/components/ButtonLink/ButtonLink";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import GalleryExample from "../../public/img/home/image 110.png";
+import GalleryExample1 from "../../public/img/home/image 105.png";
+import GalleryExample2 from "../../public/img/home/image 104.png";
+import GalleryExample3 from "../../public/img/home/image 102.png";
+import GalleryExample4 from "../../public/img/home/image 111.png";
+import GalleryExample5 from "../../public/img/home/image 109.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -572,7 +577,7 @@ export default function Home() {
 
             <div className={styles.GridPopular__item}>
               <Image
-                src={GalleryExample}
+                src={GalleryExample4}
                 fill
                 style={{ objectFit: "cover" }}
                 alt=""
@@ -581,7 +586,7 @@ export default function Home() {
 
             <div className={styles.GridPopular__item}>
               <Image
-                src={GalleryExample}
+                src={GalleryExample5}
                 fill
                 style={{ objectFit: "cover" }}
                 alt=""
@@ -590,7 +595,7 @@ export default function Home() {
 
             <div className={styles.GridPopular__item}>
               <Image
-                src={GalleryExample}
+                src={GalleryExample1}
                 fill
                 style={{ objectFit: "cover" }}
                 alt=""
@@ -599,7 +604,7 @@ export default function Home() {
 
             <div className={styles.GridPopular__item}>
               <Image
-                src={GalleryExample}
+                src={GalleryExample3}
                 fill
                 style={{ objectFit: "cover" }}
                 alt=""
@@ -607,7 +612,12 @@ export default function Home() {
             </div>
 
             <div className={styles.GridPopular__item}>
-              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} />
+              <Image
+                src={GalleryExample2}
+                fill
+                style={{ objectFit: "cover" }}
+                alt=""
+              />
             </div>
           </div>
         </div>
