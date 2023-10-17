@@ -161,7 +161,6 @@
 @media (min-width: 900px) {
   .cover {
     height: 460px;
-    width: 100%;
   }
   .info__container {
     grid-template-columns: repeat(6, 1fr);

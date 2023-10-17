@@ -66,16 +66,18 @@ function ProductPage({ data: product }) {
   if (!product) return <div>Cargando...</div>;
   return (
     <Layout metaData={metaData}>
-      <section className="container px-4">
+      <section className="container px-5">
         <h2 className={styles.title}>{product.title} </h2>
       </section>
-      <section className={`container px-4 ${styles.info__container}`}>
+      <section className={`container px-5 ${styles.info__container}`}>
         <div className={styles.hero}>
           <Image
             src={product.url_big}
             className={styles.cover}
-            width={product.width}
-            height={product.height}
+            width={1000}
+            height={1000}
+            quality={100}
+            style={{ objectFit: "cover", objectPosition: "center" }}
             alt=""
           />
         </div>
@@ -157,8 +159,10 @@ function ProductPage({ data: product }) {
               <Image
                 key={serie.id}
                 src={serie.large_thumb}
-                width={2000}
-                height={2000}
+                width={400}
+                height={400}
+                quality={100}
+                objectFit="cover"
                 alt=""
               />
             </Link>
@@ -176,8 +180,9 @@ function ProductPage({ data: product }) {
               <Image
                 key={similar.id}
                 src={similar.large_thumb}
-                width={2000}
-                height={2000}
+                width={400}
+                height={400}
+                quality={100}
                 alt=""
               />
             </Link>

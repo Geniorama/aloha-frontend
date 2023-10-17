@@ -9,6 +9,7 @@ export default function CardCategory({
   text,
   image,
   height,
+  url = "",
 }) {
   return (
     <div
@@ -16,8 +17,8 @@ export default function CardCategory({
       style={{ height: height && height }}
     >
       <Link
-        href={"/"}
         className={`${styles.CardCategory__link} ${styles[link_position]}`}
+        href={url}
       >
         <span className={styles.CardCategory__link__text}>{text}</span>
         <span className={styles.CardCategory__link__arrow}>

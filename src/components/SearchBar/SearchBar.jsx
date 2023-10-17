@@ -8,10 +8,11 @@ import {
 import { useState, useEffect, useRef } from "react";
 import MenuSelect from "../MenuSelect/MenuSelect";
 import default_categories from "@/data/default_categories";
-import search from "@/services/search.service";
+import { useRouter } from "next/router";
 
 export default function SearchBar({ size }) {
   const [categories] = useState(default_categories);
+  const router = useRouter();
 
   const [openMenu, setOpenMenu] = useState(false);
   const [searchCat, setSearchCat] = useState(categories[0]);
@@ -31,9 +32,7 @@ export default function SearchBar({ size }) {
     };
 
     const handleEscapeKey = (event) => {
-      if (event.key === "Escape") {
-        setOpenMenu(false);
-      }
+      if (event.key === "Escape") setOpenMenu(false);
     };
 
     document.addEventListener("mousedown", handleClickOutside);
@@ -57,7 +56,7 @@ export default function SearchBar({ size }) {
     setOpenMenu(false);
   };
 
-  const onSubmit = async () => search(inputRef.current.value);
+  const onSubmit = async () => router.push(`/search/${inputRef.current.value}`);
 
   return (
     <form

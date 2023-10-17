@@ -30,7 +30,7 @@ import {
   faChevronRight,
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 import Link from "next/link";
 import Tabs from "@/components/Tabs/Tabs";
 import CardPlan from "@/components/CardPlan/CardPlan";
@@ -119,402 +119,422 @@ export default function Home() {
 
   const planes = [
     {
-      id: 'fotos-vectores-suscripcion',
-      name: 'Suscripción',
+      id: "fotos-vectores-suscripcion",
+      name: "Suscripción",
       category: [
         {
-          name: 'Fotos y vectores',
-          slug: 'fotos-y-vectores'
-        }
+          name: "Fotos y vectores",
+          slug: "fotos-y-vectores",
+        },
       ],
       type: [
         {
-          id: 'pago-anual',
-          name: 'Pago anual',
+          id: "pago-anual",
+          name: "Pago anual",
           subitems: [
             {
-              name: '10 imágenes',
-              small: 'mes',
+              name: "10 imágenes",
+              small: "mes",
               price: 8.99,
-              price_per_item: 0.90,
-              small_per_item: 'por imagen',
+              price_per_item: 0.9,
+              small_per_item: "por imagen",
             },
 
             {
-              name: '75 imágenes',
-              small: 'mes',
+              name: "75 imágenes",
+              small: "mes",
               price: 59,
               price_per_item: 0.79,
-              small_per_item: 'por imagen',
+              small_per_item: "por imagen",
             },
 
             {
-              name: '150 imágenes',
-              small: 'mes',
+              name: "150 imágenes",
+              small: "mes",
               price: 89,
               price_per_item: 0.59,
-              small_per_item: 'por imagen',
+              small_per_item: "por imagen",
             },
 
             {
-              name: '750 imágenes',
-              small: 'mes',
+              name: "750 imágenes",
+              small: "mes",
               price: 169,
               price_per_item: 0.23,
-              small_per_item: 'por imagen',
+              small_per_item: "por imagen",
             },
-          ]
+          ],
         },
 
         {
           id: 2,
-          name: 'Pago mensual',
+          name: "Pago mensual",
           subitems: [
             {
-              name: '10 imágenes',
-              small: 'mes',
+              name: "10 imágenes",
+              small: "mes",
               price: 8.99,
-              price_per_item: 0.90,
-              small_per_item: 'por imagen',
+              price_per_item: 0.9,
+              small_per_item: "por imagen",
             },
 
             {
-              name: '75 imágenes',
-              small: 'mes',
+              name: "75 imágenes",
+              small: "mes",
               price: 59,
               price_per_item: 0.79,
-              small_per_item: 'por imagen',
+              small_per_item: "por imagen",
             },
 
             {
-              name: '150 imágenes',
-              small: 'mes',
+              name: "150 imágenes",
+              small: "mes",
               price: 89,
               price_per_item: 0.59,
-              small_per_item: 'por imagen',
+              small_per_item: "por imagen",
             },
 
             {
-              name: '750 imágenes',
-              small: 'mes',
+              name: "750 imágenes",
+              small: "mes",
               price: 169,
               price_per_item: 0.23,
-              small_per_item: 'por imagen',
+              small_per_item: "por imagen",
             },
-          ]
-        }
-      ]
+          ],
+        },
+      ],
     },
 
     {
-      id: 'fotos-vectores-prepago',
-      name: 'Prepago',
+      id: "fotos-vectores-prepago",
+      name: "Prepago",
       category: [
         {
-          name: 'Fotos y vectores',
-          slug: 'fotos-y-vectores'
-        }
+          name: "Fotos y vectores",
+          slug: "fotos-y-vectores",
+        },
       ],
       type: [
         {
           id: 1,
-          name: 'Pago anual',
+          name: "Pago anual",
           subitems: [
             {
-              name: '3 imágenes',
-              small: 'mes',
+              name: "3 imágenes",
+              small: "mes",
               price: 42,
               price_per_item: 14,
-              small_per_item: 'por imagen',
+              small_per_item: "por imagen",
             },
 
             {
-              name: '10 imágenes',
-              small: 'mes',
+              name: "10 imágenes",
+              small: "mes",
               price: 49,
-              price_per_item: 4.90,
-              small_per_item: 'por imagen',
+              price_per_item: 4.9,
+              small_per_item: "por imagen",
             },
 
             {
-              name: '25 imágenes',
-              small: 'mes',
+              name: "25 imágenes",
+              small: "mes",
               price: 99,
               price_per_item: 3.96,
-              small_per_item: 'por imagen',
+              small_per_item: "por imagen",
             },
 
             {
-              name: '25 imágenes',
-              small: 'mes',
+              name: "25 imágenes",
+              small: "mes",
               price: 299,
               price_per_item: 2.99,
-              small_per_item: 'por imagen',
-            }
-          ]
+              small_per_item: "por imagen",
+            },
+          ],
         },
 
         {
           id: 2,
-          name: 'Pago mensual',
+          name: "Pago mensual",
           subitems: [
             {
-              name: '10 imágenes',
-              small: 'mes',
+              name: "10 imágenes",
+              small: "mes",
               price: 8.99,
-              price_per_item: 0.90,
-              small_per_item: 'por imagen',
+              price_per_item: 0.9,
+              small_per_item: "por imagen",
             },
 
             {
-              name: '75 imágenes',
-              small: 'mes',
+              name: "75 imágenes",
+              small: "mes",
               price: 59,
               price_per_item: 0.79,
-              small_per_item: 'por imagen',
-            }
-          ]
-        }
-      ]
+              small_per_item: "por imagen",
+            },
+          ],
+        },
+      ],
     },
 
     {
       id: 3,
-      name: 'Suscripción',
+      name: "Suscripción",
       category: [
         {
-          name: 'Videos',
-          slug: 'videos'
-        }
+          name: "Videos",
+          slug: "videos",
+        },
       ],
       type: [
         {
           id: 1,
-          name: 'Pago anual',
+          name: "Pago anual",
           subitems: [
             {
-              name: '10 videos',
-              small: 'mes',
+              name: "10 videos",
+              small: "mes",
               price: 8.99,
-              price_per_item: 0.90,
-              small_per_item: 'por video',
+              price_per_item: 0.9,
+              small_per_item: "por video",
             },
 
             {
-              name: '75 videos',
-              small: 'mes',
+              name: "75 videos",
+              small: "mes",
               price: 59,
               price_per_item: 0.79,
-              small_per_item: 'por video',
+              small_per_item: "por video",
             },
 
             {
-              name: '150 videos',
-              small: 'mes',
+              name: "150 videos",
+              small: "mes",
               price: 89,
               price_per_item: 0.59,
-              small_per_item: 'por video',
+              small_per_item: "por video",
             },
 
             {
-              name: '750 videos',
-              small: 'mes',
+              name: "750 videos",
+              small: "mes",
               price: 169,
               price_per_item: 0.23,
-              small_per_item: 'por video',
+              small_per_item: "por video",
             },
-          ]
+          ],
         },
 
         {
           id: 2,
-          name: 'Pago mensual',
+          name: "Pago mensual",
           subitems: [
             {
-              name: '10 videos',
-              small: 'mes',
+              name: "10 videos",
+              small: "mes",
               price: 8.99,
-              price_per_item: 0.90,
-              small_per_item: 'por video',
+              price_per_item: 0.9,
+              small_per_item: "por video",
             },
 
             {
-              name: '75 videos',
-              small: 'mes',
+              name: "75 videos",
+              small: "mes",
               price: 59,
               price_per_item: 0.79,
-              small_per_item: 'por video',
+              small_per_item: "por video",
             },
 
             {
-              name: '150 videos',
-              small: 'mes',
+              name: "150 videos",
+              small: "mes",
               price: 89,
               price_per_item: 0.59,
-              small_per_item: 'por video',
+              small_per_item: "por video",
             },
 
             {
-              name: '750 videos',
-              small: 'mes',
+              name: "750 videos",
+              small: "mes",
               price: 169,
               price_per_item: 0.23,
-              small_per_item: 'por video',
+              small_per_item: "por video",
             },
-          ]
-        }
-      ]
+          ],
+        },
+      ],
     },
 
     {
       id: 2,
-      name: 'Prepago',
+      name: "Prepago",
       category: [
         {
-          name: 'Videos',
-          slug: 'videos'
-        }
+          name: "Videos",
+          slug: "videos",
+        },
       ],
       type: [
         {
           id: 1,
-          name: 'Pago anual',
+          name: "Pago anual",
           subitems: [
             {
-              name: '3 imágenes',
-              small: 'mes',
+              name: "3 imágenes",
+              small: "mes",
               price: 42,
               price_per_item: 14,
-              small_per_item: 'por video',
+              small_per_item: "por video",
             },
 
             {
-              name: '10 imágenes',
-              small: 'mes',
+              name: "10 imágenes",
+              small: "mes",
               price: 49,
-              price_per_item: 4.90,
-              small_per_item: 'por video',
+              price_per_item: 4.9,
+              small_per_item: "por video",
             },
 
             {
-              name: '25 imágenes',
-              small: 'mes',
+              name: "25 imágenes",
+              small: "mes",
               price: 99,
               price_per_item: 3.96,
-              small_per_item: 'por video',
+              small_per_item: "por video",
             },
 
             {
-              name: '25 imágenes',
-              small: 'mes',
+              name: "25 imágenes",
+              small: "mes",
               price: 299,
               price_per_item: 2.99,
-              small_per_item: 'por video',
-            }
-          ]
+              small_per_item: "por video",
+            },
+          ],
         },
 
         {
           id: 2,
-          name: 'Pago mensual',
+          name: "Pago mensual",
           subitems: [
             {
-              name: '10 imágenes',
-              small: 'mes',
+              name: "10 imágenes",
+              small: "mes",
               price: 8.99,
-              price_per_item: 0.90,
-              small_per_item: 'por video',
+              price_per_item: 0.9,
+              small_per_item: "por video",
             },
 
             {
-              name: '75 imágenes',
-              small: 'mes',
+              name: "75 imágenes",
+              small: "mes",
               price: 59,
               price_per_item: 0.79,
-              small_per_item: 'por video',
-            }
-          ]
-        }
-      ]
+              small_per_item: "por video",
+            },
+          ],
+        },
+      ],
     },
-
-
-  ]
+  ];
 
   const planesFotosVectores = planes.filter((plan) => {
-    return plan.category.some((categoria) => categoria.name === 'Fotos y vectores');
+    return plan.category.some(
+      (categoria) => categoria.name === "Fotos y vectores"
+    );
   });
 
   const planesVideos = planes.filter((plan) => {
-    return plan.category.some((categoria) => categoria.name === 'Videos');
+    return plan.category.some((categoria) => categoria.name === "Videos");
   });
 
   const tabsMenu = [
     {
       id: 1,
-      title: 'Fotos y vectores',
-      content: <CardPlan planes={planesFotosVectores} />
+      title: "Fotos y vectores",
+      content: <CardPlan planes={planesFotosVectores} />,
     },
 
     {
       id: 2,
-      title: 'Videos',
-      content: <CardPlan planes={planesVideos} />
+      title: "Videos",
+      content: <CardPlan planes={planesVideos} />,
     },
 
     {
       id: 3,
-      title: 'Música & SFX',
-      content: 'Content 3'
-    }
-  ]
+      title: "Música & SFX",
+      content: "Content 3",
+    },
+  ];
 
   const metaData = {
-    title: 'Inicio',
-    description: 'Mi metadescripción',
-    keywords: 'Banco imágenes, aloha',
-    author: 'Geniorama Agencia',
-  }
+    title: "Inicio",
+    description: "Mi metadescripción",
+    keywords: "Banco imágenes, aloha",
+    author: "Geniorama Agencia",
+  };
 
   return (
-    <Layout
-      metaData={metaData}
-    >
+    <Layout metaData={metaData}>
       <div className="container-fluid">
         <HeroSearch />
       </div>
-
       {/* Section - Categorías */}
       <section className={`${styles.Section}`}>
         <div className="container">
           <TitleSection text="Categorías." color={"black"} />
           <div className="row mt-5">
             <div className="col-12 col-lg-4">
-              <CardCategory text={"Fotos"} image={CoverFotos} />
+              <CardCategory
+                text={"Fotos"}
+                url="/categoria/fotos"
+                image={CoverFotos}
+              />
             </div>
             <div className="col-12 col-md-6 col-lg-4 mt-5 mt-lg-0">
-              <CardCategory link_position={"bottom-right"} text={"Vectores"} image={CoverVectores} />
+              <CardCategory
+                link_position={"bottom-right"}
+                text={"Vectores"}
+                url="/categoria/vectores"
+                image={CoverVectores}
+              />
             </div>
             <div className="col-12 col-md-6 col-lg-4 mt-5 mt-lg-0">
-              <CardCategory text={"Ilustraciones"} image={CoverIlustraciones} />
+              <CardCategory
+                text={"Ilustraciones"}
+                url="/categoria/ilustraciones"
+                image={CoverIlustraciones}
+              />
             </div>
 
             <div className="col-12 col-md-6 col-lg-3 mt-4">
-              <CardCategory text={"Videos"} size={"large"} image={CoverVideos} />
+              <CardCategory
+                text={"Videos"}
+                size={"large"}
+                url="/categoria/videos"
+                image={CoverVideos}
+              />
             </div>
 
             <div className="col-12 col-md-6 col-lg-3 mt-4">
               <CardCategory
                 text={"Música"}
                 size={"large"}
+                url="/categoria/musica"
                 link_position={"bottom-right"}
                 image={CoverMusica}
               />
             </div>
 
-            <div className="col-12 col-md-6 col-lg-3 mt-4">
-              <CardCategory text={"Gratis"} size={"large"} image={CoverGratis} />
-            </div>
+            {/* <div className="col-12 col-md-6 col-lg-3 mt-4">
+              <CardCategory
+                text={"Gratis"}
+                size={"large"}
+                image={CoverGratis}
+              />
+            </div> */}
 
             <div className="col-12 col-md-6 col-lg-3 mt-4">
               <CardCategory
@@ -542,23 +562,48 @@ export default function Home() {
 
           <div className={styles.GridPopular}>
             <div className={styles.GridPopular__item}>
-              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} alt="" />
+              <Image
+                src={GalleryExample}
+                fill
+                style={{ objectFit: "cover" }}
+                alt=""
+              />
             </div>
 
             <div className={styles.GridPopular__item}>
-              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} alt="" />
+              <Image
+                src={GalleryExample}
+                fill
+                style={{ objectFit: "cover" }}
+                alt=""
+              />
             </div>
 
             <div className={styles.GridPopular__item}>
-              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} alt="" />
+              <Image
+                src={GalleryExample}
+                fill
+                style={{ objectFit: "cover" }}
+                alt=""
+              />
             </div>
 
             <div className={styles.GridPopular__item}>
-              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} alt="" />
+              <Image
+                src={GalleryExample}
+                fill
+                style={{ objectFit: "cover" }}
+                alt=""
+              />
             </div>
 
             <div className={styles.GridPopular__item}>
-              <Image src={GalleryExample} fill style={{ objectFit: "cover" }} alt="" />
+              <Image
+                src={GalleryExample}
+                fill
+                style={{ objectFit: "cover" }}
+                alt=""
+              />
             </div>
 
             <div className={styles.GridPopular__item}>
@@ -670,14 +715,26 @@ export default function Home() {
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-7">
-              <h3 className={`${styles.SectionSignup__title}`}>Regístrate y descarga semanalmente imágenes gratis.</h3>
+              <h3 className={`${styles.SectionSignup__title}`}>
+                Regístrate y descarga semanalmente imágenes gratis.
+              </h3>
             </div>
             <div className="col-12 col-lg-5 px-4">
-              <button className={`${styles.ButtonSignUp} ${!regTerms && styles.disabled} mb-4`}>
+              <button
+                className={`${styles.ButtonSignUp} ${
+                  !regTerms && styles.disabled
+                } mb-4`}
+              >
                 <span>
-                  <Image src={LogoGoogle} className={`${styles.ButtonSignUp__logo}`} alt="Sign up with Google" />
+                  <Image
+                    src={LogoGoogle}
+                    className={`${styles.ButtonSignUp__logo}`}
+                    alt="Sign up with Google"
+                  />
                 </span>
-                <span className={`${styles.ButtonSignUp__name} mx-2`}>Sign up with Google</span>
+                <span className={`${styles.ButtonSignUp__name} mx-2`}>
+                  Sign up with Google
+                </span>
                 <span className={`${styles.ButtonSignUp__arrow}`}>
                   <svg
                     width="20"
@@ -707,11 +764,21 @@ export default function Home() {
                 </span>
               </button>
 
-              <button className={`${styles.ButtonSignUp} ${!regTerms && styles.disabled} mb-4`}>
+              <button
+                className={`${styles.ButtonSignUp} ${
+                  !regTerms && styles.disabled
+                } mb-4`}
+              >
                 <span>
-                  <Image src={LogoFB} className={`${styles.ButtonSignUp__logo}`} alt="Sign up with Google" />
+                  <Image
+                    src={LogoFB}
+                    className={`${styles.ButtonSignUp__logo}`}
+                    alt="Sign up with Google"
+                  />
                 </span>
-                <span className={`${styles.ButtonSignUp__name} mx-2`}>Sign up with Facebook</span>
+                <span className={`${styles.ButtonSignUp__name} mx-2`}>
+                  Sign up with Facebook
+                </span>
                 <span className={`${styles.ButtonSignUp__arrow}`}>
                   <svg
                     width="20"
@@ -741,11 +808,21 @@ export default function Home() {
                 </span>
               </button>
 
-              <button className={`${styles.ButtonSignUp} ${!regTerms && styles.disabled} mb-4`}>
+              <button
+                className={`${styles.ButtonSignUp} ${
+                  !regTerms && styles.disabled
+                } mb-4`}
+              >
                 <span>
-                  <Image src={IconEnvelope} className={`${styles.ButtonSignUp__logo}`} alt="Sign up with Google" />
+                  <Image
+                    src={IconEnvelope}
+                    className={`${styles.ButtonSignUp__logo}`}
+                    alt="Sign up with Google"
+                  />
                 </span>
-                <span className={`${styles.ButtonSignUp__name} mx-2`}>Sign up with Email</span>
+                <span className={`${styles.ButtonSignUp__name} mx-2`}>
+                  Sign up with Email
+                </span>
                 <span className={`${styles.ButtonSignUp__arrow}`}>
                   <svg
                     width="20"
@@ -784,7 +861,10 @@ export default function Home() {
                   defaultChecked={regTerms ? true : false}
                 />
                 <label className="form-check-label" htmlFor="condiciones">
-                  Acepto las <a href="#" style={{ color: 'white' }}>condiciones de la membresía</a>
+                  Acepto las{" "}
+                  <a href="#" style={{ color: "white" }}>
+                    condiciones de la membresía
+                  </a>
                 </label>
               </div>
 
@@ -804,15 +884,31 @@ export default function Home() {
       </section>
 
       {/* Section - colaboradores */}
-      <section className={`${styles.Section} ${styles.SectionColab}`} style={{ position: 'relative' }}>
-        <Image fill src={BgColaboradores} alt="" style={{ objectFit: 'cover' }} />
+      <section
+        className={`${styles.Section} ${styles.SectionColab}`}
+        style={{ position: "relative" }}
+      >
+        <Image
+          fill
+          src={BgColaboradores}
+          alt=""
+          style={{ objectFit: "cover" }}
+        />
         <div className={styles.LayerOpacity}></div>
         <div className="container position-relative text-center">
-          <h5 className={`${styles.SectionColab__title}`}>Únete a nuestra comunidad de colaboradores.</h5>
-          <p className={`${styles.SectionColab__desc}`}>Sabemos que detrás de cada pieza de imagen, video o sonido hay una mente creativa.
-            Puedes crear contenido y venderlo con Aloha.</p>
+          <h5 className={`${styles.SectionColab__title}`}>
+            Únete a nuestra comunidad de colaboradores.
+          </h5>
+          <p className={`${styles.SectionColab__desc}`}>
+            Sabemos que detrás de cada pieza de imagen, video o sonido hay una
+            mente creativa. Puedes crear contenido y venderlo con Aloha.
+          </p>
 
-          <ButtonLink text={"Quiero vender contenido"} color={"coral"} size={'m'} />
+          <ButtonLink
+            text={"Quiero vender contenido"}
+            color={"coral"}
+            size={"m"}
+          />
         </div>
       </section>
 
@@ -834,25 +930,32 @@ export default function Home() {
                   maxWidth: "600px",
                 }}
               >
-                Explora los diferentes planes, o si necesitas algo más personalizado <Link style={{ color: 'var(--aloha-blue)' }} href={'#'}>Escríbenos</Link>.
+                Explora los diferentes planes, o si necesitas algo más
+                personalizado{" "}
+                <Link style={{ color: "var(--aloha-blue)" }} href={"#"}>
+                  Escríbenos
+                </Link>
+                .
               </p>
-              <div className="mt-5">
-
-              </div>
+              <div className="mt-5"></div>
             </div>
-            <div className="col-12 col-lg-5">
-              {/* Empty space */}
-            </div>
+            <div className="col-12 col-lg-5">{/* Empty space */}</div>
           </div>
 
           <div className="row">
             <div className="col-12 col-lg-4">
               <div className={`${styles.CardFeatures}`}>
-                <h6 className={`${styles.CardFeatures__title}`}>Tu plan de suscripción o prepago incluye:</h6>
+                <h6 className={`${styles.CardFeatures__title}`}>
+                  Tu plan de suscripción o prepago incluye:
+                </h6>
                 <ul className={`${styles.CardFeatures__list}`}>
-                  <li>Las imágenes no usadas serán añadidas al mes siguiente.</li>
+                  <li>
+                    Las imágenes no usadas serán añadidas al mes siguiente.
+                  </li>
                   <li>Imágenes adicionales a $1 cada una.</li>
-                  <li>Uso impreso o digital (se excluyen artículos para reventa).</li>
+                  <li>
+                    Uso impreso o digital (se excluyen artículos para reventa).
+                  </li>
                   <li>Derechos de impresión: hasta 500.000 copias.</li>
                   <li>Derecho a usar las imágenes de por vida.</li>
                 </ul>
@@ -860,9 +963,7 @@ export default function Home() {
             </div>
 
             <div className="col-12 col-lg-8">
-              <Tabs
-                items={tabsMenu}
-              />
+              <Tabs items={tabsMenu} />
             </div>
           </div>
         </div>

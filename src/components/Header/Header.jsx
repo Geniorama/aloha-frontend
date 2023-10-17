@@ -53,7 +53,7 @@ const Header = () => {
       ref={headerRef}
     >
       <div className={styles.container}>
-        <Link href="#" className={styles.logo}>
+        <Link href="/" className={styles.logo}>
           <Image
             src={isHeaderFixed ? LogoLetter : LogoBlack}
             alt="Logo Aloha"
