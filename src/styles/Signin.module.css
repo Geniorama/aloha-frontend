@@ -27,10 +27,12 @@
 .title {
   font-size: 2rem;
   font-weight: bold;
+  text-align: center;
 }
 
 .description {
   font-size: 0.9rem;
+  text-align: center;
 }
 
 .loginButtons {
@@ -126,4 +128,56 @@
 .registrate span {
   color: #1a01a6;
   font-weight: 600;
+}
+
+@media screen and (max-width: 992px) {
+  .section {
+    display: flex;
+  }
+
+  .content {
+    width: 100%;
+    max-width: none;
+    min-height: auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section {
+    padding-bottom: 0;
+  }
+
+  .content {
+    padding: 2rem 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .loginButtons {
+    gap: 10px;
+  }
+
+  .buttonGoogle {
+    padding: 1rem;
+  }
+
+  .buttonFacebook {
+    padding: 10px;
+  }
+
+  .buttonFacebook img {
+    height: 28px;
+    width: 28px;
+  }
+}
+
+@media screen and (max-width: 365px) {
+  .buttonGoogle {
+    padding: 0.8rem;
+    font-size: 0.8rem;
+  }
+
+  .buttonFacebook img {
+    height: 25px;
+    width: 25px;
+  }
 }
