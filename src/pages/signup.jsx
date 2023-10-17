@@ -1,26 +1,34 @@
-import styles from "../../styles/Signin.module.css";
+import styles from "../styles/Signin.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import LogoBlack from "../../../public/img/components/header/logo-black-aloha.svg";
-import LogoGoogle from "../../../public/img/signup/logo-google.png";
-import LogoFB from "../../../public/img/signup/logo-fb.png";
+import LogoBlack from "../../public/img/components/header/logo-black-aloha.svg";
+import LogoGoogle from "../../public/img/google.png";
+import LogoFB from "../../public/img/facebook.png";
+import { useForm } from "react-hook-form";
+import { deleteCookie } from "cookies-next";
+import { loginAsUser } from "@/services/user.service";
+import { useEffect } from "react";
 
 export default function Signin() {
+  const { register, handleSubmit } = useForm();
+  useEffect(() => {
+    deleteCookie("user_id");
+    deleteCookie("session_id");
+  }, []);
+  const onSubmit = (data) => loginAsUser(data.email, data.password);
   return (
     <div className={`${styles.section}`}>
-      <Link href="#" className={styles.logo}>
+      <Link href="/" className={styles.logo}>
         <Image src={LogoBlack} alt="Logo Aloha" />
       </Link>
       <div className={`${styles.content}`}>
-        <h1 className={`${styles.title}`}>Iniciar sesión en Aloha</h1>
+        <h1 className={`${styles.title}`}>¡Bienvenido a Aloha!</h1>
         <p className={`${styles.description}`}>
-          Ingresa a tu sesión con alguna de estas opciones
+          Crea tu cuenta y libera todas las opciones de Aloha
         </p>
         <div className={`${styles.loginButtons}`}>
           <button className={`${styles.buttonGoogle}`}>
-            <span>
-              <Image src={LogoGoogle} alt="Sign up with Google" />
-            </span>
+            <Image src={LogoGoogle} quality={100} alt="Sign up with Google" />
             <span className={`${styles.ButtonSignUp__name} mx-2`}>
               Continuar con Google
             </span>
@@ -58,13 +66,14 @@ export default function Signin() {
             </span>
           </button>
           <button className={`${styles.buttonFacebook}`}>
-            <span>
-              <Image src={LogoFB} alt="Sign up with Facebook" />
-            </span>
+            <Image src={LogoFB} alt="Sign up with Facebook" />
           </button>
         </div>
-        <p className={`${styles.separador}`}>o ingresa con tu correo</p>
-        <form className={`${styles.formLogin}`}>
+        <p className={`${styles.separador}`}>o registrate con tu correo</p>
+        <form
+          className={`${styles.formLogin}`}
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <label className={`${styles.formLabel}`}>Correo electrónico *</label>
           <input
             type="email"
@@ -72,12 +81,10 @@ export default function Signin() {
             id="email"
             placeholder="Ingresa tu correo electrónico"
             className={`${styles.formInput}`}
+            {...register("email")}
           />
           <div className={`${styles.formContentLabels}`}>
             <label className={`${styles.formLabel}`}>Contraseña *</label>
-            <label className={`${styles.formRememberPass}`}>
-              ¿Olvidaste tu contraseña?
-            </label>
           </div>
           <input
             type="password"
@@ -85,6 +92,7 @@ export default function Signin() {
             id="password"
             placeholder="Ingresa tu contraseña"
             className={`${styles.formInput}`}
+            {...register("password")}
           />
           <button className={`${styles.buttonGoogle} my-3`}>
             <span className={`${styles.ButtonSignUp__name} mx-2`}>
@@ -125,7 +133,10 @@ export default function Signin() {
           </button>
         </form>
         <p className={`${styles.registrate}`}>
-          ¿Aún no tienes cuenta? <span>¡Regístrate!</span>
+          ¿Ya tienes una cuenta?{" "}
+          <Link href="/signin">
+            <span>Inicia sesión</span>
+          </Link>
         </p>
       </div>
     </div>

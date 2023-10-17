@@ -1,0 +1,64 @@
+.Container {
+  background-color: red;
+}
+
+.Content {
+  height: 100vh;
+  max-width: 700px;
+  padding: 0 7em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  background-color: white;
+ }
+
+ .Content h2 {
+  font-weight: 800;
+  font-size: 36px;
+ }
+
+ .SocialButton {
+  display: flex;  
+  align-items: center;
+  width: 100%;
+  gap: 20px
+ }
+ .SocialButton button {
+  padding: 16px;
+  font-size: 20px;
+  font-weight: 500;
+ }
+ .GoogleButton {
+  background-color: #222222;
+  color: white;
+  border: none;
+  width: 100%;
+ }
+ .FacebookButton {
+  width: 65px;
+  border: none;
+ }
+
+ .Form {
+  width: 100%;
+ }
+ .Form input,
+ .Form button {
+  width: 100%;
+ }
+ .Form input {
+  border: 2px solid #CECECE;
+  padding: 16px;
+ }
+ .Form button {
+  background-color: #222222;
+  color: white;
+  border: none;
+  width: 100%;
+  padding: 16px;
+  font-size: 20px;
+  font-weight: 500;
+ }
+ 

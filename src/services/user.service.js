@@ -8,9 +8,11 @@ export const loginAsUser = async (login_user, login_password) => {
       login_user,
       login_password,
     });
-    setCookie("user_id", response.userid);
-    setCookie("session_id", response.sessionid);
-    Router.push("/user");
+    if (response.userid && response.sessionid) {
+      setCookie("user_id", response.userid);
+      setCookie("session_id", response.sessionid);
+      Router.push("/user");
+    }
     return response;
   } catch (error) {
     console.log(error);
