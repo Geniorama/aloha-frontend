@@ -1,4 +1,5 @@
 import axios from "axios";
+import planes from "@/data/planes.json";
 
 export const formatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -69,3 +70,8 @@ export const request = async (command, options = {}) => {
     console.log(error);
   }
 };
+
+export const getPlan = (category) =>
+  planes.filter((plan) =>
+    plan.category.some((categoria) => categoria.name === category)
+  );
