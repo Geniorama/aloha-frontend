@@ -7,9 +7,9 @@
 }
 .Header {
   display: flex;
-  gap: 5px;
+  gap: 4px;
   align-items: center;
-  padding: 12px;
+  padding: 11px;
   border-radius: 10px;
   border: 2px solid #EFEFEF;
   background-color: #FAFAFA;
