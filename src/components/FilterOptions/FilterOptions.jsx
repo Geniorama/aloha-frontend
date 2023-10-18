@@ -5,7 +5,7 @@ import FilterOptionsTags from "./FilterOptionsTags/FilterOptionsTags";
 export default function FilterOptions() {
   return (
     <section className={styles.FilterOptions}>
-      <div className="container py-5 border-top">
+      <div className="container my-4">
         <div className="row">
           <div className="col-12 col-lg-6">
             <SearchFilter />
