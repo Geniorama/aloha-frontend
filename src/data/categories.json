@@ -69,6 +69,77 @@
       "height": 267
     }
   ],
+  "vectors": [ 
+    {
+      "image": "/img/category/cartoon.jpg",
+      "text": "Cartoon",
+      "slug": "cartoon",
+      "width": 1000,
+      "height": 400
+    },
+    {
+      "image": "/img/category/stock-vector.jpg",
+      "link_position": "bottom-left",
+      "text": "Stock Vector",
+      "slug": "stock-vector",
+      "width": 1000,
+      "height": 400
+    },
+    {
+      "image": "/img/category/cat-paisaje.png",
+      "link_position": "bottom-right",
+      "text": "Paisaje",
+      "slug": "paisaje",
+      "width": 1000,
+      "height": 267
+    },
+    {
+      "image": "/img/category/easter.jpg",
+      "text": "Easter",
+      "link_position": "bottom-left",
+      "slug": "easter",
+      "width": 1000,
+      "height": 265
+    },
+    {
+      "image": "/img/category/covid-19.jpg",
+      "text": "COVID-19",
+      "slug": "COVID-19",
+      "width": 1000,
+      "height": 500
+    },
+    {
+      "image": "/img/category/internacional.jpg",
+      "text": "International",
+      "slug": "international",
+      "link_position": "bottom-right",
+      "width": 1000,
+      "height": 323
+    },
+    {
+      "image": "/img/category/futurista.jpg",
+      "link_position": "bottom-left",
+      "text": "Futurista",
+      "slug": "futurista",
+      "width": 1000,
+      "height": 450
+    },
+    {
+      "image": "/img/category/social.jpg",
+      "text": "Social",
+      "slug": "social",
+      "width": 1000,
+      "height": 400
+    },
+    {
+      "image": "/img/category/vector.jpg",
+      "link_position": "bottom-right",
+      "text": "Vector",
+      "slug": "vector",
+      "width": 376,
+      "height": 267
+    }
+  ],
   "illustrations": [
     {
       "image": "https://images.unsplash.com/photo-1584446922448-efd3351dad71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1914&q=80",
