@@ -1,19 +1,12 @@
-import planes from "@/data/planes.json";
 import CardPlan from "../CardPlan/CardPlan";
 import TitleSection from "../TitleSection/TitleSection";
 import styles from "@/components/PlanSection/PlanSection.module.css";
 import Link from "next/link";
 import Tabs from "../Tabs/Tabs";
+import { getPlan } from "@/helpers/helpers";
 
-const planesFotosVectores = planes.filter((plan) => {
-  return plan.category.some(
-    (categoria) => categoria.name === "Fotos y vectores"
-  );
-});
-
-const planesVideos = planes.filter((plan) => {
-  return plan.category.some((categoria) => categoria.name === "Videos");
-});
+const planesFotosVectores = getPlan("Fotos y vectores");
+const planesVideos = getPlan("Videos");
 
 const tabsMenu = [
   {
