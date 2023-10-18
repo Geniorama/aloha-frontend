@@ -1,5 +1,3 @@
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
 import Layout from "@/components/Layout/Layout";
 import HeroSearch from "@/components/Hero/HeroSearch";
 import TitleSection from "@/components/TitleSection/TitleSection";
@@ -12,35 +10,29 @@ import GalleryExample2 from "../../public/img/home/image 104.png";
 import GalleryExample3 from "../../public/img/home/image 102.png";
 import GalleryExample4 from "../../public/img/home/image 111.png";
 import GalleryExample5 from "../../public/img/home/image 109.png";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import SlideExample1 from "../../public/img/home/image 113.jpg";
 import SlideExample2 from "../../public/img/home/image 114.jpg";
+import SlideExample3 from "../../public/img/home/image 116.jpg";
+import SlideExample4 from "../../public/img/home/image 112.jpg";
 import CardCategory from "@/components/CardCategory/CardCategory";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import CoverFotos from "../../public/img/home/categories/imagenes.jpg";
 import CoverVectores from "../../public/img/home/categories/vectores.jpg";
 import CoverIlustraciones from "../../public/img/home/categories/ilustraciones.jpg";
 import CoverVideos from "../../public/img/home/categories/videos.jpg";
 import CoverMusica from "../../public/img/home/categories/musica.jpg";
-import CoverGratis from "../../public/img/home/categories/gratis.jpg";
+import CoverEditorial from "../../public/img/home/categories/editorial.jpg";
 import CoverEfectos from "../../public/img/home/categories/efectos-de-sonido.jpg";
 import LogoGoogle from "../../public/img/signup/logo-google.png";
 import LogoFB from "../../public/img/signup/logo-fb.png";
 import IconEnvelope from "../../public/img/signup/email.svg";
 import BgColaboradores from "../../public/img/home/bg-colaboradores.png";
-import {
-  faChevronRight,
-  faChevronLeft,
-} from "@fortawesome/free-solid-svg-icons";
-import dotenv from "dotenv";
 import Link from "next/link";
 import Tabs from "@/components/Tabs/Tabs";
 import CardPlan from "@/components/CardPlan/CardPlan";
 import { useState } from "react";
-dotenv.config();
+import planes from "@/data/planes.json";
+import Slider from "@/components/Slider/Slider";
 
 export default function Home() {
   const [regTerms, setRegTerms] = useState(false);
@@ -48,401 +40,6 @@ export default function Home() {
   const handleCheckboxChange = () => {
     setRegTerms(!regTerms);
   };
-
-  function NextArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <button className={className} onClick={onClick}>
-        <div className="slick-arrow-icon">
-          <FontAwesomeIcon
-            size={"lg"}
-            icon={faChevronRight}
-            style={{ fontSize: "20px" }}
-          />
-        </div>
-      </button>
-    );
-  }
-
-  function PrevArrow(props) {
-    const { className, style, onClick } = props;
-    return (
-      <button className={className} onClick={onClick}>
-        <div className="slick-arrow-icon">
-          <FontAwesomeIcon
-            size={"lg"}
-            icon={faChevronLeft}
-            style={{ fontSize: "20px" }}
-          />
-        </div>
-      </button>
-    );
-  }
-
-  // Slider settings
-  const settings = {
-    dots: false,
-    infinite: true,
-    arrows: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-    autoplay: true,
-    centerMode: true,
-    autoplaySpeed: 3000,
-    speed: 2000,
-    variableWidth: true,
-    adaptiveHeight: true,
-    nextArrow: <NextArrow />,
-    prevArrow: <PrevArrow />,
-    responsive: [
-      {
-        breakpoint: 1024, // Pantallas grandes
-        settings: {
-          slidesToShow: 5,
-          dots: true,
-        },
-      },
-      {
-        breakpoint: 769, // Tablets
-        settings: {
-          slidesToShow: 4,
-          centerMode: false,
-        },
-      },
-      {
-        breakpoint: 480, // Dispositivos móviles
-        settings: {
-          slidesToShow: 2,
-          centerMode: true,
-          variableWidth: true,
-          arrows: false,
-        },
-      },
-    ],
-  };
-
-  const planes = [
-    {
-      id: "fotos-vectores-suscripcion",
-      name: "Suscripción",
-      category: [
-        {
-          name: "Fotos y vectores",
-          slug: "fotos-y-vectores",
-        },
-      ],
-      type: [
-        {
-          id: "pago-anual",
-          name: "Pago anual",
-          subitems: [
-            {
-              name: "10 imágenes",
-              small: "mes",
-              price: 8.99,
-              price_per_item: 0.9,
-              small_per_item: "por imagen",
-            },
-
-            {
-              name: "75 imágenes",
-              small: "mes",
-              price: 59,
-              price_per_item: 0.79,
-              small_per_item: "por imagen",
-            },
-
-            {
-              name: "150 imágenes",
-              small: "mes",
-              price: 89,
-              price_per_item: 0.59,
-              small_per_item: "por imagen",
-            },
-
-            {
-              name: "750 imágenes",
-              small: "mes",
-              price: 169,
-              price_per_item: 0.23,
-              small_per_item: "por imagen",
-            },
-          ],
-        },
-
-        {
-          id: 2,
-          name: "Pago mensual",
-          subitems: [
-            {
-              name: "10 imágenes",
-              small: "mes",
-              price: 8.99,
-              price_per_item: 0.9,
-              small_per_item: "por imagen",
-            },
-
-            {
-              name: "75 imágenes",
-              small: "mes",
-              price: 59,
-              price_per_item: 0.79,
-              small_per_item: "por imagen",
-            },
-
-            {
-              name: "150 imágenes",
-              small: "mes",
-              price: 89,
-              price_per_item: 0.59,
-              small_per_item: "por imagen",
-            },
-
-            {
-              name: "750 imágenes",
-              small: "mes",
-              price: 169,
-              price_per_item: 0.23,
-              small_per_item: "por imagen",
-            },
-          ],
-        },
-      ],
-    },
-
-    {
-      id: "fotos-vectores-prepago",
-      name: "Prepago",
-      category: [
-        {
-          name: "Fotos y vectores",
-          slug: "fotos-y-vectores",
-        },
-      ],
-      type: [
-        {
-          id: 1,
-          name: "Pago anual",
-          subitems: [
-            {
-              name: "3 imágenes",
-              small: "mes",
-              price: 42,
-              price_per_item: 14,
-              small_per_item: "por imagen",
-            },
-
-            {
-              name: "10 imágenes",
-              small: "mes",
-              price: 49,
-              price_per_item: 4.9,
-              small_per_item: "por imagen",
-            },
-
-            {
-              name: "25 imágenes",
-              small: "mes",
-              price: 99,
-              price_per_item: 3.96,
-              small_per_item: "por imagen",
-            },
-
-            {
-              name: "25 imágenes",
-              small: "mes",
-              price: 299,
-              price_per_item: 2.99,
-              small_per_item: "por imagen",
-            },
-          ],
-        },
-
-        {
-          id: 2,
-          name: "Pago mensual",
-          subitems: [
-            {
-              name: "10 imágenes",
-              small: "mes",
-              price: 8.99,
-              price_per_item: 0.9,
-              small_per_item: "por imagen",
-            },
-
-            {
-              name: "75 imágenes",
-              small: "mes",
-              price: 59,
-              price_per_item: 0.79,
-              small_per_item: "por imagen",
-            },
-          ],
-        },
-      ],
-    },
-
-    {
-      id: 3,
-      name: "Suscripción",
-      category: [
-        {
-          name: "Videos",
-          slug: "videos",
-        },
-      ],
-      type: [
-        {
-          id: 1,
-          name: "Pago anual",
-          subitems: [
-            {
-              name: "10 videos",
-              small: "mes",
-              price: 8.99,
-              price_per_item: 0.9,
-              small_per_item: "por video",
-            },
-
-            {
-              name: "75 videos",
-              small: "mes",
-              price: 59,
-              price_per_item: 0.79,
-              small_per_item: "por video",
-            },
-
-            {
-              name: "150 videos",
-              small: "mes",
-              price: 89,
-              price_per_item: 0.59,
-              small_per_item: "por video",
-            },
-
-            {
-              name: "750 videos",
-              small: "mes",
-              price: 169,
-              price_per_item: 0.23,
-              small_per_item: "por video",
-            },
-          ],
-        },
-
-        {
-          id: 2,
-          name: "Pago mensual",
-          subitems: [
-            {
-              name: "10 videos",
-              small: "mes",
-              price: 8.99,
-              price_per_item: 0.9,
-              small_per_item: "por video",
-            },
-
-            {
-              name: "75 videos",
-              small: "mes",
-              price: 59,
-              price_per_item: 0.79,
-              small_per_item: "por video",
-            },
-
-            {
-              name: "150 videos",
-              small: "mes",
-              price: 89,
-              price_per_item: 0.59,
-              small_per_item: "por video",
-            },
-
-            {
-              name: "750 videos",
-              small: "mes",
-              price: 169,
-              price_per_item: 0.23,
-              small_per_item: "por video",
-            },
-          ],
-        },
-      ],
-    },
-
-    {
-      id: 2,
-      name: "Prepago",
-      category: [
-        {
-          name: "Videos",
-          slug: "videos",
-        },
-      ],
-      type: [
-        {
-          id: 1,
-          name: "Pago anual",
-          subitems: [
-            {
-              name: "3 imágenes",
-              small: "mes",
-              price: 42,
-              price_per_item: 14,
-              small_per_item: "por video",
-            },
-
-            {
-              name: "10 imágenes",
-              small: "mes",
-              price: 49,
-              price_per_item: 4.9,
-              small_per_item: "por video",
-            },
-
-            {
-              name: "25 imágenes",
-              small: "mes",
-              price: 99,
-              price_per_item: 3.96,
-              small_per_item: "por video",
-            },
-
-            {
-              name: "25 imágenes",
-              small: "mes",
-              price: 299,
-              price_per_item: 2.99,
-              small_per_item: "por video",
-            },
-          ],
-        },
-
-        {
-          id: 2,
-          name: "Pago mensual",
-          subitems: [
-            {
-              name: "10 imágenes",
-              small: "mes",
-              price: 8.99,
-              price_per_item: 0.9,
-              small_per_item: "por video",
-            },
-
-            {
-              name: "75 imágenes",
-              small: "mes",
-              price: 59,
-              price_per_item: 0.79,
-              small_per_item: "por video",
-            },
-          ],
-        },
-      ],
-    },
-  ];
 
   const planesFotosVectores = planes.filter((plan) => {
     return plan.category.some(
@@ -533,18 +130,18 @@ export default function Home() {
               />
             </div>
 
-            {/* <div className="col-12 col-md-6 col-lg-3 mt-4">
+            <div className="col-12 col-md-6 col-lg-3 mt-4">
               <CardCategory
-                text={"Gratis"}
+                text={"Editorial"}
                 size={"large"}
-                image={CoverGratis}
+                image={CoverEditorial}
               />
-            </div> */}
-
+            </div>
             <div className="col-12 col-md-6 col-lg-3 mt-4">
               <CardCategory
                 text={"Efectos de sonido"}
                 size={"large"}
+                url="/categoria/editorial"
                 link_position={"bottom-right"}
                 image={CoverEfectos}
               />
@@ -630,28 +227,20 @@ export default function Home() {
         </div>
 
         {/* Slider */}
-        <div>
-          <Slider {...settings}>
-            <div className={styles.SlideItem}>
-              <Image src={SlideExample1} responsive="true" />
-            </div>
-            <div className={styles.SlideItem}>
-              <Image src={SlideExample2} responsive="true" />
-            </div>
-            <div className={styles.SlideItem}>
-              <Image src={SlideExample2} responsive="true" />
-            </div>
-            <div className={styles.SlideItem}>
-              <Image src={SlideExample2} responsive="true" />
-            </div>
-            <div className={styles.SlideItem}>
-              <Image src={SlideExample2} responsive="true" />
-            </div>
-            <div className={styles.SlideItem}>
-              <Image src={SlideExample2} responsive="true" />
-            </div>
-          </Slider>
-        </div>
+        <Slider>
+          <div className={styles.SlideItem}>
+            <Image src={SlideExample1} responsive="true" alt="" quality={100} />
+          </div>
+          <div className={styles.SlideItem}>
+            <Image src={SlideExample2} responsive="true" alt="" quality={100} />
+          </div>
+          <div className={styles.SlideItem}>
+            <Image src={SlideExample3} responsive="true" alt="" quality={100} />
+          </div>
+          <div className={styles.SlideItem}>
+            <Image src={SlideExample4} responsive="true" alt="" quality={100} />
+          </div>
+        </Slider>
 
         {/* Promo */}
         <div className="container-fluid">
@@ -681,43 +270,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* Section - Fotos gratis */}
-      {/* <section className={`${styles.Section} pt-0`}>
-        <div className="container">
-          <TitleSection text="Fotos gratis." color={"black"} />
-          <div style={{ marginLeft: "35%" }} className="ps-5 ps-lg-0">
-            <ButtonLink
-              href={"/"}
-              text={"Ver todas"}
-              color={"coral"}
-              size={"m"}
-            />
-          </div>
-        </div>
-        <div>
-          <Slider {...settings}>
-            <div className={styles.SlideItem}>
-              <Image src={SlideExample1} responsive="true" alt="" />
-            </div>
-            <div className={styles.SlideItem}>
-              <Image src={SlideExample2} responsive="true" alt="" />
-            </div>
-            <div className={styles.SlideItem}>
-              <Image src={SlideExample2} responsive="true" alt="" />
-            </div>
-            <div className={styles.SlideItem}>
-              <Image src={SlideExample2} responsive="true" alt="" />
-            </div>
-            <div className={styles.SlideItem}>
-              <Image src={SlideExample2} responsive="true" alt="" />
-            </div>
-            <div className={styles.SlideItem}>
-              <Image src={SlideExample2} responsive="true" alt="" />
-            </div>
-          </Slider>
-        </div>
-      </section> */}
 
       {/* Section - Regístrate */}
       <section className={`${styles.SectionSignup} ${styles.Section}`}>
@@ -980,23 +532,3 @@ export default function Home() {
     </Layout>
   );
 }
-
-// export async function getServerSideProps() {
-//   const apiKey = process.env.API_KEY;
-//   const apiUrl = process.env.API_URL;
-
-//   try {
-//     const res = await fetch(apiUrl + '?dp_command=getInfo&dp_apikey=' + apiKey);
-//     const data = await res.json()
-
-//     return {
-//       props: {
-//         data
-//       }
-//     }
-
-//   } catch (error) {
-//     console.log('Hubo un error', error)
-//   }
-
-// }
