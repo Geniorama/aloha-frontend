@@ -277,46 +277,46 @@
     {
       "title": "Foto destacada",
       "description": "Chamath Palihapitiya y Nathalie Dompeimagepressagency",
-      "image": "/img/category/bg_fotos.jpg"
+      "image": "/img/category/editorial/foto-destacada.jpg"
     },
     {
       "title": "Colección",
       "description": "Manifestaciones internacionales en apoyo a Ucrania",
-      "image": "/img/category/bg_fotos.jpg"
+      "image": "/img/category/editorial/coleccion.jpg"
     },
     {
       "title": "Selección del usuario",
       "description": "Kylie Jenner en la fiesta de los Oscar de Vanity Fair 2023",
-      "image": "/img/category/bg_fotos.jpg"
+      "image": "/img/category/editorial/seleccion-usuario.jpg"
     },
     {
       "title": "Foto editorial",
       "description": "Los reyes de España entregan los premios nacionales del deporte",
-      "image": "/img/category/bg_fotos.jpg"
+      "image": "/img/category/editorial/foto-editorial.jpg"
     }, 
     {
       "title": "Colección",
       "description": "La verdad sobre la guerra entre Ucrania y Rusia",
-      "image": "/img/category/bg_fotos.jpg"
+      "image": "/img/category/editorial/coleccion-2.jpg"
     },
     {
       "title": "Archivos más recientes",
-      "image": "/img/category/bg_fotos.jpg"
+      "image": "/img/category/editorial/archivos-recientes.jpg"
     }, 
     {
       "title": "Foto destacada",
       "description": "Stephan EL Shaarawy de Roma marca un gol",
-      "image": "/img/category/bg_fotos.jpg"
+      "image": "/img/category/editorial/foto-destacada-2.jpg"
     },
     {
       "title": "Colección",
       "description": "Política",
-      "image": "/img/category/bg_fotos.jpg"
+      "image": "/img/category/editorial/coleccion-3.jpg"
     },
     {
       "title": "Contribuidor destacado",
       "description": "Cristiano Bami",
-      "image": "/img/category/bg_fotos.jpg"
+      "image": "/img/category/editorial/contribuidor-destacado.jpg"
     }
   ]
 }
