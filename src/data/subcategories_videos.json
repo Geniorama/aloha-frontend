@@ -1,42 +1,42 @@
 {
   "naturaleza": [
     {
-      "image": "/img/category/cat-trabajo.png",
+      "image": "/img/category/videos/animacion.jpg",
       "text": "Animación 2D y 3D",
       "slug": "animacion-2d-y-3d",
       "width": 450,
       "height": 450
     },
     {
-      "image": "/img/category/cat-relajado.png",
+      "image": "/img/category/videos/aereos.jpg",
       "text": "Aéreos",
       "slug": "aereos",
       "width": 450,
       "height": 450
     },
     {
-      "image": "/img/category/cat-paisaje.png",
+      "image": "/img/category/videos/fondos.jpg",
       "text": "Fondos",
       "slug": "fondos",
       "width": 450,
       "height": 450
     },
     {
-      "image": "/img/category/cat-flores.png",
+      "image": "/img/category/videos/time-lapse.jpg",
       "text": "Time-lapse",
       "slug": "time-lapse",
       "width": 450,
       "height": 450
     },
     {
-      "image": "/img/category/cat-amigos.png",
+      "image": "/img/category/videos/camara-lenta.jpg",
       "text": "Cámara lenta",
       "slug": "camara-lenta",
       "width": 450,
       "height": 450
     },
     {
-      "image": "/img/category/cat-abstracto.png",
+      "image": "/img/category/videos/macro.jpg",
       "text": "Macro",
       "slug": "macro",
       "width": 450,

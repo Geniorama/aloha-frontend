@@ -211,21 +211,21 @@
   ], 
   "videos": [
     {
-      "image": "/img/category/cat-trabajo.png",
+      "image": "/img/category/videos/negocio.jpg",
       "link_position": "bottom-left",
       "text": "Negocio",
       "width": 400,
       "height": 458
     },
     {
-      "image": "/img/category/cat-relajado.png",
+      "image": "/img/category/videos/amigos.jpg",
       "link_position": "bottom-left",
       "text": "Amigos",
       "width": 400,
       "height": 265
     },
     {
-      "image": "/img/category/cat-paisaje.png",
+      "image": "/img/category/videos/naturaleza.jpg",
       "link_position": "top-right",
       "text": "Naturaleza",
       "slug": "naturaleza",
@@ -233,27 +233,27 @@
       "height": 267
     },
     {
-      "image": "/img/category/cat-flores.png",
+      "image": "/img/category/videos/abstracto.jpg",
       "text": "Abstracto",
       "width": 280,
       "height": 249
     },
     {
-      "image": "/img/category/cat-amigos.png",
+      "image": "/img/category/videos/amor.jpg",
       "link_position": "bottom-left",
       "text": "Amor",
       "width": 280,
       "height": 418
     },
     {
-      "image": "/img/category/cat-abstracto.png",
+      "image": "/img/category/videos/noticias.jpg",
       "link_position": "top-right",
       "text": "Noticias",
       "width": 280,
       "height": 323
     },
     {
-      "image": "/img/category/cat-arquitectura.png",
+      "image": "/img/category/videos/familia-hijos.jpg",
       "text": "Familia e hijos",
       "width": 376,
       "height": 355
@@ -266,7 +266,7 @@
       "height": 368
     },
     {
-      "image": "/img/category/cat-comida.png",
+      "image": "/img/category/videos/ciudad.jpg",
       "link_position": "bottom-right",
       "text": "Ciudad",
       "width": 376,
