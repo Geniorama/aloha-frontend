@@ -23,16 +23,6 @@ export default function GridGallery({ images = [] }) {
     <div className={`container ${styles.GridGallery}`}>
       {images.map((image, index) => {
         const orientation = getOrientation(image);
-        console.log(
-          "orientation",
-          orientation,
-          "width",
-          image.width,
-          "height",
-          image.height,
-          index,
-          image.huge_thumb
-        );
         return (
           <Link key={image.id} href={`/producto/${image.id}`}>
             <Image
