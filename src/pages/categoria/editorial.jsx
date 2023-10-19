@@ -14,7 +14,7 @@ export default function EditorialPage() {
   return (
     <Layout metaData={metaData}>
       <HeroCategory
-        background="/img/category/bg_fotos.jpg"
+        background="/img/category/bg-editorial.jpg"
         search
         title="500.000 fotos editoriales"
         desc="Captura la esencia de la actualidad en cada fotografía"
