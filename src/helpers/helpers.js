@@ -10,6 +10,7 @@ export const formatter = new Intl.NumberFormat("en-US", {
 export const defaultSettingSlider = {
   dots: false,
   infinite: true,
+  lazyLoad: "ondemand",
   arrows: true,
   speed: 500,
   // slidesToShow: 4,
