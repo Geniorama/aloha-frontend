@@ -29,7 +29,11 @@ function Ilustrations() {
           backgroundBlendMode: "multiply",
         }}
       />
-      <Categories title="ilustraciones" categories={categories.illustrations} />
+      <Categories
+        title="ilustraciones"
+        path="ilustraciones"
+        categories={categories.illustrations}
+      />
       <section className={`${styles.Section}`}>
         <div className="container">
           <TitleSection text={"Colección de ilustraciones."} />
