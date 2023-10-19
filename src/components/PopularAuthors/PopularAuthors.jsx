@@ -11,13 +11,28 @@ export default function PopularAuthors({ type = "primary" }) {
       <div className="container">
         <h2 className={styles.title}>Autores populares.</h2>
         <Slider>
-          <AuthorCard cover={image} photo={image} author="Paul Steven" />
-          <AuthorCard cover={image} photo={image} author="Paul Steven" />
-          <AuthorCard cover={image} photo={image} author="Paul Steven" />
-          <AuthorCard cover={image} photo={image} author="Paul Steven" />
-          <AuthorCard cover={image} photo={image} author="Paul Steven" />
-          <AuthorCard cover={image} photo={image} author="Paul Steven" />
-          <AuthorCard cover={image} photo={image} author="Paul Steven" />
+          <AuthorCard
+            link="/autor/vitaliy_sokol"
+            cover="https://st.depositphotos.com/1813545/1389/i/450/depositphotos_13899678-stock-photo-big-sea-turle-underwater.jpg?forcejpeg=true"
+            photo="https://static.depositphotos.com/storage/avatars/1813/1813545/p_1813545.jpg?a7a5ea3dde9909e8199361f8c28ca01c"
+            author="vitaliy_sokol"
+          />
+          <AuthorCard
+            link="/autor/michaeljung"
+            cover="https://st.depositphotos.com/1011643/3410/i/450/depositphotos_34107351-stock-photo-business-people-in-a-meeting.jpg?forcejpeg=true"
+            photo="https://static.depositphotos.com/storage/avatars/1011/1011643/p_1011643.jpg?a7a5ea3dde9909e8199361f8c28ca01c"
+            author="michaeljung"
+          />
+          <AuthorCard
+            cover="https://st4.depositphotos.com/13193658/24775/i/450/depositphotos_247758394-stock-photo-colleagues-table-laptop-smiling-highing.jpg?forcejpeg=true"
+            photo="https://static.depositphotos.com/storage/avatars/1319/13193658/p_13193658.jpg?a7a5ea3dde9909e8199361f8c28ca01c"
+            author="AndrewLozovyi"
+          />
+          <AuthorCard
+            cover="https://st4.depositphotos.com/1041222/27789/i/450/depositphotos_277898746-stock-photo-mount-rushmore-framed-by-pine.jpg?forcejpeg=true"
+            photo="https://static.depositphotos.com/storage/avatars/1041/1041222/p_1041222.jpg?a7a5ea3dde9909e8199361f8c28ca01c"
+            author="tamifreed"
+          />
           <AuthorCard cover={image} photo={image} author="Paul Steven" />
         </Slider>
       </div>
