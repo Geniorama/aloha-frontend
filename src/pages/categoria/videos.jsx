@@ -11,7 +11,7 @@ import Slider from "@/components/Slider/Slider";
 import Categories from "@/components/Categories/Categories";
 import images from "@/data/images.json";
 
-import categories from "@/data/categories/videos";
+import categories from "@/data/categories";
 
 const metaData = {
   title: "Categoría | Videos",
@@ -31,7 +31,7 @@ export default function Videos() {
           backgroundBlendMode: "multiply",
         }}
       />
-      <Categories title="videos" categories={categories} />
+      <Categories title="videos" path="videos" categories={categories.videos} />
       <section className={`${styles.Section}`}>
         <div className="container">
           <TitleSection text={"Colección de videos."} />
