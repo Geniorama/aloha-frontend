@@ -13,6 +13,6 @@ const settings = {
 };
 
 export default function Slider({ children, ...props }) {
-  const options = { ...props, ...settings };
+  const options = { ...settings, ...props };
   return <ReactSlick {...options}>{children}</ReactSlick>;
 }
