@@ -162,7 +162,7 @@ function ProductPage({ data: product }) {
                 width={400}
                 height={400}
                 quality={100}
-                objectFit="cover"
+                style={{ objectFit: "cover" }}
                 alt=""
               />
             </Link>
@@ -183,6 +183,7 @@ function ProductPage({ data: product }) {
                 width={400}
                 height={400}
                 quality={100}
+                style={{ objectFit: "cover" }}
                 alt=""
               />
             </Link>
