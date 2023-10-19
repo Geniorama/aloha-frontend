@@ -15,7 +15,6 @@ function AuthorPage({ images }) {
     const item = images.length ? images[0] : {};
     if (item) setAuthor({ username: item.username, avatar: item.avatar });
   }, [images]);
-  console.log(author, images[0]);
   return (
     <Layout metaData={metaData}>
       <HeroAuthor author={author} />
