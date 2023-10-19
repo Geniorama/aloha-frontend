@@ -49,7 +49,7 @@ export default function Videos() {
           </div>
         </div>
       </section>
-      <PopularAuthors />
+      <PopularAuthors type="dark" />
       <PlanSection />
     </Layout>
   );
