@@ -1,0 +1,106 @@
+.Banner {
+  background-color: #1A01A6;
+  padding: 60px;
+}
+.Banner p,
+.Banner h2 {
+  margin: 0;
+  text-align: center;
+}
+.Banner h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #FF595A;
+}
+.Banner p {
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 15px;
+  color: white;
+}
+.Banner p br {
+  display: none;
+}
+.Banner button {
+  background-color: white;
+  border: none;
+  font-weight: 800;
+  padding: 15px 50px;
+  margin: auto;
+  display: block;
+  margin-top: 30px;
+}
+.Banner span {
+  text-decoration: underline;
+}
+.BannerBusiness {
+  position: relative;
+}
+.BannerBusiness,
+.BannerBusinessBackground {
+  height: 350px;
+}
+.BannerBusinessBackground {
+  position: absolute;
+  width: 100%;
+  background-color: black;
+}
+.BannerBusinessContent {
+  height: 100%;
+  text-align: center;
+  color: white;
+  position: relative;
+  padding: 0 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.BannerBusiness button {
+  background-color: white;
+  border: none;
+  font-weight: 800;
+  padding: 15px;
+  
+}
+@media (min-width: 900px) {
+  .BannerBusiness,
+  .BannerBusinessBackground  {
+    height: 500px;
+  }
+  .BannerBusinessContent {
+    width: 50%;
+    margin-left: auto;
+    align-items: flex-start;
+    text-align: left;
+  }
+  .BannerBusinessContent h2, 
+  .BannerBusinessContent p {
+    max-width: 380px;
+  }
+  .BannerBusinessContent h2 {
+    font-size: 55px;
+  }
+  .BannerBusinessContent p {
+    font-size: 16px;
+  }
+  .Banner {
+    padding: 100px;
+  }
+  .Banner div {
+    max-width: 800px;
+    margin: auto;
+  }
+  .Banner h2 {
+    font-size: 60px;
+  }
+  .Banner p {
+    max-width: 540px;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 15px;
+  }
+  .Banner p br {
+    display: block;
+  }
+  
+}
