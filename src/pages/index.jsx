@@ -78,7 +78,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="col-12 col-md-6 col-lg-3 mt-4">
+            <div className="col-12 col-md-6 col-lg-4 mt-4">
               <CardCategory
                 text={"Videos"}
                 size={"large"}
@@ -87,7 +87,7 @@ export default function Home() {
               />
             </div>
 
-            <div className="col-12 col-md-6 col-lg-3 mt-4">
+            <div className="col-12 col-md-6 col-lg-4 mt-4">
               <CardCategory
                 text={"Música"}
                 size={"large"}
@@ -96,15 +96,7 @@ export default function Home() {
                 image={CoverMusica}
               />
             </div>
-
-            <div className="col-12 col-md-6 col-lg-3 mt-4">
-              <CardCategory
-                text={"Editorial"}
-                size={"large"}
-                image={CoverEditorial}
-              />
-            </div>
-            <div className="col-12 col-md-6 col-lg-3 mt-4">
+            <div className="col-12 col-md-6 col-lg-4 mt-4">
               <CardCategory
                 text={"Efectos de sonido"}
                 size={"large"}
