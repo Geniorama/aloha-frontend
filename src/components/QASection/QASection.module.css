@@ -1,0 +1,19 @@
+.QA {
+  padding: 60px 20px;
+}
+.QA h2 {
+  font-size: 35px;
+  font-weight: 800;
+  margin-bottom: 40px;
+}
+@media (min-width: 900px) {
+  .QA {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .QA h2 {
+    font-size: 45px;
+    max-width: 350px;
+  }
+}

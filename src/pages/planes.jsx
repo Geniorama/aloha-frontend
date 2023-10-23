@@ -1,5 +1,6 @@
 import Layout from "@/components/Layout/Layout";
 import PlanSection from "@/components/PlanSection/PlanSection";
+import QASection from "@/components/QASection/QASection";
 import styles from "@/styles/Planes.module.css";
 import Image from "next/image";
 
@@ -54,9 +55,23 @@ function PlanesPage() {
         </div>
       </section>
       <section className={styles.BannerBusiness}>
-        <div className={styles.BannerBusinessBackground} />
+        <div className={styles.BannerBusinessBackground}>
+          <Image
+            src="/img/planes/business-banner.jpg"
+            sizes="(min-width: 568px) 568px, (min-width: 1024px) 1024px, 128px"
+            loader={({ width }) =>
+              width >= 568
+                ? "/img/planes/business-banner.jpg"
+                : "/img/planes/business-small-banner.jpg"
+            }
+            fill
+            alt=""
+          />
+        </div>
         <div className={styles.BannerBusinessContent}>
-          <h2>¿Necesitas un plan para tu empresa?</h2>
+          <h2>
+            ¿Necesitas un plan para <span>tu empresa?</span>
+          </h2>
           <p>
             Eleva el esfuerzo de tu equipo al siguiente nivel con nuestros
             planes para empresa
@@ -91,6 +106,7 @@ function PlanesPage() {
           </button>
         </div>
       </section>
+      <QASection />
     </Layout>
   );
 }

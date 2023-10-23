@@ -1,0 +1,27 @@
+.QAItem {
+  border-bottom: 1px solid #CECECE;
+  padding: 18px 0;
+}
+.QAItem div {
+  display: flex; 
+  align-items: center;
+  justify-content: space-between;
+  gap: 38px;
+}
+.QAItem h3 {
+  font-size: 20px;
+  color: #1A01A6;
+  margin:0;
+}
+.QAItem p {
+  margin: 0;
+  margin-top: 10px;
+}
+.QAItem svg {
+  width: 40px;
+}
+@media (min-width: 900px) {
+  .QAItem {
+    width: 100%;
+  }
+}

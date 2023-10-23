@@ -62,10 +62,13 @@
   padding: 15px;
   
 }
+.BannerBusiness h2 span {
+  color: #FF595A;
+}
 @media (min-width: 900px) {
   .BannerBusiness,
   .BannerBusinessBackground  {
-    height: 500px;
+    height: 600px;
   }
   .BannerBusinessContent {
     width: 50%;
