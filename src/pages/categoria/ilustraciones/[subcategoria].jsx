@@ -33,7 +33,10 @@ function Subcatgory({ items = [], subcategory }) {
         <div className="row">
           {items.map((item, index) => (
             <div key={index} className="col-4">
-              <SubcategoryCard url={`/search/${item.slug}`} {...item} />
+              <SubcategoryCard
+                url={`/categoria/ilustraciones/collections?source=${item.text}`}
+                {...item}
+              />
             </div>
           ))}
         </div>

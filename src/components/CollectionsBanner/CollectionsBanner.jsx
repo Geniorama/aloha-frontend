@@ -1,14 +1,23 @@
+import { Fragment } from "react";
 import Image from "next/image";
 import Slider from "../Slider/Slider";
-import categories from "@/data/categories";
-import subcategories from "@/data/subcategories";
 import styles from "./CollectionsBanner.module.css";
 import Link from "next/link";
-import { Fragment } from "react";
+import subcategories from "@/data/subcategories";
+import subcategories_vectores from "@/data/subcategories_vector";
+import subcategories_illustrations from "@/data/subcategories_illustrations";
+import subcategories_videos from "@/data/subcategories_videos";
+
+const subcategoriesList = {
+  photos: subcategories,
+  illustrations: subcategories_illustrations,
+  vectors: subcategories_vectores,
+  videos: subcategories_videos,
+};
 
 export default function CollectionsBanner({ title, category, source }) {
   const items = [];
-  for (const [key, value] of Object.entries(subcategories)) {
+  for (const [key, value] of Object.entries(subcategoriesList[category])) {
     value.map((item) => items.push({ ...item, category: key }));
   }
   const banner = items.find((item) => source === item.text)?.image || "";
