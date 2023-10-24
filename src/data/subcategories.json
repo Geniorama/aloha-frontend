@@ -10,24 +10,28 @@
     {
       "image": "/img/category/cat-relajado.png",
       "text": "Invierno",
+      "slug": "inverno",
       "width": 450,
       "height": 450
     },
     {
       "image": "/img/category/cat-paisaje.png",
       "text": "Otoño",
+      "slug": "otoño",
       "width": 450,
       "height": 450
     },
     {
       "image": "/img/category/cat-flores.png",
       "text": "Primavera",
+      "slug": "primavera",
       "width": 450,
       "height": 450
     },
     {
       "image": "/img/category/cat-amigos.png",
       "text": "Flores",
+      "slug": "flores",
       "width": 450,
       "height": 450
     },
