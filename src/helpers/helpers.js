@@ -76,3 +76,7 @@ export const getPlan = (category) =>
   planes.filter((plan) =>
     plan.category.some((categoria) => categoria.name === category)
   );
+
+export const capitalizeFirstLetter = (str) => {
+  return str ? str.charAt(0).toUpperCase() + str.slice(1) : "";
+};
