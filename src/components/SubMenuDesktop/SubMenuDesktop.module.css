@@ -1,0 +1,33 @@
+.SubMenuDesktop {
+  max-width: 1000px;
+  height: 200px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px
+}
+.SubMenuDesktopItem {
+  width: 300px;
+  height: 170px;
+  position: relative;
+}
+.GridThree {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.GridFour {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+}
+.Tag { 
+  position: absolute; 
+  bottom: 0;
+  background-color: white;
+  padding-top: 1px;
+  padding-right: 10px;
+  font-weight: 800;
+}

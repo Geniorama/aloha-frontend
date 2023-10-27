@@ -20,6 +20,10 @@
   color: var(--aloha-black);
   margin: 0 8px;
   position: relative;
+  cursor: pointer;
+}
+.menufirst svg {
+  margin-left: 6px 
 }
 .menufirst a::before {
   content: "";
