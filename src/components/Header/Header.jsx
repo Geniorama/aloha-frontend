@@ -344,7 +344,7 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      {isSubMenuOpen && <SubMenuDesktop />}
+      {isSubMenuOpen && <SubMenuDesktop isHeaderFixed={isHeaderFixed} />}
     </Fragment>
   );
 };
