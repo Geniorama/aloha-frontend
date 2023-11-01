@@ -56,10 +56,14 @@ export default function SearchBar({ size }) {
     setOpenMenu(false);
   };
 
-  const onSubmit = async () => router.push(`/search/${inputRef.current.value}`);
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    router.push(`/search/${inputRef.current.value}`)
+  };
 
   return (
     <form
+      onSubmit={onSubmit}
       className={`${styles.SearchBar} ${
         size == "small" && styles.Small
       } rounded`}
@@ -137,7 +141,6 @@ export default function SearchBar({ size }) {
               className={`btn btn-primary ${styles.BtnSubmit}`}
               type="button"
               id="button-addon2"
-              onClick={onSubmit}
             >
               <FontAwesomeIcon fontSize={"28px"} icon={faMagnifyingGlass} />
             </button>
