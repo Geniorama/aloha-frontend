@@ -147,7 +147,7 @@ const Header = () => {
                     <path
                       d="M1 1L5 5L9 1"
                       stroke="#7F7F7F"
-                      stroke-width="1.5"
+                      strokeWidth="1.5"
                     />
                   </svg>
                 </a>
