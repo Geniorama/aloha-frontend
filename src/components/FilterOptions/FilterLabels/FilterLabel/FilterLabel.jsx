@@ -13,25 +13,26 @@ export default function FilterLabel({
   const [show, setShow] = useState(false);
   const onShow = () => setShow(!show);
   const size = styles[items.length > 2 ? "size-big" : "size-normal"];
-  const position = styles[`position-${align}`];
   return (
     <div className={styles.label}>
-      <header onClick={onShow}>
+      <div className={styles.title} onClick={onShow}>
         <div>
           <Image src={icon} alt="icon" />
           <span>{label}</span>
         </div>
         <Image src={Chevrondown} alt="chevrondown-icon" />
-      </header>
+      </div>
       {show && items.length ? (
-        <div className={`p-4 mt-2 ${size} ${position}`}>
+        <div className={`p-lg-4 mt-2 ${size} ${styles[`position-${align}`]}`}>
           {items.length ? (
             <FilterLabelItems items={items} />
           ) : (
             <div>{children}</div>
           )}
         </div>
-      ) : null}
+      ) : (
+        <div className={styles.divider} />
+      )}
     </div>
   );
 }
