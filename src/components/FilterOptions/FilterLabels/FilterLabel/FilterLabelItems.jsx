@@ -1,12 +1,9 @@
 import styles from "./FilterLabelItems.module.css";
 
 export default function FilterLabelsItems({ items }) {
-  const columnStyle =
-    items.length > 3
-      ? { columnCount: 2 }
-      : { display: "flex", flexDirection: "column", gap: "20px 0" };
+  const columns = items.length > 3 ? "twoColumns" : "threeColumns";
   return (
-    <div style={columnStyle} className={styles.FilterOptionsTagItems}>
+    <div className={`${styles.labelItems} ${styles[columns]}`}>
       {items.map((item, index) => (
         <div
           key={index}
@@ -16,10 +13,10 @@ export default function FilterLabelsItems({ items }) {
           }}
         >
           {item.label && <b className="mb-2 d-block">{item.label}</b>}
-          <div className={styles.ItemContent}>
+          <div className={styles.itemWrapper}>
             {item.items.length
               ? item.items.map((elem) => (
-                  <div key={elem} className={styles.Item}>
+                  <div key={elem} className={styles.item}>
                     {elem}
                   </div>
                 ))
