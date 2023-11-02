@@ -1,0 +1,18 @@
+.ItemContent {
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.Item {
+  display: flex;
+  height: 40px;
+  width: calc(50% - 4px);
+  padding: 8px 0px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  border: 1px solid #DFDFDF;
+  background:  #FFF;
+}

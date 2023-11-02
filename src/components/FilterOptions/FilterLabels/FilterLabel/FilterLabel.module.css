@@ -1,0 +1,50 @@
+.label {
+  position: relative;
+}
+.label span {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 5px;
+}
+.label header {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+@media (min-width: 900px) {
+  .label header {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    padding: 11px;
+    border-radius: 10px;
+    border: 2px solid #efefef;
+    background-color: #fafafa;
+    cursor: pointer;
+    width: 100%;
+  }
+  .label div {
+    position: absolute;
+    z-index: 1000;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.29);
+  }
+  .size-big {
+    width: 800px;
+  }
+  .size-normal {
+    width: 440px;
+  }
+  .position-left {
+    left: 0;
+  }
+  .position-center {
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .position-right {
+    right: 0;
+  }
+}
