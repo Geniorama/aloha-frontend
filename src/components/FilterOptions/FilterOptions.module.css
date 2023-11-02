@@ -1,6 +1,30 @@
-.FilterOptions select {
+.field {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid #DFDFDF;
+}
+
+.field select {
   background: none;
   border: none;
   outline: none;
   font-weight: 600;
+  width: 150px;
+}
+
+.labels {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .field {
+    display: flex;
+    gap: 2;
+    align-items: center;
+    justify-content: flex-end;
+  }
 }
