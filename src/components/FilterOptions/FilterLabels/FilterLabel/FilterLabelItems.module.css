@@ -23,12 +23,14 @@
   border-radius: 2px;
 }
 
-.towColumns {
-  column-count: 2
-}
+@media (min-width:900px) {
+  .twoColumns {
+    column-count: 2
+  }
 
-.threeColumns {
-  display: "flex";
-  flex-direction: "column";
-  gap: "20px 0"
+  .threeColumns {
+    display: "flex";
+    flex-direction: "column";
+    gap: "20px 0"
+  }
 }
