@@ -17,7 +17,7 @@ export default function FilterOptions() {
             </select>
           </div>
           <div className={`col-4 col-lg-12 ${styles.labels}`}>
-            <span>Filtrar</span>
+            <span className={styles.toggle}>Filtrar</span>
             <FilterLabels />
           </div>
         </div>

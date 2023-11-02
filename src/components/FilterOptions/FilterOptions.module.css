@@ -21,6 +21,12 @@
 }
 
 @media (min-width: 900px) {
+  .toggle {
+    display: none;
+  }
+  .labels {
+    margin: 0;
+  }
   .field {
     display: flex;
     gap: 2;
