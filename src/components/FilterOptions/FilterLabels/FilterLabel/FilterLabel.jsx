@@ -23,7 +23,11 @@ export default function FilterLabel({
         <Image src={Chevrondown} alt="chevrondown-icon" />
       </div>
       {show && items.length ? (
-        <div className={`p-lg-4 mt-2 ${size} ${styles[`position-${align}`]}`}>
+        <div
+          className={`p-lg-4 mt-2 ${styles.tooltip} ${size} ${
+            styles[`position-${align}`]
+          }`}
+        >
           {items.length ? (
             <FilterLabelItems items={items} />
           ) : (
