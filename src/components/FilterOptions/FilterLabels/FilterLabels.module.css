@@ -1,4 +1,4 @@
-.labels {
+.labelsList {
   position: fixed;
   top: 0;
   left: 0;
@@ -9,23 +9,29 @@
   padding: 20px;
   overflow: auto;
 }
-.labels header {
+.labelsList .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.labels h6 {
+.labelsList h6 {
   margin: 0;
   font-size: 20px;
   font-weight: 800;
 }
 @media (min-width: 900px) {
-  .labels {
+  .labelsList {
     position: relative;
+    padding: 0;
+    overflow: inherit;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
     padding-top: 2rem;
+    width: 100%;
+  }
+  .labelsList .header {
+    display: none;
   }
 }

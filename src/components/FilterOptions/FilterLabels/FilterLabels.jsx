@@ -14,8 +14,8 @@ import closeIcon from "../../../../public/icons/Close-blue.svg";
 import Image from "next/image";
 export default function FilterLabels() {
   return (
-    <div className={styles.labels}>
-      <header>
+    <div className={styles.labelsList}>
+      <header className={styles.header}>
         <h6>Filtros.</h6>
         <Image src={closeIcon} alt="close-icon" />
       </header>
