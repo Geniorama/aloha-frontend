@@ -48,16 +48,20 @@ function ProductPage({ data: product }) {
     if (product) {
       if (!items.series.length)
         getImage(product.series).then((data) => {
-          const series = Object.entries(data)
-            .filter((item) => item[0].includes("item"))
-            .map((item) => item[1]);
+          const series = data
+            ? Object.entries(data)
+                .filter((item) => item[0].includes("item"))
+                .map((item) => item[1])
+            : [];
           setItems({ ...items, series });
         });
       if (!items.similar.length)
         getImage(product.similar).then((data) => {
-          const similar = Object.entries(data)
-            .filter((item) => item[0].includes("item"))
-            .map((item) => item[1]);
+          const similar = data
+            ? Object.entries(data)
+                .filter((item) => item[0].includes("item"))
+                .map((item) => item[1])
+            : [];
           setItems({ ...items, similar });
         });
     }
