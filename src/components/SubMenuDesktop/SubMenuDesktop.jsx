@@ -1,11 +1,9 @@
 import Image from "next/image";
 import styles from "./SubMenuDesktop.module.css";
-export default function SubMenuDesktop({isHeaderFixed}) {
-  const subMenuStyles = isHeaderFixed
-  ? `${styles.SubMenuDesktop} ${styles.fixed}`
-  : styles.SubMenuDesktop;
+export default function SubMenuDesktop({ isHeaderFixed }) {
+  const subMenuPosition = isHeaderFixed ? styles.fixed : null;
   return (
-    <div className={subMenuStyles}>
+    <div className={`${styles.SubMenuDesktop} ${subMenuPosition}`}>
       <div className={`${styles.GridThree} ${styles.SubMenuDesktopItem}`}>
         <div
           style={{
