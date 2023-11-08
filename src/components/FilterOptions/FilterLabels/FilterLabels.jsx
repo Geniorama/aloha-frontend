@@ -12,12 +12,13 @@ import {
 } from "./FilterLabelsIcons";
 import closeIcon from "../../../../public/icons/Close-blue.svg";
 import Image from "next/image";
-export default function FilterLabels() {
+export default function FilterLabels({ show, onClose }) {
+  const displayContent = show ? styles.show : null;
   return (
-    <div className={styles.labelsList}>
+    <div className={`${styles.labelsList} ${displayContent}`}>
       <header className={styles.header}>
         <h6>Filtros.</h6>
-        <Image src={closeIcon} alt="close-icon" />
+        <Image src={closeIcon} alt="close-icon" onClick={onClose} />
       </header>
       <FilterLabel
         icon={Portrait}

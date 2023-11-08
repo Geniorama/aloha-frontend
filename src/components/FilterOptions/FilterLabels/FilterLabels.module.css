@@ -8,6 +8,7 @@
   z-index: 5;
   padding: 20px;
   overflow: auto;
+  display: none;
 }
 
 .labelsList .header {
@@ -21,6 +22,10 @@
   margin: 0;
   font-size: 20px;
   font-weight: 800;
+}
+
+.show {
+  display: inline-block;
 }
 
 @media (min-width: 900px) {
