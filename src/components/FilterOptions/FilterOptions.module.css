@@ -24,13 +24,16 @@
   .toggle {
     display: none;
   }
+
   .labels {
     margin: 0;
   }
+
   .field {
-    display: flex;
     gap: 2;
+    flex-direction: row;
     align-items: center;
     justify-content: flex-end;
+    border: none;
   }
 }
