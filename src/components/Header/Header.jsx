@@ -144,11 +144,7 @@ const Header = () => {
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
                   >
-                    <path
-                      d="M1 1L5 5L9 1"
-                      stroke="#7F7F7F"
-                      strokeWidth="1.5"
-                    />
+                    <path d="M1 1L5 5L9 1" stroke="#7F7F7F" strokeWidth="1.5" />
                   </svg>
                 </a>
               </li>
