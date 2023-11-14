@@ -1,75 +1,87 @@
-.Grid{
-    display: grid;
-    height: 450px;
-    gap: 1rem;
-    width: 550px;
-    padding: 0 20px;
+.Grid {
+  display: grid;
+  height: 450px;
+  gap: 1rem;
+  width: 550px;
+  padding: 0 20px;
 }
 
-.Grid_3{
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+.Grid_1 {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(1, 1fr);
 }
 
-.Grid_4{
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(3, 1fr);
+.Grid_3 {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
-.Item{
-    position: relative;
+.Grid_4 {
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
 
-.Grid_3, .caption {
-    grid-column: span 5;
+.Item {
+  position: relative;
 }
 
-.Grid_3, .caption {
-    grid-column: span 6;
+.Grid_1 .Item {
+  grid-column: span 5;
+  grid-row: span 1;
 }
 
-.Grid_3 .Item{
-    grid-column: span 2;
-    grid-row: span 1;
+.Grid_3,
+.caption {
+  grid-column: span 5;
 }
 
-.Grid_3 .Item:first-child{
-    grid-column: span 3;
-    grid-row: span 2;
+.Grid_3,
+.caption {
+  grid-column: span 6;
 }
 
-.Grid_4 .Item{
-    grid-column: span 2;
-    grid-row: span 1;
+.Grid_3 .Item {
+  grid-column: span 2;
+  grid-row: span 1;
 }
 
-.Grid_4 .Item:first-child{
-    grid-column: span 6;
-    grid-row: span 2;
+.Grid_3 .Item:first-child {
+  grid-column: span 3;
+  grid-row: span 2;
+}
+
+.Grid_4 .Item {
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.Grid_4 .Item:first-child {
+  grid-column: span 6;
+  grid-row: span 2;
 }
 
 .caption {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    gap: 10px
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px
 }
 
 .caption h3 {
-    font-weight: bold;
-    margin-bottom: 0;
+  font-weight: bold;
+  margin-bottom: 0;
 }
 
 .caption span {
-    color: #515151;
+  color: #515151;
 }
 
 .icon {
-    transform: rotate(-45deg);
-    font-size: 24px;
+  transform: rotate(-45deg);
+  font-size: 24px;
 }
 
 .caption:hover .icon,
 .caption:hover span {
-    color: #FF595A;
-} 
+  color: #FF595A;
+}

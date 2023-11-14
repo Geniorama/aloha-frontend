@@ -7,23 +7,24 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function CardGrid({ items = [], name }) {
+export default function CardGrid({ items = [], name = "Japandi Aesthetic" }) {
+  const sliceItems = items.length && items.slice(0, 3);
+  const columns =
+    sliceItems.length <= 1
+      ? styles.Grid_1
+      : styles.Grid[`_${sliceItems.length}`];
   return (
-    <div
-      className={`${styles.Grid} ${
-        items.length > 3 ? styles.Grid_4 : styles.Grid_3
-      }`}
-    >
+    <div className={`${styles.Grid} ${columns}`}>
       {items.length &&
         items.map((item, i) => (
           <div key={i} className={styles.Item}>
-            <Image src={item} alt="" fill />
+            <Image src={item} alt="image" objectFit="cover" fill />
           </div>
         ))}
       <div className={styles.caption}>
         <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
         <h3>
-          Japandi Aesthetic
+          {name}
           <span> &middot; 300</span>
         </h3>
       </div>
