@@ -1,52 +1,55 @@
 import Image from "next/image";
 import styles from "./SubMenuDesktop.module.css";
+import Link from "next/link";
 export default function SubMenuDesktop({ isHeaderFixed }) {
   const subMenuPosition = isHeaderFixed ? styles.fixed : null;
   return (
     <div className={`${styles.SubMenuDesktop} ${subMenuPosition}`}>
-      <div className={`${styles.GridThree} ${styles.SubMenuDesktopItem}`}>
-        <div
-          style={{
-            gridColumn: "span 2",
-            gridRow: "span 2",
-            position: "relative",
-          }}
-        >
-          <Image
-            src="/img/category/cat-arquitectura.png"
-            objectFit="cover"
-            alt="cover"
-            fill
-          />
+      <Link href="/categoria/fotos">
+        <div className={`${styles.GridThree} ${styles.SubMenuDesktopItem}`}>
+          <div
+            style={{
+              gridColumn: "span 2",
+              gridRow: "span 2",
+              position: "relative",
+            }}
+          >
+            <Image
+              src="/img/category/cat-arquitectura.png"
+              objectFit="cover"
+              alt="cover"
+              fill
+            />
+          </div>
+          <div
+            style={{
+              gridColumn: "span 1",
+              position: "relative",
+            }}
+          >
+            <Image
+              src="/img/category/cat-paisaje.png"
+              objectFit="cover"
+              alt="cover"
+              fill
+            />
+          </div>
+          <div
+            style={{
+              gridColumn: "span 1",
+              position: "relative",
+            }}
+          >
+            <Image
+              src="/img/category/cat-flores.png"
+              objectFit="cover"
+              alt="cover"
+              fill
+            />
+          </div>
+          <span className={styles.Tag}>Fotos</span>
         </div>
-        <div
-          style={{
-            gridColumn: "span 1",
-            position: "relative",
-          }}
-        >
-          <Image
-            src="/img/category/cat-paisaje.png"
-            objectFit="cover"
-            alt="cover"
-            fill
-          />
-        </div>
-        <div
-          style={{
-            gridColumn: "span 1",
-            position: "relative",
-          }}
-        >
-          <Image
-            src="/img/category/cat-flores.png"
-            objectFit="cover"
-            alt="cover"
-            fill
-          />
-        </div>
-        <span className={styles.Tag}>Fotos</span>
-      </div>
+      </Link>
       <div className={`${styles.GridThree} ${styles.SubMenuDesktopItem}`}>
         <div
           style={{
