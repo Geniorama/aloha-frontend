@@ -31,8 +31,8 @@ export default function GridGallery({ images = [] }) {
               objectFit="cover"
               objectPosition="top"
               className={styles.Image}
-              width={orientation.width}
-              height={orientation.height}
+              width={orientation?.width}
+              height={orientation?.height}
               quality={100}
               alt=""
             />

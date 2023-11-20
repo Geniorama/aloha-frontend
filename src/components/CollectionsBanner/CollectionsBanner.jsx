@@ -15,17 +15,12 @@ const subcategoriesList = {
   videos: subcategories_videos,
 };
 
-export default function CollectionsBanner({ title, category, source }) {
-  const items = [];
-  for (const [key, value] of Object.entries(subcategoriesList[category])) {
-    value.map((item) => items.push({ ...item, category: key }));
-  }
-  const banner = items.find((item) => source === item.text)?.image || "";
+export default function CollectionsBanner({ title, cover }) {
   return (
     <div className="container">
-      {banner ? (
+      {cover ? (
         <div style={{ height: "200px", width: "100%", position: "relative" }}>
-          <Image src={banner} fill alt="" objectFit="cover" />
+          <Image src={cover} fill alt="" objectFit="cover" />
         </div>
       ) : (
         <Fragment>
@@ -38,7 +33,7 @@ export default function CollectionsBanner({ title, category, source }) {
               </p>
             </div>
           ) : null}
-          {category ? (
+          {/* {category ? (
             <Slider autoplay={false}>
               {items.map((item, index) => (
                 <div
@@ -77,7 +72,7 @@ export default function CollectionsBanner({ title, category, source }) {
                 </div>
               ))}
             </Slider>
-          ) : null}
+          ) : null} */}
         </Fragment>
       )}
     </div>

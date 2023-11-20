@@ -1,8 +1,10 @@
 import Layout from "@/components/Layout/Layout";
 import PlanSection from "@/components/PlanSection/PlanSection";
 import QASection from "@/components/QASection/QASection";
+import { getSubscriptionOffers } from "@/services/subaccount";
 import styles from "@/styles/Planes.module.css";
 import Image from "next/image";
+import { useEffect } from "react";
 
 const metaData = {
   title: "Planes",
@@ -12,6 +14,9 @@ const metaData = {
 };
 
 function PlanesPage() {
+  useEffect(() => {
+    getSubscriptionOffers().then((res) => console.log(res));
+  }, []);
   return (
     <Layout metaData={metaData}>
       <PlanSection />

@@ -318,5 +318,75 @@
       "description": "Cristiano Bami",
       "image": "/img/category/editorial/contribuidor-destacado.jpg"
     }
+  ],
+  "collections": [
+    {
+      "image": "/img/category/cat-trabajo.png",
+      "text": "Estaciones del año",
+      "slug": "estaciones-año",
+      "link_position": "bottom-right",
+      "width": 400,
+      "height": 458
+    },
+    {
+      "image": "/img/category/cat-relajado.png",
+      "text": "Naturaleza",
+      "slug": "naturaleza",
+      "width": 400,
+      "height": 265
+    },
+    {
+      "image": "/img/category/cat-paisaje.png",
+      "link_position": "bottom-right",
+      "text": "Computador",
+      "slug": "computador",
+      "width": 400,
+      "height": 267
+    },
+    {
+      "image": "/img/category/cat-flores.png",
+      "text": "Diseño",
+      "slug": "diseño",
+      "width": 280,
+      "height": 249
+    },
+    {
+      "image": "/img/category/cat-amigos.png",
+      "link_position": "bottom-right",
+      "text": "Pop-art",
+      "slug": "pop-art",
+      "width": 280,
+      "height": 418
+    },
+    {
+      "image": "/img/category/cat-abstracto.png",
+      "text": "Mosaico",
+      "slug": "mosaico",
+      "width": 280,
+      "height": 323
+    },
+    {
+      "image": "/img/category/cat-arquitectura.png",
+      "link_position": "bottom-left",
+      "text": "Moderno",
+      "slug": "moderno",
+      "width": 376,
+      "height": 355
+    },
+    {
+      "image": "/img/category/cat-background.png",
+      "text": "Vintage",
+      "slug": "vintage",
+      "width": 376,
+      "height": 368
+    },
+    {
+      "image": "/img/category/cat-comida.png",
+      "link_position": "bottom-right",
+      "text": "Acuarela",
+      "slug": "acuarela",
+      "width": 376,
+      "height": 267
+    }
   ]
 }

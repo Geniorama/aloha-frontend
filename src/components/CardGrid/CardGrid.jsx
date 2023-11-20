@@ -12,7 +12,7 @@ export default function CardGrid({ items = [], name = "Japandi Aesthetic" }) {
   const columns =
     sliceItems.length <= 1
       ? styles.Grid_1
-      : styles.Grid[`_${sliceItems.length}`];
+      : styles[`Grid_${sliceItems.length}`];
   return (
     <div className={`${styles.Grid} ${columns}`}>
       {items.length &&
@@ -25,7 +25,7 @@ export default function CardGrid({ items = [], name = "Japandi Aesthetic" }) {
         <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
         <h3>
           {name}
-          <span> &middot; 300</span>
+          <span> &middot; {items.length}</span>
         </h3>
       </div>
     </div>

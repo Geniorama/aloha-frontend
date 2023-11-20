@@ -1,0 +1,9 @@
+.Link {
+  color: #222222;
+  text-decoration: none;
+  text-transform: capitalize;
+}
+
+.Link:hover {
+  color: #222222;
+}

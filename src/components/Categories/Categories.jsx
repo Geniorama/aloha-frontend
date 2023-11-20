@@ -11,7 +11,7 @@ export default function Categories({ categories, title, path }) {
           {categories.map((category, index) => (
             <Category
               key={index}
-              url={`/categoria/${path}/${category.slug}`}
+              url={`/search/${category.slug}`}
               {...category}
             />
           ))}
