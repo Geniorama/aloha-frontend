@@ -40,7 +40,7 @@ export const login = async (payload) => {
 
 export const getSubscriptionOffers = async () => {
   try {
-    const response = await request("getSubscriptionOffers", { subaccount_id });
+    const response = await request("getSubscriptionOffers");
     return response;
   } catch (error) {
     console.log(error);
