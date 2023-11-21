@@ -1,6 +1,7 @@
 import ButtonLink from "@/components/ButtonLink/ButtonLink";
 import CardGrid from "@/components/CardGrid/CardGrid";
 import Categories from "@/components/Categories/Categories";
+import CollectionCard from "@/components/CollectionCard/CollectionCard";
 import HeroCategory from "@/components/Hero/HeroCategory/HeroCategory";
 import Layout from "@/components/Layout/Layout";
 import PlanSection from "@/components/PlanSection/PlanSection";
@@ -10,6 +11,8 @@ import TitleSection from "@/components/TitleSection/TitleSection";
 import categories from "@/data/categories";
 import images from "@/data/images.json";
 import styles from "@/styles/Category.module.css";
+
+import collections from "@/data/collections.json";
 
 const metaData = {
   title: "Categoría | Ilustraciones",
@@ -42,12 +45,17 @@ function Ilustrations() {
           </div>
           <div>
             <Slider>
-              <CardGrid items={images.photo_example} />
-              <CardGrid items={images.photo_exampleWith4Images} />
-              <CardGrid items={images.photo_example} />
-              <CardGrid items={images.photo_example} />
-              <CardGrid items={images.photo_exampleWith4Images} />
+              {collections.map((collection) => (
+                <CollectionCard key={collection.name} {...collection} />
+              ))}
             </Slider>
+            {/* <Slider>
+              <CardGrid items={images.photo_example} />
+              <CardGrid items={images.photo_exampleWith4Images} />
+              <CardGrid items={images.photo_example} />
+              <CardGrid items={images.photo_example} />
+              <CardGrid items={images.photo_exampleWith4Images} />
+            </Slider> */}
           </div>
         </div>
       </section>
