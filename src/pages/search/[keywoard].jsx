@@ -21,8 +21,9 @@ export default function SearchPage({ result = [] }) {
 export const getServerSideProps = async ({ params, query }) => {
   try {
     const param = params.keywoard || "";
-    const response = query.similar
-      ? await getRelated("similar", params.keywoard)
+    console.log(query);
+    const response = query.related_type
+      ? await getRelated(query.related_type, params.keywoard)
       : await search(param, { search_limit: 30, full_info: true });
     const result = response ?? [];
     return { props: { result } };

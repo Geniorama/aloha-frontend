@@ -22,6 +22,7 @@ export const getRelated = async (
         search_item_id,
         ...options,
       })) || {};
+    console.log(response);
     return response?.items || [];
   } catch (error) {
     console.log(error);

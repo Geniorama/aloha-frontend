@@ -113,7 +113,7 @@ function ProductPage({ data: product }) {
         </div>
         <div className={styles.info__items}>
           <Link
-            href={`/search/${product.id}?similar=true`}
+            href={`/search/${product.id}?related_type=similar`}
             className={styles.searchLink}
           >
             <span>Buscar imágenes similares</span>
@@ -193,9 +193,15 @@ function ProductPage({ data: product }) {
             </Link>
           ))}
         </div>
-        <button className={styles.button_small}>
-          <span>Ver más</span>
-        </button>
+        <Link
+          target="_blank"
+          href={`/search/${product.id}?related_type=serie`}
+          style={{ textDecoration: "none" }}
+        >
+          <button className={styles.button_small}>
+            <span>Ver más</span>
+          </button>
+        </Link>
       </section>
       <section className="container p-4">
         <h5 className={styles.gallery__title}>Imágenes similares:</h5>
@@ -214,9 +220,15 @@ function ProductPage({ data: product }) {
             </Link>
           ))}
         </div>
-        <button className={styles.button_small}>
-          <span>Ver más</span>
-        </button>
+        <Link
+          target="_blank"
+          href={`/search/${product.id}?related_type=similar`}
+          style={{ textDecoration: "none" }}
+        >
+          <button className={styles.button_small}>
+            <span>Ver más</span>
+          </button>
+        </Link>
       </section>
     </Layout>
   );
