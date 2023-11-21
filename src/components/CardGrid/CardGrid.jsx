@@ -8,15 +8,15 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 
 export default function CardGrid({ items = [], name = "Japandi Aesthetic" }) {
-  const sliceItems = items.length && items.slice(0, 3);
+  const sliceItems = (items.length && items.slice(0, 3)) || [];
   const columns =
     sliceItems.length <= 1
       ? styles.Grid_1
       : styles[`Grid_${sliceItems.length}`];
   return (
     <div className={`${styles.Grid} ${columns}`}>
-      {items.length &&
-        items.map((item, i) => (
+      {sliceItems.length &&
+        sliceItems.map((item, i) => (
           <div key={i} className={styles.Item}>
             <Image src={item} alt="image" objectFit="cover" fill />
           </div>
