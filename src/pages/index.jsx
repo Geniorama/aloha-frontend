@@ -211,13 +211,15 @@ export default function Home() {
         <Slider>
           {otoño_images.images.map((image) => (
             <div key={image.id} className={styles.SlideItem}>
-              <Image
-                src={image.huge_thumb}
-                width={300}
-                height={400}
-                alt=""
-                quality={100}
-              />
+              <div style={{ height: "400px", width: "600px" }}>
+                <Image
+                  src={image.huge_thumb}
+                  width={400}
+                  height={500}
+                  alt=""
+                  quality={100}
+                />
+              </div>
             </div>
           ))}
         </Slider>
