@@ -1,3 +1,4 @@
+import { slugify } from "@/helpers/helpers";
 import TitleSection from "../TitleSection/TitleSection";
 import styles from "./Categories.module.css";
 import Category from "./Category/Category";
@@ -11,7 +12,7 @@ export default function Categories({ categories, title, path }) {
           {categories.map((category, index) => (
             <Category
               key={index}
-              url={`/search/${category.slug}`}
+              url={`/search/${slugify(category.text)}`}
               {...category}
             />
           ))}
