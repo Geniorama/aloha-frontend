@@ -1,21 +1,21 @@
 {
   "photos": [
     {
-      "image": "/img/collections/cat-trabajo.png",
+      "image": "/img/category/cat-trabajo.png",
       "text": "Trabajo",
       "slug": "trabajo",
       "width": 400,
       "height": 458
     },
     {
-      "image": "/img/collections/cat-relajado.png",
+      "image": "/img/category/cat-relajado.png",
       "text": "Relajado",
       "slug": "relajado",
       "width": 400,
       "height": 265
     },
     {
-      "image": "/img/collections/cat-paisaje.png",
+      "image": "/img/category/cat-paisaje.png",
       "link_position": "bottom-right",
       "text": "Paisaje",
       "slug": "paisaje",
@@ -23,7 +23,7 @@
       "height": 267
     },
     {
-      "image": "/img/collections/cat-flores.png",
+      "image": "/img/category/cat-flores.png",
       "link_position": "bottom-right",
       "text": "Flores",
       "slug": "flores",
@@ -31,7 +31,7 @@
       "height": 249
     },
     {
-      "image": "/img/collections/cat-amigos.png",
+      "image": "/img/category/cat-amigos.png",
       "link_position": "bottom-right",
       "text": "Amigos",
       "slug": "amigos",
@@ -39,14 +39,14 @@
       "height": 418
     },
     {
-      "image": "/img/collections/cat-abstracto.png",
+      "image": "/img/category/cat-abstracto.png",
       "text": "Abstracto",
       "slug": "abstracto",
       "width": 280,
       "height": 323
     },
     {
-      "image": "/img/collections/cat-arquitectura.png",
+      "image": "/img/category/cat-arquitectura.png",
       "link_position": "bottom-right",
       "text": "Arquitectura",
       "slug": "arquitectura",
