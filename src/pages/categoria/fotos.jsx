@@ -14,6 +14,8 @@ import images from "@/data/images";
 import categories from "@/data/categories";
 import { useEffect } from "react";
 import search from "@/services/search.service";
+import CollectionCard from "@/components/CollectionCard/CollectionCard";
+import collections from "@/data/collections.json";
 
 const metaData = {
   title: "Categoría | Fotos",
@@ -45,12 +47,17 @@ export default function Fotos() {
           </div>
           <div>
             <Slider>
-              <CardGrid items={images.photo_example} />
-              <CardGrid items={images.photo_exampleWith4Images} />
-              <CardGrid items={images.photo_example} />
-              <CardGrid items={images.photo_example} />
-              <CardGrid items={images.photo_exampleWith4Images} />
+              {collections.map((collection) => (
+                <CollectionCard key={collection.name} {...collection} />
+              ))}
             </Slider>
+            {/* <Slider>
+              <CardGrid items={images.photo_example} />
+              <CardGrid items={images.photo_exampleWith4Images} />
+              <CardGrid items={images.photo_example} />
+              <CardGrid items={images.photo_example} />
+              <CardGrid items={images.photo_exampleWith4Images} />
+            </Slider> */}
           </div>
         </div>
       </section>
