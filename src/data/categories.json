@@ -1,21 +1,21 @@
 {
   "photos": [
     {
-      "image": "/img/category/cat-trabajo.png",
+      "image": "/img/collections/cat-trabajo.png",
       "text": "Trabajo",
       "slug": "trabajo",
       "width": 400,
       "height": 458
     },
     {
-      "image": "/img/category/cat-relajado.png",
+      "image": "/img/collections/cat-relajado.png",
       "text": "Relajado",
       "slug": "relajado",
       "width": 400,
       "height": 265
     },
     {
-      "image": "/img/category/cat-paisaje.png",
+      "image": "/img/collections/cat-paisaje.png",
       "link_position": "bottom-right",
       "text": "Paisaje",
       "slug": "paisaje",
@@ -23,7 +23,7 @@
       "height": 267
     },
     {
-      "image": "/img/category/cat-flores.png",
+      "image": "/img/collections/cat-flores.png",
       "link_position": "bottom-right",
       "text": "Flores",
       "slug": "flores",
@@ -31,7 +31,7 @@
       "height": 249
     },
     {
-      "image": "/img/category/cat-amigos.png",
+      "image": "/img/collections/cat-amigos.png",
       "link_position": "bottom-right",
       "text": "Amigos",
       "slug": "amigos",
@@ -39,14 +39,14 @@
       "height": 418
     },
     {
-      "image": "/img/category/cat-abstracto.png",
+      "image": "/img/collections/cat-abstracto.png",
       "text": "Abstracto",
       "slug": "abstracto",
       "width": 280,
       "height": 323
     },
     {
-      "image": "/img/category/cat-arquitectura.png",
+      "image": "/img/collections/cat-arquitectura.png",
       "link_position": "bottom-right",
       "text": "Arquitectura",
       "slug": "arquitectura",
@@ -321,7 +321,7 @@
   ],
   "collections": [
     {
-      "image": "/img/category/cat-trabajo.png",
+      "image": "/img/collections/estacion.png",
       "text": "Estaciones del año",
       "slug": "estaciones-año",
       "link_position": "bottom-right",
@@ -329,14 +329,14 @@
       "height": 458
     },
     {
-      "image": "/img/category/cat-relajado.png",
+      "image": "/img/collections/naturaleza.png",
       "text": "Naturaleza",
       "slug": "naturaleza",
       "width": 400,
       "height": 265
     },
     {
-      "image": "/img/category/cat-paisaje.png",
+      "image": "/img/collections/computador.png",
       "link_position": "bottom-right",
       "text": "Computador",
       "slug": "computador",
@@ -344,14 +344,14 @@
       "height": 267
     },
     {
-      "image": "/img/category/cat-flores.png",
+      "image": "/img/collections/diseño.png",
       "text": "Diseño",
       "slug": "diseño",
       "width": 280,
       "height": 249
     },
     {
-      "image": "/img/category/cat-amigos.png",
+      "image": "/img/collections/pop-art.png",
       "link_position": "bottom-right",
       "text": "Pop-art",
       "slug": "pop-art",
@@ -359,14 +359,14 @@
       "height": 418
     },
     {
-      "image": "/img/category/cat-abstracto.png",
+      "image": "/img/collections/mosaico.png",
       "text": "Mosaico",
       "slug": "mosaico",
       "width": 280,
       "height": 323
     },
     {
-      "image": "/img/category/cat-arquitectura.png",
+      "image": "/img/collections/moderno.png",
       "link_position": "bottom-left",
       "text": "Moderno",
       "slug": "moderno",
@@ -374,14 +374,14 @@
       "height": 355
     },
     {
-      "image": "/img/category/cat-background.png",
+      "image": "/img/collections/vintage.png",
       "text": "Vintage",
       "slug": "vintage",
       "width": 376,
       "height": 368
     },
     {
-      "image": "/img/category/cat-comida.png",
+      "image": "/img/collections/acuarela.png",
       "link_position": "bottom-right",
       "text": "Acuarela",
       "slug": "acuarela",
