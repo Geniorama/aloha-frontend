@@ -97,7 +97,10 @@ function ProductPage({ data: product }) {
           </div>
         </div>
         <div className={styles.info__items}>
-          <Link href="#" className={styles.searchLink}>
+          <Link
+            href={`/search/${product.id}?similar=true`}
+            className={styles.searchLink}
+          >
             <span>Buscar imágenes similares</span>
             <FontAwesomeIcon
               icon={faMagnifyingGlass}

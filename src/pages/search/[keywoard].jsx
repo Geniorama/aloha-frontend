@@ -2,7 +2,7 @@ import CateogiresBanner from "@/components/CategoriesBanner/CategoriesBanner";
 import FilterOptions from "@/components/FilterOptions/FilterOptions";
 import GridGallery from "@/components/GridGallery/GridGallery";
 import Layout from "@/components/Layout/Layout";
-import search from "@/services/search.service";
+import search, { getRelated } from "@/services/search.service";
 
 const metaData = {
   title: "Resultado",
@@ -18,12 +18,13 @@ export default function SearchPage({ result = [] }) {
   );
 }
 
-export const getServerSideProps = async ({ params }) => {
+export const getServerSideProps = async ({ params, query }) => {
   try {
     const param = params.keywoard || "";
-
-    const response = await search(param, { search_limit: 30, full_info: true });
-    const result = response?.result ?? [];
+    const response = query.similar
+      ? await getRelated("similar", params.keywoard)
+      : await search(param, { search_limit: 30, full_info: true });
+    const result = response ?? [];
     return { props: { result } };
   } catch (error) {
     return { props: { result: [] } };
