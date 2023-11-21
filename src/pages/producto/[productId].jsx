@@ -106,9 +106,6 @@ function ProductPage({ data: product }) {
                 color="white"
               />
             </button>
-            <Link href="#" className={`${styles.searchLink} mt-4 p-4 p-lg-0`}>
-              <span>Empezar prueba gratis</span>
-            </Link>
           </div>
         </div>
         <div className={styles.info__items}>
@@ -148,9 +145,6 @@ function ProductPage({ data: product }) {
           >
             <span>Descargar imagen</span>
           </button>
-          <Link href="#" className={`${styles.searchLink} p-4`}>
-            <span>Empezar prueba gratis</span>
-          </Link>
         </div>
       </section>
       <section className={`container my-4 px-4 ${styles.description}`}>
