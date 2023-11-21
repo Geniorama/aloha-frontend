@@ -1,7 +1,15 @@
 import Link from "next/link";
 import styles from "./ButtonLink.module.css";
 
-export default function ButtonLink({ size, color, href, target, text, type }) {
+export default function ButtonLink({
+  size,
+  color,
+  href,
+  target,
+  text,
+  type,
+  onClick,
+}) {
   return (
     <>
       {type != "submit" ? (
@@ -45,6 +53,7 @@ export default function ButtonLink({ size, color, href, target, text, type }) {
           target={target ? target : "_self"}
           style={{ border: "none", background: "none" }}
           className={`${styles.ButtonLink} ${styles[size]} ${styles[color]}`}
+          onClick={onClick}
         >
           <span>{text}</span>
           <span className={styles.arrow}>
