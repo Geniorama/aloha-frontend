@@ -13,6 +13,9 @@ import images from "@/data/images.json";
 
 import categories from "@/data/categories";
 
+import collections from "@/data/collections.json";
+import CollectionCard from "@/components/CollectionCard/CollectionCard";
+
 const metaData = {
   title: "Categoría | Videos",
 };
@@ -40,12 +43,17 @@ export default function Videos() {
           </div>
           <div>
             <Slider>
-              <CardGrid items={images.photo_example} />
-              <CardGrid items={images.photo_exampleWith4Images} />
-              <CardGrid items={images.photo_example} />
-              <CardGrid items={images.photo_example} />
-              <CardGrid items={images.photo_exampleWith4Images} />
+              {collections.map((collection) => (
+                <CollectionCard key={collection.name} {...collection} />
+              ))}
             </Slider>
+            {/* <Slider>
+              <CardGrid items={images.photo_example} />
+              <CardGrid items={images.photo_exampleWith4Images} />
+              <CardGrid items={images.photo_example} />
+              <CardGrid items={images.photo_example} />
+              <CardGrid items={images.photo_exampleWith4Images} />
+            </Slider> */}
           </div>
         </div>
       </section>
