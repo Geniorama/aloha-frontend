@@ -75,6 +75,7 @@ function ProductPage({ data: product }) {
 
   const handleDownloadImage = () => {
     if (!session) return router.push("/signin");
+    console.log("download");
   };
 
   if (!product) return <div>Cargando...</div>;
@@ -98,13 +99,33 @@ function ProductPage({ data: product }) {
         <div className={styles.options}>
           <ProductChooseSize sizes={product.sizes} />
           <div className={`mt-2 w-100 d-none d-lg-block ${styles.info__nav}`}>
-            <button className={styles.button}>
-              <ButtonLink
-                type="submit"
-                onClick={handleDownloadImage}
-                text="Descargar imagen"
-                color="white"
-              />
+            <button className={styles.button} onClick={handleDownloadImage}>
+              Descargar imagen
+              <svg
+                width="32"
+                height="32"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g clipPath="url(#clip0_48_55)">
+                  <path
+                    d="M22.6668 9.33301L9.3335 22.6663"
+                    stroke="#fff"
+                    strokeWidth="2.66667"
+                  />
+                  <path
+                    d="M10.6665 9.33301H22.6665V21.333"
+                    stroke="#fff"
+                    strokeWidth="2.66667"
+                  />
+                </g>
+                <defs>
+                  <clipPath id="clip0_48_55">
+                    <rect width="32" height="32" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
             </button>
           </div>
         </div>
@@ -138,12 +159,33 @@ function ProductPage({ data: product }) {
           </div>
         </div>
         <div className={`mt-5 ${styles.info__nav}`}>
-          <button
-            type="button"
-            className={styles.button}
-            onClick={handleDownloadImage}
-          >
-            <span>Descargar imagen</span>
+          <button className={styles.button} onClick={handleDownloadImage}>
+            Descargar imagen
+            <svg
+              width="32"
+              height="32"
+              viewBox="0 0 32 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clipPath="url(#clip0_48_55)">
+                <path
+                  d="M22.6668 9.33301L9.3335 22.6663"
+                  stroke="#fff"
+                  strokeWidth="2.66667"
+                />
+                <path
+                  d="M10.6665 9.33301H22.6665V21.333"
+                  stroke="#fff"
+                  strokeWidth="2.66667"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_48_55">
+                  <rect width="32" height="32" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
           </button>
         </div>
       </section>
