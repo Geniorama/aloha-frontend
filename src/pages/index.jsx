@@ -30,6 +30,9 @@ import IconEnvelope from "../../public/img/signup/email.svg";
 import BgColaboradores from "../../public/img/home/bg-colaboradores.png";
 import Slider from "@/components/Slider/Slider";
 import PlanSection from "@/components/PlanSection/PlanSection";
+import CollectionCard from "@/components/CollectionCard/CollectionCard";
+
+import collections from "@/data/collections.json";
 
 const metaData = {
   title: "Inicio",
@@ -44,7 +47,7 @@ export default function Home() {
   const handleCheckboxChange = () => {
     setRegTerms(!regTerms);
   };
-
+  const otoño_images = collections.find((item) => item.name.includes("otoño"));
   return (
     <Layout metaData={metaData}>
       <div className="container-fluid">
@@ -108,7 +111,26 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      <section className={styles.Section}>
+        <div className="container">
+          <TitleSection text="Colecciones más recientes." />
+          <div className="text-center mb-4">
+            <ButtonLink
+              href="/colecciones"
+              text="Ver todos"
+              color="coral"
+              size="m"
+            />
+          </div>
+          <div>
+            <Slider>
+              {collections.map((collection) => (
+                <CollectionCard key={collection.name} {...collection} />
+              ))}
+            </Slider>
+          </div>
+        </div>
+      </section>
       {/* Section - Fotos populares */}
       <section className={`${styles.SectionPopular} ${styles.Section}`}>
         <div className="container">
@@ -187,18 +209,17 @@ export default function Home() {
 
         {/* Slider */}
         <Slider>
-          <div className={styles.SlideItem}>
-            <Image src={SlideExample1} responsive="true" alt="" quality={100} />
-          </div>
-          <div className={styles.SlideItem}>
-            <Image src={SlideExample2} responsive="true" alt="" quality={100} />
-          </div>
-          <div className={styles.SlideItem}>
-            <Image src={SlideExample3} responsive="true" alt="" quality={100} />
-          </div>
-          <div className={styles.SlideItem}>
-            <Image src={SlideExample4} responsive="true" alt="" quality={100} />
-          </div>
+          {otoño_images.images.map((image) => (
+            <div key={image.id} className={styles.SlideItem}>
+              <Image
+                src={image.huge_thumb}
+                width={300}
+                height={400}
+                alt=""
+                quality={100}
+              />
+            </div>
+          ))}
         </Slider>
 
         {/* Promo */}
