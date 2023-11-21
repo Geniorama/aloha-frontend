@@ -133,20 +133,29 @@ const Header = () => {
           </Link>
           {/* Menú #1 */}
           <div className={styles.menufirst}>
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <a className="nav-link" onClick={onShowSubMenu}>
-                  {menuData[0].text}
-                  <svg
-                    width="10"
-                    height="7"
-                    viewBox="0 0 10 7"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path d="M1 1L5 5L9 1" stroke="#7F7F7F" strokeWidth="1.5" />
-                  </svg>
-                </a>
+            <ul className="navbar-nav" style={{ alignItems: "center" }}>
+              <li className={styles.navImages}>
+                <div className="nav-item">
+                  <Link className="nav-link" href="/categoria/fotos">
+                    {menuData[0].text}
+                    <svg
+                      width="10"
+                      height="7"
+                      viewBox="0 0 10 7"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M1 1L5 5L9 1"
+                        stroke="#7F7F7F"
+                        strokeWidth="1.5"
+                      />
+                    </svg>
+                  </Link>
+                </div>
+                <div className={`${styles.show} ${styles.navSubmenu}`}>
+                  <SubMenuDesktop isHeaderFixed={isHeaderFixed} />
+                </div>
               </li>
               {menuData
                 .filter((item) => item.text != "Imágenes")
@@ -340,7 +349,6 @@ const Header = () => {
           </div>
         </div>
       </nav>
-      {isSubMenuOpen && <SubMenuDesktop isHeaderFixed={isHeaderFixed} />}
     </Fragment>
   );
 };

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./SubMenuDesktop.module.css";
 import Link from "next/link";
+const path = "/img/components/header/submenu";
 export default function SubMenuDesktop({ isHeaderFixed }) {
   const subMenuPosition = isHeaderFixed ? styles.fixed : null;
   return (
@@ -15,9 +16,10 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/cat-arquitectura.png"
+              src={`${path}/fotos/1.png`}
               objectFit="cover"
               alt="cover"
+              quality={100}
               fill
             />
           </div>
@@ -28,9 +30,10 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/cat-paisaje.png"
+              src={`${path}/fotos/2.png`}
               objectFit="cover"
               alt="cover"
+              quality={100}
               fill
             />
           </div>
@@ -41,9 +44,10 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/cat-flores.png"
+              src={`${path}/fotos/3.png`}
               objectFit="cover"
               alt="cover"
+              quality={100}
               fill
             />
           </div>
@@ -60,9 +64,10 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/vector.jpg"
+              src={`${path}/vectores/1.png`}
               objectFit="cover"
               alt="cover"
+              quality={100}
               fill
             />
           </div>
@@ -73,9 +78,10 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/covid-19.jpg"
+              src={`${path}/vectores/2.png`}
               objectFit="cover"
               alt="cover"
+              quality={100}
               fill
             />
           </div>
@@ -87,9 +93,10 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/futurista.jpg"
+              src={`${path}/vectores/3.png`}
               objectFit="cover"
               alt="cover"
+              quality={100}
               fill
             />
           </div>
@@ -101,9 +108,10 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/stock-vector.jpg"
+              src={`${path}/vectores/4.png`}
               objectFit="cover"
               alt="cover"
+              quality={100}
               fill
             />
           </div>
@@ -120,7 +128,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/bg_subcat_moderno.png"
+              src={`${path}/ilustraciones/1.png`}
               objectFit="cover"
               alt="cover"
               fill
@@ -134,7 +142,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/bg_subcat_moderno.png"
+              src={`${path}/ilustraciones/2.png`}
               objectFit="cover"
               alt="cover"
               fill
@@ -148,7 +156,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/bg_subcat_moderno.png"
+              src={`${path}/ilustraciones/3.png`}
               objectFit="cover"
               alt="cover"
               fill
@@ -162,7 +170,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/bg_subcat_moderno.png"
+              src={`${path}/ilustraciones/4.png`}
               objectFit="cover"
               alt="cover"
               fill
@@ -181,7 +189,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/bg_subcat_naturaleza.png"
+              src={`${path}/colecciones/1.png`}
               objectFit="cover"
               alt="cover"
               fill
@@ -195,7 +203,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/bg_subcat_naturaleza.png"
+              src={`${path}/colecciones/2.png`}
               objectFit="cover"
               alt="cover"
               fill
@@ -209,7 +217,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
-              src="/img/category/bg_subcat_naturaleza.png"
+              src={`${path}/colecciones/3.png`}
               objectFit="cover"
               alt="cover"
               fill
