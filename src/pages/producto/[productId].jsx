@@ -12,8 +12,10 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import { getCookie } from "cookies-next";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
 const metaData = {
@@ -44,6 +46,10 @@ function ProductPage({ data: product }) {
     similar: [],
   });
 
+  const router = useRouter();
+
+  const session = getCookie("session_id");
+
   useEffect(() => {
     if (product) {
       if (!items.series.length)
@@ -67,6 +73,10 @@ function ProductPage({ data: product }) {
     }
   }, [items, product]);
 
+  const handleDownloadImage = () => {
+    if (!session) return router.push("/signin");
+  };
+
   if (!product) return <div>Cargando...</div>;
   return (
     <Layout metaData={metaData}>
@@ -89,7 +99,12 @@ function ProductPage({ data: product }) {
           <ProductChooseSize sizes={product.sizes} />
           <div className={`mt-2 w-100 d-none d-lg-block ${styles.info__nav}`}>
             <button className={styles.button}>
-              <ButtonLink text="Descargar imagen" color="white" />
+              <ButtonLink
+                type="submit"
+                onClick={handleDownloadImage}
+                text="Descargar imagen"
+                color="white"
+              />
             </button>
             <Link href="#" className={`${styles.searchLink} mt-4 p-4 p-lg-0`}>
               <span>Empezar prueba gratis</span>
@@ -126,9 +141,12 @@ function ProductPage({ data: product }) {
           </div>
         </div>
         <div className={`mt-5 ${styles.info__nav}`}>
-          <button className={styles.button}>
+          <button
+            type="button"
+            className={styles.button}
+            onClick={handleDownloadImage}
+          >
             <span>Descargar imagen</span>
-            {/* <FontAwesomeIcon icon={faArrowRight} /> */}
           </button>
           <Link href="#" className={`${styles.searchLink} p-4`}>
             <span>Empezar prueba gratis</span>
