@@ -36,7 +36,7 @@ function ColecctionsPage() {
         path="collections"
         categories={categories.collections}
       />
-      <section className={styles.Section}>
+      <section className={styles.Section} style={{ marginTop: "100px" }}>
         <div className="container">
           <TitleSection text="Colecciones más recientes." />
           <div className="text-center mb-4">
@@ -51,7 +51,7 @@ function ColecctionsPage() {
           </div>
         </div>
       </section>
-      <section className={styles.Section}>
+      <section className={styles.Section} style={{ marginTop: "100px" }}>
         <div className="container">
           <TitleSection text="Tendencias de color" />
           <div className="text-center mb-4">
