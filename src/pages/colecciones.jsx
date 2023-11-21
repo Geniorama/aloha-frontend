@@ -12,6 +12,7 @@ import styles from "@/styles/Collections.module.css";
 
 import images from "@/data/images";
 import CollectionCard from "@/components/CollectionCard/CollectionCard";
+import PlanSection from "@/components/PlanSection/PlanSection";
 
 const metaData = {
   title: "Colecciones",
@@ -59,15 +60,14 @@ function ColecctionsPage() {
           </div>
           <div>
             <Slider>
-              <CardGrid items={images.photo_example} />
-              <CardGrid items={images.photo_exampleWith4Images} />
-              <CardGrid items={images.photo_example} />
-              <CardGrid items={images.photo_example} />
-              <CardGrid items={images.photo_exampleWith4Images} />
+              {collections.map((collection) => (
+                <CollectionCard key={collection.name} {...collection} />
+              ))}
             </Slider>
           </div>
         </div>
       </section>
+      <PlanSection />
     </Layout>
   );
 }
