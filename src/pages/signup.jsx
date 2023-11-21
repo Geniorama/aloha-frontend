@@ -6,16 +6,16 @@ import LogoGoogle from "../../public/img/google.png";
 import LogoFB from "../../public/img/facebook.png";
 import { useForm } from "react-hook-form";
 import { deleteCookie } from "cookies-next";
-import { loginAsUser } from "@/services/user.service";
+import { createSubaccount, login } from "@/services/user.service";
 import { useEffect } from "react";
 
-export default function Signin() {
+function SignUpPage({ sessionId }) {
   const { register, handleSubmit } = useForm();
   useEffect(() => {
     deleteCookie("user_id");
     deleteCookie("session_id");
   }, []);
-  const onSubmit = (data) => loginAsUser(data.email, data.password);
+  const onSubmit = (data) => createSubaccount(data);
   return (
     <div className={`${styles.section}`}>
       <Link href="/" className={styles.logo}>
@@ -77,22 +77,28 @@ export default function Signin() {
           <label className={`${styles.formLabel}`}>Correo electrónico *</label>
           <input
             type="email"
-            name="email"
-            id="email"
+            name="subaccount_email"
+            id="subaccount_email"
             placeholder="Ingresa tu correo electrónico"
             className={`${styles.formInput}`}
-            {...register("email")}
+            {...register("subaccount_email")}
           />
           <div className={`${styles.formContentLabels}`}>
             <label className={`${styles.formLabel}`}>Contraseña *</label>
           </div>
           <input
             type="password"
-            name="password"
-            id="password"
+            name="subaccount_password"
+            id="subaccount_password"
             placeholder="Ingresa tu contraseña"
             className={`${styles.formInput}`}
-            {...register("password")}
+            {...register("subaccount_password")}
+          />
+          <input
+            name="session_id"
+            value={sessionId}
+            {...register("session_id")}
+            hidden
           />
           <button className={`${styles.buttonGoogle} my-3`}>
             <span className={`${styles.ButtonSignUp__name} mx-2`}>
@@ -142,3 +148,15 @@ export default function Signin() {
     </div>
   );
 }
+
+export const getServerSideProps = async () => {
+  try {
+    const data = (await login()) || {};
+    const sessionId = data.sessionid ?? "";
+    return { props: { sessionId } };
+  } catch (error) {
+    return { props: {} };
+  }
+};
+
+export default SignUpPage;

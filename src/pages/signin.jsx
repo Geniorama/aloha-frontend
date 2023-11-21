@@ -8,7 +8,11 @@ import { useForm } from "react-hook-form";
 import { deleteCookie } from "cookies-next";
 import { loginAsUser } from "@/services/user.service";
 import { useEffect } from "react";
-
+import Head from "next/head";
+const metaData = {
+  title: "Iniciar sesión",
+  author: "Geniorama Agencia",
+};
 export default function Signin() {
   const { register, handleSubmit } = useForm();
   useEffect(() => {
@@ -18,6 +22,10 @@ export default function Signin() {
   const onSubmit = (data) => loginAsUser(data.email, data.password);
   return (
     <div className={`${styles.section}`}>
+      <Head>
+        <title>{metaData.title}</title>
+        <meta name="author" content={metaData.author} />
+      </Head>
       <Link href="/" className={styles.logo}>
         <Image src={LogoBlack} alt="Logo Aloha" />
       </Link>
