@@ -53,25 +53,18 @@ function ProductPage({ data: product }) {
   const session = getCookie("session_id");
 
   useEffect(() => {
-    if (product) {
-      if (!items.series.length)
-        getImage(product.series).then((data) => {
-          const series = data
-            ? Object.entries(data)
-                .filter((item) => item[0].includes("item"))
-                .map((item) => item[1])
-            : [];
-          setItems({ ...items, series });
-        });
-      if (!items.similar.length)
-        getImage(product.similar).then((data) => {
-          const similar = data
-            ? Object.entries(data)
-                .filter((item) => item[0].includes("item"))
-                .map((item) => item[1])
-            : [];
-          setItems({ ...items, similar });
-        });
+    if (!items.series.length || !items.similar.length) {
+      const series = [];
+      const similar = [];
+
+      Object.entries(product.series).forEach(([key, value]) =>
+        series.push(value)
+      );
+
+      Object.entries(product.similar).forEach(([key, value]) =>
+        similar.push(value)
+      );
+      if (series.length || similar.length) setItems({ series, similar });
     }
   }, [items, product]);
 
