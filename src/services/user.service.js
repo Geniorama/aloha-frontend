@@ -72,3 +72,8 @@ export const createSubaccount = async (payload) => {
     console.log(error);
   }
 };
+
+export const changePassword = async (payload) => {
+  const response = await request("changePassword", payload);
+  return response;
+};

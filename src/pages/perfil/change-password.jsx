@@ -1,5 +1,9 @@
 import Layout from "@/components/Layout/Layout";
+import { changePassword } from "@/services/user.service";
 import styles from "@/styles/ChagnePassword.module.css";
+import { getCookie } from "cookies-next";
+import { useRouter } from "next/router";
+import { useForm } from "react-hook-form";
 const metaData = {
   title: "Cambiar contraseña",
   description: "Mi metadescripción",
@@ -14,27 +18,37 @@ const info_list = [
   "Evita la fecha de hoy.",
 ];
 function ChangePasswordPage() {
+  const { register, handleSubmit } = useForm();
+  const router = useRouter();
+  const session = getCookie("session_id");
+  const onSubmit = async (data) => {
+    if (!session) return router.push("/signin");
+    return await changePassword(data);
+  };
   return (
     <Layout metaData={metaData}>
       <main className={styles.ChangePassword}>
         <h2>Cambiar contraseña</h2>
-        <section className={styles.Form}>
-          <div>
-            <label htmlFor="">Contraseña antigua</label>
-            <input type="password" />
-          </div>
-          <div>
-            <label htmlFor="">Nueva contraseña</label>
-            <input type="password" />
-          </div>
-          <div>
-            <label htmlFor="">Confirmar nueva contraseña</label>
-            <input type="password" />
-          </div>
-          <div>
-            <button>Guardar información</button>
-          </div>
-        </section>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <section className={styles.Form}>
+            <div>
+              <label htmlFor="">Contraseña antigua</label>
+              <input type="password" {...register("old_password")} />
+            </div>
+            <div>
+              <label htmlFor="">Nueva contraseña</label>
+              <input type="password" />
+            </div>
+            <div>
+              <label htmlFor="">Confirmar nueva contraseña</label>
+              <input type="password" {...register("new_password")} />
+            </div>
+            <input {...register("session_id")} value={session} hidden />
+            <div>
+              <button>Guardar información</button>
+            </div>
+          </section>
+        </form>
         <section className={styles.Info}>
           <div>
             <ul>
