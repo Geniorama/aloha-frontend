@@ -15,7 +15,8 @@ function SignUpPage({ sessionId }) {
     deleteCookie("user_id");
     deleteCookie("session_id");
   }, []);
-  const onSubmit = (data) => createSubaccount(data);
+  const onSubmit = (data) =>
+    createSubaccount({ ...data, session_id: sessionId });
   return (
     <div className={`${styles.section}`}>
       <Link href="/" className={styles.logo}>

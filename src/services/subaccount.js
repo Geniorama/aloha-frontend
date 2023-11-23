@@ -1,9 +1,5 @@
 import { request } from "@/helpers/helpers";
 
-const session_id = "4df34b802866b4c25dc764d67779e187";
-const subaccountsession_id = "4df34b802866b4c25dc764d67779e187";
-const subaccount_id = "82645722";
-
 export const getSubaccounts = async () => {
   try {
     const response = await request("getSubaccounts", {
@@ -19,10 +15,7 @@ export const getSubaccounts = async () => {
 
 export const createSubaccount = async (payload) => {
   try {
-    const response = await request("createSubaccount", {
-      session_id,
-      ...payload,
-    });
+    const response = await request("createSubaccount", payload);
     return response;
   } catch (error) {
     console.log(error);
@@ -47,12 +40,18 @@ export const getSubscriptionOffers = async () => {
   }
 };
 
-export const getCreditStatus = async () => {
+export const getCreditStatus = async (payload) => {
   try {
-    const response = await request("getCreditStatus", {
-      session_id,
-      subaccount_id,
-    });
+    const response = await request("getCreditStatus", payload);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const createSubaccountSubscription = async (payload) => {
+  try {
+    const response = await request("createSubaccountSubscription", payload);
     return response;
   } catch (error) {
     console.log(error);
