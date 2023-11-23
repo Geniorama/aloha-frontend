@@ -2,8 +2,10 @@ import ButtonLink from "@/components/ButtonLink/ButtonLink";
 import Layout from "@/components/Layout/Layout";
 import ProductChooseItem from "@/components/Product/ProductChooseItem/ProductChooseItem";
 import ProductChooseSize from "@/components/Product/ProductChooseSize/ProductChooseSize";
-import { api } from "@/helpers/helpers";
+import { api, downloadSource } from "@/helpers/helpers";
 import getMediaData from "@/services/product.service";
+import { getMedia } from "@/services/purchase.service";
+import { getCreditStatus } from "@/services/subaccount";
 import styles from "@/styles/Product.module.css";
 import {
   faArrowRight,
@@ -50,34 +52,48 @@ function ProductPage({ data: product }) {
 
   const session = getCookie("session_id");
 
+  // useEffect(() => {
+  //   if (product) {
+  //     if (!items.series.length)
+  //       getImage(product.series).then((data) => {
+  //         const series = data
+  //           ? Object.entries(data)
+  //               .filter((item) => item[0].includes("item"))
+  //               .map((item) => item[1])
+  //           : [];
+  //         setItems({ ...items, series });
+  //       });
+  //     if (!items.similar.length)
+  //       getImage(product.similar).then((data) => {
+  //         const similar = data
+  //           ? Object.entries(data)
+  //               .filter((item) => item[0].includes("item"))
+  //               .map((item) => item[1])
+  //           : [];
+  //         setItems({ ...items, similar });
+  //       });
+  //   }
+  // }, [items, product]);
+
   useEffect(() => {
-    if (product) {
-      if (!items.series.length)
-        getImage(product.series).then((data) => {
-          const series = data
-            ? Object.entries(data)
-                .filter((item) => item[0].includes("item"))
-                .map((item) => item[1])
-            : [];
-          setItems({ ...items, series });
-        });
-      if (!items.similar.length)
-        getImage(product.similar).then((data) => {
-          const similar = data
-            ? Object.entries(data)
-                .filter((item) => item[0].includes("item"))
-                .map((item) => item[1])
-            : [];
-          setItems({ ...items, similar });
-        });
-    }
-  }, [items, product]);
+    getCreditStatus({
+      session_id: "b79527ff2f64b0dd547d37ecde773b84",
+      subaccount_id: 83922224,
+    });
+  }, [session]);
 
-  const handleDownloadImage = () => {
+  const handleDownloadImage = async () => {
     if (!session) return router.push("/signin");
-    console.log("download");
+    const purhcase = await getMedia({
+      session_id: "b79527ff2f64b0dd547d37ecde773b84",
+      media_id: product.id,
+      media_license: "standard",
+      media_option: "s",
+      force_purchase_method: "credits",
+    });
+    const name = `${product.title}${product.original_extension}`;
+    if (purhcase) return downloadSource(name, purhcase.downloadLink);
   };
-
   if (!product) return <div>Cargando...</div>;
   return (
     <Layout metaData={metaData}>
@@ -273,7 +289,9 @@ function ProductPage({ data: product }) {
 export async function getServerSideProps({ params }) {
   try {
     const query = params.productId || "";
-    const data = (await getMediaData(query)) || {};
+    const data =
+      (await getMediaData(query, { full_similar: true, search_layout: 1 })) ||
+      {};
     return { props: { data } };
   } catch (error) {
     return { props: {} };

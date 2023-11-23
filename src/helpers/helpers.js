@@ -92,3 +92,13 @@ export function slugify(...args) {
     .replace(/[^a-z0-9 ]/g, "") // remove all chars not letters, numbers and spaces (to be replaced)
     .replace(/\s+/g, "-"); // separator
 }
+
+export const downloadSource = (name, url) => {
+  const a = document.createElement("a");
+  a.style.display = "none";
+  a.href = url;
+  // the filename you want
+  a.download = name;
+  document.body.appendChild(a);
+  a.click();
+};
