@@ -1,13 +1,14 @@
 .Image {
   width: 100%;
   margin-bottom: 15px;
-  object-fit: cover;
 }
+
 @media (min-width: 500px) {
   .GridGallery {
     column-count: 2;
   }
 }
+
 @media (min-width: 900px) {
   .GridGallery {
     column-count: 3;

@@ -6,10 +6,23 @@ import { capitalizeFirstLetter, slugify } from "@/helpers/helpers";
 import search from "@/services/search.service";
 import styles from "@/styles/Collections.module.css";
 import collections from "@/data/collections.json";
+import { useEffect, useState } from "react";
+import getMediaData from "@/services/product.service";
 
-function CollectionPage({ name, covers = [], images = [] }) {
+function CollectionPage({ name, sources }) {
+  const [images, setImages] = useState([]);
   const titleBanner = name ? capitalizeFirstLetter(name) : "Fotos de stock";
   const title = name ? `Colección ${name}.` : "Todas las colecciones.";
+  useEffect(() => {
+    getMediaData(sources).then((res) => {
+      const data = [];
+      Object.entries(res).forEach(
+        ([key, value]) => key.includes("item") && data.push(value)
+      );
+      setImages(data);
+    });
+  }, [sources]);
+  console.log(images.slice(0, 3));
   return (
     <Layout metaData={{ title: "Fotos | Listado colecciones" }}>
       <CollectionsBanner

@@ -28,13 +28,14 @@ export default function GridGallery({ images = [] }) {
             <Image
               key={index}
               src={image.huge_thumb}
-              objectFit="cover"
-              objectPosition="top"
               className={styles.Image}
               width={orientation?.width}
               height={orientation?.height}
               quality={100}
               alt=""
+              priority
+              objectFit="cover"
+              objectPosition="top"
             />
           </Link>
         );

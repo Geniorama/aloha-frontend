@@ -7,7 +7,11 @@ import {
   faChevronRight,
 } from "@fortawesome/free-solid-svg-icons";
 
-export default function CardGrid({ items = [], name = "Japandi Aesthetic" }) {
+export default function CardGrid({
+  items = [],
+  name = "Japandi Aesthetic",
+  quantity,
+}) {
   const sliceItems = (items.length && items.slice(0, 3)) || [];
   const columns =
     sliceItems.length <= 1
@@ -25,7 +29,7 @@ export default function CardGrid({ items = [], name = "Japandi Aesthetic" }) {
         <FontAwesomeIcon icon={faArrowRight} className={styles.icon} />
         <h3>
           {name}
-          <span> &middot; {items.length}</span>
+          <span> &middot; {quantity}</span>
         </h3>
       </div>
     </div>

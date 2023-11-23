@@ -20,7 +20,7 @@ export default function CollectionsBanner({ title, cover }) {
     <div className="container">
       {cover ? (
         <div style={{ height: "200px", width: "100%", position: "relative" }}>
-          <Image src={cover} fill alt="" objectFit="cover" />
+          <Image src={cover} fill alt="" quality={100} objectFit="cover" />
         </div>
       ) : (
         <Fragment>
