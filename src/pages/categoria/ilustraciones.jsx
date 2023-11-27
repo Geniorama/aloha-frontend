@@ -45,9 +45,16 @@ function Ilustrations() {
           </div>
           <div>
             <Slider>
-              {collections.map((collection) => (
-                <CollectionCard key={collection.name} {...collection} />
-              ))}
+              {collections
+                .filter(
+                  (item) =>
+                    item.name.includes("comida") ||
+                    item.name.includes("Tecnologia") ||
+                    item.name.includes("Japandi Aestethic")
+                )
+                .map((collection) => (
+                  <CollectionCard key={collection.name} {...collection} />
+                ))}
             </Slider>
             {/* <Slider>
               <CardGrid items={images.photo_example} />
