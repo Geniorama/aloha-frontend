@@ -27,7 +27,7 @@ function CollectionPage({ name, sources }) {
     <Layout metaData={{ title: "Fotos | Listado colecciones" }}>
       <CollectionsBanner
         title={titleBanner}
-        cover={images ? images[0].huge_thumb : null}
+        cover={images[0] ? images[0].huge_thumb : null}
       />
       <div className="container mt-5">
         <h2 className={styles.Title}>{title}</h2>
