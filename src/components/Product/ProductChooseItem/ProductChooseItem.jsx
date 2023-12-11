@@ -8,10 +8,11 @@ export default function ProductChooseItem({
   height,
   mp,
   active,
-  onSetActiveRadio,
+  onSelectSize,
 }) {
+  const onClick = () => onSelectSize(size);
   return (
-    <div className={styles.container} onClick={onSetActiveRadio}>
+    <div className={styles.container} onClick={onClick}>
       <div className={`${styles.content} ${active ? styles.active : ""}`}>
         <div className={styles.input}>
           <div className={styles.radio} />

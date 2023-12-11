@@ -2,10 +2,12 @@ import ButtonLink from "@/components/ButtonLink/ButtonLink";
 import Layout from "@/components/Layout/Layout";
 import ProductChooseItem from "@/components/Product/ProductChooseItem/ProductChooseItem";
 import ProductChooseSize from "@/components/Product/ProductChooseSize/ProductChooseSize";
+import SimilarProducts from "@/components/SimilarProducts/SimilarProducts";
 import { api, downloadSource } from "@/helpers/helpers";
 import getMediaData from "@/services/product.service";
 import { getMedia } from "@/services/purchase.service";
 import { getCreditStatus } from "@/services/subaccount";
+import { login } from "@/services/user.service";
 import styles from "@/styles/Product.module.css";
 import {
   faArrowRight,
@@ -24,70 +26,26 @@ const metaData = {
   title: "Producto",
 };
 
-const getImage = async (media) => {
-  try {
-    const response = await axios.post(`${api}`, null, {
-      params: {
-        dp_command: "getMediaData",
-        dp_media_id: media ?? "7587996",
-        dp_translate_items: true,
-        dp_lang: "sp",
-        dp_apikey: "79a81d2c27320915317994339a8b0589fe45c6ad",
-        // dp_full_similar: true,
-      },
-    });
-    return response.data;
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-function ProductPage({ data: product }) {
-  const [items, setItems] = useState({
-    series: [],
-    similar: [],
-  });
-
+function ProductPage({ data: product, session_id }) {
+  const [selectedSize, setSelectedSize] = useState("s");
   const router = useRouter();
 
-  const session = getCookie("session_id");
-
-  useEffect(() => {
-    if (!items.series.length || !items.similar.length) {
-      const series = [];
-      const similar = [];
-
-      Object.entries(product.series).forEach(([key, value]) =>
-        series.push(value)
-      );
-
-      Object.entries(product.similar).forEach(([key, value]) =>
-        similar.push(value)
-      );
-      if (series.length || similar.length) setItems({ series, similar });
-    }
-  }, [items, product]);
-
-  useEffect(() => {
-    getCreditStatus({
-      session_id: "b79527ff2f64b0dd547d37ecde773b84",
-      subaccount_id: 83922224,
-    });
-  }, [session]);
+  const handleSelectSize = (size) => setSelectedSize(size);
 
   const handleDownloadImage = async () => {
-    if (!session) return router.push("/signin");
+    if (!session_id) return router.push("/signin");
     const purhcase = await getMedia({
-      session_id: "b79527ff2f64b0dd547d37ecde773b84",
+      session_id,
       media_id: product.id,
       media_license: "standard",
       media_option: "s",
-      force_purchase_method: "credits",
     });
     const name = `${product.title}${product.original_extension}`;
     if (purhcase) return downloadSource(name, purhcase.downloadLink);
   };
+
   if (!product) return <div>Cargando...</div>;
+
   return (
     <Layout metaData={metaData}>
       <section className="container px-5">
@@ -106,7 +64,11 @@ function ProductPage({ data: product }) {
           />
         </div>
         <div className={styles.options}>
-          <ProductChooseSize sizes={product.sizes} />
+          <ProductChooseSize
+            active={selectedSize}
+            sizes={product.sizes}
+            onSelectSize={handleSelectSize}
+          />
           <div className={`mt-2 w-100 d-none d-lg-block ${styles.info__nav}`}>
             <button className={styles.button} onClick={handleDownloadImage}>
               Descargar imagen
@@ -221,60 +183,7 @@ function ProductPage({ data: product }) {
           </div>
         </div>
       </section>
-      <section className="container p-4">
-        <h5 className={styles.gallery__title}>Misma serie:</h5>
-        <div className={styles.gallery}>
-          {items.series.map((serie) => (
-            <Link key={serie.id} href={`/producto/${serie.id}`}>
-              <Image
-                key={serie.id}
-                src={serie.large_thumb}
-                width={400}
-                height={400}
-                quality={100}
-                style={{ objectFit: "cover" }}
-                alt=""
-              />
-            </Link>
-          ))}
-        </div>
-        <Link
-          target="_blank"
-          href={`/search/${product.id}?related_type=serie`}
-          style={{ textDecoration: "none" }}
-        >
-          <button className={styles.button_small}>
-            <span>Ver más</span>
-          </button>
-        </Link>
-      </section>
-      <section className="container p-4">
-        <h5 className={styles.gallery__title}>Imágenes similares:</h5>
-        <div className={styles.gallery}>
-          {items.similar.map((similar) => (
-            <Link key={similar.id} href={`/producto/${similar.id}`}>
-              <Image
-                key={similar.id}
-                src={similar.large_thumb}
-                width={400}
-                height={400}
-                quality={100}
-                style={{ objectFit: "cover" }}
-                alt=""
-              />
-            </Link>
-          ))}
-        </div>
-        <Link
-          target="_blank"
-          href={`/search/${product.id}?related_type=similar`}
-          style={{ textDecoration: "none" }}
-        >
-          <button className={styles.button_small}>
-            <span>Ver más</span>
-          </button>
-        </Link>
-      </section>
+      <SimilarProducts product={product} />
     </Layout>
   );
 }
@@ -285,7 +194,11 @@ export async function getServerSideProps({ params }) {
     const data =
       (await getMediaData(query, { full_similar: true, search_layout: 1 })) ||
       {};
-    return { props: { data } };
+
+    const auth = (await login()) || {};
+    const session_id = auth.sessionid ?? "";
+
+    return { props: { data, session_id } };
   } catch (error) {
     return { props: {} };
   }
