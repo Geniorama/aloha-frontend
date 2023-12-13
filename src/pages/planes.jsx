@@ -14,9 +14,6 @@ const metaData = {
 };
 
 function PlanesPage() {
-  useEffect(() => {
-    getSubscriptionOffers().then((res) => console.log(res));
-  }, []);
   return (
     <Layout metaData={metaData}>
       <PlanSection />

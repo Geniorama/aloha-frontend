@@ -12,7 +12,7 @@ const planesVideos = getPlan("Videos");
 
 export default function PlanSection() {
   const [planes, setPlanes] = useState([]);
-
+  console.log(planes);
   const tabsMenu = [
     {
       id: 1,
