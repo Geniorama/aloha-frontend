@@ -57,3 +57,12 @@ export const createSubaccountSubscription = async (payload) => {
     console.log(error);
   }
 };
+
+export const getSubscriptions = async (payload) => {
+  try {
+    const response = await request("getSubscriptions", payload);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};

@@ -4,9 +4,10 @@ import ProductChooseItem from "@/components/Product/ProductChooseItem/ProductCho
 import ProductChooseSize from "@/components/Product/ProductChooseSize/ProductChooseSize";
 import SimilarProducts from "@/components/SimilarProducts/SimilarProducts";
 import { api, downloadSource } from "@/helpers/helpers";
+import stripe from "@/lib/stripe";
 import getMediaData from "@/services/product.service";
 import { getMedia } from "@/services/purchase.service";
-import { getCreditStatus } from "@/services/subaccount";
+import { getCreditStatus, getSubscriptions } from "@/services/subaccount";
 import { login } from "@/services/user.service";
 import styles from "@/styles/Product.module.css";
 import {
@@ -30,17 +31,31 @@ function ProductPage({ data: product, session_id }) {
   const [selectedSize, setSelectedSize] = useState("s");
   const router = useRouter();
 
+  const subaccount_id = getCookie("user_id");
+
   const handleSelectSize = (size) => setSelectedSize(size);
+
+  console.log(subaccount_id);
 
   const handleDownloadImage = async () => {
     if (!session_id) return router.push("/signin");
+    const subscriptions = await getSubscriptions({ session_id, subaccount_id });
+
+    const name = `${product.title}${product.original_extension}`;
+    if (!subscriptions.length)
+      return stripe({
+        media_name: name,
+        media_id: product.id,
+        media_option: selectedSize,
+        client_reference_id: subaccount_id,
+      });
+
     const purhcase = await getMedia({
       session_id,
       media_id: product.id,
       media_license: "standard",
-      media_option: "s",
+      media_option: selectedSize,
     });
-    const name = `${product.title}${product.original_extension}`;
     if (purhcase) return downloadSource(name, purhcase.downloadLink);
   };
 

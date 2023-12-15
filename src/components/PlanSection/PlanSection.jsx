@@ -35,18 +35,18 @@ export default function PlanSection() {
 
   useEffect(() => {
     getSubscriptionOffers().then((items) => {
-      const filterPlanes = items.offers.filter(
-        (item) =>
-          item.offerId === "65" ||
-          item.offerId === "728" ||
-          item.offerId === "722" ||
-          item.offerId === "300" ||
-          item.offerId === "70"
-      );
-      setPlanes(filterPlanes);
+      // const filterPlanes = items.offers.filter(
+      //   (item) =>
+      //     item.offerId === "65" ||
+      //     item.offerId === "728" ||
+      //     item.offerId === "722" ||
+      //     item.offerId === "300" ||
+      //     item.offerId === "70"
+      // );
+      setPlanes(items);
     });
   }, []);
-
+  console.log(planes);
   return (
     <section className={styles.Section}>
       <div className="container">
