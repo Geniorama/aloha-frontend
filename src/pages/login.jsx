@@ -1,16 +1,13 @@
-import { loginAsUser } from "@/services/user.service";
-import { useEffect } from "react";
+import { getUserData, loginAsUser } from "@/services/user.service";
 import { useForm } from "react-hook-form";
-import { deleteCookie } from "cookies-next";
 import styles from "@/styles/Login.module.css";
 
 function Login() {
   const { register, handleSubmit } = useForm();
-  useEffect(() => {
-    deleteCookie("user_id");
-    deleteCookie("session_id");
-  }, []);
-  const onSubmit = (data) => loginAsUser(data.email, data.password);
+  const onSubmit = (data) => {
+    loginAsUser(data.email, data.password);
+    getUserData();
+  };
   return (
     <div className={styles.Container}>
       <div className={styles.Content}>

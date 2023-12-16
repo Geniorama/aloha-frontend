@@ -6,8 +6,7 @@ import LogoGoogle from "../../../public/img/google.png";
 import LogoFB from "../../../public/img/facebook.png";
 import { useForm } from "react-hook-form";
 import { deleteCookie } from "cookies-next";
-import { loginAsUser } from "@/services/user.service";
-import { useEffect } from "react";
+import { getUserData, loginAsUser } from "@/services/user.service";
 import Head from "next/head";
 const metaData = {
   title: "Iniciar sesión",
@@ -15,11 +14,10 @@ const metaData = {
 };
 export default function Signin() {
   const { register, handleSubmit } = useForm();
-  useEffect(() => {
-    deleteCookie("user_id");
-    deleteCookie("session_id");
-  }, []);
-  const onSubmit = (data) => loginAsUser(data.email, data.password);
+  const onSubmit = async (data) => {
+    const auth = await loginAsUser(data.email, data.password);
+    if (auth.sessionid && auth.userid) getUserData(auth.sessinid, auth.userid);
+  };
   return (
     <div className={`${styles.section}`}>
       <Head>

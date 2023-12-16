@@ -1,12 +1,11 @@
 import Router from "next/router";
-import { deleteCookie, getCookie, setCookie } from "cookies-next";
+import { deleteCookie, getCookie, getCookies, setCookie } from "cookies-next";
 
 export const auth = (ctx) => {
-  const session_id = getCookie("session_id", ctx);
-  const user_id = getCookie("user_id", ctx);
-  console.log(session_id);
-  if (!session_id || !user_id) return redirect(ctx?.res);
-  return { session_id, user_id };
+  const cookie = getCookies(ctx);
+  console.log(cookie);
+  if (!cookie.session_id || !cookie.user_id) return redirect(ctx?.res);
+  return cookie;
 };
 
 export const login = ({ userid, sessionid }) => {
@@ -32,12 +31,13 @@ export function withAuthSync(WrappedComponent, { loggedOnly = false }) {
   };
   withAuthSession.getInitialProps = async (ctx) => {
     let token = getCookie("session_id", ctx);
+    const cookie = getCookies(ctx);
     if (loggedOnly && !token) redirect(ctx.res);
     let componentProps = {};
     if (WrappedComponent.getInitialProps) {
       componentProps = await WrappedComponent.getInitialProps(ctx);
     }
-    return { token, ...componentProps };
+    return { token, user_id: cookie.user_id, ...componentProps };
   };
 
   return withAuthSession;
