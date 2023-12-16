@@ -66,3 +66,12 @@ export const getSubscriptions = async (payload) => {
     console.log(error);
   }
 };
+
+export const updateSubaccount = async (payload) => {
+  try {
+    const response = await request("updateSubaccount", payload);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+};
