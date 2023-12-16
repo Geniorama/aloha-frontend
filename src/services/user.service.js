@@ -1,5 +1,7 @@
 import { request } from "@/helpers/helpers";
 import { auth, login as signin } from "@/lib/auth";
+import { saveUserCookie } from "@/pages/search/save-user-cookie";
+import { setCookie } from "cookies-next";
 
 export const login = async (
   login_user = "info@alohaimages.co",
@@ -29,13 +31,13 @@ export const loginAsUser = async (login_user, login_password) => {
   }
 };
 
-export const getUserData = async () => {
+export const getUserData = async (session_id, user_id) => {
   try {
-    const { session_id, user_id } = auth();
     const response = await request("getUserData", {
       user_id,
       session_id,
     });
+    saveUserCookie(response);
     return response;
   } catch (error) {
     console.log(error);
