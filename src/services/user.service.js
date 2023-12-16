@@ -1,6 +1,5 @@
 import { request } from "@/helpers/helpers";
-import { getCookie, setCookie } from "cookies-next";
-import Router from "next/router";
+import { auth, login as signin } from "@/lib/auth";
 
 export const login = async (
   login_user = "info@alohaimages.co",
@@ -23,11 +22,7 @@ export const loginAsUser = async (login_user, login_password) => {
       login_user,
       login_password,
     });
-    if (response.userid && response.sessionid) {
-      setCookie("user_id", response.userid);
-      setCookie("session_id", response.sessionid);
-      Router.push("/user");
-    }
+    if (response.userid && response.sessionid) signin(response);
     return response;
   } catch (error) {
     console.log(error);
@@ -36,8 +31,7 @@ export const loginAsUser = async (login_user, login_password) => {
 
 export const getUserData = async () => {
   try {
-    const user_id = getCookie("user_id");
-    const session_id = getCookie("session_id");
+    const { session_id, user_id } = auth();
     const response = await request("getUserData", {
       user_id,
       session_id,

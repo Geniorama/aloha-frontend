@@ -1,9 +1,9 @@
-import styles from "../styles/Signin.module.css";
+import styles from "@/styles/Signin.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import LogoBlack from "../../public/img/components/header/logo-black-aloha.svg";
-import LogoGoogle from "../../public/img/google.png";
-import LogoFB from "../../public/img/facebook.png";
+import LogoBlack from "../../../public/img/components/header/logo-black-aloha.svg";
+import LogoGoogle from "../../../public/img/google.png";
+import LogoFB from "../../../public/img/facebook.png";
 import { useForm } from "react-hook-form";
 import { deleteCookie } from "cookies-next";
 import { loginAsUser } from "@/services/user.service";

@@ -2,6 +2,9 @@ import Layout from "@/components/Layout/Layout";
 import Image from "next/image";
 import styles from "@/styles/Profile.module.css";
 import Link from "next/link";
+import { withAuthSync } from "@/lib/auth";
+import { useEffect } from "react";
+import { getUserData } from "@/services/user.service";
 const metaData = {
   title: "Perfil",
   description: "Mi metadescripción",
@@ -10,6 +13,9 @@ const metaData = {
 };
 
 function ProfilePage() {
+  useEffect(() => {
+    getUserData();
+  }, []);
   return (
     <Layout metaData={metaData}>
       <section className={styles.Banner}>
@@ -86,4 +92,4 @@ function ProfilePage() {
   );
 }
 
-export default ProfilePage;
+export default withAuthSync(ProfilePage, { loggedOnly: true });
