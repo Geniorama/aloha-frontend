@@ -4,7 +4,6 @@
   position: relative;
 }
 
-
 .navbar.header {
   transition: opacity 0.3s ease-in-out;
   top: 0;
@@ -17,6 +16,67 @@
   justify-content: space-between;
   padding: 10px 50px;
   align-items: center;
+}
+
+.navUsername {
+  font-weight: 600;
+  color: #1a01a6;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 10px 0;
+}
+
+.navMenuUser {
+  position: absolute;
+  background-color: white;
+  width: 281px;
+  right: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0px 8px 20px 0px rgba(0, 0, 0, 0.35);
+  z-index: 1000;
+}
+
+.navMenuUser div[role="header"] {
+  background-color: #fafafa;
+  padding: 20px 16px;
+}
+
+.navMenuUser div[role="header"] h2 {
+  margin: 0;
+  color: #222222;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.navMenuUser div[role="header"] span {
+  margin: 0;
+  color: #515151;
+  font-size: 12px;
+}
+
+.navMenuUser div[role="menu"] {
+  border-top: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+}
+
+.navMenuUser div[role="logout"],
+.navMenuUser div[role="menu"] {
+  padding: 24px 16px;
+  background: white;
+}
+
+.navMenuUser div[role="menu"] a,
+.navMenuUser div[role="logout"] a {
+  text-decoration: none;
+  color: #222222;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.navMenuUser div[role="menu"] a:hover,
+.navMenuUser div[role="logout"] a:hover {
+  color: #1a01a6;
 }
 
 .navSubmenu {
@@ -56,7 +116,7 @@
 }
 
 .menufirst svg {
-  margin-left: 6px
+  margin-left: 6px;
 }
 
 .menufirst a::before {
@@ -220,8 +280,7 @@
   width: 100%;
   height: 2px;
   background: var(--aloha-blue);
-  transition: .4s;
-
+  transition: 0.4s;
 }
 
 .menuButton__toggle.close span {
@@ -266,7 +325,7 @@
 }
 
 .menuItem {
-  border-bottom: 1px solid #DFDFDF;
+  border-bottom: 1px solid #dfdfdf;
   font-weight: 600;
   color: var(--aloha-black);
   font-size: 24px;

@@ -2,7 +2,7 @@ import Layout from "@/components/Layout/Layout";
 import Image from "next/image";
 import styles from "@/styles/Profile.module.css";
 import Link from "next/link";
-import { auth, withAuthSync } from "@/lib/auth";
+import { auth } from "@/lib/auth";
 import { getUserData, login } from "@/services/user.service";
 import { useForm } from "react-hook-form";
 import { updateSubaccount } from "@/services/subaccount";
@@ -61,14 +61,18 @@ function ProfilePage({ data, session_id, subaccount_id }) {
   );
 }
 
-ProfilePage.getInitialProps = async (ctx) => {
+export const getServerSideProps = async (ctx) => {
   const session = auth(ctx);
+  console.log(session.user_id);
+  const signin = (await login()) || {};
   const data = await getUserData(session.session_id, session.user_id);
   return {
-    data,
-    session_id: session.session_id,
-    subaccount_id: session.user_id,
+    props: {
+      data,
+      session_id: signin.sessionid,
+      subaccount_id: session.user_id,
+    },
   };
 };
 
-export default withAuthSync(ProfilePage, { loggedOnly: true });
+export default ProfilePage;

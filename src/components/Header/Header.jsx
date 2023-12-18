@@ -12,6 +12,8 @@ import menuData from "./menuData.json";
 import ButtonLink from "../ButtonLink/ButtonLink";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import SubMenuDesktop from "../SubMenuDesktop/SubMenuDesktop";
+import { logout } from "@/lib/auth";
+import { getCookies } from "cookies-next";
 
 const Header = () => {
   const headerRef = useRef(null);
@@ -19,16 +21,22 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [indiceSubMenuAbierto, setIndiceSubMenuAbierto] = useState(null);
   const [isSubMenuOpen, setIsSubMenuOpen] = useState(false);
+  const [user, setUser] = useState({});
+  const data = getCookies();
+
+  const username = user.name?.includes(".com") ? user.email : user.name;
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
+
+    setUser({ name: data.name, email: data.email });
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
   const onShowSubMenu = () => setIsSubMenuOpen(!isSubMenuOpen);
-
+  console.log(user);
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
     if (headerRef.current) {
@@ -168,7 +176,6 @@ const Header = () => {
                 ))}
             </ul>
           </div>
-
           {/*Search*/}
 
           {isHeaderFixed && (
@@ -176,47 +183,69 @@ const Header = () => {
               <SearchBar size="small" />
             </div>
           )}
-
-          {/* Menú #2 */}
-          <div className={styles.menusecond}>
-            <ul className="navbar-nav">
-              <li className="nav-item">
-                <Link className="nav-link" href="/signup">
-                  Registrarme
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" href="/signin">
-                  Iniciar sesión
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <g clipPath="url(#clip0_69_1496)">
-                      <path
-                        d="M11.3337 4.66699L4.66699 11.3337"
-                        stroke="#FF595A"
-                        strokeWidth="1.33333"
-                      />
-                      <path
-                        d="M5.33398 4.66699H11.334V10.667"
-                        stroke="#FF595A"
-                        strokeWidth="1.33333"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_69_1496">
-                        <rect width="16" height="16" fill="white" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                </Link>
-              </li>
-            </ul>
-          </div>
+          {user.email ? (
+            <div style={{ position: "relative" }}>
+              <span className={styles.navUsername}>{username}</span>
+              <div className={styles.navMenuUser}>
+                <div role="header">
+                  <h2>{user.name}</h2>
+                  <span>{user.email}</span>
+                </div>
+                <div role="menu">
+                  <div>
+                    <Link href="/perfil">
+                      <span>Perfil</span>
+                    </Link>
+                  </div>
+                </div>
+                <div role="logout">
+                  <a onClick={logout}>
+                    <span>Salir</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          ) : (
+            <div className={styles.menusecond}>
+              <ul className="navbar-nav">
+                <li className="nav-item">
+                  <Link className="nav-link" href="/signup">
+                    Registrarme
+                  </Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link" href="/signin">
+                    Iniciar sesión
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <g clipPath="url(#clip0_69_1496)">
+                        <path
+                          d="M11.3337 4.66699L4.66699 11.3337"
+                          stroke="#FF595A"
+                          strokeWidth="1.33333"
+                        />
+                        <path
+                          d="M5.33398 4.66699H11.334V10.667"
+                          stroke="#FF595A"
+                          strokeWidth="1.33333"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_69_1496">
+                          <rect width="16" height="16" fill="white" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          )}
           <div className={styles.menuThree}>
             <button
               className={`${styles.menuButton}`}

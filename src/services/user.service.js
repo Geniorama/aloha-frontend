@@ -34,8 +34,8 @@ export const loginAsUser = async (login_user, login_password) => {
 export const getUserData = async (session_id, user_id) => {
   try {
     const response = await request("getUserData", {
-      user_id,
       session_id,
+      user_id,
     });
     saveUserCookie(response);
     return response;
