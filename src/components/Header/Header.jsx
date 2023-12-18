@@ -184,8 +184,16 @@ const Header = () => {
             </div>
           )}
           {user.email ? (
-            <div style={{ position: "relative" }}>
-              <span className={styles.navUsername}>{username}</span>
+            <div className={styles.navProfile} style={{ position: "relative" }}>
+              <span className={styles.navUsername}>
+                {username}{" "}
+                <Image
+                  src="/icons/Arrow-profile.svg"
+                  width={14}
+                  height={14}
+                  alt=""
+                />
+              </span>
               <div className={styles.navMenuUser}>
                 <div role="header">
                   <h2>{user.name}</h2>
