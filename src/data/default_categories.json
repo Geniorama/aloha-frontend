@@ -36,21 +36,9 @@
     "value": "musica"
   },
   {
-    "id": 7,
-    "title": "Gratis",
-    "icon": "star",
-    "value": "gratis"
-  },
-  {
     "id": 8,
     "title": "Efectos de sonido",
     "icon": "sound",
     "value": "efectos-sonido"
-  },
-  {
-    "id": 9,
-    "title": "Buscar por imagen",
-    "icon": "cameraFill",
-    "value": "buscar-imagen"
   }
 ]

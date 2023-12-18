@@ -17,7 +17,7 @@ export default function CardGrid({
     sliceItems.length <= 1
       ? styles.Grid_1
       : styles[`Grid_${sliceItems.length}`];
-  console.log(columns);
+
   return (
     <div className={`${styles.Grid} ${columns}`}>
       {sliceItems.length &&

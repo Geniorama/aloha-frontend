@@ -34,7 +34,6 @@ export default function GridGallery({ images = [] }) {
               quality={100}
               alt=""
               priority
-              objectFit="cover"
               objectPosition="top"
             />
           </Link>

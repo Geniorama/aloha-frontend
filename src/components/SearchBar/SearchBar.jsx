@@ -18,7 +18,7 @@ export default function SearchBar({ size }) {
   const [searchCat, setSearchCat] = useState(categories[0]);
   const ref = useRef(null);
   const inputRef = useRef();
-
+  console.log(searchCat);
   const handleItemSelect = (selectedItem) => {
     setSearchCat(selectedItem);
     handleCloseButtonClick();
@@ -57,8 +57,10 @@ export default function SearchBar({ size }) {
   };
 
   const onSubmit = async (e) => {
-    e.preventDefault()
-    router.push(`/search/${inputRef.current.value}`)
+    e.preventDefault();
+    router.push(
+      `/search/${inputRef.current.value}?category=${searchCat.value}`
+    );
   };
 
   return (
