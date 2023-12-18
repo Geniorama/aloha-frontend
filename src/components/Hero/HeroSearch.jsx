@@ -87,7 +87,7 @@ export default function HeroSearch() {
           <p className={`${styles.HeroSearch__desc}`}>
             Obtén 100 imágenes por $100/mes{" "}
             <ButtonLink
-              href="/"
+              href="/planes"
               text={"Comprar ahora"}
               size={"s"}
               color={"coral"}

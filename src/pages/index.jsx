@@ -254,7 +254,7 @@ export default function Home() {
       </section>
 
       {/* Section - Regístrate */}
-      <section className={`${styles.SectionSignup} ${styles.Section}`}>
+      {/* <section className={`${styles.SectionSignup} ${styles.Section}`}>
         <div className="container">
           <div className="row">
             <div className="col-12 col-lg-7">
@@ -424,7 +424,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Section - colaboradores */}
       <section
