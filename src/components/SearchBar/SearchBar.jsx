@@ -141,7 +141,7 @@ export default function SearchBar({ size }) {
           {size != "small" && (
             <button
               className={`btn btn-primary ${styles.BtnSubmit}`}
-              type="button"
+              type="submit"
               id="button-addon2"
             >
               <FontAwesomeIcon fontSize={"28px"} icon={faMagnifyingGlass} />
