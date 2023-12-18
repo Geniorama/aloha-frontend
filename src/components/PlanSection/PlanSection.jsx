@@ -12,7 +12,19 @@ const planesVideos = getPlan("Videos");
 
 export default function PlanSection() {
   const [planes, setPlanes] = useState([]);
-  console.log(planes);
+  useEffect(() => {
+    getSubscriptionOffers().then((items) => {
+      const filterPlanes = items.offers.filter(
+        (item) =>
+          item.offerId === "65" ||
+          item.offerId === "728" ||
+          item.offerId === "722" ||
+          item.offerId === "300" ||
+          item.offerId === "70"
+      );
+      setPlanes(filterPlanes);
+    });
+  }, []);
   const tabsMenu = [
     {
       id: 1,
@@ -32,21 +44,6 @@ export default function PlanSection() {
       content: "Content 3",
     },
   ];
-
-  useEffect(() => {
-    getSubscriptionOffers().then((items) => {
-      // const filterPlanes = items.offers.filter(
-      //   (item) =>
-      //     item.offerId === "65" ||
-      //     item.offerId === "728" ||
-      //     item.offerId === "722" ||
-      //     item.offerId === "300" ||
-      //     item.offerId === "70"
-      // );
-      setPlanes(items);
-    });
-  }, []);
-  console.log(planes);
   return (
     <section className={styles.Section}>
       <div className="container">

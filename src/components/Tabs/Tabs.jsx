@@ -4,7 +4,6 @@ import ItemsPlan from "../CardPlan/ItemsPlan/ItemsPlan";
 
 export default function Tabs({ items, style, products, idPlan, namePlan }) {
   const [activeTab, setActiveTab] = useState(items[0]?.id);
-  console.log("products", products, "idPlan", idPlan, "name", namePlan);
   if (!items || items.length < 1) {
     return;
   }

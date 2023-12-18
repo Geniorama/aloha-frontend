@@ -16,29 +16,36 @@
           {
             "name": "10 imágenes",
             "small": "mes",
-            "price": 8.99,
-            "price_per_item": 0.9,
+            "price": 259,
+            "price_per_item": 25.9,
             "small_per_item": "por imagen"
           },
           {
-            "name": "75 imágenes",
+            "name": "50 imágenes",
             "small": "mes",
-            "price": 59,
-            "price_per_item": 0.79,
+            "price": 899,
+            "price_per_item": 17,
             "small_per_item": "por imagen"
           },
           {
             "name": "150 imágenes",
             "small": "mes",
-            "price": 89,
-            "price_per_item": 0.59,
+            "price": 1299.0,
+            "price_per_item": 8.6,
+            "small_per_item": "por imagen"
+          },
+          {
+            "name": "350 imágenes",
+            "small": "mes",
+            "price": 1599,
+            "price_per_item": 4.5,
             "small_per_item": "por imagen"
           },
           {
             "name": "750 imágenes",
             "small": "mes",
-            "price": 169,
-            "price_per_item": 0.23,
+            "price": 1799,
+            "price_per_item": 2.3,
             "small_per_item": "por imagen"
           }
         ]
@@ -50,29 +57,36 @@
           {
             "name": "10 imágenes",
             "small": "mes",
-            "price": 8.99,
-            "price_per_item": 0.9,
+            "price": 39,
+            "price_per_item": 3.9,
             "small_per_item": "por imagen"
           },
           {
-            "name": "75 imágenes",
+            "name": "50 imágenes",
             "small": "mes",
-            "price": 59,
-            "price_per_item": 0.79,
+            "price": 69,
+            "price_per_item": 1.38,
             "small_per_item": "por imagen"
           },
           {
             "name": "150 imágenes",
             "small": "mes",
-            "price": 89,
-            "price_per_item": 0.59,
+            "price": 129,
+            "price_per_item": 0.86,
+            "small_per_item": "por imagen"
+          },
+          {
+            "name": "350 imágenes",
+            "small": "mes",
+            "price": 139,
+            "price_per_item": 0.39,
             "small_per_item": "por imagen"
           },
           {
             "name": "750 imágenes",
             "small": "mes",
-            "price": 169,
-            "price_per_item": 0.23,
+            "price": 189,
+            "price_per_item": 0.25,
             "small_per_item": "por imagen"
           }
         ]

@@ -36,7 +36,7 @@ const Header = () => {
   }, []);
 
   const onShowSubMenu = () => setIsSubMenuOpen(!isSubMenuOpen);
-  console.log(user);
+
   const handleScroll = () => {
     const scrollPosition = window.scrollY;
     if (headerRef.current) {
