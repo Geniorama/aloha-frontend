@@ -28,7 +28,7 @@ const metaData = {
 function ProductPage({ data: product, session_id, file_name, downloadLink }) {
   const [selectedSize, setSelectedSize] = useState("s");
   const router = useRouter();
-  console.log(product);
+
   useEffect(() => {
     if (file_name && downloadLink) downloadSource(file_name, downloadLink);
   }, [file_name, downloadLink]);
