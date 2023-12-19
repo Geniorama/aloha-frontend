@@ -30,8 +30,9 @@ function ProductPage({ data: product, session_id, file_name, downloadLink }) {
   const router = useRouter();
   console.log(product);
   useEffect(() => {
-    downloadSource(file_name, downloadLink);
+    if (file_name && downloadLink) downloadSource(file_name, downloadLink);
   }, [file_name, downloadLink]);
+
   const subaccount_id = getCookie("user_id");
 
   const handleSelectSize = (size) => setSelectedSize(size);
@@ -68,16 +69,21 @@ function ProductPage({ data: product, session_id, file_name, downloadLink }) {
         <h2 className={styles.title}>{product.title} </h2>
       </section>
       <section className={`container px-5 ${styles.info__container}`}>
+        {console.log(product.mp4)}
         <div className={styles.hero}>
-          <Image
-            src={product.url_big}
-            className={styles.cover}
-            width={1000}
-            height={1000}
-            quality={100}
-            style={{ objectFit: "cover", objectPosition: "center" }}
-            alt=""
-          />
+          {product.mp4 ? (
+            <video src={product.mp4} controls width="100%" height="100%" />
+          ) : (
+            <Image
+              src={product.url_big}
+              className={styles.cover}
+              width={1000}
+              height={1000}
+              quality={100}
+              style={{ objectFit: "cover", objectPosition: "center" }}
+              alt=""
+            />
+          )}
         </div>
         <div className={styles.options}>
           <ProductChooseSize
@@ -242,8 +248,8 @@ export async function getServerSideProps({ params, query }) {
       props: {
         data,
         session_id,
-        file_name: transaction.metadata.media_name,
-        downloadLink: purchase.downloadLink,
+        file_name: transaction ? transaction.metadata.media_name : false,
+        downloadLink: purchase ? purchase.downloadLink : false,
       },
     };
   } catch (error) {

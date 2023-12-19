@@ -3,6 +3,7 @@ import FilterOptions from "@/components/FilterOptions/FilterOptions";
 import GridGallery from "@/components/GridGallery/GridGallery";
 import Layout from "@/components/Layout/Layout";
 import search, { getRelated } from "@/services/search.service";
+import { useEffect } from "react";
 
 const metaData = {
   title: "Resultado",
@@ -24,10 +25,21 @@ const search_type = {
   videos: {
     search_photo: false,
     search_vector: false,
+    search_video: true,
   },
 };
 
 export default function SearchPage({ result = [] }) {
+  const get = async () =>
+    await search("perro", {
+      search_limit: 30,
+      ...search_type["videos"],
+      full_info: true,
+    });
+
+  useEffect(() => {
+    get();
+  }, []);
   return (
     <Layout metaData={metaData}>
       <CateogiresBanner category="photos" />
@@ -48,6 +60,7 @@ export const getServerSideProps = async ({ params, query }) => {
           full_info: true,
         });
     const result = response ?? [];
+    console.log(result);
     return { props: { result } };
   } catch (error) {
     return { props: { result: [] } };
