@@ -1,10 +1,11 @@
 import Layout from "@/components/Layout/Layout";
 import PlanSection from "@/components/PlanSection/PlanSection";
 import QASection from "@/components/QASection/QASection";
-import { getSubscriptionOffers } from "@/services/subaccount";
+import { auth } from "@/lib/auth";
+import { createSubaccountSubscription } from "@/services/subaccount";
+import { login } from "@/services/user.service";
 import styles from "@/styles/Planes.module.css";
 import Image from "next/image";
-import { useEffect } from "react";
 
 const metaData = {
   title: "Planes",
@@ -13,7 +14,8 @@ const metaData = {
   author: "Geniorama Agencia",
 };
 
-function PlanesPage() {
+function PlanesPage({ subscription }) {
+  console.log(subscription);
   return (
     <Layout metaData={metaData}>
       <PlanSection />
@@ -111,6 +113,32 @@ function PlanesPage() {
       <QASection />
     </Layout>
   );
+}
+
+export async function getServerSideProps({ query, ...ctx }) {
+  const session = auth(ctx);
+  const sp_session_id = query.session_id;
+  const res = await fetch(
+    `https://api.stripe.com/v1/checkout/sessions/${sp_session_id}`,
+    {
+      method: "GET",
+      headers: {
+        Authorization: `bearer ${process.env.STRIPE_SECRET_KEY}`,
+      },
+    }
+  );
+  const data = await res.json();
+  console.log(data);
+  const admin = (await login()) || {};
+  const session_id = admin.sessionid ?? "";
+  const subscription = await createSubaccountSubscription({
+    session_id,
+    subaccount_id: session.user_id,
+    offer_id: data.metadata.offer_id,
+  });
+  return {
+    props: { subscription },
+  };
 }
 
 export default PlanesPage;

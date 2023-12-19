@@ -10,40 +10,26 @@ import { getSubscriptionOffers } from "@/services/subaccount";
 const planesFotosVectores = getPlan("Fotos y vectores");
 const planesVideos = getPlan("Videos");
 
+const tabsMenu = [
+  {
+    id: 1,
+    title: "Fotos y vectores",
+    content: <CardPlan planes={planesFotosVectores} />,
+  },
+
+  {
+    id: 2,
+    title: "Videos",
+    content: <CardPlan planes={planesVideos} />,
+  },
+
+  {
+    id: 3,
+    title: "Música & SFX",
+    content: "Content 3",
+  },
+];
 export default function PlanSection() {
-  const [planes, setPlanes] = useState([]);
-  useEffect(() => {
-    getSubscriptionOffers().then((items) => {
-      const filterPlanes = items.offers.filter(
-        (item) =>
-          item.offerId === "65" ||
-          item.offerId === "728" ||
-          item.offerId === "722" ||
-          item.offerId === "300" ||
-          item.offerId === "70"
-      );
-      setPlanes(filterPlanes);
-    });
-  }, []);
-  const tabsMenu = [
-    {
-      id: 1,
-      title: "Fotos y vectores",
-      content: <CardPlan planes={planesFotosVectores} />,
-    },
-
-    {
-      id: 2,
-      title: "Videos",
-      content: <CardPlan planes={planesVideos} />,
-    },
-
-    {
-      id: 3,
-      title: "Música & SFX",
-      content: "Content 3",
-    },
-  ];
   return (
     <section className={styles.Section}>
       <div className="container">

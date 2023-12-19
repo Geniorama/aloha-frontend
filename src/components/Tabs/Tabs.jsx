@@ -2,12 +2,18 @@ import styles from "./Tabs.module.css";
 import { useState } from "react";
 import ItemsPlan from "../CardPlan/ItemsPlan/ItemsPlan";
 
-export default function Tabs({ items, style, products, idPlan, namePlan }) {
+export default function Tabs({
+  items,
+  style,
+  products,
+  onSelectPlan,
+  idPlan,
+  namePlan,
+}) {
   const [activeTab, setActiveTab] = useState(items[0]?.id);
   if (!items || items.length < 1) {
     return;
   }
-
   const changeTab = (tabId) => {
     setActiveTab(tabId);
   };
@@ -45,7 +51,8 @@ export default function Tabs({ items, style, products, idPlan, namePlan }) {
                 >
                   <ItemsPlan
                     items={item.subitems}
-                    namePlan={namePlan}
+                    onClick={onSelectPlan}
+                    namePlan={item.id}
                     idPlan={idPlan}
                   />
                 </div>

@@ -1,7 +1,7 @@
 import styles from "./ItemsPlan.module.css";
 import { formatter } from "@/helpers/helpers";
 
-export default function ItemsPlan({ items, idPlan, namePlan }) {
+export default function ItemsPlan({ items, namePlan, onClick }) {
   if (!items || items.length < 1) {
     return;
   }
@@ -10,17 +10,22 @@ export default function ItemsPlan({ items, idPlan, namePlan }) {
     <ul className={styles.ListItems}>
       {items &&
         items.map((item, i) => (
-          <li key={i} className={styles.ListItems__item}>
+          <li
+            key={i}
+            className={styles.ListItems__item}
+            onClick={() => onClick(item)}
+          >
             <div className="form-check d-flex align-items-center">
               <input
                 className={`${styles.InputCheck} form-check-input`}
                 type="radio"
                 name={namePlan}
-                id={idPlan + "-" + i}
+                value={item.id}
+                id={item.id}
               />
               <label
                 className={`${styles.LabelItem} w-100 ms-3 form-check-label d-flex justify-content-between align-items-center`}
-                htmlFor={idPlan + "-" + i}
+                htmlFor={item.id}
               >
                 <div>
                   <span

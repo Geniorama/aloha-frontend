@@ -14,6 +14,7 @@
         "name": "Pago anual",
         "subitems": [
           {
+            "id": "728",
             "name": "10 imágenes",
             "small": "mes",
             "price": 259,
@@ -21,6 +22,7 @@
             "small_per_item": "por imagen"
           },
           {
+            "id": "300",
             "name": "50 imágenes",
             "small": "mes",
             "price": 899,
@@ -28,6 +30,7 @@
             "small_per_item": "por imagen"
           },
           {
+            "id": "732",
             "name": "150 imágenes",
             "small": "mes",
             "price": 1299.0,
@@ -35,6 +38,7 @@
             "small_per_item": "por imagen"
           },
           {
+            "id": "23756",
             "name": "350 imágenes",
             "small": "mes",
             "price": 1599,
@@ -42,6 +46,7 @@
             "small_per_item": "por imagen"
           },
           {
+            "id": "4956",
             "name": "750 imágenes",
             "small": "mes",
             "price": 1799,

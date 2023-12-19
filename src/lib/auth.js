@@ -3,7 +3,6 @@ import { deleteCookie, getCookie, getCookies, setCookie } from "cookies-next";
 
 export const auth = (ctx) => {
   const cookie = getCookies(ctx);
-  console.log(cookie);
   if (!cookie.session_id || !cookie.user_id) return redirect(ctx?.res);
   return cookie;
 };

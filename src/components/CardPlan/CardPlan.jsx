@@ -5,8 +5,13 @@ import ButtonLink from "../ButtonLink/ButtonLink";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import { auth } from "@/lib/auth";
+import { useState } from "react";
+import stripe from "@/lib/stripe";
 
 export default function CardPlan({ planes }) {
+  const [selectedPlan, setSelectedPlan] = useState();
+  const onSelectPlan = (plan) => setSelectedPlan(plan);
   if (!planes || planes.length < 1) {
     return;
   }
@@ -40,6 +45,15 @@ export default function CardPlan({ planes }) {
       },
     ],
   };
+  const onSubmit = async () => {
+    const session = auth();
+    return stripe({
+      amount: selectedPlan.price,
+      offer_id: selectedPlan.id,
+      subaccount_id: session.user_id,
+      subscription: true,
+    });
+  };
 
   return (
     <Slider {...settings}>
@@ -51,16 +65,20 @@ export default function CardPlan({ planes }) {
               <div>
                 <Tabs
                   products={true}
-                  // namePlan={plan.category[0].slug}
                   idPlan={plan.id}
                   items={plan.type}
+                  onSelectPlan={onSelectPlan}
                   style={"style-2"}
                 />
               </div>
             </div>
             <div className={styles.CardFooter}>
-              <button className={styles.ButtonBuy}>
-                <ButtonLink text={"Comprar ahora"} color={"white"} />
+              <button
+                type="submit"
+                onClick={onSubmit}
+                className={styles.ButtonBuy}
+              >
+                Comprar ahora
               </button>
             </div>
           </div>
