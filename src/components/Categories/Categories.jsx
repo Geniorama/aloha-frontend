@@ -12,7 +12,7 @@ export default function Categories({ categories, title, path }) {
           {categories.map((category, index) => (
             <Category
               key={index}
-              url={`/search/${slugify(category.text)}`}
+              url={`/search/${slugify(category.text)}?category=${path}`}
               {...category}
             />
           ))}
