@@ -7,21 +7,19 @@ import { api, downloadSource } from "@/helpers/helpers";
 import stripe from "@/lib/stripe";
 import getMediaData from "@/services/product.service";
 import { getMedia } from "@/services/purchase.service";
-import { getCreditStatus, getSubscriptions } from "@/services/subaccount";
+import { getSubscriptions } from "@/services/subaccount";
 import { login } from "@/services/user.service";
 import styles from "@/styles/Product.module.css";
 import {
   faArrowRight,
-  faClone,
   faMagnifyingGlass,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import axios from "axios";
 import { getCookie } from "cookies-next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const metaData = {
   title: "Producto",
@@ -34,8 +32,6 @@ function ProductPage({ data: product, session_id }) {
   const subaccount_id = getCookie("user_id");
 
   const handleSelectSize = (size) => setSelectedSize(size);
-
-  console.log(subaccount_id);
 
   const handleDownloadImage = async () => {
     if (!session_id) return router.push("/signin");

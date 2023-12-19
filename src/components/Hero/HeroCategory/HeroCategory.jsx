@@ -8,6 +8,7 @@ export default function HeroCategory({
   desc,
   search,
   layer,
+  category,
 }) {
   return (
     <div className="container-fluid">
@@ -28,7 +29,7 @@ export default function HeroCategory({
 
           {search && (
             <div className={styles.SearchWrap}>
-              <SearchBar />
+              <SearchBar query={category} />
             </div>
           )}
         </div>

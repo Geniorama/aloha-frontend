@@ -28,6 +28,7 @@ export default function Videos() {
         search={true}
         title="Videos"
         desc="Más de 13.500 videos de alta calidad"
+        category="videos"
         layer={{
           background:
             "linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0.3) 49%, rgba(0,0,0,0) 100%)",

@@ -32,6 +32,7 @@ export default function Fotos() {
         search={true}
         title="Fotos"
         desc="La magia en cada imagen"
+        category="fotos"
         layer={{
           background:
             "linear-gradient(0deg, rgba(0,0,0,.7) 0%, rgba(0,0,0,0.3) 49%, rgba(0,0,0,0) 100%)",

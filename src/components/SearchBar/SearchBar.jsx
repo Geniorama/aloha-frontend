@@ -10,15 +10,16 @@ import MenuSelect from "../MenuSelect/MenuSelect";
 import default_categories from "@/data/default_categories";
 import { useRouter } from "next/router";
 
-export default function SearchBar({ size }) {
+export default function SearchBar({ size, query }) {
   const [categories] = useState(default_categories);
   const router = useRouter();
+  const default_value = categories.find((item) => query === item.value);
 
   const [openMenu, setOpenMenu] = useState(false);
-  const [searchCat, setSearchCat] = useState(categories[0]);
+  const [searchCat, setSearchCat] = useState(default_value || categories[0]);
   const ref = useRef(null);
   const inputRef = useRef();
-  console.log(searchCat);
+
   const handleItemSelect = (selectedItem) => {
     setSearchCat(selectedItem);
     handleCloseButtonClick();
@@ -88,7 +89,11 @@ export default function SearchBar({ size }) {
 
           {openMenu && (
             <div className={`${styles.MenuCategories}`} ref={ref}>
-              <MenuSelect items={categories} />
+              <MenuSelect
+                items={categories}
+                defaultItem={default_value}
+                onSelect={handleItemSelect}
+              />
             </div>
           )}
         </div>
@@ -107,7 +112,11 @@ export default function SearchBar({ size }) {
             className={`${styles.MenuCategories} ${styles.MenuCategoriesDesktop}  d-none d-sm-block`}
             ref={ref}
           >
-            <MenuSelect items={categories} onSelect={handleItemSelect} />
+            <MenuSelect
+              items={categories}
+              defaultItem={default_value}
+              onSelect={handleItemSelect}
+            />
           </div>
         )}
         <span className={`${styles.Divider}`}></span>

@@ -15,6 +15,7 @@ export default function Vectores() {
         background="/img/category/bg-vectores.jpg"
         search={true}
         title="Vectores"
+        category="vectores"
         desc="Crea formas precisas y líneas perfectas"
         layer={{
           background:
