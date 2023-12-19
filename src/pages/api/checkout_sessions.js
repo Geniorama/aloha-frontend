@@ -20,7 +20,7 @@ export default async function handler(req, res) {
               product_data: {
                 name: req.body.subscription ? "suscription" : "ondemand",
               },
-              unit_amount: req.body.amount * 100 ?? 1000,
+              unit_amount: req.body.amount ? req.body.amount * 100 : 1000,
             },
             quantity: 1,
           },

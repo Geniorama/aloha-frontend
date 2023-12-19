@@ -31,6 +31,7 @@ export async function getServerSideProps({ query }) {
     media_id: data.metadata.media_id,
     media_license: "standard",
     media_option: data.metadata.media_option,
+    force_purchase_method: "ondemand",
   });
 
   return {

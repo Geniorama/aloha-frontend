@@ -19,16 +19,19 @@ import { getCookie } from "cookies-next";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const metaData = {
   title: "Producto",
 };
 
-function ProductPage({ data: product, session_id }) {
+function ProductPage({ data: product, session_id, file_name, downloadLink }) {
   const [selectedSize, setSelectedSize] = useState("s");
   const router = useRouter();
-
+  console.log(product);
+  useEffect(() => {
+    downloadSource(file_name, downloadLink);
+  }, [file_name, downloadLink]);
   const subaccount_id = getCookie("user_id");
 
   const handleSelectSize = (size) => setSelectedSize(size);
@@ -44,6 +47,7 @@ function ProductPage({ data: product, session_id }) {
         media_id: product.id,
         media_option: selectedSize,
         client_reference_id: subaccount_id,
+        url: `/producto/${product.id}`,
       });
 
     const purhcase = await getMedia({
@@ -52,6 +56,7 @@ function ProductPage({ data: product, session_id }) {
       media_license: "standard",
       media_option: selectedSize,
     });
+
     if (purhcase) return downloadSource(name, purhcase.downloadLink);
   };
 
@@ -199,17 +204,48 @@ function ProductPage({ data: product, session_id }) {
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getServerSideProps({ params, query }) {
   try {
-    const query = params.productId || "";
+    let transaction;
+    let purchase;
+    const productId = params.productId || "";
     const data =
-      (await getMediaData(query, { full_similar: true, search_layout: 1 })) ||
-      {};
+      (await getMediaData(productId, {
+        full_similar: true,
+        search_layout: 1,
+      })) || {};
 
     const auth = (await login()) || {};
     const session_id = auth.sessionid ?? "";
+    const sp_session_id = query.session_id;
 
-    return { props: { data, session_id } };
+    if (sp_session_id) {
+      const res = await fetch(
+        `https://api.stripe.com/v1/checkout/sessions/${sp_session_id}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `bearer ${process.env.STRIPE_SECRET_KEY}`,
+          },
+        }
+      );
+      transaction = await res.json();
+      purchase = await getMedia({
+        session_id,
+        media_id: transaction.metadata.media_id,
+        media_license: "standard",
+        media_option: transaction.metadata.media_option,
+      });
+    }
+
+    return {
+      props: {
+        data,
+        session_id,
+        file_name: transaction.metadata.media_name,
+        downloadLink: purchase.downloadLink,
+      },
+    };
   } catch (error) {
     return { props: {} };
   }
