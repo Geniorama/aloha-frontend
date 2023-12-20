@@ -3,6 +3,7 @@ import CardGrid from "@/components/CardGrid/CardGrid";
 import HeroCategory from "@/components/Hero/HeroCategory/HeroCategory";
 import Layout from "@/components/Layout/Layout";
 import PlanSection from "@/components/PlanSection/PlanSection";
+import PlayerListTrends from "@/components/PlayerListTrends/PlayerListTrends";
 import PopularAuthors from "@/components/PopularAuthors/PopularAuthors";
 import PopularSearches from "@/components/PupularSearches/PopularSearches";
 import Slider from "@/components/Slider/Slider";
@@ -48,6 +49,7 @@ function MusicSFXPage() {
             otherClass="text-wrap-balance"
             text={`Descubres las tendencias actuales.`}
           />
+          <PlayerListTrends />
         </div>
       </div>
       <PlanSection />

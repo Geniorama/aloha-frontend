@@ -30,7 +30,8 @@
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
     "stripe": "^14.8.0",
-    "swr": "^2.2.2"
+    "swr": "^2.2.2",
+    "wavesurfer.js": "^7.5.3"
   },
   "devDependencies": {
     "@types/node": "20.5.0"
