@@ -1,6 +1,6 @@
 import { request } from "@/helpers/helpers";
 import { auth, login as signin } from "@/lib/auth";
-import { saveUserCookie } from "@/pages/search/save-user-cookie";
+import { saveUserCookie } from "@/lib/save-user-cookie";
 import { setCookie } from "cookies-next";
 
 export const login = async (
