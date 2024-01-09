@@ -2,9 +2,17 @@ import React, { useEffect, useRef, useState } from "react";
 
 import WaveSurfer from "wavesurfer.js";
 
+import styles from "./Waveform.module.css";
+import Image from "next/image";
+
+import PlayIcon from "../../../public/icons/Play.svg";
+import PauseIcon from "../../../public/icons/Pause.svg";
+import ArrowDownIcon from "../../../public/icons/ArrowDown.svg";
+import DownloadIcon from "../../../public/icons/DownloadIcon.svg";
+
 const formWaveSurferOptions = (ref) => ({
   container: ref,
-  waveColor: "#eee",
+  waveColor: "#AEAEAE",
   progressColor: "#FF595A",
   cursorColor: "transparent",
   barWidth: 4,
@@ -41,14 +49,44 @@ export default function Waveform({ url }) {
   };
 
   return (
-    <div>
-      <div id="waveform" ref={waveformRef} />
-      <div className="controls">
-        <button onClick={handlePlayPause}>{!playing ? "Play" : "Pause"}</button>
+    <div className={styles.waveform}>
+      <div className={`${styles.controls} controls`}>
+        <button onClick={handlePlayPause}>
+          {!playing ? (
+            <Image src={PlayIcon} alt="" />
+          ) : (
+            <Image src={PauseIcon} alt="" />
+          )}
+        </button>
+        <div>
+          <h2>Gran pista de percusión automo...</h2>
+          <span>
+            Autor: <b>Stock 19</b>
+          </span>
+        </div>
+      </div>
+      <div className={styles.waveinfo}>
+        <span>01:32</span>
+        <span>153BPM</span>
+        <div className={styles.player}>
+          <div id="waveform" ref={waveformRef} />
+        </div>
+      </div>
+      <button className={styles.downloadButton}>
+        <span>Descargar</span>
+        <Image src={ArrowDownIcon} alt="" />
+      </button>
+      <div className={styles.downloadIcon}>
+        <Image src={DownloadIcon} alt="" />
       </div>
       <style global jsx>{`
         #waveform ::part(cursor) {
           display: none;
+        }
+        @media (max-width: 500px) {
+          #waveform ::part(wrapper) {
+            display: none;
+          }
         }
       `}</style>
     </div>

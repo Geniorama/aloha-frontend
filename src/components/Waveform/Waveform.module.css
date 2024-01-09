@@ -1,0 +1,91 @@
+.waveform {
+  background-color: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 16px;
+}
+
+.waveinfo {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  color: #515151;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.controls h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.controls span {
+  color: #515151;
+}
+
+.controls button,
+.controls button:focus-visible {
+  border: none;
+  background: none;
+  outline: none;
+}
+
+.downloadButton {
+  background-color: #000000;
+  border: none;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  text-decoration: underline;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.downloadIcon {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .waveform {
+    padding: 12px 8px;
+  }
+  .controls {
+    width: 159px;
+  }
+  .controls button img {
+    width: 32px;
+    height: 32px;
+  }
+  .controls h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    width: 123px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .waveinfo {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    width: 56px;
+  }
+  .waveinfo .player {
+    display: none;
+  }
+  .downloadButton {
+    display: none;
+  }
+  .downloadIcon {
+    display: flex;
+  }
+}
