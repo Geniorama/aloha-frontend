@@ -8,6 +8,8 @@ import { useForm } from "react-hook-form";
 import { deleteCookie } from "cookies-next";
 import { createSubaccount, login } from "@/services/user.service";
 import { useEffect } from "react";
+import { saveContact } from "@/services/hubspot.service";
+import Router from "next/router";
 
 function SignUpPage({ sessionId }) {
   const { register, handleSubmit } = useForm();
@@ -15,8 +17,14 @@ function SignUpPage({ sessionId }) {
     deleteCookie("user_id");
     deleteCookie("session_id");
   }, []);
-  const onSubmit = (data) =>
-    createSubaccount({ ...data, session_id: sessionId });
+  const onSubmit = async (data) => {
+    try {
+      const res = await createSubaccount({ ...data, session_id: sessionId });
+      if (res.userid) Router.push("/auth/signin");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className={`${styles.section}`}>
       <Link href="/" className={styles.logo}>

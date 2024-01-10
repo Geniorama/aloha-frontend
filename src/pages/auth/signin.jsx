@@ -9,20 +9,18 @@ import { deleteCookie } from "cookies-next";
 import { getUserData, loginAsUser } from "@/services/user.service";
 import Head from "next/head";
 import { useEffect } from "react";
-import { getContact } from "@/services/hubspot.service";
+
 const metaData = {
   title: "Iniciar sesión",
   author: "Geniorama Agencia",
 };
 export default function Signin() {
   const { register, handleSubmit } = useForm();
-  useEffect(() => {
-    getContact();
-  }, []);
   const onSubmit = async (data) => {
     const auth = await loginAsUser(data.email, data.password);
     if (auth.sessionid && auth.userid) getUserData(auth.sessinid, auth.userid);
   };
+
   return (
     <div className={`${styles.section}`}>
       <Head>

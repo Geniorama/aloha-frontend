@@ -5,6 +5,7 @@ import ProductChooseSize from "@/components/Product/ProductChooseSize/ProductCho
 import SimilarProducts from "@/components/SimilarProducts/SimilarProducts";
 import { api, downloadSource } from "@/helpers/helpers";
 import stripe from "@/lib/stripe";
+import { saveDeal } from "@/services/hubspot.service";
 import getMediaData from "@/services/product.service";
 import { getMedia } from "@/services/purchase.service";
 import { getSubscriptions } from "@/services/subaccount";
@@ -210,11 +211,12 @@ function ProductPage({ data: product, session_id, file_name, downloadLink }) {
   );
 }
 
-export async function getServerSideProps({ params, query }) {
+export async function getServerSideProps({ params, query, ...ctx }) {
   try {
     let transaction;
     let purchase;
     const productId = params.productId || "";
+
     const data =
       (await getMediaData(productId, {
         full_similar: true,
@@ -224,6 +226,8 @@ export async function getServerSideProps({ params, query }) {
     const auth = (await login()) || {};
     const session_id = auth.sessionid ?? "";
     const sp_session_id = query.session_id;
+
+    const email = getCookie("email", ctx);
 
     if (sp_session_id) {
       const res = await fetch(
@@ -235,13 +239,19 @@ export async function getServerSideProps({ params, query }) {
           },
         }
       );
+
       transaction = await res.json();
+
       purchase = await getMedia({
         session_id,
         media_id: transaction.metadata.media_id,
         media_license: "standard",
         media_option: transaction.metadata.media_option,
       });
+
+      if (purchase.downloadLink) {
+        await saveDeal({ email, productId, transaction: sp_session_id });
+      }
     }
 
     return {

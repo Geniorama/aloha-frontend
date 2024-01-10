@@ -2,6 +2,7 @@ import { request } from "@/helpers/helpers";
 import { auth, login as signin } from "@/lib/auth";
 import { saveUserCookie } from "@/lib/save-user-cookie";
 import { setCookie } from "cookies-next";
+import { saveContact } from "./hubspot.service";
 
 export const login = async (
   login_user = "info@alohaimages.co",
@@ -63,6 +64,7 @@ export const createSubaccount = async (payload) => {
     payload.subaccount_lname = payload.subaccount_email;
     payload.subaccount_username = payload.subaccount_email;
     const response = await request("createSubaccount", payload);
+    await saveContact({ email: payload.subaccount_email });
     return response;
   } catch (error) {
     console.log(error);
