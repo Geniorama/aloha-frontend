@@ -8,10 +8,12 @@ import PopularAuthors from "@/components/PopularAuthors/PopularAuthors";
 import PopularSearches from "@/components/PupularSearches/PopularSearches";
 import Slider from "@/components/Slider/Slider";
 import TitleSection from "@/components/TitleSection/TitleSection";
+import { getPlayList } from "@/services/musicfx.service";
+
 const metaData = {
   title: "Música y SFX",
 };
-function MusicSFXPage() {
+function MusicSFXPage({ playlist }) {
   return (
     <Layout metaData={metaData}>
       <HeroCategory
@@ -49,13 +51,24 @@ function MusicSFXPage() {
             otherClass="text-wrap-balance"
             text={`Descubres las tendencias actuales.`}
           />
-          <PlayerListTrends />
+          <PlayerListTrends playlist={playlist} />
         </div>
       </div>
       <PlanSection />
       <PopularSearches />
     </Layout>
   );
+}
+
+export async function getServerSideProps() {
+  try {
+    const playlist =
+      (await getPlayList(null, { search_limit: 15, search_instrument: 2 })) ||
+      [];
+    return { props: { playlist } };
+  } catch (error) {
+    return { props: { error } };
+  }
 }
 
 export default MusicSFXPage;

@@ -1,9 +1,19 @@
+import { useState } from "react";
 import Waveform from "../Waveform/Waveform";
 
-export default function PlayerListTrends() {
+export default function PlayerListTrends({ playlist = [] }) {
+  const [active, sectActive] = useState();
+  const handleSelect = (value) => sectActive(value);
   return (
     <div>
-      <Waveform url="https://www.mfiles.co.uk/mp3-downloads/franz-schubert-standchen-serenade.mp3" />
+      {playlist.map((track) => (
+        <Waveform
+          active={active === track.id}
+          handleSelect={handleSelect}
+          key={track.id}
+          {...track}
+        />
+      ))}
     </div>
   );
 }

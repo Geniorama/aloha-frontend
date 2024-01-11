@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 20px 16px;
+  margin-bottom: 24px;
 }
 
 .waveinfo {
@@ -23,6 +24,10 @@
   font-size: 20px;
   font-weight: bold;
   margin: 0;
+  width: 380px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .controls span {

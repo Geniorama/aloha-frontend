@@ -9,6 +9,7 @@ import PlayIcon from "../../../public/icons/Play.svg";
 import PauseIcon from "../../../public/icons/Pause.svg";
 import ArrowDownIcon from "../../../public/icons/ArrowDown.svg";
 import DownloadIcon from "../../../public/icons/DownloadIcon.svg";
+import secondsToString from "@/lib/secondsToString";
 
 const formWaveSurferOptions = (ref) => ({
   container: ref,
@@ -27,47 +28,61 @@ const formWaveSurferOptions = (ref) => ({
   partialRender: true,
 });
 
-export default function Waveform({ url }) {
+export default function Waveform({
+  id,
+  title,
+  username,
+  duration_in_seconds,
+  thumb_audio,
+  bpm,
+  active,
+  handleSelect,
+}) {
   const waveformRef = useRef(null);
   const wavesurfer = useRef(null);
-  const [playing, setPlay] = useState(false);
+  const [play, setPlay] = useState(false);
 
   useEffect(() => {
-    setPlay(false);
-
     const options = formWaveSurferOptions(waveformRef.current);
     wavesurfer.current = WaveSurfer.create(options);
 
-    wavesurfer.current.load(url);
+    wavesurfer.current.load(thumb_audio);
 
     return () => wavesurfer.current.destroy();
-  }, [url]);
+  }, [thumb_audio]);
+
+  useEffect(() => {
+    if (!active && play) {
+      wavesurfer.current.playPause();
+    }
+  }, [active, play]);
 
   const handlePlayPause = () => {
-    setPlay(!playing);
     wavesurfer.current.playPause();
+    setPlay(!play);
+    handleSelect(id);
   };
 
   return (
     <div className={styles.waveform}>
       <div className={`${styles.controls} controls`}>
         <button onClick={handlePlayPause}>
-          {!playing ? (
+          {!play || !active ? (
             <Image src={PlayIcon} alt="" />
           ) : (
             <Image src={PauseIcon} alt="" />
           )}
         </button>
         <div>
-          <h2>Gran pista de percusión automo...</h2>
+          <h2>{title}</h2>
           <span>
-            Autor: <b>Stock 19</b>
+            Autor: <b>{username}</b>
           </span>
         </div>
       </div>
       <div className={styles.waveinfo}>
-        <span>01:32</span>
-        <span>153BPM</span>
+        <span>{secondsToString(duration_in_seconds)}</span>
+        {bpm && <span>{bpm} BPM</span>}
         <div className={styles.player}>
           <div id="waveform" ref={waveformRef} />
         </div>
