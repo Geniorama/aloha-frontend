@@ -102,3 +102,23 @@ export const downloadSource = (name, url) => {
   document.body.appendChild(a);
   a.click();
 };
+
+export const search_type = {
+  todas: {},
+  fotos: {
+    search_vector: false,
+    search_video: false,
+  },
+  vectores: {
+    search_photo: false,
+    search_video: false,
+  },
+  ilustraciones: {
+    illustration: 1,
+  },
+  videos: {
+    search_photo: false,
+    search_vector: false,
+    search_video: true,
+  },
+};
