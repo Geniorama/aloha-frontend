@@ -127,3 +127,13 @@
     font-weight: 400;
   }
 }
+
+
+/*Custom styles for specific sections of the component*/
+.searchBarHeaderFixed {
+  width: 536px;
+}
+
+.searchBarHeaderFixed .FieldSelect {
+  max-width: 100px;
+}

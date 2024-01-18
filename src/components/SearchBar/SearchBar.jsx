@@ -10,7 +10,7 @@ import MenuSelect from "../MenuSelect/MenuSelect";
 import default_categories from "@/data/default_categories";
 import { useRouter } from "next/router";
 
-export default function SearchBar({ size, query }) {
+export default function SearchBar({ size, query, customClass }) {
   const [categories] = useState(default_categories);
   const router = useRouter();
   const default_value = categories.find((item) => query === item.value);
@@ -69,7 +69,7 @@ export default function SearchBar({ size, query }) {
       onSubmit={onSubmit}
       className={`${styles.SearchBar} ${
         size == "small" && styles.Small
-      } rounded`}
+      } ${styles[customClass]} rounded`}
     >
       <div className="form-group d-flex align-items-center">
         <div className={`d-sm-none ${styles.SearchBar__select__mobile}`}>
@@ -140,21 +140,33 @@ export default function SearchBar({ size, query }) {
             style={{ border: "none" }}
             aria-describedby="basic-addon1"
           />
-          <span
-            className="input-group-text d-none d-md-flex"
-            id="basic-addon1"
-            style={{ background: "none", border: "none" }}
-          >
-            <AlohaIcon icon={"camera-solid"} size={size == "small" ? 24 : 30} />
-          </span>
-          {size != "small" && (
+          {size == 'small' && (
             <button
-              className={`btn btn-primary ${styles.BtnSubmit}`}
+              className="input-group-text d-none d-md-flex"
+              id="basic-addon1"
               type="submit"
-              id="button-addon2"
+              style={{ background: "none", border: "none" }}
             >
-              <FontAwesomeIcon fontSize={"28px"} icon={faMagnifyingGlass} />
+              <AlohaIcon icon={"camera-solid"} size={size == "small" ? 24 : 30} />
             </button>
+          )}
+          {size != "small" && (
+            <>
+              <span
+              className="input-group-text d-none d-md-flex"
+              id="basic-addon1"
+              style={{ background: "none", border: "none" }}
+              >
+                <AlohaIcon icon={"camera-solid"} size={size == "small" ? 24 : 30} />
+              </span>
+              <button
+                className={`btn btn-primary ${styles.BtnSubmit}`}
+                type="submit"
+                id="button-addon2"
+              >
+                <FontAwesomeIcon fontSize={"28px"} icon={faMagnifyingGlass} />
+              </button>
+            </>
           )}
         </div>
       </div>

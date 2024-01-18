@@ -180,7 +180,7 @@ const Header = () => {
 
           {isHeaderFixed && (
             <div className="d-none d-sm-block">
-              <SearchBar size="small" />
+              <SearchBar size="small" customClass='searchBarHeaderFixed' />
             </div>
           )}
           {user.email ? (
