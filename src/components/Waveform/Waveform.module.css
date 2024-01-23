@@ -5,6 +5,7 @@
   justify-content: space-between;
   padding: 20px 16px;
   margin-bottom: 24px;
+  position: relative;
 }
 
 .waveinfo {
@@ -52,10 +53,49 @@
   display: flex;
   gap: 10px;
   align-items: center;
+  transition: all .2s ease-in;
 }
 
-.downloadIcon {
-  display: none;
+.downloadButton:hover {
+  color: #FF595A;
+}
+
+.selectLike {
+  border: none;
+  background-color: transparent;
+}
+
+.downloadPopUp {
+  background-color: #fff;
+  box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.35);
+  border: 1px solid #EFEFEF;
+  border-radius: 4px;
+  width: 198px;
+  height: 96px;
+  position: absolute;
+  right: 12px;
+  top: 80px;
+  z-index: 1;
+}
+
+.downloadPopUp button {
+  width: 100%;
+  height: 50%;
+  border: none;
+  text-align: left;
+  padding: 14px 15px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #222;
+  font-size: 14px;
+  font-weight: 500;
+  background-color: #fff;
+  transition: background .3s ease-in;
+}
+
+.downloadPopUp button:hover {
+  background-color: #FAFAFA;
 }
 
 @media (max-width: 500px) {

@@ -29,20 +29,18 @@ function MusicSFXPage({ playlist }) {
       />
       <div className="section py-5">
         <div className="container py-3">
-          <TitleSection text={`Categorías de música.`} />
+          <TitleSection text={`Colección de música.`} />
           <div className="text-center mb-4">
             <ButtonLink text={"Ver todos"} color={"coral"} size={"m"} />
           </div>
-          <Slider>
-            <CardGrid
-              name="Alternativa"
-              items={["/img/music-sfx/alternative.png"]}
-            />
-            <CardGrid name="Ambiente" items={["/img/music-sfx/ambiente.png"]} />
-            <CardGrid name="Cine" items={["/img/music-sfx/cine.png"]} />
-            <CardGrid items={["/img/music-sfx/alternative.png"]} />
-          </Slider>
         </div>
+        <Slider>
+          <CardGrid name="Alternativa" items={["/img/music-sfx/alternative.png"]} />
+          <CardGrid name="Ambiente" items={["/img/music-sfx/ambiente.png"]} />
+          <CardGrid name="Cine" items={["/img/music-sfx/cine.png"]} />
+          <CardGrid name="Alternativa" items={["/img/music-sfx/alternative.png"]} />
+          <CardGrid items={["/img/music-sfx/alternative.png"]} />
+        </Slider>
       </div>
       <PopularAuthors type="dark" />
       <div className="section py-5">

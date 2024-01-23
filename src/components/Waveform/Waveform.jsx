@@ -8,7 +8,10 @@ import Image from "next/image";
 import PlayIcon from "../../../public/icons/Play.svg";
 import PauseIcon from "../../../public/icons/Pause.svg";
 import ArrowDownIcon from "../../../public/icons/ArrowDown.svg";
-import DownloadIcon from "../../../public/icons/DownloadIcon.svg";
+import heartIcon from "../../../public/icons/HeartIcon.svg";
+import heartSolidIcon from "../../../public/icons/HeartSolidIcon.svg";
+import DownloadMusica from "../../../public/icons/DownloadMusica.svg";
+import DownloadMuestra from "../../../public/icons/DownloadMuestra.svg";
 import secondsToString from "@/lib/secondsToString";
 
 const formWaveSurferOptions = (ref) => ({
@@ -41,6 +44,8 @@ export default function Waveform({
   const waveformRef = useRef(null);
   const wavesurfer = useRef(null);
   const [play, setPlay] = useState(false);
+  const [like, setLike] = useState(false);
+  const [showDownload, setShowDownload] = useState(false);
 
   useEffect(() => {
     const options = formWaveSurferOptions(waveformRef.current);
@@ -56,11 +61,19 @@ export default function Waveform({
       wavesurfer.current.playPause();
     }
   }, [active, play]);
-
+  
   const handlePlayPause = () => {
     wavesurfer.current.playPause();
     setPlay(!play);
     handleSelect(id);
+  };
+  
+  const handleLike = () => {
+    setLike(!like);
+  };
+  
+  const handleDownload = () => {
+    setShowDownload(!showDownload);
   };
 
   return (
@@ -87,13 +100,32 @@ export default function Waveform({
           <div id="waveform" ref={waveformRef} />
         </div>
       </div>
-      <button className={styles.downloadButton}>
+      {
+        like?
+          <button className={styles.selectLike} onClick={handleLike}>
+            <Image src={heartSolidIcon} alt="Like" />
+          </button> :
+          <button className={styles.selectLike} onClick={handleLike}>
+            <Image src={heartIcon} alt="Dislike" />
+          </button>
+      }
+      <button className={styles.downloadButton} onClick={handleDownload}>
         <span>Descargar</span>
         <Image src={ArrowDownIcon} alt="" />
       </button>
-      <div className={styles.downloadIcon}>
-        <Image src={DownloadIcon} alt="" />
-      </div>
+      {
+        showDownload &&
+        <div className={styles.downloadPopUp}>
+          <button>
+            <Image src={DownloadMusica} alt="" />
+            <span>Descargar pista</span>
+          </button>
+          <button>
+            <Image src={DownloadMuestra} alt="" />
+            <span>Descargar muestra</span>
+          </button>
+        </div>
+      }
       <style global jsx>{`
         #waveform ::part(cursor) {
           display: none;
