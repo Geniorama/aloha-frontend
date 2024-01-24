@@ -23,7 +23,7 @@ export default function CardGrid({
       {sliceItems.length &&
         sliceItems.map((item, i) => (
           <div key={i} className={styles.Item}>
-            <Image src={item} alt="image" objectFit="cover" fill />
+            <Image unoptimized src={item} alt="image" objectFit="cover" fill />
           </div>
         ))}
       <div className={styles.caption}>
