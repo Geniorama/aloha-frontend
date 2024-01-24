@@ -218,12 +218,12 @@ const Header = () => {
             <div className={styles.menusecond}>
               <ul className="navbar-nav">
                 <li className="nav-item">
-                  <Link className="nav-link" href="/signup">
+                  <Link className="nav-link" href="/auth/signup">
                     Registrarme
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="/signin">
+                  <Link className="nav-link" href="/auth/signin">
                     Iniciar sesión
                     <svg
                       width="16"
