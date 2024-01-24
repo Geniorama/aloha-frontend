@@ -18,7 +18,7 @@ export default function FilterLabels({ show, onClose }) {
     <div className={`${styles.labelsList} ${displayContent}`}>
       <header className={styles.header}>
         <h6>Filtros.</h6>
-        <Image src={closeIcon} alt="close-icon" onClick={onClose} />
+        <Image unoptimized src={closeIcon} alt="close-icon" onClick={onClose} />
       </header>
       <FilterLabel
         icon={Portrait}

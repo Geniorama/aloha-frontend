@@ -46,6 +46,7 @@ export default function Category({
         </span>
       </Link>
       <Image
+        unoptimized
         src={image}
         className={styles.category__image}
         width={width}

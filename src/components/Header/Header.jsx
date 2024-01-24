@@ -68,6 +68,7 @@ const Header = () => {
         <div className={styles.container}>
           <Link href="/" className={styles.logo}>
             {/* <Image
+            unoptimized
             src={isHeaderFixed ? LogoLetter : LogoBlack}
             alt="Logo Aloha"
           /> */}

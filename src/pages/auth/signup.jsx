@@ -28,7 +28,7 @@ function SignUpPage({ sessionId }) {
   return (
     <div className={`${styles.section}`}>
       <Link href="/" className={styles.logo}>
-        <Image src={LogoBlack} alt="Logo Aloha" />
+        <Image unoptimized src={LogoBlack} alt="Logo Aloha" />
       </Link>
       <div className={`${styles.content}`}>
         <h1 className={`${styles.title}`}>¡Bienvenido a Aloha!</h1>
@@ -37,7 +37,7 @@ function SignUpPage({ sessionId }) {
         </p>
         <div className={`${styles.loginButtons}`}>
           <button className={`${styles.buttonGoogle}`}>
-            <Image src={LogoGoogle} quality={100} alt="Sign up with Google" />
+            <Image unoptimized src={LogoGoogle} quality={100} alt="Sign up with Google" />
             <span className={`${styles.ButtonSignUp__name} mx-2`}>
               Continuar con Google
             </span>
@@ -75,7 +75,7 @@ function SignUpPage({ sessionId }) {
             </span>
           </button>
           <button className={`${styles.buttonFacebook}`}>
-            <Image src={LogoFB} alt="Sign up with Facebook" />
+            <Image unoptimized src={LogoFB} alt="Sign up with Facebook" />
           </button>
         </div>
         <p className={`${styles.separador}`}>o registrate con tu correo</p>

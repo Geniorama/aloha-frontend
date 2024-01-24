@@ -52,9 +52,9 @@ export default function TrackDetail({ thumb_audio }) {
       <div className={`${styles.controls} controls`}>
         <button onClick={handlePlayPause}>
           {!play ? (
-            <Image src={PlayIcon} alt="" />
+            <Image unoptimized src={PlayIcon} alt="" />
           ) : (
-            <Image src={PauseIcon} alt="" />
+            <Image unoptimized src={PauseIcon} alt="" />
           )}
         </button>
       </div>
@@ -65,10 +65,10 @@ export default function TrackDetail({ thumb_audio }) {
       </div>
       <button className={styles.downloadButton}>
         <span>Descargar</span>
-        <Image src={ArrowDownIcon} alt="" />
+        <Image unoptimized src={ArrowDownIcon} alt="" />
       </button>
       <div className={styles.downloadIcon}>
-        <Image src={DownloadIcon} alt="" />
+        <Image unoptimized src={DownloadIcon} alt="" />
       </div>
       <style global jsx>{`
         #waveform ::part(cursor) {

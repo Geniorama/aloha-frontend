@@ -7,6 +7,7 @@ export default function AuthorCard({ link = "", cover, author, photo }) {
     <Link href={link}>
       <div className={styles.authorCard}>
         <Image
+          unoptimized
           src={cover}
           className={styles.cover}
           width={290}
@@ -18,6 +19,7 @@ export default function AuthorCard({ link = "", cover, author, photo }) {
         <div className={styles.main}>
           <div className={styles.author}>
             <Image
+              unoptimized
               src={photo}
               className={styles.photo}
               width={85}

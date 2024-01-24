@@ -82,9 +82,9 @@ export default function Waveform({
       <div className={`${styles.controls} controls`}>
         <button onClick={handlePlayPause}>
           {!play || !active ? (
-            <Image src={PlayIcon} alt="" />
+            <Image unoptimized src={PlayIcon} alt="" />
           ) : (
-            <Image src={PauseIcon} alt="" />
+            <Image unoptimized src={PauseIcon} alt="" />
           )}
         </button>
         <div>
@@ -104,28 +104,28 @@ export default function Waveform({
       {
         like?
           <button className={styles.selectLike} onClick={handleLike}>
-            <Image src={heartSolidIcon} alt="Like" />
+            <Image unoptimized src={heartSolidIcon} alt="Like" />
           </button> :
           <button className={styles.selectLike} onClick={handleLike}>
-            <Image src={heartIcon} alt="Dislike" />
+            <Image unoptimized src={heartIcon} alt="Dislike" />
           </button>
       }
       <button className={styles.downloadButton} onClick={handleDownload}>
         <span>Descargar</span>
-        <Image src={ArrowDownIcon} alt="" />
+        <Image unoptimized src={ArrowDownIcon} alt="" />
       </button>
       <div className={styles.downloadIcon}  onClick={handleDownload}>
-        <Image src={DownloadIcon} alt="" />
+        <Image unoptimized src={DownloadIcon} alt="" />
       </div>
       {
         showDownload &&
         <div className={styles.downloadPopUp}>
           <button>
-            <Image src={DownloadMusica} alt="" />
+            <Image unoptimized src={DownloadMusica} alt="" />
             <span>Descargar pista</span>
           </button>
           <button>
-            <Image src={DownloadMuestra} alt="" />
+            <Image unoptimized src={DownloadMuestra} alt="" />
             <span>Descargar muestra</span>
           </button>
         </div>

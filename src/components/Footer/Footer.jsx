@@ -14,7 +14,7 @@ const Footer = () => {
       <div className="container">
         <div className={`${styles.alfooterHeader} row align-items-center`}>
           <div className="col-12 col-lg-3">
-            <Image src={Logo} alt="Logo Aloha" className={styles.logo} />
+            <Image unoptimized src={Logo} alt="Logo Aloha" className={styles.logo} />
           </div>
           <div className="col-12 col-md-6 col-lg-3">
             <Link href="#">
@@ -103,10 +103,10 @@ const Footer = () => {
             <h5>Apps.</h5>
             <div className={styles.alapps}>
               <Link href="#">
-                <Image src={AppStore} alt="App Store" />
+                <Image unoptimized src={AppStore} alt="App Store" />
               </Link>
               <Link href="#">
-                <Image src={GooglePlay} alt="App Store" />
+                <Image unoptimized src={GooglePlay} alt="App Store" />
               </Link>
             </div>
           </div>

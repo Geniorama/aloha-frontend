@@ -75,7 +75,8 @@ function ProductPage({ data: product, session_id, file_name, downloadLink }) {
           {product.mp4 ? (
             <video src={product.mp4} controls width="100%" height="100%" />
           ) : (
-            <Image
+            <Image 
+              unoptimized
               src={product.url_big}
               className={styles.cover}
               width={1000}
@@ -148,7 +149,7 @@ function ProductPage({ data: product, session_id, file_name, downloadLink }) {
             <h6>ID de la imagen</h6>
             <Link href="#">
               <span>{product.id}</span>
-              <Image src="/Copy-blue.svg" width={18} height={18} alt="" />
+              <Image unoptimized src="/Copy-blue.svg" width={18} height={18} alt="" />
             </Link>
           </div>
         </div>

@@ -50,6 +50,7 @@ export default function CardCategory({
         </span>
       </Link>
       <Image
+        unoptimized
         src={image ? image : ExampleImage}
         fill
         style={{ objectFit: "cover" }}

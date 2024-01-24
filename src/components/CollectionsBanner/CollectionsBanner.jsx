@@ -20,7 +20,8 @@ export default function CollectionsBanner({ title, cover }) {
     <div className="container">
       {cover ? (
         <div style={{ height: "200px", width: "100%", position: "relative" }}>
-          <Image src={cover} fill alt="" quality={100} objectFit="cover" />
+          <Image 
+            unoptimized src={cover} fill alt="" quality={100} objectFit="cover" />
         </div>
       ) : (
         <Fragment>
@@ -43,7 +44,8 @@ export default function CollectionsBanner({ title, cover }) {
                   <Link
                     href={`/categoria/fotos/collections?source=${item.text}`}
                   >
-                    <Image
+                    <Image 
+                      unoptimized
                       src={item.image}
                       width={250}
                       height={100}

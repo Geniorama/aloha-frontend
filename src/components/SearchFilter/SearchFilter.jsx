@@ -6,7 +6,7 @@ export default function SearchFilter() {
   return (
     <div className={styles.SearchFilter}>
       <input placeholder="Buscar por video" />
-      <Image src={Icon} alt="" />
+      <Image unoptimized src={Icon} alt="" />
     </div>
   );
 }

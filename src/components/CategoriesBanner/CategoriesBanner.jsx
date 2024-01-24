@@ -11,6 +11,7 @@ export default function CateogiresBanner({ category }) {
           {items.map((item, index) => (
             <div key={index} style={{ padding: "100px", position: "relative" }}>
               <Image
+                unoptimized
                 src={item.image}
                 width={250}
                 height={100}

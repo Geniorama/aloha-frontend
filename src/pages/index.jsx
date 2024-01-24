@@ -146,6 +146,8 @@ export default function Home() {
           <div className={styles.GridPopular}>
             <div className={styles.GridPopular__item}>
               <Image
+                unoptimized
+                unoptimized
                 src={GalleryExample}
                 fill
                 style={{ objectFit: "cover" }}
@@ -155,6 +157,7 @@ export default function Home() {
 
             <div className={styles.GridPopular__item}>
               <Image
+                unoptimized
                 src={GalleryExample4}
                 fill
                 style={{ objectFit: "cover" }}
@@ -164,6 +167,7 @@ export default function Home() {
 
             <div className={styles.GridPopular__item}>
               <Image
+                unoptimized
                 src={GalleryExample5}
                 fill
                 style={{ objectFit: "cover" }}
@@ -173,6 +177,7 @@ export default function Home() {
 
             <div className={styles.GridPopular__item}>
               <Image
+                unoptimized
                 src={GalleryExample1}
                 fill
                 style={{ objectFit: "cover" }}
@@ -182,6 +187,7 @@ export default function Home() {
 
             <div className={styles.GridPopular__item}>
               <Image
+                unoptimized
                 src={GalleryExample3}
                 fill
                 style={{ objectFit: "cover" }}
@@ -191,6 +197,7 @@ export default function Home() {
 
             <div className={styles.GridPopular__item}>
               <Image
+                unoptimized
                 src={GalleryExample2}
                 fill
                 style={{ objectFit: "cover" }}
@@ -213,6 +220,7 @@ export default function Home() {
             <div key={image.id} className={styles.SlideItem}>
               <div style={{ height: "400px", width: "600px" }}>
                 <Image
+                  unoptimized
                   src={image.huge_thumb}
                   width={400}
                   height={500}
@@ -270,6 +278,7 @@ export default function Home() {
               >
                 <span>
                   <Image
+                    unoptimized
                     src={LogoGoogle}
                     className={`${styles.ButtonSignUp__logo}`}
                     alt="Sign up with Google"
@@ -314,6 +323,7 @@ export default function Home() {
               >
                 <span>
                   <Image
+                    unoptimized
                     src={LogoFB}
                     className={`${styles.ButtonSignUp__logo}`}
                     alt="Sign up with Google"
@@ -358,6 +368,7 @@ export default function Home() {
               >
                 <span>
                   <Image
+                    unoptimized
                     src={IconEnvelope}
                     className={`${styles.ButtonSignUp__logo}`}
                     alt="Sign up with Google"
@@ -432,6 +443,7 @@ export default function Home() {
         style={{ position: "relative" }}
       >
         <Image
+          unoptimized
           fill
           src={BgColaboradores}
           alt=""

@@ -28,7 +28,7 @@ function PlanesPage({ subscription }) {
             condiciones!
           </p>
           <button type="submit" target="_self">
-            <Image src="/icons/Whatsapp.svg" width={25} height={25} alt="" />
+            <Image unoptimized src="/icons/Whatsapp.svg" width={25} height={25} alt="" />
             <span>Escríbenos</span>
             <svg
               width="32"
@@ -60,7 +60,8 @@ function PlanesPage({ subscription }) {
       </section>
       <section className={styles.BannerBusiness}>
         <div className={styles.BannerBusinessBackground}>
-          <Image
+          <Image 
+            unoptimized
             src="/img/planes/business-banner.jpg"
             sizes="(min-width: 568px) 568px, (min-width: 1024px) 1024px, 128px"
             loader={({ width }) =>

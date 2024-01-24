@@ -26,6 +26,7 @@ export default function GridGallery({ images = [] }) {
         return (
           <Link key={image.id} href={`/producto/${image.id}`}>
             <Image
+              unoptimized
               key={index}
               src={image.huge_thumb}
               className={styles.Image}

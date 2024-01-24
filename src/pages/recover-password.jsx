@@ -11,7 +11,7 @@ export default function RecoverPasswordPage() {
   return (
     <div className={`${styles.section}`}>
       <Link href="/" className={styles.logo}>
-        <Image src={LogoBlack} alt="Logo Aloha" />
+        <Image unoptimized src={LogoBlack} alt="Logo Aloha" />
       </Link>
       <div className={`${styles.content}`}>
         <h1 className={`${styles.title}`}>¿Has olvidado tu contraseña?</h1>

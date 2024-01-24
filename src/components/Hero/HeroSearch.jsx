@@ -14,7 +14,7 @@ export default function HeroSearch() {
 
   return (
     <div className={`py-5 d-flex align-items-center ${styles.HeroSearch}`}>
-      <Image src={BgHero} fill quality={100} alt="" />
+      <Image unoptimized src={BgHero} fill quality={100} alt="" />
       <div
         className={`container d-flex flex-column align-items-center h-100 justify-content-center ${styles.HeroSearch__content}`}
       >

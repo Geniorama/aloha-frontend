@@ -36,6 +36,7 @@ export default function SubcategoryCard({ text, image, url }) {
         </span>
       </Link>
       <Image
+        unoptimized
         src={image}
         className={styles.image}
         width={400}

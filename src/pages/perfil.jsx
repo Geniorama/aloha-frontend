@@ -22,6 +22,7 @@ function ProfilePage({ data, session_id, subaccount_id }) {
       <section className={styles.Banner}>
         <div className={styles.BannerContent}>
           <Image
+            unoptimized
             width={160}
             height={160}
             src="/img/profile/avatar.jpg"

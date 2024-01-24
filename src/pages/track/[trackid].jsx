@@ -41,7 +41,7 @@ export default function TrackPage({ data: track = {} }) {
         <div>
           <h4>Colaborador</h4>
           <div>
-            <Image src={track.avatar} width={50} height={50} alt="" />
+            <Image unoptimized src={track.avatar} width={50} height={50} alt="" />
             <span>{track.username}</span>
           </div>
         </div>

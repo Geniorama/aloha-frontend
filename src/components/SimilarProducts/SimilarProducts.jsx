@@ -33,6 +33,7 @@ export default function SimilarProducts({ product }) {
           {items.series.map((serie) => (
             <Link key={serie.id} href={`/producto/${serie.id}`}>
               <Image
+                unoptimized
                 key={serie.id}
                 src={serie.large_thumb}
                 width={400}
@@ -60,6 +61,7 @@ export default function SimilarProducts({ product }) {
           {items.similar.map((similar) => (
             <Link key={similar.id} href={`/producto/${similar.id}`}>
               <Image
+                unoptimized
                 key={similar.id}
                 src={similar.large_thumb}
                 width={400}

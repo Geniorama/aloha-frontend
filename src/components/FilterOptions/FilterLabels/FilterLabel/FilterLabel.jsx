@@ -17,10 +17,10 @@ export default function FilterLabel({
     <div className={styles.label}>
       <div className={styles.title} onClick={onShow}>
         <div>
-          <Image src={icon} alt="icon" />
+          <Image unoptimized src={icon} alt="icon" />
           <span>{label}</span>
         </div>
-        <Image src={Chevrondown} alt="chevrondown-icon" />
+        <Image unoptimized src={Chevrondown} alt="chevrondown-icon" />
       </div>
       {show && items.length ? (
         <div

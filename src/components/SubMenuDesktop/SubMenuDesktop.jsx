@@ -16,6 +16,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/fotos/1.png`}
               objectFit="cover"
               alt="cover"
@@ -30,6 +31,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/fotos/2.png`}
               objectFit="cover"
               alt="cover"
@@ -44,6 +46,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/fotos/3.png`}
               objectFit="cover"
               alt="cover"
@@ -64,6 +67,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/vectores/1.png`}
               objectFit="cover"
               alt="cover"
@@ -78,6 +82,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/vectores/2.png`}
               objectFit="cover"
               alt="cover"
@@ -93,6 +98,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/vectores/3.png`}
               objectFit="cover"
               alt="cover"
@@ -108,6 +114,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/vectores/4.png`}
               objectFit="cover"
               alt="cover"
@@ -128,6 +135,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/ilustraciones/1.png`}
               objectFit="cover"
               alt="cover"
@@ -142,6 +150,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/ilustraciones/2.png`}
               objectFit="cover"
               alt="cover"
@@ -156,6 +165,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/ilustraciones/3.png`}
               objectFit="cover"
               alt="cover"
@@ -170,6 +180,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/ilustraciones/4.png`}
               objectFit="cover"
               alt="cover"
@@ -189,6 +200,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/colecciones/1.png`}
               objectFit="cover"
               alt="cover"
@@ -203,6 +215,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/colecciones/2.png`}
               objectFit="cover"
               alt="cover"
@@ -217,6 +230,7 @@ export default function SubMenuDesktop({ isHeaderFixed }) {
             }}
           >
             <Image
+              unoptimized
               src={`${path}/colecciones/3.png`}
               objectFit="cover"
               alt="cover"
