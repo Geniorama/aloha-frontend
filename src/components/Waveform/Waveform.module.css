@@ -98,12 +98,28 @@
   background-color: #FAFAFA;
 }
 
-@media (max-width: 500px) {
+.downloadIcon {
+  display: none;
+}
+
+@media (max-width: 768px) {
   .waveform {
     padding: 12px 8px;
   }
   .controls {
     width: 159px;
+    gap: 6px;
+  }
+  .controls > div {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .controls > div span {
+    width: 123px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
   .controls button img {
     width: 32px;
@@ -121,8 +137,10 @@
   .waveinfo {
     flex-direction: column;
     align-items: flex-start;
-    gap: 0;
+    gap: 4px;
     width: 56px;
+    font-size: 14px;
+    font-weight: 500;
   }
   .waveinfo .player {
     display: none;

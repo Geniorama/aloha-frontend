@@ -6,9 +6,58 @@ import PlanSection from "@/components/PlanSection/PlanSection";
 import PlayerListTrends from "@/components/PlayerListTrends/PlayerListTrends";
 import PopularAuthors from "@/components/PopularAuthors/PopularAuthors";
 import PopularSearches from "@/components/PupularSearches/PopularSearches";
-import Slider from "@/components/Slider/Slider";
+// import Slider from "@/components/Slider/Slider";
 import TitleSection from "@/components/TitleSection/TitleSection";
 import { getPlayList } from "@/services/musicfx.service";
+
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+import NextArrowButton from "@/components/Slider/NextArrowButton";
+import PrevArrowButton from "@/components/Slider/PrevArrowButton";
+
+const settings = {
+  dots: false,
+  infinite: true,
+  lazyLoad: "ondemand",
+  arrows: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,
+  centerMode: true,
+  autoplaySpeed: 3000,
+  variableWidth: true,
+  adaptiveHeight: true,
+  // responsive: [
+  //   {
+  //     breakpoint: 1024, // Pantallas grandes
+  //     settings: {
+  //       slidesToShow: 4,
+  //       dots: true,
+  //     },
+  //   },
+  //   {
+  //     breakpoint: 769, // Tablets
+  //     settings: {
+  //       slidesToShow: 4,
+  //       centerMode: false,
+  //     },
+  //   },
+  //   {
+  //     breakpoint: 480, // Dispositivos móviles
+  //     settings: {
+  //       centerMode: true,
+  //       variableWidth: true,
+  //       arrows: false,
+  //     },
+  //   },
+  // ],
+  nextArrow: <NextArrowButton />,
+  prevArrow: <PrevArrowButton />,
+};
+
 
 const metaData = {
   title: "Música y SFX",
@@ -34,7 +83,7 @@ function MusicSFXPage({ playlist }) {
             <ButtonLink text={"Ver todos"} color={"coral"} size={"m"} />
           </div>
         </div>
-        <Slider>
+        <Slider {...settings}>
           <CardGrid name="Alternativa" items={["/img/music-sfx/alternative.png"]} />
           <CardGrid name="Ambiente" items={["/img/music-sfx/ambiente.png"]} />
           <CardGrid name="Cine" items={["/img/music-sfx/cine.png"]} />

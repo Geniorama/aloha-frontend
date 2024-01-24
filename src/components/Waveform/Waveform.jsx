@@ -12,6 +12,7 @@ import heartIcon from "../../../public/icons/HeartIcon.svg";
 import heartSolidIcon from "../../../public/icons/HeartSolidIcon.svg";
 import DownloadMusica from "../../../public/icons/DownloadMusica.svg";
 import DownloadMuestra from "../../../public/icons/DownloadMuestra.svg";
+import DownloadIcon from "../../../public/icons/DownloadIcon.svg";
 import secondsToString from "@/lib/secondsToString";
 
 const formWaveSurferOptions = (ref) => ({
@@ -113,6 +114,9 @@ export default function Waveform({
         <span>Descargar</span>
         <Image src={ArrowDownIcon} alt="" />
       </button>
+      <div className={styles.downloadIcon}  onClick={handleDownload}>
+        <Image src={DownloadIcon} alt="" />
+      </div>
       {
         showDownload &&
         <div className={styles.downloadPopUp}>
