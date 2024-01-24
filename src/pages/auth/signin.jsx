@@ -148,7 +148,7 @@ export default function Signin() {
         </form>
         <p className={`${styles.registrate}`}>
           ¿Aún no tienes cuenta?{" "}
-          <Link href="/signup">
+          <Link href="/auth/signup">
             <span>¡Regístrate!</span>
           </Link>
         </p>

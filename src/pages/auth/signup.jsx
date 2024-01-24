@@ -149,7 +149,7 @@ function SignUpPage({ sessionId }) {
         </form>
         <p className={`${styles.registrate}`}>
           ¿Ya tienes una cuenta?{" "}
-          <Link href="/signin">
+          <Link href="/auth/signin">
             <span>Inicia sesión</span>
           </Link>
         </p>
