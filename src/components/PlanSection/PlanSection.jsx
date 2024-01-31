@@ -30,7 +30,7 @@ const tabsMenu = [
     content: <CardPlan planes={planesMusica} />,
   },
 ];
-export default function PlanSection() {
+export default function PlanSection({idTab}) {
   return (
     <section className={styles.Section}>
       <div className="container">
@@ -80,7 +80,7 @@ export default function PlanSection() {
           </div>
 
           <div className="col-12 col-lg-8">
-            <Tabs items={tabsMenu} />
+            <Tabs items={tabsMenu} idTab={idTab} />
           </div>
         </div>
       </div>

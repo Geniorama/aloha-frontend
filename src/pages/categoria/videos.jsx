@@ -66,7 +66,7 @@ export default function Videos() {
         </div>
       </section>
       <PopularAuthors type="dark" />
-      <PlanSection />
+      <PlanSection idTab={2} />
     </Layout>
   );
 }

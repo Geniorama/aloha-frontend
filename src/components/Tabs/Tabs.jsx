@@ -4,13 +4,14 @@ import ItemsPlan from "../CardPlan/ItemsPlan/ItemsPlan";
 
 export default function Tabs({
   items,
+  idTab,
   style,
   products,
   onSelectPlan,
   idPlan,
   namePlan,
 }) {
-  const [activeTab, setActiveTab] = useState(items[0]?.id);
+  const [activeTab, setActiveTab] = useState(idTab || items[0]?.id);
   if (!items || items.length < 1) {
     return;
   }

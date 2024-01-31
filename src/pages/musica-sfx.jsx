@@ -101,7 +101,7 @@ function MusicSFXPage({ playlist }) {
           <PlayerListTrends playlist={playlist} />
         </div>
       </div>
-      <PlanSection />
+      <PlanSection idTab={3} />
       <PopularSearches />
     </Layout>
   );
