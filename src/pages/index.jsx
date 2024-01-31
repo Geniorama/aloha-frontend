@@ -94,7 +94,7 @@ export default function Home() {
               <CardCategory
                 text={"Música"}
                 size={"large"}
-                url="/categoria/musica"
+                url="/musica-sfx"
                 link_position={"bottom-right"}
                 image={CoverMusica}
               />
@@ -103,7 +103,7 @@ export default function Home() {
               <CardCategory
                 text={"Efectos de sonido"}
                 size={"large"}
-                url="/categoria/editorial"
+                url="/musica-sfx"
                 link_position={"bottom-right"}
                 image={CoverEfectos}
               />
