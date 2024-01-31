@@ -147,7 +147,6 @@ export default function Home() {
             <div className={styles.GridPopular__item}>
               <Image
                 unoptimized
-                unoptimized
                 src={GalleryExample}
                 fill
                 style={{ objectFit: "cover" }}
