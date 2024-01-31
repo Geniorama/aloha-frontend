@@ -17,7 +17,7 @@ const Footer = () => {
             <Image unoptimized src={Logo} alt="Logo Aloha" className={styles.logo} />
           </div>
           <div className="col-12 col-md-6 col-lg-3">
-            <Link href="#">
+            <Link href="/planes">
               Planes y precios
               <svg
                 width="32"
