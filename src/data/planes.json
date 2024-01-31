@@ -17,40 +17,32 @@
             "id": "728",
             "name": "10 imágenes",
             "small": "mes",
-            "price": 259,
-            "price_per_item": 25.9,
+            "price": 8.99,
+            "price_per_item": 0.90,
             "small_per_item": "por imagen"
           },
           {
             "id": "300",
-            "name": "50 imágenes",
+            "name": "75 imágenes",
             "small": "mes",
-            "price": 899,
-            "price_per_item": 17,
+            "price": 59,
+            "price_per_item": 0.79,
             "small_per_item": "por imagen"
           },
           {
             "id": "732",
             "name": "150 imágenes",
             "small": "mes",
-            "price": 1299.0,
-            "price_per_item": 8.6,
+            "price": 89,
+            "price_per_item": 0.59,
             "small_per_item": "por imagen"
           },
           {
             "id": "23756",
-            "name": "350 imágenes",
-            "small": "mes",
-            "price": 1599,
-            "price_per_item": 4.5,
-            "small_per_item": "por imagen"
-          },
-          {
-            "id": "4956",
             "name": "750 imágenes",
             "small": "mes",
-            "price": 1799,
-            "price_per_item": 2.3,
+            "price": 169,
+            "price_per_item": 0.23,
             "small_per_item": "por imagen"
           }
         ]
@@ -81,13 +73,6 @@
             "small_per_item": "por imagen"
           },
           {
-            "name": "350 imágenes",
-            "small": "mes",
-            "price": 139,
-            "price_per_item": 0.39,
-            "small_per_item": "por imagen"
-          },
-          {
             "name": "750 imágenes",
             "small": "mes",
             "price": 189,
@@ -110,7 +95,7 @@
     "type": [
       {
         "id": 1,
-        "name": "Pago anual",
+        "name": "Licencia estándar",
         "subitems": [
           {
             "name": "3 imágenes",
@@ -123,7 +108,7 @@
             "name": "10 imágenes",
             "small": "mes",
             "price": 49,
-            "price_per_item": 4.9,
+            "price_per_item": 4.90,
             "small_per_item": "por imagen"
           },
           {
@@ -134,7 +119,7 @@
             "small_per_item": "por imagen"
           },
           {
-            "name": "25 imágenes",
+            "name": "100 imágenes",
             "small": "mes",
             "price": 299,
             "price_per_item": 2.99,
@@ -144,7 +129,7 @@
       },
       {
         "id": 2,
-        "name": "Pago mensual",
+        "name": "Licencia ampliada",
         "subitems": [
           {
             "name": "10 imágenes",
@@ -159,86 +144,6 @@
             "price": 59,
             "price_per_item": 0.79,
             "small_per_item": "por imagen"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Suscripción",
-    "category": [
-      {
-        "name": "Videos",
-        "slug": "videos"
-      }
-    ],
-    "type": [
-      {
-        "id": 1,
-        "name": "Pago anual",
-        "subitems": [
-          {
-            "name": "10 videos",
-            "small": "mes",
-            "price": 8.99,
-            "price_per_item": 0.9,
-            "small_per_item": "por video"
-          },
-          {
-            "name": "75 videos",
-            "small": "mes",
-            "price": 59,
-            "price_per_item": 0.79,
-            "small_per_item": "por video"
-          },
-          {
-            "name": "150 videos",
-            "small": "mes",
-            "price": 89,
-            "price_per_item": 0.59,
-            "small_per_item": "por video"
-          },
-          {
-            "name": "750 videos",
-            "small": "mes",
-            "price": 169,
-            "price_per_item": 0.23,
-            "small_per_item": "por video"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Pago mensual",
-        "subitems": [
-          {
-            "name": "10 videos",
-            "small": "mes",
-            "price": 8.99,
-            "price_per_item": 0.9,
-            "small_per_item": "por video"
-          },
-          {
-            "name": "75 videos",
-            "small": "mes",
-            "price": 59,
-            "price_per_item": 0.79,
-            "small_per_item": "por video"
-          },
-          {
-            "name": "150 videos",
-            "small": "mes",
-            "price": 89,
-            "price_per_item": 0.59,
-            "small_per_item": "por video"
-          },
-          {
-            "name": "750 videos",
-            "small": "mes",
-            "price": 169,
-            "price_per_item": 0.23,
-            "small_per_item": "por video"
           }
         ]
       }
@@ -256,31 +161,31 @@
     "type": [
       {
         "id": 1,
-        "name": "Pago anual",
+        "name": "Licencia estándar",
         "subitems": [
           {
-            "name": "3 imágenes",
+            "name": "3 videos",
             "small": "mes",
             "price": 42,
             "price_per_item": 14,
             "small_per_item": "por video"
           },
           {
-            "name": "10 imágenes",
+            "name": "10 videos",
             "small": "mes",
             "price": 49,
-            "price_per_item": 4.9,
+            "price_per_item": 4.90,
             "small_per_item": "por video"
           },
           {
-            "name": "25 imágenes",
+            "name": "25 videos",
             "small": "mes",
             "price": 99,
             "price_per_item": 3.96,
             "small_per_item": "por video"
           },
           {
-            "name": "25 imágenes",
+            "name": "25 videos",
             "small": "mes",
             "price": 299,
             "price_per_item": 2.99,
@@ -290,7 +195,7 @@
       },
       {
         "id": 2,
-        "name": "Pago mensual",
+        "name": "Licencia ampliada",
         "subitems": [
           {
             "name": "10 imágenes",
@@ -305,6 +210,72 @@
             "price": 59,
             "price_per_item": 0.79,
             "small_per_item": "por video"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Prepago",
+    "category": [
+      {
+        "name": "Música & SFX",
+        "slug": "musica-y-sfx"
+      }
+    ],
+    "type": [
+      {
+        "id": 1,
+        "name": "Licencia estándar",
+        "subitems": [
+          {
+            "name": "3 descargas",
+            "small": "mes",
+            "price": 42,
+            "price_per_item": 14,
+            "small_per_item": "por pista"
+          },
+          {
+            "name": "10 descargas",
+            "small": "mes",
+            "price": 49,
+            "price_per_item": 4.90,
+            "small_per_item": "por pista"
+          },
+          {
+            "name": "25 descargas",
+            "small": "mes",
+            "price": 99,
+            "price_per_item": 3.96,
+            "small_per_item": "por pista"
+          },
+          {
+            "name": "100 descargas",
+            "small": "mes",
+            "price": 299,
+            "price_per_item": 2.99,
+            "small_per_item": "por pista"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Licencia ampliada",
+        "subitems": [
+          {
+            "name": "10 imágenes",
+            "small": "mes",
+            "price": 8.99,
+            "price_per_item": 0.9,
+            "small_per_item": "por pista"
+          },
+          {
+            "name": "75 imágenes",
+            "small": "mes",
+            "price": 59,
+            "price_per_item": 0.79,
+            "small_per_item": "por pista"
           }
         ]
       }

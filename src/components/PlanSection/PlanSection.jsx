@@ -9,6 +9,7 @@ import { getSubscriptionOffers } from "@/services/subaccount";
 
 const planesFotosVectores = getPlan("Fotos y vectores");
 const planesVideos = getPlan("Videos");
+const planesMusica = getPlan("Música & SFX");
 
 const tabsMenu = [
   {
@@ -26,7 +27,7 @@ const tabsMenu = [
   {
     id: 3,
     title: "Música & SFX",
-    content: "Content 3",
+    content: <CardPlan planes={planesMusica} />,
   },
 ];
 export default function PlanSection() {

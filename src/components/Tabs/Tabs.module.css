@@ -42,6 +42,11 @@
     display: block;
 }
 
+.TabContent > div > div > div {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 .TabButton{
     line-break: none;
     white-space: nowrap;
