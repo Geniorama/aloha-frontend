@@ -44,6 +44,7 @@ export function withAuthSync(WrappedComponent, { loggedOnly = false }) {
 
 export const logout = () => {
   deleteCookie("session_id");
+  deleteCookie("email");
   Router.push("/auth/signin");
   return;
 };

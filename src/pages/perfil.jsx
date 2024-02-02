@@ -67,7 +67,6 @@ function ProfilePage({ data, session_id, subaccount_id }) {
 
 export const getServerSideProps = async (ctx) => {
   const session = auth(ctx);
-  console.log(session.user_id);
   const signin = (await login()) || {};
   const data = await getUserData(session.session_id, session.user_id);
   

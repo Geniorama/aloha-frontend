@@ -15,6 +15,7 @@ import { AlohaIcon } from "@/components/SvgImages/SvgImages";
 function SignUpPage({ sessionId }) {
   const { register, handleSubmit } = useForm();
   const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(null)
   useEffect(() => {
     deleteCookie("user_id");
     deleteCookie("session_id");
@@ -22,15 +23,47 @@ function SignUpPage({ sessionId }) {
   const onSubmit = async (data) => {
     try {
       const res = await createSubaccount({ ...data, session_id: sessionId });
-      if (res.userid) {
+      console.log(res.error)
+      if (res.userid && !res.error) {
+        console.log(res)
         setSuccess(true)
-        setTimeout(Router.push("/perfil"), 3000);
+        setError(null)
+        // setTimeout(Router.push("/auth/signin"), 10000);
+      }
+
+      if(res.error){
+        switch (res.error.errorcode) {
+          case 400:
+            setError("El correo electrónico ya está en uso.");
+            break;
+          case 401:
+            setError("No estás autorizado para realizar esta acción.");
+            break;
+          case 500:
+            setError("Ha ocurrido un error interno en el servidor. Inténtalo de nuevo más tarde.");
+            break;
+          default:
+            setError("Ha ocurrido un error al guardar el contacto. Inténtalo de nuevo más tarde.");
+        }
       }
     } catch (error) {
-      console.log(error);
+      switch (error.code) {
+        case 400:
+          setError("El correo electrónico no es válido.");
+          break;
+        case 401:
+          setError("No estás autorizado para realizar esta acción.");
+          break;
+        case 500:
+          setError("Ha ocurrido un error interno en el servidor. Inténtalo de nuevo más tarde.");
+          break;
+        default:
+          setError("Ha ocurrido un error al guardar el contacto. Inténtalo de nuevo más tarde.");
+      }
     }
   };
-  console.log(success);
+
+  console.log('success: ' + success)
   return (
     <div className={`${styles.section}`}>
       {success && (
@@ -46,7 +79,7 @@ function SignUpPage({ sessionId }) {
                 padding: "10px",
               }}
             >
-              <button role="button" style={{ background: "none" }}>
+              <button role="button" onClick={() => setSuccess(false)} style={{ background: "none" }}>
                 <AlohaIcon icon={"close"} />
               </button>
             </div>
@@ -79,16 +112,18 @@ function SignUpPage({ sessionId }) {
               Tu suscripción ya se encuentra activa, ya puedes empezar a
               descargar
             </p>
-            <div style={{ display: "flex", justifyContent: "flex-end" }}>
-              <button
-                style={{ height: "50px" }}
-                className={`${styles.buttonGoogle} my-3`}
-              >
-                <span className={`${styles.ButtonSignUp__name} mx-2`}>
-                  Entendido
-                </span>
-              </button>
-            </div>
+            <Link href={'/auth/signin'}>
+              <div style={{ display: "flex", justifyContent: "flex-end" }}>
+                <button
+                  style={{ height: "50px" }}
+                  className={`${styles.buttonGoogle} my-3`}
+                >
+                  <span className={`${styles.ButtonSignUp__name} mx-2`}>
+                    Iniciar sesión
+                  </span>
+                </button>
+              </div>
+            </Link>
           </div>
         </div>
       )}
@@ -179,6 +214,13 @@ function SignUpPage({ sessionId }) {
             {...register("session_id")}
             hidden
           />
+          {error && <p style={{
+            marginTop: '10px',
+            marginBottom: '0px',
+            color: 'red',
+            fontSize: '12px'
+          }} >{error}</p>}
+
           <button className={`${styles.buttonGoogle} my-3`}>
             <span className={`${styles.ButtonSignUp__name} mx-2`}>
               Ingresar

@@ -35,6 +35,8 @@ const Header = () => {
     };
   }, []);
 
+  console.log(data)
+
   const onShowSubMenu = () => setIsSubMenuOpen(!isSubMenuOpen);
 
   const handleScroll = () => {

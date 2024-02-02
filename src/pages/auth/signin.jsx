@@ -18,7 +18,7 @@ export default function Signin() {
   const { register, handleSubmit } = useForm();
   const onSubmit = async (data) => {
     const auth = await loginAsUser(data.email, data.password);
-    if (auth.sessionid && auth.userid) getUserData(auth.sessinid, auth.userid);
+    if (auth.sessionid && auth.userid) getUserData(auth.sessionid, auth.userid);
   };
 
   return (

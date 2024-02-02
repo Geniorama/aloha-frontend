@@ -11,9 +11,10 @@ export const saveContact = async (payload) => {
     const data = await res.json();
     return data;
   } catch (error) {
-    console.log(error);
+    throw error;
   }
 };
+
 
 export const getContact = async () => {
   try {
@@ -30,40 +31,40 @@ export const getContact = async () => {
   }
 };
 
-export const getContactByEmail = async (email) => {
-  try {
-    const url = 'https://api.hubapi.com/crm/v3/objects/contacts/search';
-    const res = await fetch(url, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${process.env.NEXT_PUBLIC_ACCESS_TOKEN_HUBSPOT}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        filterGroups:[
-          {
-            filters: [
-              {
-                propertyName: 'email',
-                operator: 'EQ',
-                value: email,
-              },
-            ],
-          }
-        ]
-      }),
-    });
-    const data = await res.json();
-    if (data.results && data.results.length > 0) {
-      return data.results[0]; // Asumiendo un solo contacto con el correo electrónico
-    } else {
-      return null; // No se encontró ningún contacto con el correo electrónico especificado
-    }
-  } catch (error) {
-    console.error('Error al obtener el contacto:', error);
-    throw error; // Relanzar para permitir el manejo en la función de llamada
-  }
-};
+// export const getContactByEmail = async (email) => {
+//   try {
+//     const url = 'https://api.hubapi.com/crm/v3/objects/contacts/search';
+//     const res = await fetch(url, {
+//       method: 'POST',
+//       headers: {
+//         Authorization: `Bearer ${process.env.NEXT_PUBLIC_ACCESS_TOKEN_HUBSPOT}`,
+//         'Content-Type': 'application/json',
+//       },
+//       body: JSON.stringify({
+//         filterGroups:[
+//           {
+//             filters: [
+//               {
+//                 propertyName: 'email',
+//                 operator: 'EQ',
+//                 value: email,
+//               },
+//             ],
+//           }
+//         ]
+//       }),
+//     });
+//     const data = await res.json();
+//     if (data.results && data.results.length > 0) {
+//       return data.results[0]; // Asumiendo un solo contacto con el correo electrónico
+//     } else {
+//       return null; // No se encontró ningún contacto con el correo electrónico especificado
+//     }
+//   } catch (error) {
+//     console.error('Error al obtener el contacto:', error);
+//     throw error; // Relanzar para permitir el manejo en la función de llamada
+//   }
+// };
 
 
 export const saveDeal = async (payload) => {
