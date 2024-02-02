@@ -7,12 +7,14 @@ import LogoFB from "../../../public/img/facebook.png";
 import { useForm } from "react-hook-form";
 import { deleteCookie } from "cookies-next";
 import { createSubaccount, login } from "@/services/user.service";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { saveContact } from "@/services/hubspot.service";
 import Router from "next/router";
+import { AlohaIcon } from "@/components/SvgImages/SvgImages";
 
 function SignUpPage({ sessionId }) {
   const { register, handleSubmit } = useForm();
+  const [success, setSuccess] = useState(false);
   useEffect(() => {
     deleteCookie("user_id");
     deleteCookie("session_id");
@@ -20,13 +22,76 @@ function SignUpPage({ sessionId }) {
   const onSubmit = async (data) => {
     try {
       const res = await createSubaccount({ ...data, session_id: sessionId });
-      if (res.userid) Router.push("/auth/signin");
+      if (res.userid) {
+        setSuccess(true)
+        setTimeout(Router.push("/perfil"), 3000);
+      }
     } catch (error) {
       console.log(error);
     }
   };
+  console.log(success);
   return (
     <div className={`${styles.section}`}>
+      {success && (
+        <div className={styles.popup}>
+          <div className={styles.card}>
+            <div
+              style={{
+                position: "absolute",
+                textAlign: "right",
+                width: "100%",
+                top: "0",
+                left: "0",
+                padding: "10px",
+              }}
+            >
+              <button role="button" style={{ background: "none" }}>
+                <AlohaIcon icon={"close"} />
+              </button>
+            </div>
+            {/* Icon check*/}
+            <span style={{ display: "block", marginBottom: "1rem" }}>
+              <svg
+                width="64"
+                height="64"
+                viewBox="0 0 64 64"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M32 58.2564C46.501 58.2564 58.2564 46.501 58.2564 32C58.2564 17.499 46.501 5.74359 32 5.74359C17.499 5.74359 5.74359 17.499 5.74359 32C5.74359 46.501 17.499 58.2564 32 58.2564ZM32 64C49.6731 64 64 49.6731 64 32C64 14.3269 49.6731 0 32 0C14.3269 0 0 14.3269 0 32C0 49.6731 14.3269 64 32 64Z"
+                  fill="#43C478"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M50.4491 21.7572L45.9322 17.2402L25.5994 37.5538L17.5957 29.5502L13.0527 34.0612L25.5989 46.6074L50.4491 21.7572Z"
+                  fill="#43C478"
+                />
+              </svg>
+            </span>
+
+            <h4>Tu registro fue exitoso</h4>
+            <p>
+              Tu suscripción ya se encuentra activa, ya puedes empezar a
+              descargar
+            </p>
+            <div style={{ display: "flex", justifyContent: "flex-end" }}>
+              <button
+                style={{ height: "50px" }}
+                className={`${styles.buttonGoogle} my-3`}
+              >
+                <span className={`${styles.ButtonSignUp__name} mx-2`}>
+                  Entendido
+                </span>
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
       <Link href="/" className={styles.logo}>
         <Image unoptimized src={LogoBlack} alt="Logo Aloha" />
       </Link>
@@ -37,7 +102,12 @@ function SignUpPage({ sessionId }) {
         </p>
         <div className={`${styles.loginButtons}`}>
           <button className={`${styles.buttonGoogle}`}>
-            <Image unoptimized src={LogoGoogle} quality={100} alt="Sign up with Google" />
+            <Image
+              unoptimized
+              src={LogoGoogle}
+              quality={100}
+              alt="Sign up with Google"
+            />
             <span className={`${styles.ButtonSignUp__name} mx-2`}>
               Continuar con Google
             </span>

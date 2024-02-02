@@ -16,7 +16,7 @@ const metaData = {
 function ProfilePage({ data, session_id, subaccount_id }) {
   const { register, handleSubmit } = useForm({ defaultValues: data });
   const onSubmit = async (data) =>
-    updateSubaccount({ session_id, subaccount_id, ...data });
+  updateSubaccount({ session_id, subaccount_id, ...data });
   return (
     <Layout metaData={metaData}>
       <section className={styles.Banner}>
@@ -32,7 +32,10 @@ function ProfilePage({ data, session_id, subaccount_id }) {
             <span>
               ID: <b>{subaccount_id}</b>
             </span>
-            <h2>{`${data.firstName} ${data.lastName}`}</h2>
+            {data && (
+              <h2>{data.username}</h2>
+            )}
+            
             <Link href="/perfil/change-password">Cambiar contraseña</Link>
           </div>
         </div>
@@ -67,6 +70,7 @@ export const getServerSideProps = async (ctx) => {
   console.log(session.user_id);
   const signin = (await login()) || {};
   const data = await getUserData(session.session_id, session.user_id);
+  
   return {
     props: {
       data,

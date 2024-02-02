@@ -1,9 +1,11 @@
 .section {
-  min-height: 100vh;
+  height: 100vh;
   background-image: url("../../public/img/signin/bg-signin.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -140,6 +142,27 @@
 .registrate span {
   color: #1a01a6;
   font-weight: 600;
+}
+
+.popup{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, .8);
+  left: 0;
+  top: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+}
+
+.card{
+  background-color: white;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  position: relative;
 }
 
 @media screen and (max-width: 992px) {
