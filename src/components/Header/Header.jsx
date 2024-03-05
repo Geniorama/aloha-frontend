@@ -10,7 +10,7 @@ import SearchBar from "../SearchBar/SearchBar";
 import LogoLetter from "../../../public/img/components/header/logo-aloha-letter.svg";
 import menuData from "./menuData.json";
 import ButtonLink from "../ButtonLink/ButtonLink";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown, faUser } from "@fortawesome/free-solid-svg-icons";
 import SubMenuDesktop from "../SubMenuDesktop/SubMenuDesktop";
 import { logout } from "@/lib/auth";
 import { getCookies } from "cookies-next";
@@ -189,7 +189,9 @@ const Header = () => {
           {user.email ? (
             <div className={styles.navProfile} style={{ position: "relative" }}>
               <span className={styles.navUsername}>
-                {username}{" "}
+                <div style={{width: '40px', aspectRatio: '1 / 1', backgroundColor: '#d7d7d7', borderRadius: '50%', display: 'grid', placeItems: 'center'}}>
+                  <FontAwesomeIcon fontSize={15} icon={faUser} />
+                </div>
                 <Image
                   src="/icons/Arrow-profile.svg"
                   width={14}
@@ -198,10 +200,6 @@ const Header = () => {
                 />
               </span>
               <div className={styles.navMenuUser}>
-                <div role="header">
-                  <h2>{user.name}</h2>
-                  <span>{user.email}</span>
-                </div>
                 <div role="menu">
                   <div>
                     <Link href="/perfil">

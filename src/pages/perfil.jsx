@@ -12,6 +12,8 @@ const metaData = {
   keywords: "Banco imágenes, aloha",
   author: "Geniorama Agencia",
 };
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 function ProfilePage({ data, session_id, subaccount_id }) {
   const { register, handleSubmit } = useForm({ defaultValues: data });
@@ -21,13 +23,6 @@ function ProfilePage({ data, session_id, subaccount_id }) {
     <Layout metaData={metaData}>
       <section className={styles.Banner}>
         <div className={styles.BannerContent}>
-          <Image
-            unoptimized
-            width={160}
-            height={160}
-            src="/img/profile/avatar.jpg"
-            alt="avatar-profile"
-          />
           <div>
             <span>
               ID: <b>{subaccount_id}</b>

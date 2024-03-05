@@ -9,11 +9,13 @@ import { useState, useEffect, useRef } from "react";
 import MenuSelect from "../MenuSelect/MenuSelect";
 import default_categories from "@/data/default_categories";
 import { useRouter } from "next/router";
+import PopUpSearchImg from "../PopUpSearchImg/PopUpSearchImg";
 
 export default function SearchBar({ size, query, customClass }) {
   const [categories] = useState(default_categories);
   const router = useRouter();
   const default_value = categories.find((item) => query === item.value);
+  const [isOpenModal, setIsOpenModal] = useState(false)
 
   const [openMenu, setOpenMenu] = useState(false);
   const [searchCat, setSearchCat] = useState(default_value || categories[0]);
@@ -64,31 +66,63 @@ export default function SearchBar({ size, query, customClass }) {
     );
   };
 
+  const handleModal = () =>{
+    setIsOpenModal(!isOpenModal)
+  }
+
   return (
-    <form
-      onSubmit={onSubmit}
-      className={`${styles.SearchBar} ${
-        size == "small" && styles.Small
-      } ${styles[customClass]} rounded`}
-    >
-      <div className="form-group d-flex align-items-center">
-        <div className={`d-sm-none ${styles.SearchBar__select__mobile}`}>
-          <span
-            className={styles.IconImage}
-            onClick={() => setOpenMenu(!openMenu)}
-          >
-            <AlohaIcon icon={"picture"} size={"25"} />
-          </span>
+    <>
+      {isOpenModal && (
+        <PopUpSearchImg handleModal={handleModal} />
+      )}
+      
+      <form
+        onSubmit={onSubmit}
+        className={`${styles.SearchBar} ${size == "small" && styles.Small} ${
+          styles[customClass]
+        } rounded`}
+      >
+        <div className="form-group d-flex align-items-center">
+          <div className={`d-sm-none ${styles.SearchBar__select__mobile}`}>
+            <span
+              className={styles.IconImage}
+              onClick={() => setOpenMenu(!openMenu)}
+            >
+              <AlohaIcon icon={"picture"} size={"25"} />
+            </span>
 
-          <span
-            className={styles.IconSelectArrow}
-            onClick={() => setOpenMenu(!openMenu)}
-          >
-            <FontAwesomeIcon icon={faChevronDown} fontSize={"12px"} />
-          </span>
+            <span
+              className={styles.IconSelectArrow}
+              onClick={() => setOpenMenu(!openMenu)}
+            >
+              <FontAwesomeIcon icon={faChevronDown} fontSize={"12px"} />
+            </span>
 
+            {openMenu && (
+              <div className={`${styles.MenuCategories}`} ref={ref}>
+                <MenuSelect
+                  items={categories}
+                  defaultItem={default_value}
+                  onSelect={handleItemSelect}
+                />
+              </div>
+            )}
+          </div>
+          <div
+            className={`${styles.FieldSelect} d-none d-sm-flex`}
+            id="btn-menu-toggle"
+            onClick={handleButtonClick}
+          >
+            <span className={styles.FieldSelect__text}>{searchCat.title}</span>
+            <span className={styles.FieldSelect__icon}>
+              <FontAwesomeIcon icon={faChevronDown} fontSize={"12px"} />
+            </span>
+          </div>
           {openMenu && (
-            <div className={`${styles.MenuCategories}`} ref={ref}>
+            <div
+              className={`${styles.MenuCategories} ${styles.MenuCategoriesDesktop}  d-none d-sm-block`}
+              ref={ref}
+            >
               <MenuSelect
                 items={categories}
                 defaultItem={default_value}
@@ -96,80 +130,66 @@ export default function SearchBar({ size, query, customClass }) {
               />
             </div>
           )}
-        </div>
-        <div
-          className={`${styles.FieldSelect} d-none d-sm-flex`}
-          id="btn-menu-toggle"
-          onClick={handleButtonClick}
-        >
-          <span className={styles.FieldSelect__text}>{searchCat.title}</span>
-          <span className={styles.FieldSelect__icon}>
-            <FontAwesomeIcon icon={faChevronDown} fontSize={"12px"} />
-          </span>
-        </div>
-        {openMenu && (
-          <div
-            className={`${styles.MenuCategories} ${styles.MenuCategoriesDesktop}  d-none d-sm-block`}
-            ref={ref}
-          >
-            <MenuSelect
-              items={categories}
-              defaultItem={default_value}
-              onSelect={handleItemSelect}
-            />
-          </div>
-        )}
-        <span className={`${styles.Divider}`}></span>
-        <div className="input-group align-items-center">
-          {size == "small" && (
-            <span
-              style={{ fontSize: "18px", color: "#979797" }}
-              className="ms-3 d-inline-block"
-            >
-              <FontAwesomeIcon icon={faMagnifyingGlass} />
-            </span>
-          )}
-          <input
-            type="search"
-            ref={inputRef}
-            className={`form-control ${styles.FormControl} ${
-              size == "small" && "px-2"
-            }`}
-            placeholder="Buscar imágenes"
-            aria-label="Buscar imágenes"
-            style={{ border: "none" }}
-            aria-describedby="basic-addon1"
-          />
-          {size == 'small' && (
-            <button
-              className="input-group-text d-none d-md-flex"
-              id="basic-addon1"
-              type="submit"
-              style={{ background: "none", border: "none" }}
-            >
-              <AlohaIcon icon={"camera-solid"} size={size == "small" ? 24 : 30} />
-            </button>
-          )}
-          {size != "small" && (
-            <>
+          <span className={`${styles.Divider}`}></span>
+          <div className="input-group align-items-center">
+            {size == "small" && (
               <span
-              className="input-group-text d-none d-md-flex"
-              id="basic-addon1"
-              style={{ background: "none", border: "none" }}
+                style={{ fontSize: "18px", color: "#979797" }}
+                className="ms-3 d-inline-block"
               >
-                <AlohaIcon icon={"camera-solid"} size={size == "small" ? 24 : 30} />
+                <FontAwesomeIcon icon={faMagnifyingGlass} />
               </span>
+            )}
+            <input
+              type="search"
+              ref={inputRef}
+              className={`form-control ${styles.FormControl} ${
+                size == "small" && "px-2"
+              }`}
+              placeholder="Buscar imágenes"
+              aria-label="Buscar imágenes"
+              style={{ border: "none" }}
+              aria-describedby="basic-addon1"
+            />
+            {size == "small" && (
               <button
-                className={`btn btn-primary ${styles.BtnSubmit}`}
+                className="input-group-text d-none d-md-flex"
+                id="basic-addon1"
                 type="submit"
-                id="button-addon2"
+                style={{ background: "none", border: "none" }}
+                onClick={handleModal}
               >
-                <FontAwesomeIcon fontSize={"28px"} icon={faMagnifyingGlass} />
+                <AlohaIcon
+                  icon={"camera-solid"}
+                  size={size == "small" ? 24 : 30}
+                />
               </button>
-            </>
-          )}
+            )}
+            {size != "small" && (
+              <>
+                <span
+                  className="input-group-text d-none d-md-flex"
+                  id="basic-addon1"
+                  style={{ background: "none", border: "none", cursor: 'pointer' }}
+                  onClick={() => setIsOpenModal(!isOpenModal)}
+                >
+                  <AlohaIcon
+                    icon={"camera-solid"}
+                    size={size == "small" ? 24 : 30}
+                  />
+                </span>
+                <button
+                  className={`btn btn-primary ${styles.BtnSubmit}`}
+                  type="submit"
+                  id="button-addon2"
+                >
+                  <FontAwesomeIcon fontSize={"28px"} icon={faMagnifyingGlass} />
+                </button>
+              </>
+            )}
+          </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </>
   );
 }

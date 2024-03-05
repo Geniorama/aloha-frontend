@@ -92,7 +92,7 @@ export default function Home() {
 
             <div className="col-12 col-md-6 col-lg-4 mt-4">
               <CardCategory
-                text={"Música"}
+                text={"Música & SFX"}
                 size={"large"}
                 url="/musica-sfx"
                 link_position={"bottom-right"}
@@ -101,9 +101,9 @@ export default function Home() {
             </div>
             <div className="col-12 col-md-6 col-lg-4 mt-4">
               <CardCategory
-                text={"Efectos de sonido"}
+                text={"Editorial"}
                 size={"large"}
-                url="/musica-sfx"
+                url="/categoria/editorial"
                 link_position={"bottom-right"}
                 image={CoverEfectos}
               />

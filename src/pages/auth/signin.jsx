@@ -31,11 +31,11 @@ export default function Signin() {
         <Image unoptimized src={LogoBlack} alt="Logo Aloha" />
       </Link>
       <div className={`${styles.content}`}>
-        <h1 className={`${styles.title}`}>Iniciar sesión en Aloha</h1>
-        <p className={`${styles.description}`}>
+        <h1 style={{marginBottom: '1em'}} className={`${styles.title}`}>Iniciar sesión en Aloha</h1>
+        {/* <p className={`${styles.description}`}>
           Ingresa a tu sesión con alguna de estas opciones
-        </p>
-        <div className={`${styles.loginButtons}`}>
+        </p> */}
+        {/* <div className={`${styles.loginButtons}`}>
           <button className={`${styles.buttonGoogle}`}>
             <Image unoptimized src={LogoGoogle} quality={100} alt="Sign up with Google" />
             <span className={`${styles.ButtonSignUp__name} mx-2`}>
@@ -77,8 +77,8 @@ export default function Signin() {
           <button className={`${styles.buttonFacebook}`}>
             <Image unoptimized src={LogoFB} alt="Sign up with Facebook" />
           </button>
-        </div>
-        <p className={`${styles.separador}`}>o ingresa con tu correo</p>
+        </div> */}
+        {/* <p className={`${styles.separador}`}>o ingresa con tu correo</p> */}
         <form
           className={`${styles.formLogin}`}
           onSubmit={handleSubmit(onSubmit)}

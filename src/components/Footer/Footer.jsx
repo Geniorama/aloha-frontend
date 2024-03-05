@@ -13,10 +13,12 @@ const Footer = () => {
     <div className={styles.alfooter}>
       <div className="container">
         <div className={`${styles.alfooterHeader} row align-items-center`}>
-          <div className="col-12 col-lg-3">
-            <Image unoptimized src={Logo} alt="Logo Aloha" className={styles.logo} />
+          <div className="col-12 col-lg-4">
+            <Link href={'/'}>
+              <Image unoptimized src={Logo} alt="Logo Aloha" className={styles.logo} />
+            </Link>
           </div>
-          <div className="col-12 col-md-6 col-lg-3">
+          <div className="col-12 col-md-6 col-lg-4">
             <Link href="/planes">
               Planes y precios
               <svg
@@ -46,7 +48,7 @@ const Footer = () => {
               </svg>
             </Link>
           </div>
-          <div className="col-12 col-md-6 col-lg-6">
+          <div className="col-12 col-md-6 col-lg-4">
             <Link href="#">
               Búsquedas populares
               <svg
@@ -78,28 +80,35 @@ const Footer = () => {
           </div>
         </div>
         <div className={`${styles.alfooterBottom} row`}>
-          <div className="col-12 col-md-6 col-lg-3">
+          <div className="col-12 col-md-6 col-lg-4">
             <h5>Legal.</h5>
             <ul>
               <li>
                 <Link href="#">Términos y uso del sitio web</Link>
-                <Link href="#">Términos de servicio</Link>
-                <Link href="#">Preferencias de cookies</Link>
+              </li>
+              <li>
+               <Link href="#">Términos de servicio</Link>
+              </li>
+              <li>
+               <Link href="#">Sobre nosotros</Link>
+              </li>
+              <li>
                 <Link href="#">Política de privacidad</Link>
               </li>
             </ul>
           </div>
-          <div className="col-12 col-md-6 col-lg-3">
+          <div className="col-12 col-md-6 col-lg-4">
             <h5>Contacto y soporte.</h5>
             <ul>
               <li>
-                <Link href="#">(235) 362-1351</Link>
-                <Link href="#">hola@alohaimages.com</Link>
-                <Link href="#">Preguntas frecuentes</Link>
+                <Link href="tel:+34652757509">(+34) 652757509</Link>
+              </li>
+              <li>
+                <Link href="mailto:info@alohaimages.co" target="_blank">info@alohaimages.co</Link>
               </li>
             </ul>
           </div>
-          <div className="col-12 col-md-6 col-lg-3">
+          {/* <div className="col-12 col-md-6 col-lg-3">
             <h5>Apps.</h5>
             <div className={styles.alapps}>
               <Link href="#">
@@ -109,14 +118,14 @@ const Footer = () => {
                 <Image unoptimized src={GooglePlay} alt="App Store" />
               </Link>
             </div>
-          </div>
-          <div className="col-12 col-md-6 col-lg-3">
+          </div> */}
+          <div className="col-12 col-md-6 col-lg-4">
             <h5>Redes sociales.</h5>
             <div className={styles.alsocial}>
-              <Link href="#">
+              <Link href="https://www.instagram.com/aloha_images/" target="_blank">
                 <FontAwesomeIcon icon={faInstagram} />
               </Link>
-              <Link href="#">
+              <Link href="https://www.facebook.com/alohaimagesphotostock/" target="_blank">
                 <FontAwesomeIcon icon={faFacebook} />
               </Link>
             </div>

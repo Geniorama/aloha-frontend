@@ -63,7 +63,7 @@
   .BannerContent {
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     gap: 35px;
   }
   .BannerContent img {

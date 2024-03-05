@@ -135,7 +135,7 @@ function SignUpPage({ sessionId }) {
         <p className={`${styles.description}`}>
           Crea tu cuenta y libera todas las opciones de Aloha
         </p>
-        <div className={`${styles.loginButtons}`}>
+        {/* <div className={`${styles.loginButtons}`}>
           <button className={`${styles.buttonGoogle}`}>
             <Image
               unoptimized
@@ -183,7 +183,7 @@ function SignUpPage({ sessionId }) {
             <Image unoptimized src={LogoFB} alt="Sign up with Facebook" />
           </button>
         </div>
-        <p className={`${styles.separador}`}>o registrate con tu correo</p>
+        <p className={`${styles.separador}`}>o registrate con tu correo</p> */}
         <form
           className={`${styles.formLogin}`}
           onSubmit={handleSubmit(onSubmit)}
@@ -191,6 +191,7 @@ function SignUpPage({ sessionId }) {
           <label className={`${styles.formLabel}`}>Correo electrónico *</label>
           <input
             type="email"
+            required
             name="subaccount_email"
             id="subaccount_email"
             placeholder="Ingresa tu correo electrónico"
@@ -203,6 +204,7 @@ function SignUpPage({ sessionId }) {
           <input
             type="password"
             name="subaccount_password"
+            required
             id="subaccount_password"
             placeholder="Ingresa tu contraseña"
             className={`${styles.formInput}`}
@@ -214,6 +216,15 @@ function SignUpPage({ sessionId }) {
             {...register("session_id")}
             hidden
           />
+          <div style={{marginBottom: '10px', marginTop: '10px', fontSize: '13px', display: 'flex', alignItems: 'center'}}>
+            <input required id="check-privacy" type="checkbox" />
+            <label style={{marginLeft: '5px'}} htmlFor="check-privacy">Acepto la política de <Link href={'#'} target="_blank" style={{color: '#1a01a6'}}>tratamiento de datos</Link></label>
+          </div>
+
+          <div style={{marginBottom: '10px', fontSize: '13px', display: 'flex', alignItems: 'center'}}>
+            <input required id="check-terms" type="checkbox" />
+            <label style={{marginLeft: '5px'}} htmlFor="check-terms">Acepto los <Link href={'#'} target="_blank" style={{color: '#1a01a6'}}>términos y condiciones</Link></label>
+          </div>
           {error && <p style={{
             marginTop: '10px',
             marginBottom: '0px',
@@ -223,7 +234,7 @@ function SignUpPage({ sessionId }) {
 
           <button className={`${styles.buttonGoogle} my-3`}>
             <span className={`${styles.ButtonSignUp__name} mx-2`}>
-              Ingresar
+              Registrarme
             </span>
             <span>
               <svg
