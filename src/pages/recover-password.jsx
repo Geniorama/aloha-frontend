@@ -4,6 +4,8 @@ import Image from "next/image";
 import LogoBlack from "../../public/img/components/header/logo-black-aloha.svg";
 import { useForm } from "react-hook-form";
 import { loginAsUser } from "@/services/user.service";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 
 export default function RecoverPasswordPage() {
   const { register, handleSubmit } = useForm();
@@ -14,6 +16,14 @@ export default function RecoverPasswordPage() {
         <Image unoptimized src={LogoBlack} alt="Logo Aloha" />
       </Link>
       <div className={`${styles.content}`}>
+        <Link href={"/auth/signin"} className={`${styles.backLink}`}>
+          <span style={{marginRight: '5px'}}>
+            <FontAwesomeIcon icon={faArrowLeft} />
+          </span>
+          <span>
+            Regresar
+          </span>
+        </Link>
         <h1 className={`${styles.title}`}>¿Has olvidado tu contraseña?</h1>
         <p className={`${styles.description}`}>
           Introduzca su dirección de email abajo y le enviaremos un enlace para
