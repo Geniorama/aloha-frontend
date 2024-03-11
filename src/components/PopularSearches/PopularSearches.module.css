@@ -1,6 +1,6 @@
 .container {
   background-color: #222222;
-  padding: 50px 25px;
+  padding: 50px 0px;
 }
 .title {
   font-size: 45px;
@@ -20,7 +20,7 @@
 }
 @media (min-width: 500px) {
   .container {
-    padding: 30px;
+    padding: 30px 0px;
   }
   .title {
     font-size: 50px;
@@ -33,7 +33,7 @@
 
 @media (min-width: 900px) {
   .container {
-    padding: 80px;
+    padding: 80px 0px;
   }
   .keywoards {
     gap: 20px;

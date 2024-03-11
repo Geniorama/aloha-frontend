@@ -4,7 +4,7 @@ import PlanSection from "@/components/PlanSection/PlanSection";
 import styles from "@/styles/Editorial.module.css";
 import categories from "@/data/categories";
 import EditorialItemCard from "@/components/Categories/Editorial/EditorialItemCard/EditorialItemCard";
-import PopularSearches from "@/components/PupularSearches/PopularSearches";
+import PopularSearches from "@/components/PopularSearches/PopularSearches";
 
 const metaData = {
   title: "Categoría | Editorial",
@@ -24,23 +24,31 @@ export default function EditorialPage() {
           backgroundBlendMode: "multiply",
         }}
       />
-      <section className={styles.info}>
-        <h2>
-          Nuevas imágenes editoriales <span>sin royalities</span>
-        </h2>
-        <p>
-          Inyecte vitalidad en sus noticias con fotos editoriales de alta
-          calidad que ilustran los eventos más excitantes de todo el mundo.
-          <br />
-          <br />
-          Nuestras fotos están seleccionadas especialmente para periodistas,
-          editores, blogueros, agencias de prensa y propietarios de sitios web.
-        </p>
+      <section>
+       <div className="container">
+         <div className={styles.info}>
+          <h2>
+              Nuevas imágenes editoriales <span>sin royalities</span>
+            </h2>
+            <p>
+              Inyecte vitalidad en sus noticias con fotos editoriales de alta
+              calidad que ilustran los eventos más excitantes de todo el mundo.
+              <br />
+              <br />
+              Nuestras fotos están seleccionadas especialmente para periodistas,
+              editores, blogueros, agencias de prensa y propietarios de sitios web.
+            </p>
+         </div>
+       </div>
       </section>
-      <section className={styles.categories}>
-        {categories.editorial.map((item, index) => (
-          <EditorialItemCard key={index} {...item} />
-        ))}
+      <section>
+        <div className="container">
+          <div className={styles.categories}>
+            {categories.editorial.map((item, index) => (
+              <EditorialItemCard key={index} {...item} />
+            ))}
+          </div>
+        </div>
       </section>
       <PlanSection />
       <PopularSearches />

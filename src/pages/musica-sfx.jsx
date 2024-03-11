@@ -5,7 +5,7 @@ import Layout from "@/components/Layout/Layout";
 import PlanSection from "@/components/PlanSection/PlanSection";
 import PlayerListTrends from "@/components/PlayerListTrends/PlayerListTrends";
 import PopularAuthors from "@/components/PopularAuthors/PopularAuthors";
-import PopularSearches from "@/components/PupularSearches/PopularSearches";
+import PopularSearches from "@/components/PopularSearches/PopularSearches";
 // import Slider from "@/components/Slider/Slider";
 import TitleSection from "@/components/TitleSection/TitleSection";
 import { getPlayList } from "@/services/musicfx.service";

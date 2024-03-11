@@ -1,5 +1,5 @@
 .info {
-  padding: 40px;
+  padding: 40px 0px;
   text-align: center;
 }
 .info h2 {
@@ -22,7 +22,6 @@
     margin-bottom: 30px;
   }
   .categories {
-    padding: 0 30px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 20px;
@@ -40,7 +39,6 @@
   }
   .categories {
     max-width: 1500px;
-    padding: 0 40px ;
     margin: auto;
     grid-template-columns: repeat(3, 1fr);
   }

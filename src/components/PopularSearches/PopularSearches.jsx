@@ -8,14 +8,16 @@ export default function PopularSearches() {
   useEffect(() => {
     getKeywoards().then((result) => result.length && setKeywoards(result));
   }, []);
+
+  console.log(keywoards)
   return (
     <section className={styles.container}>
-      <div>
+      <div className="container">
         <h2 className={styles.title}>Búsquedas populares.</h2>
         <div className={styles.keywoards}>
           {keywoards.map((keywoard) => (
             <span key={keywoard.id}>{keywoard.phrase}</span>
-          ))}
+          ))}    
         </div>
       </div>
     </section>
